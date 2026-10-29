@@ -1,0 +1,38 @@
+﻿{
+    "provider":  "Google Cloud Vertex AI",
+    "model":  "gemini-3.1-flash-image",
+    "location":  "global",
+    "projectId":  "simbusiness-13e1f",
+    "generatedAt":  "2026-10-29T14:39:55.0768343+00:00",
+    "note":  "Proof images only. White backgrounds have not yet been removed or production-optimized.",
+    "images":  [
+                   {
+                       "name":  "american-inspired-no-logo",
+                       "file":  "american-inspired-no-logo.png",
+                       "mimeType":  "image/png",
+                       "prompt":  "Create a premium photorealistic website asset: one modern Boeing 737-800-style passenger jet, nose pointing right, mostly side-on three-quarter view with the port side visible, landing gear fully retracted. Show the entire aircraft centered on a wide 16:9 canvas with generous even padding. Exactly two under-wing engines, realistic intact anatomy and proportions, clean daylight from above-left, restrained highlights, no ground shadow, no scenery, no clouds, no contrails, no people, no watermark, and no cropped aircraft parts. Isolate the plane on a plain pure white background suitable for later background removal.\nPaint the aircraft in an original American-airline-inspired scheme: pearl white and light silver fuselage, restrained navy and red geometric tail stripes, and small tasteful red and blue accent panels. Do not include any airline name, logo, letters, words, registration number, fake text, or recognizable brand mark.",
+                       "reference":  null
+                   },
+                   {
+                       "name":  "american-branded",
+                       "file":  "american-branded.png",
+                       "mimeType":  "image/png",
+                       "prompt":  "Edit the supplied aircraft image. Preserve the aircraft, anatomy, pose, camera angle, crop, lighting, background, windows, wings, and exactly two engines. Change only the paint details into an accurate, polished American Airlines treatment with the correct official tail branding and the official American wordmark on the forward fuselage. Spell â€œAmericanâ€ exactly once, clearly and normally from left to right. Add no registration, extra text, watermark, scenery, shadow, clouds, or landing gear.",
+                       "reference":  "american-inspired-no-logo.png"
+                   },
+                   {
+                       "name":  "southwest-inspired-no-logo",
+                       "file":  "southwest-inspired-no-logo.png",
+                       "mimeType":  "image/png",
+                       "prompt":  "Create a premium photorealistic website asset: one modern Boeing 737-800-style passenger jet, nose pointing right, mostly side-on three-quarter view with the port side visible, landing gear fully retracted. Show the entire aircraft centered on a wide 16:9 canvas with generous even padding. Exactly two under-wing engines, realistic intact anatomy and proportions, clean daylight from above-left, restrained highlights, no ground shadow, no scenery, no clouds, no contrails, no people, no watermark, and no cropped aircraft parts. Isolate the plane on a plain pure white background suitable for later background removal.\nPaint the aircraft in an original Southwest-airline-inspired scheme: rich cobalt-blue fuselage, warm red underside and tail, a narrow golden-yellow divider accent, and tasteful red-yellow-blue tail bands. Make it cheerful, modern, and balanced. Do not include any airline name, logo, heart symbol, letters, words, registration number, fake text, or recognizable brand mark.",
+                       "reference":  null
+                   },
+                   {
+                       "name":  "southwest-branded",
+                       "file":  "southwest-branded.png",
+                       "mimeType":  "image/png",
+                       "prompt":  "Edit the supplied aircraft image. Preserve the aircraft, anatomy, pose, camera angle, crop, lighting, background, windows, wings, exactly two engines, and blue-red-yellow palette. Change only the livery details into an accurate current Southwest Airlines branded treatment with the correct official heart/tail branding and official Southwest wordmark on the forward fuselage. Spell â€œSOUTHWESTâ€ exactly once, clearly and normally from left to right. Add no registration, extra text, watermark, scenery, shadow, clouds, or landing gear.",
+                       "reference":  "southwest-inspired-no-logo.png"
+                   }
+               ]
+}

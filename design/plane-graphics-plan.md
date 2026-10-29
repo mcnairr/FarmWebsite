@@ -7,15 +7,11 @@ Status: not started. Written 2026-10-28.
 Replace the two generic plane drawings in the flight feed with a small
 library of side-view aircraft shapes painted in each airline's colors, so a
 Southwest 737 looks different from a FedEx 767 or a Cessna 172. Closer to
-the mockup (`design/mockups/`) without copying any real artwork.
+the mockup (`design/mockups/`).
 
 ## Ground rules
 
-- **No logos, wordmarks, or text** in any drawing (no "American" title, no
-  Delta widget, no United globe, no Alaska face, no Frontier animals, no
-  FedEx/UPS marks). Liveries are suggested by color and simple shapes only.
-  This keeps the site clear of trademark use and lets the existing
-  left/right mirroring work without reversed text.
+- Beware of the existing left/right mirroring feature for east and west travel. This new feature should not end up with reversed text. Two images of each plane probably need to be created, one pointing left and one pointing right.
 - **Original drawings.** Draw shapes from published dimensions (length, fin
   height, engine placement), not by tracing photos or third-party drawings.
 - **Same visual style as today:** flat vector, soft top-lit shading, no
