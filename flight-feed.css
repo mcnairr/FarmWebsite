@@ -310,12 +310,7 @@
 
 /* ----- footer attribution ----- */
 
-.flight-credit {
-  display: block;
-  margin-top: .3rem;
-  font-size: .62rem;
-  opacity: .85;
-}
+.flight-credit::before { content: " · "; }
 .flight-credit a { color: inherit; text-underline-offset: .2em; }
 
 /* ----- narrow phones: drop the decorative glyph to keep text roomy ----- */

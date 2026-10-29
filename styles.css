@@ -54,8 +54,8 @@ header p {
 footer {
   margin-top: auto;
   padding: 2rem 1rem 1.25rem;
-  font: .7rem/1.6 system-ui, sans-serif;
-  letter-spacing: .04em;
+  font: .6rem/1.6 system-ui, sans-serif;
+  letter-spacing: .02em;
 }
 .not-found {
   margin: auto 1.25rem;
