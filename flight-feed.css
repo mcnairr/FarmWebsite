@@ -24,8 +24,7 @@
 .flight-feed [hidden] { display: none !important; }
 
 .ff-card,
-.ff-end,
-.ff-details {
+.ff-end {
   background: var(--ff-glass);
   border: 1px solid var(--ff-edge);
   box-shadow: var(--ff-shadow);
@@ -33,7 +32,7 @@
   backdrop-filter: blur(10px) saturate(1.15);
 }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .ff-card, .ff-end, .ff-details { background: var(--ff-glass-strong); }
+  .ff-card, .ff-end { background: var(--ff-glass-strong); }
 }
 .ff-glyph { flex: none; width: 1.05rem; height: 1.05rem; color: var(--ff-text); }
 
@@ -240,7 +239,6 @@
   color: inherit;
   font: inherit;
   text-align: left;
-  cursor: pointer;
 }
 .ff-card.is-single .ff-card-main { padding-inline: .9rem; }
 .ff-eyebrow {
@@ -259,9 +257,10 @@
 .ff-position::before { content: "·"; margin-right: .6rem; }
 .ff-card-body { display: flex; align-items: stretch; gap: .8rem; }
 .ff-card-id { display: flex; flex-direction: column; min-width: 0; }
-.ff-callsign { font-size: 1.12rem; font-weight: 700; letter-spacing: .02em; line-height: 1.2; }
+.ff-type { font-size: 1.12rem; font-weight: 700; letter-spacing: .02em; line-height: 1.2; }
+.ff-callsign { font-size: .86rem; line-height: 1.35; }
 .ff-airline { font-size: .86rem; line-height: 1.35; }
-.ff-type { font-size: .76rem; line-height: 1.35; color: var(--ff-muted); letter-spacing: .02em; }
+.ff-airline { color: var(--ff-muted); letter-spacing: .02em; }
 .ff-card-metrics {
   display: flex;
   align-items: center;
@@ -280,19 +279,6 @@
   white-space: nowrap;
 }
 
-.ff-details {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: .35rem 1.25rem;
-  margin: 0;
-  padding: .5rem .9rem;
-  border-radius: .6rem;
-  font-size: .76rem;
-}
-.ff-details dt { color: var(--ff-muted); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; }
-.ff-details dd { margin: 0; font-weight: 600; }
-
-.ff-card-main:focus-visible,
 .ff-step:focus-visible {
   outline: 2px solid #fff;
   outline-offset: -3px;
@@ -333,7 +319,8 @@
   .ff-card-main { padding: .55rem .5rem .65rem; }
   .ff-card-body { gap: 1.1rem; }
   .ff-card-metrics { padding-left: 1.1rem; }
-  .ff-callsign { font-size: 1.3rem; }
+  .ff-type { font-size: 1.3rem; }
+  .ff-callsign { font-size: .95rem; }
   .ff-airline { font-size: .95rem; }
   .ff-metrics-text { font-size: .95rem; }
   .ff-eyebrow { font-size: .62rem; }

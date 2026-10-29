@@ -25,17 +25,15 @@ drawn in the blue sky of the farm photograph:
 - **Its route**, when known, runs through the plane: the origin city behind
   it, the destination ahead with an arrow (e.g. *From Denver DEN → To Chicago
   ORD*). The plane's position on the line reflects how far along the trip it is.
-- **A glass card below the plane** shows the callsign, airline, aircraft
-  type, altitude and speed in mph. A small line at the top reads
-  **● FLYING OVER RIGHT NOW · 18 MI AWAY** (green) for real data or
-  **○ DEMO · 18 MI AWAY** for demo data, plus the position, such as
-  **2 OF 4**, when several aircraft are nearby.
+- **A glass card below the plane** shows the aircraft type, flight number,
+  airline, altitude, speed in mph, and heading. A small line at the top gives
+  its registration and position, such as **● N8607M IS 15 MI NORTHEAST OF THE
+  FARM**, plus the position, such as **2 OF 4**, when several aircraft are
+  nearby.
 - **‹ and › on the sides of the card** step to the previous or next aircraft,
   wrapping around. Arrow keys work while the card has focus, and on phones
   you can also swipe left or right across the sky. With one aircraft the
   arrows are hidden.
-- **Tapping the card** reveals registration, distance from the farm, and
-  heading.
 - **Other nearby aircraft** appear as small, faded planes placed by their
   real direction and distance from the farm (east to the right, north up).
   Clicking one selects it. Phones show the four most relevant; every aircraft

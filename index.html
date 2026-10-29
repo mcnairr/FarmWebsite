@@ -40,35 +40,31 @@
             <button class="ff-step ff-prev" type="button" data-step="-1" aria-label="Previous aircraft">
               <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M14.5 5.5 8 12l6.5 6.5"/></svg>
             </button>
-            <button class="ff-card-main" type="button" aria-expanded="false" aria-controls="ff-details">
+            <div class="ff-card-main">
               <span class="ff-eyebrow">
                 <span class="ff-badge"><span class="ff-dot" aria-hidden="true"></span><span class="ff-badge-text"></span></span>
                 <span class="ff-position"></span>
               </span>
               <span class="ff-card-body">
                 <span class="ff-card-id">
+                  <span class="ff-type"></span>
                   <span class="ff-callsign"></span>
                   <span class="ff-airline"></span>
-                  <span class="ff-type"></span>
                 </span>
                 <span class="ff-card-metrics">
                   <svg class="ff-glyph" aria-hidden="true" focusable="false"><use href="#ff-glyph-plane"></use></svg>
                   <span class="ff-metrics-text">
                     <span class="ff-altitude"></span>
                     <span class="ff-speed"></span>
+                    <span class="ff-heading"></span>
                   </span>
                 </span>
               </span>
-            </button>
+            </div>
             <button class="ff-step ff-next" type="button" data-step="1" aria-label="Next aircraft">
               <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="m9.5 5.5 6.5 6.5-6.5 6.5"/></svg>
             </button>
           </div>
-          <dl class="ff-details" id="ff-details" hidden>
-            <div class="ff-detail-registration"><dt>Registration</dt><dd></dd></div>
-            <div class="ff-detail-distance"><dt>From the farm</dt><dd></dd></div>
-            <div class="ff-detail-heading"><dt>Heading</dt><dd></dd></div>
-          </dl>
         </article>
       </div>
       <p class="ff-announcer" aria-live="polite"></p>

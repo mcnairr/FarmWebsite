@@ -23,14 +23,6 @@ import {
 /** @typedef {import('./api/src/types.js').FlightFeedResponse} FeedResponse */
 /** @typedef {'connecting' | 'live' | 'demo' | 'reconnecting' | 'unavailable'} ViewState */
 
-/** Small status label in the card; demo data must never read as live. */
-const BADGE_TEXT = {
-  connecting: '',
-  live: 'Flying over right now',
-  demo: 'Demo',
-  reconnecting: 'Reconnecting…',
-  unavailable: '',
-};
 /** Keep showing the last aircraft through brief outages, but not stale ones. */
 const KEEP_LAST_DATA_MS = 45_000;
 const REQUEST_TIMEOUT_MS = 8_000;
@@ -50,7 +42,6 @@ async function start(endpointUrl, root) {
     traffic: $('.ff-traffic'),
     flight: $('.ff-flight'),
     card: $('.ff-card'),
-    cardMain: $('.ff-card-main'),
     position: $('.ff-position'),
     callsign: $('.ff-callsign'),
     airline: $('.ff-airline'),
@@ -58,7 +49,7 @@ async function start(endpointUrl, root) {
     metrics: $('.ff-card-metrics'),
     altitude: $('.ff-altitude'),
     speed: $('.ff-speed'),
-    details: $('.ff-details'),
+    heading: $('.ff-heading'),
     route: $('.ff-route'),
     from: $('.ff-from'),
     to: $('.ff-to'),
@@ -152,13 +143,19 @@ async function start(endpointUrl, root) {
     renderBadge();
   }
 
-  /** State label, plus how far the selected aircraft is from the farm. */
+  /** Registration and position of the selected aircraft relative to the farm. */
   function renderBadge() {
     const state = /** @type {ViewState} */ (root.dataset.state);
     const selected = aircraft.find((a) => a.id === selectedId);
-    const distance = selected && (state === 'live' || state === 'demo') ? formatDistance(selected.distanceFromFarmNm) : null;
-    const away = distance === 'Overhead' ? 'directly overhead' : distance && `${distance} away`;
-    el.badge.textContent = away ? `${BADGE_TEXT[state]} · ${away}` : BADGE_TEXT[state];
+    if (!selected || (state !== 'live' && state !== 'demo')) {
+      el.badge.textContent = '';
+      return;
+    }
+    const aircraftName = selected.registration ?? displayTitle(selected);
+    const distance = formatDistance(selected.distanceFromFarmNm);
+    el.badge.textContent = distance === 'Overhead'
+      ? `${aircraftName} is overhead the farm.`
+      : `${aircraftName} is ${distance} ${compassWord(selected.directionFromFarmDeg)} of the farm.`;
   }
 
   /** @param {Aircraft[]} next */
@@ -186,7 +183,6 @@ async function start(endpointUrl, root) {
     }
 
     const changed = renderedId !== null && renderedId !== selected.id;
-    if (changed) collapseDetails();
     renderedId = selected.id;
     el.flight.hidden = false; // before renderTraffic(), which measures it
     if (changed && !reducedMotion.matches) {
@@ -212,13 +208,11 @@ async function start(endpointUrl, root) {
     setText(el.type, a.aircraftType);
     const altitude = formatAltitude(a.altitudeFt);
     const speed = formatSpeed(a.groundSpeedMph);
+    const heading = a.headingDeg === null ? null : `${a.headingDeg}°`;
     setText(el.altitude, altitude);
     setText(el.speed, speed);
-    el.metrics.hidden = !altitude && !speed;
-
-    setDetail('registration', a.registration);
-    setDetail('distance', formatDistance(a.distanceFromFarmNm));
-    setDetail('heading', a.headingDeg === null ? null : `${a.headingDeg}° (${compassWord(a.headingDeg)})`);
+    setText(el.heading, heading);
+    el.metrics.hidden = !altitude && !speed && !heading;
 
     const pose = planePose(a.headingDeg, a.verticalRateFpm);
     el.route.dataset.facing = pose.facing;
@@ -242,13 +236,6 @@ async function start(endpointUrl, root) {
     end.hidden = !label;
     setText(/** @type {HTMLElement} */ (end.querySelector('.ff-city')), label?.city ?? null);
     setText(/** @type {HTMLElement} */ (end.querySelector('.ff-code')), label?.code ?? null);
-  }
-
-  /** @param {string} name @param {string | null} value */
-  function setDetail(name, value) {
-    const row = /** @type {HTMLElement} */ (el.details.querySelector(`.ff-detail-${name}`));
-    row.hidden = !value;
-    setText(/** @type {HTMLElement} */ (row.querySelector('dd')), value);
   }
 
   /** Small unselected aircraft, keyed by id so refreshes move them rather than rebuild them. */
@@ -341,18 +328,6 @@ async function start(endpointUrl, root) {
     touchStart = null;
     if (Math.abs(dx) > 50 && Math.abs(dy) < 40) step(dx < 0 ? 1 : -1);
   });
-
-  el.cardMain.addEventListener('click', () => {
-    const open = el.cardMain.getAttribute('aria-expanded') !== 'true';
-    el.cardMain.setAttribute('aria-expanded', String(open));
-    el.details.hidden = !open;
-    renderTraffic();
-  });
-
-  function collapseDetails() {
-    el.cardMain.setAttribute('aria-expanded', 'false');
-    el.details.hidden = true;
-  }
 
   let resizeFrame = 0;
   window.addEventListener('resize', () => {
