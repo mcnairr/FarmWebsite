@@ -1,0 +1,388 @@
+/* Live flight feed overlay for the homepage sky. Loaded by flight-feed.js
+   only when the feed is enabled, so the base page never pays for it. */
+
+.flight-feed {
+  --ff-glass: rgba(9, 24, 54, .44);
+  --ff-glass-strong: rgba(8, 21, 48, .6);
+  --ff-edge: rgba(255, 255, 255, .16);
+  --ff-text: #fffdf5;
+  --ff-muted: rgba(255, 253, 245, .8);
+  --ff-live: #3fdc7c;
+  --ff-amber: #f6c95a;
+  --ff-shadow: 0 10px 30px rgba(3, 14, 38, .22);
+  position: relative;
+  width: 100%;
+  max-width: 72rem;
+  margin-top: -.75rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ff-text);
+}
+.flight-feed [hidden] { display: none !important; }
+
+.ff-card,
+.ff-end,
+.ff-details {
+  background: var(--ff-glass);
+  border: 1px solid var(--ff-edge);
+  box-shadow: var(--ff-shadow);
+  -webkit-backdrop-filter: blur(10px) saturate(1.15);
+  backdrop-filter: blur(10px) saturate(1.15);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .ff-card, .ff-end, .ff-details { background: var(--ff-glass-strong); }
+}
+.ff-glyph { flex: none; width: 1.05rem; height: 1.05rem; color: var(--ff-text); }
+
+/* ----- live / demo badge (in the card and the empty-sky message) ----- */
+
+.ff-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+.ff-dot {
+  flex: none;
+  width: .45rem;
+  height: .45rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--ff-muted);
+}
+.flight-feed[data-state="live"] .ff-dot {
+  border-color: var(--ff-live);
+  background: var(--ff-live);
+  animation: ff-pulse 2.4s ease-out infinite;
+}
+.flight-feed[data-state="demo"] .ff-dot,
+.flight-feed[data-state="reconnecting"] .ff-dot { border-color: var(--ff-amber); }
+@keyframes ff-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(63, 220, 124, .55); }
+  70%, 100% { box-shadow: 0 0 0 .4rem rgba(63, 220, 124, 0); }
+}
+
+/* ----- sky stage ----- */
+
+.ff-sky {
+  position: relative;
+  width: 100%;
+  min-height: clamp(16rem, 36svh, 26rem);
+  display: grid;
+  place-items: start center;
+  touch-action: pan-y;
+}
+.ff-traffic { position: absolute; inset: 0 0 6% 0; pointer-events: none; }
+
+.ff-blip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.9rem;
+  margin: -.55rem 0 0 -1.45rem;
+  padding: .25rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  opacity: .78;
+  cursor: pointer;
+  pointer-events: auto;
+  filter: drop-shadow(0 2px 4px rgba(3, 14, 38, .35));
+  transition: transform 3s cubic-bezier(.4, 0, .2, 1), opacity .6s ease;
+}
+.ff-blip svg { display: block; width: 100%; height: auto; }
+.ff-blip[data-facing="left"] svg { transform: scaleX(-1); }
+.ff-blip.is-light { width: 2.3rem; margin-left: -1.15rem; }
+.ff-blip:hover { opacity: 1; }
+.ff-blip.is-entering,
+.ff-blip.is-leaving { opacity: 0; }
+
+.ff-message {
+  align-self: center;
+  text-align: center;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, .35);
+}
+.ff-message-badge,
+.ff-message-sub {
+  margin: 0;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ff-muted);
+}
+.ff-message-title {
+  margin: .4rem 0 .45rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 4vw, 2rem);
+  letter-spacing: -.01em;
+}
+
+/* ----- selected flight: airliner and route on top, card beneath ----- */
+
+.ff-flight {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 46rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  transition: opacity .18s ease, transform .18s ease;
+}
+.ff-flight.is-switching { opacity: 0; transform: translateY(.25rem); }
+
+/* Route: origin behind the aircraft, destination ahead of it. */
+.ff-route {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: .25rem;
+}
+.ff-route[data-facing="left"],
+.ff-route[data-facing="left"] .ff-path { flex-direction: row-reverse; }
+.ff-route:not(.has-route) { justify-content: center; }
+
+.ff-end {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 8.25rem;
+  margin: 0;
+  padding: .35rem .55rem;
+  border-radius: .5rem;
+  line-height: 1.2;
+  text-align: left;
+}
+.ff-end-label { font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ff-muted); }
+.ff-city { font-size: .9rem; font-weight: 700; overflow-wrap: break-word; }
+.ff-code { font-size: .7rem; letter-spacing: .08em; color: var(--ff-muted); }
+
+.ff-path {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.ff-route:not(.has-route) .ff-path { flex: none; }
+.ff-line {
+  position: relative;
+  flex: .5 1 0;
+  min-width: .6rem;
+  height: 2px;
+}
+.ff-route:not(.has-route) .ff-line { display: none; }
+.ff-line-done { background: linear-gradient(90deg, rgba(255, 255, 255, .35), rgba(255, 255, 255, .9)); }
+.ff-line-ahead { background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .9) 0 7px, transparent 7px 12px); }
+.ff-route[data-facing="left"] .ff-line-done { background: linear-gradient(270deg, rgba(255, 255, 255, .35), rgba(255, 255, 255, .9)); }
+.ff-line-done::before,
+.ff-line-ahead::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+}
+.ff-line-done::before {
+  left: -3px;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: #fff;
+}
+.ff-line-ahead::after {
+  right: -2px;
+  width: 9px;
+  height: 9px;
+  margin-top: -5px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg);
+}
+.ff-route[data-facing="left"] .ff-line-done::before { left: auto; right: -3px; }
+.ff-route[data-facing="left"] .ff-line-ahead::after { right: auto; left: -2px; transform: rotate(-135deg); }
+
+.ff-plane {
+  --ff-tilt: 0deg;
+  --ff-flip: 1;
+  flex: 0 1 auto;
+  min-width: 5.5rem;
+  width: clamp(9rem, 44vw, 15.5rem);
+  height: auto;
+  aspect-ratio: 320 / 110;
+  margin: 0 -.35rem;
+  transform: rotate(var(--ff-tilt)) scaleX(var(--ff-flip));
+  filter: drop-shadow(0 8px 12px rgba(3, 18, 52, .35));
+  transition: transform .6s ease;
+}
+.ff-route[data-facing="left"] .ff-plane { --ff-flip: -1; }
+.ff-plane.is-light { width: clamp(6.5rem, 28vw, 11rem); }
+
+/* Card: ‹ previous | flight information | next › */
+.ff-card {
+  display: flex;
+  align-items: stretch;
+  max-width: 100%;
+  border-radius: .65rem;
+}
+.ff-step {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+.ff-prev { border-radius: .65rem 0 0 .65rem; }
+.ff-next { border-radius: 0 .65rem .65rem 0; }
+.ff-step svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ff-step:hover { background: rgba(255, 255, 255, .1); }
+
+.ff-card-main {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  min-width: 0;
+  padding: .5rem .35rem .6rem;
+  border: 0;
+  border-radius: .65rem;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.ff-card.is-single .ff-card-main { padding-inline: .9rem; }
+.ff-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--ff-muted);
+}
+.ff-position { font-variant-numeric: tabular-nums; }
+.ff-position::before { content: "·"; margin-right: .6rem; }
+.ff-card-body { display: flex; align-items: stretch; gap: .8rem; }
+.ff-card-id { display: flex; flex-direction: column; min-width: 0; }
+.ff-callsign { font-size: 1.12rem; font-weight: 700; letter-spacing: .02em; line-height: 1.2; }
+.ff-airline { font-size: .86rem; line-height: 1.35; }
+.ff-type { font-size: .76rem; line-height: 1.35; color: var(--ff-muted); letter-spacing: .02em; }
+.ff-route-note {
+  margin-top: .1rem;
+  font-size: .6rem;
+  letter-spacing: .14em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--ff-muted);
+}
+.ff-card-metrics {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding-left: .8rem;
+  border-left: 1px solid var(--ff-edge);
+}
+.ff-card-metrics .ff-glyph { width: 1.15rem; height: 1.15rem; }
+.ff-metrics-text {
+  display: flex;
+  flex-direction: column;
+  font-size: .86rem;
+  font-weight: 600;
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ff-details {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: .35rem 1.25rem;
+  margin: 0;
+  padding: .5rem .9rem;
+  border-radius: .6rem;
+  font-size: .76rem;
+}
+.ff-details dt { color: var(--ff-muted); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; }
+.ff-details dd { margin: 0; font-weight: 600; }
+
+.ff-card-main:focus-visible,
+.ff-step:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -3px;
+}
+
+.ff-announcer {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ----- footer attribution ----- */
+
+.flight-credit {
+  display: block;
+  margin-top: .3rem;
+  font-size: .62rem;
+  opacity: .85;
+}
+.flight-credit a { color: inherit; text-underline-offset: .2em; }
+
+/* ----- narrow phones: drop the decorative glyph to keep text roomy ----- */
+
+@media (max-width: 23rem) {
+  .ff-card-metrics .ff-glyph { display: none; }
+  .ff-card-body { gap: .6rem; }
+  .ff-card-metrics { padding-left: .6rem; }
+}
+
+/* ----- wider screens: use the broad sky ----- */
+
+@media (min-width: 48rem) {
+  .ff-sky { min-height: clamp(16rem, 34svh, 26rem); }
+  /* The landscape crop puts the pivot just above the horizon; keep small
+     planes out of the sky band's lower strip. */
+  .ff-traffic { bottom: 30%; }
+  .ff-flight { width: min(100%, 42rem); }
+  .ff-step { width: 2.6rem; }
+  .ff-card-main { padding: .55rem .5rem .65rem; }
+  .ff-card-body { gap: 1.1rem; }
+  .ff-card-metrics { padding-left: 1.1rem; }
+  .ff-callsign { font-size: 1.3rem; }
+  .ff-airline { font-size: .95rem; }
+  .ff-metrics-text { font-size: .95rem; }
+  .ff-eyebrow { font-size: .62rem; }
+  .ff-route { gap: .5rem; }
+  .ff-end { max-width: 10rem; padding: .45rem .8rem; }
+  .ff-city { font-size: 1.2rem; }
+  .ff-code { font-size: .76rem; }
+  .ff-plane { width: clamp(12rem, 24vw, 17rem); }
+  .ff-blip { width: 3.4rem; margin-left: -1.7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flight-feed *,
+  .flight-feed *::before,
+  .flight-feed *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

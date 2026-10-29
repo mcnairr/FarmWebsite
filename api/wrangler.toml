@@ -1,0 +1,19 @@
+# Cloudflare Worker serving GET /api/flights for www.mcnair-farms.com.
+# Deploy: npm run deploy:api   (first run: npx wrangler@4 login)
+
+name = "mcnair-flight-feed"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+
+# Non-secret settings. Demo mode must stay "false" here.
+[vars]
+FLIGHT_FEED_ENABLED = "true"
+FLIGHT_FEED_DEMO = "false"
+FLIGHT_QUERY_RADIUS_NM = "50"
+FLIGHT_DISPLAY_RADIUS_NM = "30"
+FLIGHT_REFRESH_SECONDS = "15"
+FLIGHT_ALLOWED_ORIGINS = "https://www.mcnair-farms.com,https://mcnair-farms.com"
+
+# Exact farm coordinates are secrets, not vars, so they stay out of git:
+#   npx wrangler@4 secret put FARM_LATITUDE --config api/wrangler.toml
+#   npx wrangler@4 secret put FARM_LONGITUDE --config api/wrangler.toml

@@ -1,0 +1,15 @@
+{
+  "name": "mcnair-farms-website",
+  "private": true,
+  "description": "McNair Farms Inc. website and live flight feed API",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "demo": "node scripts/dev-server.mjs --demo",
+    "test": "node --test \"test/*.test.js\"",
+    "deploy:api": "npx wrangler@4 deploy --config api/wrangler.toml"
+  }
+}

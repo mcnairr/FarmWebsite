@@ -7,8 +7,11 @@
   <meta name="description" content="McNair Farms Inc. — Chase County, Nebraska, USA.">
   <link rel="canonical" href="https://www.mcnair-farms.com/">
   <link rel="stylesheet" href="/styles.css">
+  <!-- Live flight feed API URL. Empty = feature off; the page renders exactly as before. -->
+  <meta name="flight-feed-endpoint" content="https://mcnair-flight-feed.mcnairr.workers.dev/api/flights">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYSZ7YPH24"></script>
   <script src="/analytics.js"></script>
+  <script type="module" src="/flight-feed.js"></script>
 </head>
 <body>
   <main class="landscape">
@@ -20,7 +23,118 @@
       <h1>McNair Farms Inc.</h1>
       <p>Chase County, Nebraska, USA.</p>
     </header>
-    <footer>&copy; 2026 McNair Farms Inc. All rights reserved.</footer>
+    <section class="flight-feed" id="flight-feed" aria-label="Aircraft flying near McNair Farms" data-state="connecting" hidden>
+      <div class="ff-sky">
+        <div class="ff-traffic" aria-hidden="true"></div>
+        <div class="ff-message" hidden>
+          <p class="ff-message-badge"><span class="ff-badge"><span class="ff-dot" aria-hidden="true"></span><span class="ff-badge-text"></span></span></p>
+          <p class="ff-message-title"></p>
+          <p class="ff-message-sub"></p>
+        </div>
+        <article class="ff-flight" hidden>
+          <div class="ff-route" data-facing="right">
+            <p class="ff-end ff-from"><span class="ff-end-label">From</span> <span class="ff-city"></span> <span class="ff-code"></span></p>
+            <div class="ff-path">
+              <span class="ff-line ff-line-done" aria-hidden="true"></span>
+              <svg class="ff-plane" viewBox="0 0 320 110" aria-hidden="true" focusable="false"><use href="#ff-jet"></use></svg>
+              <span class="ff-line ff-line-ahead" aria-hidden="true"></span>
+            </div>
+            <p class="ff-end ff-to"><span class="ff-end-label">To</span> <span class="ff-city"></span> <span class="ff-code"></span></p>
+          </div>
+          <div class="ff-card" role="group" aria-label="Selected aircraft">
+            <button class="ff-step ff-prev" type="button" data-step="-1" aria-label="Previous aircraft">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M14.5 5.5 8 12l6.5 6.5"/></svg>
+            </button>
+            <button class="ff-card-main" type="button" aria-expanded="false" aria-controls="ff-details">
+              <span class="ff-eyebrow">
+                <span class="ff-badge"><span class="ff-dot" aria-hidden="true"></span><span class="ff-badge-text"></span></span>
+                <span class="ff-position"></span>
+              </span>
+              <span class="ff-card-body">
+                <span class="ff-card-id">
+                  <span class="ff-callsign"></span>
+                  <span class="ff-airline"></span>
+                  <span class="ff-type"></span>
+                  <span class="ff-route-note" hidden>Route unavailable</span>
+                </span>
+                <span class="ff-card-metrics">
+                  <svg class="ff-glyph" aria-hidden="true" focusable="false"><use href="#ff-glyph-plane"></use></svg>
+                  <span class="ff-metrics-text">
+                    <span class="ff-altitude"></span>
+                    <span class="ff-speed"></span>
+                  </span>
+                </span>
+              </span>
+            </button>
+            <button class="ff-step ff-next" type="button" data-step="1" aria-label="Next aircraft">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="m9.5 5.5 6.5 6.5-6.5 6.5"/></svg>
+            </button>
+          </div>
+          <dl class="ff-details" id="ff-details" hidden>
+            <div class="ff-detail-registration"><dt>Registration</dt><dd></dd></div>
+            <div class="ff-detail-distance"><dt>From the farm</dt><dd></dd></div>
+            <div class="ff-detail-heading"><dt>Heading</dt><dd></dd></div>
+          </dl>
+        </article>
+      </div>
+      <p class="ff-announcer" aria-live="polite"></p>
+    </section>
+    <footer>
+      &copy; 2026 McNair Farms Inc. All rights reserved.
+      <span class="flight-credit" hidden>Contains information from <a href="https://www.adsb.lol/">adsb.lol</a>, made available under the <a href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL</a>. Routes from <a href="https://www.adsbdb.com/">ADSBDB</a>.</span>
+    </footer>
   </main>
+  <svg class="ff-sprite" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="ff-body" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ffffff"/>
+        <stop offset=".55" stop-color="#eef2f7"/>
+        <stop offset="1" stop-color="#b9c5d4"/>
+      </linearGradient>
+      <linearGradient id="ff-tail" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#2f5a92"/>
+        <stop offset="1" stop-color="#16325c"/>
+      </linearGradient>
+      <linearGradient id="ff-wing" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#e4e9f0"/>
+        <stop offset="1" stop-color="#aebbcb"/>
+      </linearGradient>
+      <linearGradient id="ff-engine" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#f4f6f9"/>
+        <stop offset="1" stop-color="#a3b0c1"/>
+      </linearGradient>
+    </defs>
+    <!-- Side-view airliner, facing right. Original artwork for this site. -->
+    <symbol id="ff-jet" viewBox="0 0 320 110">
+      <path d="M176 47 141 33h-10l20 14z" fill="#b7c3d2"/>
+      <path d="M90 45 46 8c-2-2-5-3-8-3H27c-2 0-3 2-2 4l10 37z" fill="url(#ff-tail)"/>
+      <path d="M30 46 262 43c22 0 38 6 47 14-6 6-19 10-39 10H96c-24 0-46-6-62-13l-10-4c-2-2 1-4 6-4z" fill="url(#ff-body)"/>
+      <path d="M72 55 31 67c-3 1-5-2-2-4l21-11z" fill="#c9d2de"/>
+      <path d="M100 54.5 258 52" stroke="#33445e" stroke-width="3.4" stroke-linecap="round" stroke-dasharray="0 6.6"/>
+      <path d="m284 50 13 2.5 3 3.5-14-.5z" fill="#26364f"/>
+      <path d="M192 62 121 96c-3 2-8 2-10 0l-2-3 41-30z" fill="url(#ff-wing)"/>
+      <path d="m113 96-8-12h4l9 9z" fill="#c4cedb"/>
+      <path d="M176 65h8l-2 6h-6z" fill="#b6c2d1"/>
+      <path d="M160 70h38c6 0 9 4 9 8s-3 8-9 8h-36c-6 0-10-4-10-8s3-8 8-8z" fill="url(#ff-engine)"/>
+      <ellipse cx="205" cy="78" rx="3" ry="7" fill="#3a475b"/>
+      <path d="M96 67h174" stroke="#9fadbf" stroke-width="1" opacity=".6"/>
+    </symbol>
+    <!-- Side-view high-wing light aircraft, facing right. -->
+    <symbol id="ff-prop" viewBox="0 0 320 110">
+      <path d="M40 58 26 22h18l40 34z" fill="url(#ff-tail)"/>
+      <path d="M40 58 190 50c30-1 56 4 74 14 7 4 7 10 0 13l-38 8c-44 6-104-1-150-11l-26-6c-4-2-2-9 0-10z" fill="url(#ff-body)"/>
+      <path d="M44 66 14 76c-3 1-1 5 2 5l50-7z" fill="#c9d2de"/>
+      <path d="M118 44h112c4 0 4 8 0 8H118c-4 0-4-8 0-8z" fill="url(#ff-wing)"/>
+      <path d="m186 52 22 2 12 12-30 1z" fill="#26364f"/>
+      <path d="M200 52 186 86" stroke="#9fadbf" stroke-width="3"/>
+      <ellipse cx="272" cy="70" rx="4" ry="22" fill="#ffffff" opacity=".45"/>
+      <path d="M266 66h6v8h-6z" fill="#8795a8"/>
+      <circle cx="196" cy="94" r="6" fill="#2d3748"/>
+      <circle cx="252" cy="88" r="5" fill="#2d3748"/>
+    </symbol>
+    <symbol id="ff-glyph-plane" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2.4c.8 0 1.3.7 1.3 1.6v5.3l7.7 4.6v1.9l-7.7-2.3v4.7l2.2 1.6v1.6l-3.5-.9-3.5.9v-1.6l2.2-1.6v-4.7L3 15.8v-1.9l7.7-4.6V4c0-.9.5-1.6 1.3-1.6z" transform="rotate(60 12 12)"/>
+    </symbol>
+  </svg>
 </body>
 </html>
