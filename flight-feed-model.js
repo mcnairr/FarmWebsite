@@ -58,10 +58,16 @@ export function formatDistance(nm) {
 }
 
 const COMPASS = ['north', 'northeast', 'east', 'southeast', 'south', 'southwest', 'west', 'northwest'];
+const COMPASS_ABBREVIATIONS = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
 
 /** @param {number} deg */
 export function compassWord(deg) {
   return COMPASS[Math.round((((deg % 360) + 360) % 360) / 45) % 8];
+}
+
+/** Short compass direction for a heading, such as NE. @param {number} deg */
+export function compassAbbreviation(deg) {
+  return COMPASS_ABBREVIATIONS[Math.round((((deg % 360) + 360) % 360) / 45) % 8];
 }
 
 /** Main label for an aircraft card. @param {Aircraft} a */

@@ -6,6 +6,7 @@
 
 import {
   airportLabel,
+  compassAbbreviation,
   compassWord,
   displayTitle,
   formatAltitude,
@@ -147,7 +148,7 @@ async function start(endpointUrl, root) {
   function renderBadge() {
     const state = /** @type {ViewState} */ (root.dataset.state);
     const selected = aircraft.find((a) => a.id === selectedId);
-    if (!selected || (state !== 'live' && state !== 'demo')) {
+    if (!selected || (state !== 'live' && state !== 'demo' && state !== 'reconnecting')) {
       el.badge.textContent = '';
       return;
     }
@@ -208,7 +209,7 @@ async function start(endpointUrl, root) {
     setText(el.type, a.aircraftType);
     const altitude = formatAltitude(a.altitudeFt);
     const speed = formatSpeed(a.groundSpeedMph);
-    const heading = a.headingDeg === null ? null : `${a.headingDeg}°`;
+    const heading = a.headingDeg === null ? null : `${compassAbbreviation(a.headingDeg)} (${a.headingDeg}°)`;
     setText(el.altitude, altitude);
     setText(el.speed, speed);
     setText(el.heading, heading);

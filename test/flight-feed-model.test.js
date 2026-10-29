@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   airportLabel,
+  compassAbbreviation,
   formatAltitude,
   formatSpeed,
   hasRoute,
@@ -44,6 +45,14 @@ test('formats altitude and speed for visitors', () => {
   assert.equal(formatAltitude(null), null);
   assert.equal(formatSpeed(494.8), '495 mph');
   assert.equal(formatSpeed(null), null);
+});
+
+test('formats headings as short compass directions', () => {
+  assert.equal(compassAbbreviation(0), 'N');
+  assert.equal(compassAbbreviation(45), 'NE');
+  assert.equal(compassAbbreviation(181), 'S');
+  assert.equal(compassAbbreviation(315), 'NW');
+  assert.equal(compassAbbreviation(360), 'N');
 });
 
 test('airport label prefers city, falls back to code, never shows placeholders', () => {

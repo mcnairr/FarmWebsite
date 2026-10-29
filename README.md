@@ -26,7 +26,7 @@ drawn in the blue sky of the farm photograph:
   it, the destination ahead with an arrow (e.g. *From Denver DEN → To Chicago
   ORD*). The plane's position on the line reflects how far along the trip it is.
 - **A glass card below the plane** shows the aircraft type, flight number,
-  airline, altitude, speed in mph, and heading. A small line at the top gives
+  airline, altitude, speed in mph, and heading such as **NE (45°)**. A small line at the top gives
   its registration and position, such as **● N8607M IS 15 MI NORTHEAST OF THE
   FARM**, plus the position, such as **2 OF 4**, when several aircraft are
   nearby.
