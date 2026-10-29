@@ -26,9 +26,10 @@ drawn in the blue sky of the farm photograph:
   it, the destination ahead with an arrow (e.g. *From Denver DEN → To Chicago
   ORD*). The plane's position on the line reflects how far along the trip it is.
 - **A glass card below the plane** shows the callsign, airline, aircraft
-  type, altitude and speed in mph. A small line at the top reads **● LIVE**
-  (green) for real data or **○ DEMO** for demo data, plus the position, such
-  as **2 OF 4**, when several aircraft are nearby.
+  type, altitude and speed in mph. A small line at the top reads
+  **● FLYING OVER RIGHT NOW · 18 MI AWAY** (green) for real data or
+  **○ DEMO · 18 MI AWAY** for demo data, plus the position, such as
+  **2 OF 4**, when several aircraft are nearby.
 - **‹ and › on the sides of the card** step to the previous or next aircraft,
   wrapping around. Arrow keys work while the card has focus, and on phones
   you can also swipe left or right across the sky. With one aircraft the
@@ -39,10 +40,8 @@ drawn in the blue sky of the farm photograph:
   real direction and distance from the farm (east to the right, north up).
   Clicking one selects it. Phones show the four most relevant; every aircraft
   is still reachable with ‹ ›.
-- **No aircraft nearby:** *Clear skies over McNair Farms — Watching for the
-  next aircraft…*
-- **Data outage:** *Flight data temporarily unavailable.* The farm photo and
-  title are never affected.
+- **No aircraft nearby, or a data outage:** the sky is left empty, with no
+  message. The farm photo and title are never affected.
 
 The footer gains a one-line data credit while the feed is on.
 
@@ -127,16 +126,15 @@ offers optional API keys (adsb.lol/request) if they ever become necessary.
   frequently out of date; in testing it listed a Southwest flight over
   Nebraska as Kahului→Oakland. A route is shown only if the aircraft is
   plausibly flying it: near the direct path between the two airports and not
-  heading away from the destination. Otherwise the card says *Route
-  unavailable*. Routes are never guessed from heading.
+  heading away from the destination. Otherwise no route is shown. Routes are
+  never guessed from heading.
 - **Aircraft type accuracy:** the aircraft database occasionally mismatches.
   In testing a Delta jet at 35,000 ft came back as a Beechcraft King Air. When
   the database type contradicts the size class the aircraft itself
   broadcasts, the type and registration are left off.
 - **Outages:** if adsb.lol fails, aircraft already on screen stay for up to
-  45 seconds marked *Reconnecting…*, then the sky shows *Flight data
-  temporarily unavailable*. If ADSBDB fails, aircraft still show, just
-  without routes.
+  45 seconds marked *Reconnecting…*, then the sky is left empty. If ADSBDB
+  fails, aircraft still show, just without routes.
 - **Privacy:** visitors' locations are never used; everything is relative to
   the farm. Nothing about visitors is logged. Server logs record only
   upstream failures, at most once per 5 minutes per kind.
@@ -222,8 +220,8 @@ with Google and GitHub.
 | See usage | Cloudflare dashboard → Workers & Pages → mcnair-flight-feed |
 
 **Usage limits:** the free plan allows 100,000 requests a day, about 400
-hours of visitors with the page open. If that's ever exceeded, the feed shows
-"temporarily unavailable" until the next day. The free plan never bills.
+hours of visitors with the page open. If that's ever exceeded, the sky stays
+empty until the next day. The free plan never bills.
 
 **Custom address (optional):** a name like `flights.mcnair-farms.com` instead
 of `workers.dev` requires the domain's DNS to move to Cloudflare. It's

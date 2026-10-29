@@ -26,7 +26,7 @@ import {
 /** Small status label in the card; demo data must never read as live. */
 const BADGE_TEXT = {
   connecting: '',
-  live: 'Live',
+  live: 'Flying over right now',
   demo: 'Demo',
   reconnecting: 'Reconnecting…',
   unavailable: '',
@@ -48,10 +48,6 @@ async function start(endpointUrl, root) {
   const el = {
     sky: $('.ff-sky'),
     traffic: $('.ff-traffic'),
-    message: $('.ff-message'),
-    messageBadge: $('.ff-message-badge'),
-    messageTitle: $('.ff-message-title'),
-    messageSub: $('.ff-message-sub'),
     flight: $('.ff-flight'),
     card: $('.ff-card'),
     cardMain: $('.ff-card-main'),
@@ -69,9 +65,8 @@ async function start(endpointUrl, root) {
     lineDone: $('.ff-line-done'),
     lineAhead: $('.ff-line-ahead'),
     plane: $('.ff-plane'),
-    routeNote: $('.ff-route-note'),
     steps: /** @type {HTMLButtonElement[]} */ ([...root.querySelectorAll('.ff-step')]),
-    badges: /** @type {HTMLElement[]} */ ([...root.querySelectorAll('.ff-badge-text')]),
+    badge: $('.ff-badge-text'),
     announcer: $('.ff-announcer'),
   };
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -149,22 +144,21 @@ async function start(endpointUrl, root) {
 
   // ----- state -> view -----
 
+  // With no aircraft, or no data, the sky is simply left empty: no message.
+
   /** @param {ViewState} state */
   function setState(state) {
     root.dataset.state = state;
-    for (const badge of el.badges) badge.textContent = BADGE_TEXT[state];
-    renderMessage();
+    renderBadge();
   }
 
-  /** Text in the empty sky: clear skies, or an outage notice. Nothing while connecting. */
-  function renderMessage() {
-    const state = root.dataset.state;
-    const clear = aircraft.length === 0 && (state === 'live' || state === 'demo');
-    const outage = aircraft.length === 0 && state === 'unavailable';
-    el.message.hidden = !clear && !outage;
-    el.messageBadge.hidden = !clear;
-    setText(el.messageTitle, clear ? 'Clear skies over McNair Farms' : null);
-    setText(el.messageSub, clear ? 'Watching for the next aircraft…' : outage ? 'Flight data temporarily unavailable' : null);
+  /** State label, plus how far the selected aircraft is from the farm. */
+  function renderBadge() {
+    const state = /** @type {ViewState} */ (root.dataset.state);
+    const selected = aircraft.find((a) => a.id === selectedId);
+    const distance = selected && (state === 'live' || state === 'demo') ? formatDistance(selected.distanceFromFarmNm) : null;
+    const away = distance === 'Overhead' ? 'directly overhead' : distance && `${distance} away`;
+    el.badge.textContent = away ? `${BADGE_TEXT[state]} · ${away}` : BADGE_TEXT[state];
   }
 
   /** @param {Aircraft[]} next */
@@ -172,7 +166,6 @@ async function start(endpointUrl, root) {
     const previousIds = aircraft.map((a) => a.id);
     aircraft = next;
     selectedId = reconcileSelection(selectedId, previousIds, next.map((a) => a.id));
-    renderMessage();
     renderSelected(false);
   }
 
@@ -213,6 +206,7 @@ async function start(endpointUrl, root) {
 
   /** @param {Aircraft} a */
   function fillFlight(a) {
+    renderBadge();
     setText(el.callsign, displayTitle(a));
     setText(el.airline, a.airline);
     setText(el.type, a.aircraftType);
@@ -241,9 +235,6 @@ async function start(endpointUrl, root) {
     const position = routed ? routeLinePosition(a.routeProgress) : 0.5;
     el.lineDone.style.flexGrow = String(position);
     el.lineAhead.style.flexGrow = String(1 - position);
-    // Only scheduled flights get a "Route unavailable" note; for private
-    // aircraft a missing route is normal and not worth mentioning.
-    el.routeNote.hidden = routed || !a.airline;
   }
 
   /** @param {HTMLElement} end @param {{ city: string, code: string | null } | null} label */

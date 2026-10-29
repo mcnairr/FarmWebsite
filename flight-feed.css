@@ -37,7 +37,7 @@
 }
 .ff-glyph { flex: none; width: 1.05rem; height: 1.05rem; color: var(--ff-text); }
 
-/* ----- live / demo badge (in the card and the empty-sky message) ----- */
+/* ----- live / demo badge (in the card) ----- */
 
 .ff-badge {
   display: inline-flex;
@@ -97,27 +97,6 @@
 .ff-blip:hover { opacity: 1; }
 .ff-blip.is-entering,
 .ff-blip.is-leaving { opacity: 0; }
-
-.ff-message {
-  align-self: center;
-  text-align: center;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, .35);
-}
-.ff-message-badge,
-.ff-message-sub {
-  margin: 0;
-  font-size: .7rem;
-  font-weight: 600;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--ff-muted);
-}
-.ff-message-title {
-  margin: .4rem 0 .45rem;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.35rem, 4vw, 2rem);
-  letter-spacing: -.01em;
-}
 
 /* ----- selected flight: airliner and route on top, card beneath ----- */
 
@@ -266,8 +245,9 @@
 .ff-card.is-single .ff-card-main { padding-inline: .9rem; }
 .ff-eyebrow {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: .6rem;
+  gap: .2rem .6rem;
   font-size: .58rem;
   font-weight: 600;
   letter-spacing: .16em;
@@ -282,14 +262,6 @@
 .ff-callsign { font-size: 1.12rem; font-weight: 700; letter-spacing: .02em; line-height: 1.2; }
 .ff-airline { font-size: .86rem; line-height: 1.35; }
 .ff-type { font-size: .76rem; line-height: 1.35; color: var(--ff-muted); letter-spacing: .02em; }
-.ff-route-note {
-  margin-top: .1rem;
-  font-size: .6rem;
-  letter-spacing: .14em;
-  line-height: 1.4;
-  text-transform: uppercase;
-  color: var(--ff-muted);
-}
 .ff-card-metrics {
   display: flex;
   align-items: center;
