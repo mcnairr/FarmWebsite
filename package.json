@@ -9,7 +9,11 @@
   "scripts": {
     "dev": "node scripts/dev-server.mjs",
     "demo": "node scripts/dev-server.mjs --demo",
+    "plane-art:reference": "node scripts/build-plane-art-reference.mjs",
     "test": "node --test \"test/*.test.js\"",
     "deploy:api": "npx wrangler@4 deploy --config api/wrangler.toml"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
   }
 }

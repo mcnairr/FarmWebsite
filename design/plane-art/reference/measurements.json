@@ -1,0 +1,423 @@
+{
+  "generatedBy": "scripts/build-plane-art-reference.mjs",
+  "colorSpace": "sRGB IEC61966-2.1; metadata normalized by libvips/sharp",
+  "selected": {
+    "method": "edge-connected-white-matte",
+    "quality": 90,
+    "width": 960,
+    "height": 330,
+    "paddingX": 36,
+    "top": 20,
+    "baseline": 290
+  },
+  "measurements": [
+    {
+      "source": "american-branded.png",
+      "method": "global-white-key",
+      "quality": 78,
+      "bytes": 38972,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 34,
+        "width": 888,
+        "height": 256
+      }
+    },
+    {
+      "source": "american-branded.png",
+      "method": "global-white-key",
+      "quality": 84,
+      "bytes": 42358,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 34,
+        "width": 888,
+        "height": 256
+      }
+    },
+    {
+      "source": "american-branded.png",
+      "method": "global-white-key",
+      "quality": 90,
+      "bytes": 47350,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 34,
+        "width": 888,
+        "height": 256
+      }
+    },
+    {
+      "source": "american-branded.png",
+      "method": "edge-connected-white-matte",
+      "quality": 78,
+      "bytes": 41642,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 34,
+        "width": 888,
+        "height": 256
+      }
+    },
+    {
+      "source": "american-branded.png",
+      "method": "edge-connected-white-matte",
+      "quality": 84,
+      "bytes": 45004,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 34,
+        "width": 888,
+        "height": 256
+      }
+    },
+    {
+      "source": "american-branded.png",
+      "method": "edge-connected-white-matte",
+      "quality": 90,
+      "bytes": 50466,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 34,
+        "width": 888,
+        "height": 256
+      }
+    },
+    {
+      "source": "american-inspired-no-logo.png",
+      "method": "global-white-key",
+      "quality": 78,
+      "bytes": 35466,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 34,
+        "width": 888,
+        "height": 256
+      }
+    },
+    {
+      "source": "american-inspired-no-logo.png",
+      "method": "global-white-key",
+      "quality": 84,
+      "bytes": 38328,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 34,
+        "width": 888,
+        "height": 256
+      }
+    },
+    {
+      "source": "american-inspired-no-logo.png",
+      "method": "global-white-key",
+      "quality": 90,
+      "bytes": 43536,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 34,
+        "width": 888,
+        "height": 256
+      }
+    },
+    {
+      "source": "american-inspired-no-logo.png",
+      "method": "edge-connected-white-matte",
+      "quality": 78,
+      "bytes": 39064,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 34,
+        "width": 888,
+        "height": 256
+      }
+    },
+    {
+      "source": "american-inspired-no-logo.png",
+      "method": "edge-connected-white-matte",
+      "quality": 84,
+      "bytes": 42332,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 34,
+        "width": 888,
+        "height": 256
+      }
+    },
+    {
+      "source": "american-inspired-no-logo.png",
+      "method": "edge-connected-white-matte",
+      "quality": 90,
+      "bytes": 47356,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 34,
+        "width": 888,
+        "height": 256
+      }
+    },
+    {
+      "source": "southwest-branded.png",
+      "method": "global-white-key",
+      "quality": 78,
+      "bytes": 37986,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 26,
+        "width": 888,
+        "height": 264
+      }
+    },
+    {
+      "source": "southwest-branded.png",
+      "method": "global-white-key",
+      "quality": 84,
+      "bytes": 42378,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 26,
+        "width": 888,
+        "height": 264
+      }
+    },
+    {
+      "source": "southwest-branded.png",
+      "method": "global-white-key",
+      "quality": 90,
+      "bytes": 49098,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 26,
+        "width": 888,
+        "height": 264
+      }
+    },
+    {
+      "source": "southwest-branded.png",
+      "method": "edge-connected-white-matte",
+      "quality": 78,
+      "bytes": 32120,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 26,
+        "width": 888,
+        "height": 264
+      }
+    },
+    {
+      "source": "southwest-branded.png",
+      "method": "edge-connected-white-matte",
+      "quality": 84,
+      "bytes": 36468,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 26,
+        "width": 888,
+        "height": 264
+      }
+    },
+    {
+      "source": "southwest-branded.png",
+      "method": "edge-connected-white-matte",
+      "quality": 90,
+      "bytes": 43206,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 26,
+        "width": 888,
+        "height": 264
+      }
+    },
+    {
+      "source": "southwest-inspired-no-logo.png",
+      "method": "global-white-key",
+      "quality": 78,
+      "bytes": 33010,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 26,
+        "width": 888,
+        "height": 264
+      }
+    },
+    {
+      "source": "southwest-inspired-no-logo.png",
+      "method": "global-white-key",
+      "quality": 84,
+      "bytes": 37388,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 26,
+        "width": 888,
+        "height": 264
+      }
+    },
+    {
+      "source": "southwest-inspired-no-logo.png",
+      "method": "global-white-key",
+      "quality": 90,
+      "bytes": 43852,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 26,
+        "width": 888,
+        "height": 264
+      }
+    },
+    {
+      "source": "southwest-inspired-no-logo.png",
+      "method": "edge-connected-white-matte",
+      "quality": 78,
+      "bytes": 30142,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 26,
+        "width": 888,
+        "height": 264
+      }
+    },
+    {
+      "source": "southwest-inspired-no-logo.png",
+      "method": "edge-connected-white-matte",
+      "quality": 84,
+      "bytes": 34490,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 26,
+        "width": 888,
+        "height": 264
+      }
+    },
+    {
+      "source": "southwest-inspired-no-logo.png",
+      "method": "edge-connected-white-matte",
+      "quality": 90,
+      "bytes": 40904,
+      "width": 960,
+      "height": 330,
+      "paddingX": 36,
+      "top": 20,
+      "baseline": 290,
+      "bounds": {
+        "left": 36,
+        "top": 26,
+        "width": 888,
+        "height": 264
+      }
+    }
+  ]
+}
