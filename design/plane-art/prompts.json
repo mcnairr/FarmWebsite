@@ -2262,8 +2262,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "767-777-class-cargo-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 767-777-class-cargo-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2281,13 +2281,13 @@
         "shape-guide:767-777-class-cargo-widebody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T03:11:49.3458514+00:00",
+      "candidateNotes": "Vertex request 4d9b9c17573f9ca474bf returned one independently generated right-facing candidate; processed from candidate-1.png with the recorded transparent-background manual repair. Manual alpha-repair SHA-256: 44f4ad022a5aba35f3f5275ee19f0fb718930ddcda6fd0192290c92b545834db. The OpenAI image background-extraction edit was used only for transparency repair; the aircraft master remains the linked Vertex candidate.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, cargo category, widebody anatomy, two-engine configuration, crop, baseline, alpha edges, readable FedEx wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 visual approval: repaired FedEx widebody is crisp below the 40 KB target; quality-90 settings remain unchanged.",
       "output": {
         "manifestKey": "fdx-widebody:right",
         "url": "/assets/planes/v1/fdx-widebody-right.webp",
-        "sha256": null
+        "sha256": "3e3c03f24013566328c866c1a301e6046c8828bae4a8d3feae76a1338fc3b2a3"
       }
     },
     {
@@ -2306,8 +2306,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "767-777-class-cargo-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 767-777-class-cargo-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2325,13 +2325,13 @@
         "shape-guide:767-777-class-cargo-widebody"
       ],
       "styleReferenceKey": "fdx-widebody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T12:28:20.4538817+00:00",
+      "candidateNotes": "Vertex request 8e910b34476ef6a571c2 in northamerica-northeast1 returned one independently generated left-facing candidate using the approved right-facing production result as a style and livery reference; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, cargo category, widebody anatomy, two-engine configuration, crop, baseline, alpha edges, readable FedEx wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "fdx-widebody:left",
         "url": "/assets/planes/v1/fdx-widebody-left.webp",
-        "sha256": null
+        "sha256": "4e00062d48f0d677f1a39cdebf40e1950f3e90be73b2b8916aafc4d17a1ea537"
       }
     },
     {
@@ -2442,8 +2442,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "767-class-cargo-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 767-class-cargo-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2461,13 +2461,13 @@
         "shape-guide:767-class-cargo-widebody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T12:29:59.0941931+00:00",
+      "candidateNotes": "Vertex request cc6cc246fe27f7000919 in southamerica-east1 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, cargo category, 767-class widebody anatomy, two-engine configuration, crop, baseline, alpha edges, readable UPS shield, and Worldwide Services branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "ups-widebody:right",
         "url": "/assets/planes/v1/ups-widebody-right.webp",
-        "sha256": null
+        "sha256": "884f074a0165eb7b29541de69c614ef36450c5f8b7eb5842861caaad5416ea08"
       }
     },
     {
@@ -2486,8 +2486,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "767-class-cargo-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 767-class-cargo-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2505,13 +2505,13 @@
         "shape-guide:767-class-cargo-widebody"
       ],
       "styleReferenceKey": "ups-widebody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T19:20:07.2334764+00:00",
+      "candidateNotes": "Vertex request f50ec25e3ef728beae23 in australia-southeast1 returned one independently generated left-facing candidate using the approved right-facing production result as a style and livery reference; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, cargo category, 767-class widebody anatomy, two-engine configuration, crop, baseline, alpha edges, readable UPS shield, and Worldwide Services branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "ups-widebody:left",
         "url": "/assets/planes/v1/ups-widebody-left.webp",
-        "sha256": null
+        "sha256": "7acd023c430d8bf6ab22e9dbc8a1a8f7d12066cbaf835bc9e20fb4ac9acf4c2a"
       }
     },
     {
@@ -2618,8 +2618,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "767-class-cargo-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 767-class-cargo-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2662,8 +2662,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "767-class-cargo-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 767-class-cargo-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2706,8 +2706,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide e175-crj-class-regional-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2725,13 +2725,13 @@
         "shape-guide:e175-crj-class-regional-jet"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T03:11:40.1014757+00:00",
+      "candidateNotes": "Vertex request 53fac708b2d964cf5e81 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, scheduled-passenger category, regional-jet anatomy, two-engine configuration, crop, baseline, alpha edges, readable American Eagle wordmark, and tail branding pass. Regional partnership mapping is restricted to confident ENY and JIA callsigns. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "american-eagle-regional:right",
         "url": "/assets/planes/v1/american-eagle-regional-right.webp",
-        "sha256": null
+        "sha256": "cf7a7f0207b3bfafc5278eb45773cb84ce489995ea1dee19af37e6f72a47e744"
       }
     },
     {
@@ -2750,8 +2750,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide e175-crj-class-regional-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2769,13 +2769,13 @@
         "shape-guide:e175-crj-class-regional-jet"
       ],
       "styleReferenceKey": "american-eagle-regional:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T12:14:22.6307283+00:00",
+      "candidateNotes": "Vertex request f76ae38c676176a7f76d returned one independently generated left-facing candidate using the approved right-facing production result as a style and livery reference; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, scheduled-passenger category, regional-jet anatomy, two-engine configuration, crop, baseline, alpha edges, readable American Eagle wordmark, and tail branding pass. Regional partnership mapping is restricted to confident ENY and JIA callsigns. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "american-eagle-regional:left",
         "url": "/assets/planes/v1/american-eagle-regional-left.webp",
-        "sha256": null
+        "sha256": "25c8f0b5ce78c235d3229ece2e68f2e7ab5897382bbb761910d20787e07d5343"
       }
     },
     {
@@ -2794,8 +2794,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide e175-crj-class-regional-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2838,8 +2838,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide e175-crj-class-regional-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2882,8 +2882,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide e175-crj-class-regional-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2926,8 +2926,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide e175-crj-class-regional-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3058,8 +3058,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "regional-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide regional-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3077,13 +3077,13 @@
         "shape-guide:regional-jet"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T12:17:11.4305310+00:00",
+      "candidateNotes": "Vertex request f292a7d17d84e002adf0 returned one independently generated right-facing candidate; processed from candidate-1.png with the recorded transparent-background manual repair. Manual alpha-repair SHA-256: 21a53ffd81c11d4e57d37d2f23248d2b6ce2fd9e2792f6699439e4621d989f3b. The OpenAI image background-extraction edit was used only for transparency repair; the aircraft master remains the linked Vertex candidate.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral regional-jet anatomy, two-engine configuration, crop, baseline, alpha edges, attractive silhouette, and unbranded treatment pass. No airline name, logo, registration, or recognizable brand mark is present. 2026-10-30 visual approval records a below-40-KB exception with quality-90 settings unchanged. The directional pair was reviewed together and matches one aircraft family and neutral treatment.",
       "output": {
         "manifestKey": "generic-regional:right",
         "url": "/assets/planes/v1/generic-regional-right.webp",
-        "sha256": null
+        "sha256": "ecd2b780f05d748fcb7ddd5dfb62654f5c479e590472b19ad66afa81ca621da0"
       }
     },
     {
@@ -3102,8 +3102,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "regional-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide regional-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3121,13 +3121,13 @@
         "shape-guide:regional-jet"
       ],
       "styleReferenceKey": "generic-regional:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T12:18:51.5133652+00:00",
+      "candidateNotes": "Vertex request 8ae74265fd0552026b0d returned one independently generated left-facing candidate using the approved right-facing production result as a style and treatment reference; processed from candidate-1.png with the recorded transparent-background manual repair. Manual alpha-repair SHA-256: 63770b1672560f1b509b2566cf318efb0504256abb2097e4093efa5042c669bc. The OpenAI image background-extraction edit was used only for transparency repair; the aircraft master remains the linked Vertex candidate.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral regional-jet anatomy, two-engine configuration, crop, baseline, alpha edges, attractive silhouette, and unbranded treatment pass. No airline name, logo, registration, or recognizable brand mark is present. 2026-10-30 visual approval records a below-40-KB exception with quality-90 settings unchanged. The directional pair was reviewed together and matches one aircraft family and neutral treatment.",
       "output": {
         "manifestKey": "generic-regional:left",
         "url": "/assets/planes/v1/generic-regional-left.webp",
-        "sha256": null
+        "sha256": "93494aa254d19ecbdc2e9a3eacbdae12f21eb4c251870a465ff796d052a02ea2"
       }
     },
     {
@@ -3146,8 +3146,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3165,13 +3165,13 @@
         "shape-guide:narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T12:15:25.4418317+00:00",
+      "candidateNotes": "Vertex request 6b32c38c7e20cd204874 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral narrowbody anatomy, two-engine configuration, crop, baseline, alpha edges, and attractive unbranded livery pass. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and matches one aircraft family and neutral treatment.",
       "output": {
         "manifestKey": "generic-narrowbody:right",
         "url": "/assets/planes/v1/generic-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "48f65f8e14661e2634c6aaa410db31df5561ec4ee88b6818e50011bfb18a93fa"
       }
     },
     {
@@ -3190,8 +3190,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3209,13 +3209,13 @@
         "shape-guide:narrowbody"
       ],
       "styleReferenceKey": "generic-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T12:16:17.4972264+00:00",
+      "candidateNotes": "Vertex request 9efb4d2c066df6bb1337 returned one independently generated left-facing candidate using the approved right-facing production result as a style and treatment reference; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral narrowbody anatomy, two-engine configuration, crop, baseline, alpha edges, and attractive unbranded livery pass. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and matches one aircraft family and neutral treatment.",
       "output": {
         "manifestKey": "generic-narrowbody:left",
         "url": "/assets/planes/v1/generic-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "8d7415ff5bd708238ad265e41539edceb997683165aad5ab73c31566d33f59cc"
       }
     },
     {
@@ -3234,8 +3234,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3253,13 +3253,13 @@
         "shape-guide:widebody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T12:22:58.0907380+00:00",
+      "candidateNotes": "Vertex request 10e32528e7c9668e6a06 in us-central1 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral widebody anatomy, two-engine configuration, crop, baseline, alpha edges, and attractive unbranded treatment pass. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and matches one aircraft family and neutral treatment.",
       "output": {
         "manifestKey": "generic-widebody:right",
         "url": "/assets/planes/v1/generic-widebody-right.webp",
-        "sha256": null
+        "sha256": "0d50c288ff7cb9012592176dc300d7c2201007bd3eb5c9644ab1324a7ce14d23"
       }
     },
     {
@@ -3278,8 +3278,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3297,13 +3297,13 @@
         "shape-guide:widebody"
       ],
       "styleReferenceKey": "generic-widebody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T12:26:44.4833064+00:00",
+      "candidateNotes": "Vertex request 380a1f8345d7ecfa6d05 in europe-west1 returned the approved independently generated left-facing candidate using the approved right-facing result as a style and treatment reference; processed from candidate-1.png using the standard edge-connected white-matte workflow. Earlier Vertex candidates 4a0aa412e5fbd617be5e and d426b20c86b241ac41aa were rejected and never promoted because one copied shape-guide captions and pointed right, while the other resembled a recognizable branded tail treatment.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral widebody anatomy, two-engine configuration, crop, baseline, alpha edges, and attractive unbranded treatment pass. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and matches one aircraft family and neutral treatment.",
       "output": {
         "manifestKey": "generic-widebody:left",
         "url": "/assets/planes/v1/generic-widebody-left.webp",
-        "sha256": null
+        "sha256": "596272d4ddf716a786f82a82ea565f84537b979cbff072fa679c42531f407192"
       }
     },
     {

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
+    <path d="M125 355 C245 295 465 282 1145 295 C1324 299 1425 337 1480 376 C1410 420 1268 447 1040 448 L370 445 C245 441 160 414 125 390 Z"/>
+    <path d="M280 338 L150 165 L220 158 L482 336 Z"/>
+    <path d="M335 424 L165 540 L132 518 L266 398 Z"/>
+    <path d="M680 342 L365 112 L468 98 L930 333 Z"/>
+    <path d="M726 430 L440 700 L352 686 L574 407 Z"/>
+    <ellipse cx="655" cy="449" rx="112" ry="67"/><ellipse cx="948" cy="450" rx="112" ry="67"/>
+  </g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12">
+    <line x1="85" y1="480" x2="1520" y2="480"/><line x1="800" y1="70" x2="800" y2="720"/>
+  </g>
+  <g fill="#132a46" font-family="Arial, sans-serif">
+    <text x="100" y="70" font-size="46" font-weight="700">Widebody shape guide</text>
+    <text x="100" y="790" font-size="30">Neutral twin-engine twin-aisle jet - broad fuselage - long swept wings - gear retracted</text>
+    <text x="100" y="836" font-size="25" fill="#52677d">Original McNair Farms project diagram - silhouette and proportions only; no livery or registration reference.</text>
+  </g>
+</svg>

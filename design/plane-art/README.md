@@ -349,6 +349,41 @@ a dated byte-range exception in its approval notes. All 14 remain below the
 padding, baseline, clipping, and fringe checks. Pair approval was performed at
 272 px hero and 46 px blip sizes over the production sky and checkerboard.
 
+## Phase 1 cargo, regional, and generic pairs (PG-009)
+
+The Phase 1 `fdx-widebody`, `ups-widebody`, `american-eagle-regional`,
+`generic-regional`, `generic-narrowbody`, and `generic-widebody` treatments are
+approved in both independently generated directions. Their twelve production
+WebPs live beneath `assets/planes/v1/`; the public manifest and matching
+`prompts.json` records contain stable mappings, generation timestamps, source
+request keys, output hashes, approval notes, and any processing exceptions.
+
+Six original project-owned guides were added for the exact cargo, regional,
+narrowbody, and widebody families required by this batch. Their rendered PNGs,
+editable SVG sources, ownership, permission, and provenance are recorded under
+`shape-guides/`. No third-party aircraft reference was introduced.
+
+All twelve aircraft masters were independently generated with the pinned
+`gemini-3.1-flash-image` Google Cloud Vertex AI workflow. Regional Vertex
+locations were used when global dynamic capacity returned `RESOURCE_EXHAUSTED`;
+each request records its actual location. Two rejected generic-widebody left
+candidates were never promoted: one copied guide captions and faced the wrong
+direction, and one resembled a recognizable airline tail treatment.
+
+The FedEx right and both generic-regional outputs used the documented manual
+alpha-only repair path; their aircraft masters remain the linked Vertex
+candidates. Those three files also have dated below-range exceptions with the
+frozen quality-90 settings unchanged. The other nine outputs passed the normal
+edge-connected white-matte workflow and byte-range gate.
+
+Cargo review confirmed readable, correctly oriented FedEx and UPS branding.
+The three generic pairs contain no airline name, logo, registration, or
+recognizable brand mark. American Eagle selection is restricted to confident
+`ENY` and `JIA` callsigns; uncertain regional operators fall back to the
+production-ready `generic-regional` pair. Pair review covered direction,
+anatomy, crop, baseline, alpha edges, and recognition at 272 px hero and 46 px
+blip sizes over both the production sky and checkerboard.
+
 ## Phase 1 business, light-aircraft, and agricultural pairs (PG-010)
 
 The Phase 1 `generic-bizjet-small`, `cessna-high-wing`, and

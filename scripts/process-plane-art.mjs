@@ -218,7 +218,10 @@ export async function processPlaneArt(options) {
   const direction = options.direction;
   if (!artworkId || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(artworkId)) fail('A safe, unambiguous --artwork-id is required.');
   if (!DIRECTIONS.has(direction)) fail("--direction must be exactly 'left' or 'right'.");
-  const manifestRecord = PLANE_ASSETS_BY_KEY[`${artworkId}:${direction}`];
+  const manifestRecord = PLANE_ASSETS_BY_KEY[`${artworkId}:${direction}`]
+    ?? (process.env.NODE_ENV === 'test' && options.testManifestRecord?.key === `${artworkId}:${direction}`
+      ? options.testManifestRecord
+      : null);
   if (!manifestRecord) fail(`Unknown manifest asset '${artworkId}:${direction}'.`);
   if (!options.inputPath) fail('--input is required.');
   const inputPath = resolve(options.inputPath);

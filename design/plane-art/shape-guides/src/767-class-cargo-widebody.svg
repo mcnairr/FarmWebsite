@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
+    <path d="M145 366 C255 315 462 302 1120 312 C1280 315 1388 345 1455 381 C1382 419 1250 441 1037 442 L390 439 C274 436 183 415 145 391 Z"/>
+    <path d="M293 350 L177 193 L237 184 L466 346 Z"/>
+    <path d="M348 421 L190 523 L157 503 L281 403 Z"/>
+    <path d="M676 351 L395 139 L486 126 L903 343 Z"/>
+    <path d="M713 426 L468 660 L389 647 L583 409 Z"/>
+    <ellipse cx="651" cy="446" rx="96" ry="58"/><ellipse cx="910" cy="447" rx="96" ry="58"/>
+  </g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12">
+    <line x1="100" y1="474" x2="1500" y2="474"/><line x1="800" y1="92" x2="800" y2="690"/>
+  </g>
+  <g fill="#132a46" font-family="Arial, sans-serif">
+    <text x="100" y="78" font-size="46" font-weight="700">767-class cargo widebody shape guide</text>
+    <text x="100" y="790" font-size="30">Twin underwing engines - medium freighter fuselage - swept low wing - gear retracted</text>
+    <text x="100" y="836" font-size="25" fill="#52677d">Original McNair Farms project diagram - silhouette and proportions only; no livery or registration reference.</text>
+  </g>
+</svg>

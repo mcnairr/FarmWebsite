@@ -7,13 +7,15 @@ import sharp from 'sharp';
 import { PROCESSING_SETTINGS, processPlaneArt } from '../scripts/process-plane-art.mjs';
 
 const root = process.cwd();
-const output = join(root, 'assets', 'planes', 'v1', 'generic-narrowbody-right.webp');
+const fixtureArtworkId = 'processor-test-fixture';
+const output = join(root, 'assets', 'planes', 'v1', `${fixtureArtworkId}-right.webp`);
 const generated = join(root, '.generated', 'plane-art');
-const report = join(generated, 'processed', 'generic-narrowbody-right.json');
+const report = join(generated, 'processed', `${fixtureArtworkId}-right.json`);
 const sourceImage = join(root, 'design', 'plane-art', 'proofs', 'vertex', 'american-branded.png');
 const digest = (buffer) => createHash('sha256').update(buffer).digest('hex');
 
 test('PG-005 processor is deterministic and enforces the production checks', async (t) => {
+  process.env.NODE_ENV = 'test';
   await assert.rejects(stat(output), { code: 'ENOENT' }, 'test target must not replace a real production asset');
   await mkdir(generated, { recursive: true });
   const fixture = await mkdtemp(join(generated, 'processor-test-'));
@@ -21,10 +23,10 @@ test('PG-005 processor is deterministic and enforces the production checks', asy
   const proofPath = join(fixture, 'proof.png');
   const sourceBytes = await readFile(sourceImage);
   await writeFile(metadataPath, `${JSON.stringify({
-    artworkId: 'generic-narrowbody',
+    artworkId: fixtureArtworkId,
     direction: 'right',
     requestKey: 'deterministic-fixture',
-    promptRevision: 'generic-narrowbody:right:v1',
+    promptRevision: `${fixtureArtworkId}:right:v1`,
     candidates: [{ file: 'american-branded.png', sha256: digest(sourceBytes) }],
   }, null, 2)}\n`);
   t.after(async () => {
@@ -34,8 +36,9 @@ test('PG-005 processor is deterministic and enforces the production checks', asy
   });
 
   const options = {
-    artworkId: 'generic-narrowbody', direction: 'right', inputPath: sourceImage,
+    artworkId: fixtureArtworkId, direction: 'right', inputPath: sourceImage,
     sourceMetadataPath: metadataPath, proofPath,
+    testManifestRecord: { key: `${fixtureArtworkId}:right` },
   };
   const first = await processPlaneArt(options);
   const firstBytes = await readFile(output);

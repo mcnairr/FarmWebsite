@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
+    <path d="M205 380 C305 340 505 330 1105 337 C1250 339 1350 361 1405 390 C1338 420 1210 438 1015 438 L447 436 C330 434 240 416 205 398 Z"/>
+    <path d="M334 369 L239 235 L294 228 L481 365 Z"/>
+    <path d="M385 421 L257 507 L227 489 L329 406 Z"/>
+    <path d="M700 371 L500 211 L570 201 L866 366 Z"/>
+    <path d="M730 425 L552 598 L488 588 L632 411 Z"/>
+    <ellipse cx="667" cy="442" rx="70" ry="42"/><ellipse cx="870" cy="443" rx="70" ry="42"/>
+  </g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12">
+    <line x1="165" y1="462" x2="1440" y2="462"/><line x1="800" y1="135" x2="800" y2="625"/>
+  </g>
+  <g fill="#132a46" font-family="Arial, sans-serif">
+    <text x="100" y="88" font-size="46" font-weight="700">Regional jet shape guide</text>
+    <text x="100" y="790" font-size="30">Neutral compact twin-engine regional jet - swept wing - conventional tail - gear retracted</text>
+    <text x="100" y="836" font-size="25" fill="#52677d">Original McNair Farms project diagram - silhouette and proportions only; no livery or registration reference.</text>
+  </g>
+</svg>

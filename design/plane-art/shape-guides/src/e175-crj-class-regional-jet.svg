@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
+    <path d="M195 377 C295 337 500 327 1112 334 C1260 336 1360 358 1415 388 C1348 419 1220 436 1017 437 L440 435 C323 433 230 414 195 396 Z"/>
+    <path d="M325 367 L226 228 L281 222 L477 363 Z"/>
+    <path d="M375 420 L247 504 L218 486 L320 405 Z"/>
+    <path d="M698 369 L487 205 L557 195 L868 364 Z"/>
+    <path d="M728 423 L545 599 L480 589 L627 410 Z"/>
+    <ellipse cx="666" cy="440" rx="72" ry="43"/><ellipse cx="875" cy="441" rx="72" ry="43"/>
+  </g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12">
+    <line x1="155" y1="460" x2="1450" y2="460"/><line x1="800" y1="130" x2="800" y2="625"/>
+  </g>
+  <g fill="#132a46" font-family="Arial, sans-serif">
+    <text x="100" y="88" font-size="46" font-weight="700">E175 / CRJ-class regional jet shape guide</text>
+    <text x="100" y="790" font-size="30">Compact twin-engine regional jet - narrow fuselage - swept wing - gear retracted</text>
+    <text x="100" y="836" font-size="25" fill="#52677d">Original McNair Farms project diagram - silhouette and proportions only; no livery or registration reference.</text>
+  </g>
+</svg>
