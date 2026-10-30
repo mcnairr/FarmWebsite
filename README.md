@@ -87,7 +87,7 @@ offers optional API keys (adsb.lol/request) if they ever become necessary.
 
 ### Data behavior
 
-- **Refresh:** browsers check for new data every 15 seconds. They pause in
+- **Refresh:** browsers check for new data every 10 seconds. They pause in
   background tabs, refresh as soon as the visitor returns, and slow to once a
   minute while the service is having trouble.
 - **Area:** the Worker requests everything within 50 nautical miles of the
@@ -249,7 +249,7 @@ stored as a Worker secret, never in the page or the repository.
 | `FLIGHT_QUERY_RADIUS_NM` | `50` | Search radius (max 250) |
 | `FLIGHT_DISPLAY_RADIUS_NM` | `30` | Display radius |
 | `FLIGHT_STALE_AFTER_SECONDS` | `30` | Ignore older position reports |
-| `FLIGHT_REFRESH_SECONDS` | `15` | Browser refresh interval |
+| `FLIGHT_REFRESH_SECONDS` | `10` | Browser refresh interval |
 | `FLIGHT_LIVE_CACHE_SECONDS` | `10` | Shared snapshot lifetime |
 | `FLIGHT_MAX_DISPLAYED` | `8` | Aircraft per snapshot |
 | `FLIGHT_ALLOWED_ORIGINS` | `https://www.mcnair-farms.com,https://mcnair-farms.com` | Sites allowed to call the API |

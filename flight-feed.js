@@ -74,7 +74,7 @@ async function start(endpointUrl, root) {
   let renderedId = null;
   let lastSuccess = 0;
   let failures = 0;
-  let refreshMs = 15_000;
+  let refreshMs = 10_000;
   let radiusNm = 30;
   /** @type {ReturnType<typeof setTimeout> | undefined} */
   let timer;
@@ -112,7 +112,7 @@ async function start(endpointUrl, root) {
       }
       failures = 0;
       lastSuccess = Date.now();
-      refreshMs = clamp((data.refreshSeconds || 15) * 1000, 10_000, 120_000);
+      refreshMs = clamp((data.refreshSeconds || 10) * 1000, 10_000, 120_000);
       radiusNm = data.displayRadiusNm || radiusNm;
       setState(data.status === 'demo' ? 'demo' : 'live');
       update(data.aircraft.filter(isAircraft));

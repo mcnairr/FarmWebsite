@@ -203,7 +203,7 @@ it flies for one partner; otherwise use the neutral regional default.
 2. **`flight-feed.js` `fillFlight()`**: replace the `<use>` swap with
    `el.plane.innerHTML = planeMarkup(...)` and set `el.plane.dataset.size`.
    Only rebuild the markup when the shape or livery changes (cache the last
-   key), so 15-second refreshes don't redraw the same plane. Keep the
+   key), so 10-second refreshes don't redraw the same plane. Keep the
    `--ff-tilt` / `--ff-flip` pose code unchanged.
 3. **`renderTraffic()` blips**: same, with `detail: 'low'` (no windows or
    cheatline; at 2.9rem wide only body, fin color and engines read). Replace

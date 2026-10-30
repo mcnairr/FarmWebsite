@@ -28,7 +28,7 @@ export const FLIGHT_CONFIG = Object.freeze({
   /** Position reports older than this are treated as stale tracks. */
   staleAfterSeconds: 30,
   /** How often browsers poll /api/flights. */
-  refreshSeconds: 15,
+  refreshSeconds: 10,
   /** How long one upstream position snapshot is shared by all visitors. */
   liveCacheSeconds: 10,
   maxDisplayedAircraft: 8,
