@@ -238,6 +238,51 @@ WebP beneath `assets/planes/v1/`. That approved right image is sent as a style
 and livery input while the left prompt continues to require an independent,
 unmirrored result.
 
+## Deterministic production processing (PG-005)
+
+[`../../scripts/process-plane-art.mjs`](../../scripts/process-plane-art.mjs)
+implements the approved edge-connected white-matte cleanup and normalization
+contract. It accepts exactly one authored manifest ID and one direction per run;
+it never flips or mirrors an image. When the input came from the production
+generator, pass that request's `metadata.json` so the processor verifies the
+candidate hash, artwork ID, and direction before writing anything:
+
+```powershell
+npm run plane-art:process -- `
+  --artwork-id aal-narrowbody `
+  --direction right `
+  --input .generated/plane-art/candidates/aal-narrowbody/right/<request-key>/candidate-1.png `
+  --source-metadata .generated/plane-art/candidates/aal-narrowbody/right/<request-key>/metadata.json `
+  --proof .generated/plane-art/proofs/aal-narrowbody-right.png
+```
+
+The only production destination is
+`assets/planes/v1/<artwork-id>-<direction>.webp`. Before it writes, the tool
+checks WebP type, 960 × 330 dimensions, alpha, transparent corners, padding,
+clipping, y=290 baseline, possible white-matte fringe, and the 40,000–110,000
+byte range/ceiling. The optional proof sheet shows the result at the actual
+272 px hero and 46 px blip sizes over both `Oats.jpg` and checkerboard.
+
+If automatic cleanup cannot separate the aircraft without damage, repair the
+alpha manually and supply the repaired RGBA file with `--manual-repair`; the
+original `--input` remains the linked source. Do not tune thresholds per image.
+An out-of-range file requires `--byte-exception-note` containing the dated,
+approved visual justification required above.
+
+Each successful run prints stable JSON and writes the same report beneath
+`.generated/plane-art/processed/` by default. It includes source/repair/output
+SHA-256 hashes, source request linkage, dimensions, bytes, all checks, exact
+settings, content bounds, and the Sharp/libvips versions that define the
+documented deterministic equivalent. Identical inputs and recorded versions
+produce identical WebP bytes and report data.
+
+An existing production file is never overwritten by default. The explicit
+replacement workflow requires both `--replace-approved` and a non-empty
+`--replacement-note`; the report then records the previous hash and reason.
+Processing never changes `approvalStatus`: a reviewer still updates manifest
+and prompt metadata and approves both the sky/checkerboard proof and directional
+pair after processing.
+
 ### Adding a future asset-library version
 
 A future library is added beside this one, for example
