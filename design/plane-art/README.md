@@ -196,6 +196,48 @@ missing IDs, missing fields, duplicate prompt keys, bad left/right links,
 unknown guide/reference IDs, incomplete provenance, and missing files for any
 reference or guide that claims to exist.
 
+## Selective Vertex generation (PG-004)
+
+[`../../scripts/generate-plane-library.ps1`](../../scripts/generate-plane-library.ps1)
+supersedes the fixed four-image `generate-vertex-plane-proofs.ps1` workflow for
+library production. The proof script remains usable only for reproducing the
+committed design proofs; it is not the production batch tool.
+
+Generation is always explicitly scoped. Pass one or more `-ArtworkId` values
+and `-Direction right`, `left`, or `both`. A full catalog selection requires the
+two deliberate switches `-All -ConfirmAll`. Inspect the offline plan first:
+
+```powershell
+npm run plane-art:generate -- -ArtworkId aal-narrowbody -Direction right -DryRun
+```
+
+The dry run validates prompts, available guide files, references, safe output
+paths, and approved-output conflicts, then prints every input hash, raw output,
+approved target, prompt revision, model, and estimated Vertex request count. It
+does not authenticate or call Vertex. Current catalog entries intentionally
+fail this gate until PG-003's missing shape-guide tasks are completed.
+
+For a paid run, either pass an arbitrary service-account JSON location with
+`-CredentialPath` or omit it to use configured Application Default Credentials.
+No credential filename is assumed. `-ProjectId`, `-Location`, `-Model`, and
+`-CandidateCount` select the recorded request settings; defaults use the pinned
+catalog model and global location. Authentication output, authorization headers,
+tokens, private keys, and credential JSON are suppressed or redacted.
+
+Raw candidates and their request metadata are written only below
+`.generated/plane-art/candidates/`. The gitignored ledger at
+`.generated/plane-art/ledger.json` checkpoints each completed request by a
+deterministic hash of its prompt, model, project, location, candidate count, and
+reference hashes. Repeating a completed selection skips it; `-Force` is required
+to retry it. The generator never writes an approved production WebP and refuses
+to run when the directional approved target already exists.
+
+Left artwork additionally requires the corresponding right prompt record to be
+marked `approved`, to contain its production SHA-256, and to match the right
+WebP beneath `assets/planes/v1/`. That approved right image is sent as a style
+and livery input while the left prompt continues to require an independent,
+unmirrored result.
+
 ### Adding a future asset-library version
 
 A future library is added beside this one, for example
