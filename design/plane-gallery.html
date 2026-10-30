@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Plane artwork review gallery — development only</title>
+  <style>
+    :root { color-scheme: dark; --ink: #f5f1e7; --muted: #b9c0ba; --panel: #17211e; --line: #40504a; --accent: #e9b949; --danger: #ff786e; --ok: #71d59b; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #0d1513; color: var(--ink); }
+    button, textarea { font: inherit; }
+    body > header { padding: 2rem clamp(1rem, 4vw, 3rem) 1.5rem; border-bottom: 1px solid var(--line); background: #101a17; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: .5rem; font: 700 clamp(1.7rem, 4vw, 2.8rem)/1.1 Georgia, serif; }
+    body > header p { max-width: 72ch; margin-bottom: 0; color: var(--muted); }
+    .dev-label { display: inline-block; margin-bottom: .8rem; padding: .3rem .55rem; border: 1px solid var(--accent); color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    main { width: min(1500px, 100%); margin: auto; padding: 1.5rem clamp(.75rem, 3vw, 2rem) 4rem; }
+    .review-guide { display: grid; grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+    .review-guide > section { padding: 1rem; border: 1px solid var(--line); border-radius: .5rem; background: var(--panel); }
+    .review-guide h2 { margin-bottom: .65rem; font-size: 1rem; color: var(--accent); }
+    .review-guide ul { margin: 0; padding-left: 1.2rem; columns: 2; column-gap: 2rem; color: var(--muted); font-size: .86rem; }
+    .review-guide li { break-inside: avoid; margin-bottom: .35rem; }
+    .allow-note { margin: .7rem 0 0; color: var(--muted); font-size: .82rem; }
+    .toolbar { position: sticky; top: 0; z-index: 10; display: flex; flex-wrap: wrap; align-items: center; gap: .55rem; margin-bottom: 1.25rem; padding: .75rem; border: 1px solid var(--line); border-radius: .5rem; background: rgba(13, 21, 19, .96); backdrop-filter: blur(8px); }
+    .toolbar strong { margin-right: .3rem; }
+    button { padding: .45rem .7rem; border: 1px solid var(--line); border-radius: 99px; background: #1d2b27; color: var(--ink); cursor: pointer; }
+    button:hover, button:focus-visible, button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+    #export-notes { margin-left: auto; border-radius: .35rem; }
+    #summary { width: 100%; margin: .15rem 0 0; color: var(--muted); font-size: .82rem; }
+    #gallery { display: grid; gap: 1.4rem; }
+    .treatment { overflow: hidden; border: 1px solid var(--line); border-radius: .65rem; background: var(--panel); }
+    .treatment > header { display: flex; justify-content: space-between; gap: 1rem; padding: .9rem 1rem; background: #1c2925; }
+    .treatment h2 { margin: 0; font: 700 1.15rem/1.2 Georgia, serif; }
+    .treatment-id { color: var(--muted); font: .78rem ui-monospace, monospace; }
+    .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .direction { min-width: 0; padding: 1rem; border-top: 1px solid var(--line); }
+    .direction + .direction { border-left: 1px solid var(--line); }
+    .direction-title { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-bottom: .75rem; }
+    .direction-title h3 { margin: 0; text-transform: capitalize; }
+    .asset-state { padding: .25rem .45rem; border-radius: .25rem; background: #313b37; color: var(--muted); font-size: .72rem; font-weight: 800; text-transform: uppercase; }
+    .asset-state.available { background: #183c29; color: var(--ok); }
+    .asset-state.missing { background: #481f1d; color: var(--danger); }
+    .preview-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
+    .preview-group h4 { margin: 0 0 .35rem; color: var(--muted); font-size: .72rem; font-weight: 600; text-align: center; text-transform: uppercase; }
+    .preview { position: relative; display: grid; min-height: 132px; margin-bottom: .5rem; place-items: center; overflow: hidden; border: 1px solid #64716c; border-radius: .3rem; }
+    .preview.sky { background: #8eb2cc url('/Oats.jpg') center top / cover; }
+    .preview.checker { background-color: #eee; background-image: linear-gradient(45deg, #bbb 25%, transparent 25%), linear-gradient(-45deg, #bbb 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #bbb 75%), linear-gradient(-45deg, transparent 75%, #bbb 75%); background-position: 0 0, 0 8px, 8px -8px, -8px 0; background-size: 16px 16px; }
+    .preview::after { position: absolute; right: .25rem; bottom: .2rem; padding: .1rem .25rem; border-radius: .15rem; background: rgba(0,0,0,.65); color: white; content: attr(data-label); font-size: .6rem; }
+    .plane { display: block; width: min(100%, 272px); height: auto; transform: rotate(var(--tilt)); }
+    .preview.blip { min-height: 72px; }
+    .preview.blip .plane { width: 46px; }
+    .direction.is-missing .preview::before { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; padding: .5rem; background: rgba(55, 12, 10, .82); color: #fff; content: 'MISSING ASSET'; font-size: .72rem; font-weight: 900; letter-spacing: .08em; }
+    .metadata { display: grid; grid-template-columns: max-content 1fr; gap: .25rem .6rem; margin: .8rem 0 0; font-size: .78rem; }
+    .metadata dt { color: var(--muted); }
+    .metadata dd { min-width: 0; margin: 0; overflow-wrap: anywhere; }
+    .notes { padding: 0 1rem 1rem; }
+    .notes label { display: block; margin-bottom: .35rem; color: var(--muted); font-size: .8rem; font-weight: 700; }
+    .notes textarea { width: 100%; min-height: 5rem; resize: vertical; border: 1px solid var(--line); border-radius: .35rem; padding: .6rem; background: #0d1513; color: var(--ink); }
+    .notes small { color: var(--muted); }
+    .error { padding: 1rem; border: 1px solid var(--danger); color: var(--danger); }
+    @media (max-width: 900px) { .review-guide, .pair { grid-template-columns: 1fr; } .direction + .direction { border-left: 0; } .review-guide ul { columns: 1; } }
+    @media (max-width: 560px) { .preview-grid { grid-template-columns: 1fr; } #export-notes { margin-left: 0; } }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="dev-label">Development only · manual review</span>
+    <h1>Plane artwork acceptance gallery</h1>
+    <p>This unlinked surface reads the production v1 manifest and assets directly. Missing files are expected for planned records; artwork is never approved or published by this page.</p>
+  </header>
+  <main>
+    <div class="review-guide">
+      <section>
+        <h2>Reject when any view shows</h2>
+        <ul>
+          <li>Wrong direction or backwards primary wordmark</li>
+          <li>Misspelled or unrecognizable main airline name</li>
+          <li>Malformed wings, tail, engines, rotors, propellers, or gear</li>
+          <li>Engine or rotor count contradicting the assigned family</li>
+          <li>Inconsistent angle, extreme scale mismatch, bad crop, or broken baseline</li>
+          <li>Clipping, opaque corners, matte halos, or severe color fringing</li>
+          <li>Watermark or unrelated scenery</li>
+          <li>Poor hero recognition or an ugly blip silhouette</li>
+        </ul>
+        <p class="allow-note">Do not reject solely for tiny plausible incidental lettering, minor panel-detail inventions, or small natural differences between directions.</p>
+      </section>
+      <section>
+        <h2>Review method</h2>
+        <p class="allow-note">Compare the independently generated right and left pair. Inspect all three tilts at 272 px hero and 46 px blip size on the production sky and checkerboard. Record the decision and reason in the pair notes.</p>
+      </section>
+    </div>
+    <nav class="toolbar" aria-label="Gallery filters">
+      <strong>Category</strong>
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="airline" aria-pressed="false">Airline</button>
+      <button type="button" data-filter="cargo" aria-pressed="false">Cargo</button>
+      <button type="button" data-filter="general-aviation" aria-pressed="false">General aviation</button>
+      <button type="button" data-filter="crop-duster" aria-pressed="false">Crop duster</button>
+      <button type="button" data-filter="helicopter" aria-pressed="false">Helicopter</button>
+      <button type="button" data-filter="military" aria-pressed="false">Military</button>
+      <button type="button" id="export-notes">Export notes</button>
+      <p id="summary" aria-live="polite">Loading production manifest…</p>
+    </nav>
+    <div id="gallery"></div>
+  </main>
+  <script type="module">
+    import { PLANE_ASSETS } from '/assets/planes/v1/manifest.js';
+
+    const FILTER_CATEGORIES = Object.freeze({
+      airline: ['scheduled-passenger'], cargo: ['cargo'],
+      'general-aviation': ['business', 'general-aviation', 'turboprop'],
+      'crop-duster': ['crop-duster'], helicopter: ['helicopter'], military: ['military'],
+    });
+    const TILTS = Object.freeze([['climb', '-12deg'], ['level', '0deg'], ['descent', '12deg']]);
+    const NOTE_PREFIX = 'plane-gallery-notes:v1:';
+    const gallery = document.querySelector('#gallery');
+    const summary = document.querySelector('#summary');
+    let activeFilter = 'all';
+    let treatments = [];
+
+    try {
+      const promptResponse = await fetch('/design/plane-art/prompts.json');
+      if (!promptResponse.ok) throw new Error(`Prompt catalog returned ${promptResponse.status}`);
+      const promptCatalog = await promptResponse.json();
+      const promptsByKey = new Map(promptCatalog.records.map((record) => [record.key, record]));
+      treatments = groupTreatments(PLANE_ASSETS, promptsByKey);
+      render();
+    } catch (error) {
+      gallery.replaceChildren(element('p', 'error', `Gallery data could not be loaded. Run this page through the local development server. ${error.message}`));
+      summary.textContent = 'Load failed';
+    }
+
+    document.querySelector('.toolbar').addEventListener('click', (event) => {
+      const button = event.target.closest('[data-filter]');
+      if (!button) return;
+      activeFilter = button.dataset.filter;
+      document.querySelectorAll('[data-filter]').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      render();
+    });
+
+    document.querySelector('#export-notes').addEventListener('click', () => {
+      const notes = Object.fromEntries(treatments.map(({ artworkId }) => [artworkId, localStorage.getItem(NOTE_PREFIX + artworkId) ?? '']).filter(([, note]) => note));
+      const blob = new Blob([JSON.stringify({ manifestVersion: 1, exportedAt: new Date().toISOString(), notes }, null, 2)], { type: 'application/json' });
+      const link = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'plane-gallery-approval-notes.json' });
+      link.click();
+      URL.revokeObjectURL(link.href);
+    });
+
+    function groupTreatments(assets, promptsByKey) {
+      const groups = new Map();
+      for (const asset of assets) {
+        const group = groups.get(asset.artworkId) ?? { artworkId: asset.artworkId, category: asset.category, assets: new Map() };
+        group.assets.set(asset.direction, { ...asset, prompt: promptsByKey.get(asset.promptRecordKey) });
+        groups.set(asset.artworkId, group);
+      }
+      return [...groups.values()];
+    }
+
+    function render() {
+      const visible = treatments.filter(({ category }) => activeFilter === 'all' || FILTER_CATEGORIES[activeFilter].includes(category));
+      gallery.replaceChildren(...visible.map(treatmentCard));
+      summary.textContent = `Showing ${visible.length} of ${treatments.length} manifest treatments · ${PLANE_ASSETS.length} directional records`;
+      for (const card of gallery.querySelectorAll('.direction[data-url]')) inspectAsset(card);
+    }
+
+    function treatmentCard(treatment) {
+      const article = element('article', 'treatment');
+      article.dataset.category = treatment.category;
+      const heading = element('header');
+      const titleWrap = element('div');
+      const title = treatment.assets.get('right')?.prompt?.treatmentName ?? treatment.assets.get('left')?.prompt?.treatmentName ?? treatment.artworkId;
+      titleWrap.append(element('h2', '', title), element('span', 'treatment-id', treatment.artworkId));
+      heading.append(titleWrap, element('span', 'asset-state', treatment.category));
+      const pair = element('div', 'pair');
+      pair.append(directionCard(treatment, 'right'), directionCard(treatment, 'left'));
+      const notes = element('div', 'notes');
+      const label = element('label', '', 'Approval notes (decision, reviewer, date, and exceptions)');
+      const textarea = document.createElement('textarea');
+      textarea.placeholder = 'Example: Reject — left wordmark is backwards. Reviewed by … on YYYY-MM-DD.';
+      textarea.value = localStorage.getItem(NOTE_PREFIX + treatment.artworkId) ?? '';
+      textarea.addEventListener('input', () => localStorage.setItem(NOTE_PREFIX + treatment.artworkId, textarea.value));
+      notes.append(label, textarea, element('small', '', 'Draft notes are saved only in this browser. Export them before updating the reviewed provenance record.'));
+      article.append(heading, pair, notes);
+      return article;
+    }
+
+    function directionCard(treatment, direction) {
+      const asset = treatment.assets.get(direction);
+      if (!asset) {
+        const missing = element('section', 'direction is-missing');
+        missing.append(element('div', 'direction-title', `${direction} — no manifest record`));
+        return missing;
+      }
+      const section = element('section', 'direction');
+      section.dataset.url = asset.url;
+      const directionTitle = element('div', 'direction-title');
+      const status = element('span', 'asset-state', 'checking file');
+      directionTitle.append(element('h3', '', direction), status);
+      const previews = element('div', 'preview-grid');
+      for (const [tiltName, tilt] of TILTS) {
+        const group = element('div', 'preview-group');
+        group.append(element('h4', '', tiltName));
+        for (const background of ['sky', 'checker']) {
+          for (const size of ['hero', 'blip']) {
+            const frame = element('div', `preview ${background} ${size}`);
+            frame.dataset.label = `${background} · ${size}`;
+            const image = document.createElement('img');
+            image.className = 'plane'; image.src = asset.url;
+            image.alt = `${asset.artworkId}, ${direction}, ${tiltName}, ${size} size on ${background}`;
+            image.style.setProperty('--tilt', tilt);
+            frame.append(image); group.append(frame);
+          }
+        }
+        previews.append(group);
+      }
+      const metadata = element('dl', 'metadata');
+      addMetadata(metadata, 'Filename', asset.url.split('/').at(-1));
+      addMetadata(metadata, 'Bytes', 'Checking…', 'bytes');
+      addMetadata(metadata, 'Dimensions', `${asset.width} × ${asset.height}px`);
+      addMetadata(metadata, 'Mapping', mappingSummary(asset));
+      addMetadata(metadata, 'Model', asset.generationModel);
+      addMetadata(metadata, 'Prompt key', asset.promptRecordKey);
+      addMetadata(metadata, 'Approval', asset.approvalStatus);
+      addMetadata(metadata, 'Recorded notes', asset.prompt?.approvalNotes ?? 'Prompt record unavailable');
+      section.append(directionTitle, previews, metadata);
+      return section;
+    }
+
+    async function inspectAsset(section) {
+      const state = section.querySelector('.direction-title .asset-state');
+      const bytes = section.querySelector('[data-field="bytes"]');
+      try {
+        const response = await fetch(section.dataset.url, { method: 'HEAD', cache: 'no-store' });
+        if (!response.ok) throw new Error(String(response.status));
+        const length = Number(response.headers.get('content-length'));
+        state.textContent = 'file available'; state.className = 'asset-state available';
+        bytes.textContent = Number.isFinite(length) && length > 0 ? `${length.toLocaleString()} bytes` : 'Unavailable from server';
+      } catch {
+        section.classList.add('is-missing');
+        state.textContent = 'missing file'; state.className = 'asset-state missing'; bytes.textContent = 'Missing';
+        section.querySelectorAll('img').forEach((image) => image.removeAttribute('src'));
+      }
+    }
+
+    function mappingSummary(asset) {
+      const types = asset.applicableIcaoTypes.length ? `ICAO ${asset.applicableIcaoTypes.join(', ')}` : 'no exact ICAO types';
+      const callsigns = asset.allowedCallsignPrefixes.length ? `callsigns ${asset.allowedCallsignPrefixes.join(', ')}` : 'any callsign';
+      return `${types}; ${callsigns}; fallback ${asset.fallbackId}`;
+    }
+
+    function addMetadata(list, term, value, field = '') {
+      list.append(element('dt', '', term), element('dd', '', value));
+      if (field) list.lastElementChild.dataset.field = field;
+    }
+
+    function element(tag, className = '', text = '') {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text) node.textContent = text;
+      return node;
+    }
+  </script>
+</body>
+</html>

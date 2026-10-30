@@ -299,6 +299,24 @@ alpha channel, the byte ceiling, and a SHA-256 that matches approved prompt
 metadata. Approval therefore cannot get ahead of either its counterpart,
 provenance, or committed image.
 
+## Development review gallery (PG-007)
+
+Run `npm run dev`, then open
+[`../plane-gallery.html`](../plane-gallery.html) at
+`http://localhost:8080/design/plane-gallery.html`. The page is deliberately not
+linked from the public homepage. It imports the production v1 manifest, reads
+the development prompt catalog, and probes the authored production asset URLs;
+there is no copied gallery inventory to keep synchronized.
+
+Each manifest treatment appears as an adjacent right/left pair at the production
+272 px hero and 46 px blip sizes, across climb/level/descent tilts on both the
+production sky and a checkerboard alpha background. Missing planned files are
+shown as failures rather than silently replaced. Category filters, provenance
+and mapping metadata, the Plan 2 reject checklist, and browser-local approval
+notes support manual review. Export notes to JSON before clearing browser data
+or transferring the decision into `prompts.json`; the gallery cannot approve or
+publish artwork itself.
+
 ### Adding a future asset-library version
 
 A future library is added beside this one, for example
