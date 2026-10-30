@@ -307,6 +307,8 @@ Cloudflare's own runtime, at http://127.0.0.1:8787/api/flights.
 | `flight-feed.js`, `flight-feed-model.js`, `flight-feed.css` | Homepage feature (CSS loads only when enabled) |
 | `assets/planes/v1/manifest.js`, `design/plane-art/prompts.json` | Versioned plane-asset contract and development provenance |
 | `scripts/process-plane-art.mjs` | Deterministic alpha cleanup, 960 × 330 normalization, WebP encoding, checks, and proof output |
+| `scripts/repair-plane-lighting.mjs` | PG-011 reviewer-driven, alpha-preserving correction for smoke-like neutral upper-surface shading (`npm run plane-art:repair-lighting`) |
+| `scripts/audit-phase1-plane-art.mjs` | Reproducible PG-011 dimensions, byte distribution, alpha, pair, model, and prompt-revision audit (`npm run plane-art:audit-phase1`) |
 | `scripts/validate-plane-library.mjs` | CI-safe plane-library integrity, mapping, hostile-input, and public credential/runtime validation (`npm run plane-art:validate`) |
 | `scripts/dev-server.mjs` | Local preview: website and API together |
 | `test/` | Unit tests (`node --test`) |

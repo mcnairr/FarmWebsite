@@ -23,6 +23,13 @@
       "text": "do not mirror or flip an image"
     }
   ],
+  "generationAmendments": [
+    {
+      "id": "pg011-lighting-1",
+      "effectiveOn": "2026-10-30",
+      "text": "Use clean, even daylight across all upper aircraft surfaces. Reject and regenerate any candidate with a smoky, soot-like, burned, dirty, or unnaturally dark upper-surface cast. Preserve realistic gentle curvature shading and normal underside shadows."
+    }
+  ],
   "referenceCatalog": [
     {
       "id": "production-spec",
@@ -78,12 +85,22 @@
       ],
       "styleReferenceKey": null,
       "generatedAt": "2026-10-30T02:52:53.7507698+00:00",
-      "candidateNotes": "Vertex request 34a2a0e235208ebf8c9f returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
-      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
+      "candidateNotes": "Vertex request 34a2a0e235208ebf8c9f returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
       "output": {
         "manifestKey": "aal-narrowbody:right",
         "url": "/assets/planes/v1/aal-narrowbody-right.webp",
-        "sha256": "3ffec1d10efca3dcd025ac8dd452e9b6bd17305891118fcd357210685d96ce25"
+        "sha256": "36c2fae80b6f81342774d7ef736fa32871570e5f9ca3219eee3daca4e23d6a85"
+      },
+      "repair": {
+        "date": "2026-10-30",
+        "issue": "PG-011",
+        "reason": "User visual review rejected smoke-damage-like dark upper-surface shading.",
+        "method": "The OpenAI built-in image editor supplied a clean-lighting reference. scripts/repair-plane-lighting.mjs used only its median neutral upper-surface luminance as a correction target; original RGB detail, geometry, branding, text, and alpha remained the pixel source.",
+        "sourceSha256": "3ffec1d10efca3dcd025ac8dd452e9b6bd17305891118fcd357210685d96ce25",
+        "referenceSha256": "fbf7dd283630c82fd7ef5b3970326378ffc36102afa939faf2349cd5ba41e502",
+        "correctedPngSha256": "663c8f1679a5db669abf6d6ddc13c5d54935bf62355b56bfee6bd0e4b6812f5b",
+        "outputSha256": "36c2fae80b6f81342774d7ef736fa32871570e5f9ca3219eee3daca4e23d6a85"
       }
     },
     {
@@ -474,12 +491,22 @@
       ],
       "styleReferenceKey": "dal-narrowbody:right:v1",
       "generatedAt": "2026-10-30T02:57:52.9255150+00:00",
-      "candidateNotes": "Vertex request 08edd8058d8062ac5504 returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
-      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
+      "candidateNotes": "Vertex request 08edd8058d8062ac5504 returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
       "output": {
         "manifestKey": "dal-narrowbody:left",
         "url": "/assets/planes/v1/dal-narrowbody-left.webp",
-        "sha256": "328976ed2db2cc992a5ada3dfe0b45149e642d083c55dab2cef7551cfcff1d31"
+        "sha256": "8b8c7682735510255cd8c517c8362073524c6b363f5b7eda5e204a8b4dc70353"
+      },
+      "repair": {
+        "date": "2026-10-30",
+        "issue": "PG-011",
+        "reason": "User visual review rejected smoke-damage-like dark upper-surface shading.",
+        "method": "The OpenAI built-in image editor supplied a clean-lighting reference. scripts/repair-plane-lighting.mjs used only its median neutral upper-surface luminance as a correction target; original RGB detail, geometry, branding, text, and alpha remained the pixel source.",
+        "sourceSha256": "328976ed2db2cc992a5ada3dfe0b45149e642d083c55dab2cef7551cfcff1d31",
+        "referenceSha256": "48781c8e352019414be2d3e7f6281a2f50f617b4243855e161aebb4e33c95913",
+        "correctedPngSha256": "08be7af14a95d092109898b85f07a3870bec210f9ba4afafc8f29abd4c541d04",
+        "outputSha256": "8b8c7682735510255cd8c517c8362073524c6b363f5b7eda5e204a8b4dc70353"
       }
     },
     {
@@ -518,12 +545,22 @@
       ],
       "styleReferenceKey": null,
       "generatedAt": "2026-10-30T02:53:19.0275485+00:00",
-      "candidateNotes": "Vertex request 453a7adf457f7c5d91c4 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
-      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
+      "candidateNotes": "Vertex request 453a7adf457f7c5d91c4 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
       "output": {
         "manifestKey": "dal-widebody:right",
         "url": "/assets/planes/v1/dal-widebody-right.webp",
-        "sha256": "c77ab68bbef61bb6e8596bc8ead3bd521313a7327d314c6a3e53dbf3711df25c"
+        "sha256": "88eb3c23f8bc7ea5eb6337eda7ac2f978ba9dfca4822743e10363e7cb740b4fa"
+      },
+      "repair": {
+        "date": "2026-10-30",
+        "issue": "PG-011",
+        "reason": "User visual review rejected smoke-damage-like dark upper-surface shading.",
+        "method": "The OpenAI built-in image editor supplied a clean-lighting reference. scripts/repair-plane-lighting.mjs used only its median neutral upper-surface luminance as a correction target; original RGB detail, geometry, branding, text, and alpha remained the pixel source.",
+        "sourceSha256": "c77ab68bbef61bb6e8596bc8ead3bd521313a7327d314c6a3e53dbf3711df25c",
+        "referenceSha256": "1a69363e531f2a20398001b4db4a8a757df0aa5800837f71c7ca2c4b32233404",
+        "correctedPngSha256": "332f522bdf15a99590de560779b8b01ac2f5a4e6254807e077e4790bd05182fd",
+        "outputSha256": "88eb3c23f8bc7ea5eb6337eda7ac2f978ba9dfca4822743e10363e7cb740b4fa"
       }
     },
     {
@@ -562,12 +599,22 @@
       ],
       "styleReferenceKey": "dal-widebody:right:v1",
       "generatedAt": "2026-10-30T03:03:00.0597467+00:00",
-      "candidateNotes": "Vertex request a5e938e37221b9e4a08e returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. The initial left candidate was rejected for tail-livery mismatch; the authorized forced regeneration produced this selected candidate.",
-      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
+      "candidateNotes": "Vertex request a5e938e37221b9e4a08e returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. The initial left candidate was rejected for tail-livery mismatch; the authorized forced regeneration produced this selected candidate. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
       "output": {
         "manifestKey": "dal-widebody:left",
         "url": "/assets/planes/v1/dal-widebody-left.webp",
-        "sha256": "23aec28cea94898678d71df7ebb7a6badb0d5b26d8ea3d5b944b97e083a012c6"
+        "sha256": "10890870d8ded51e6d6575a397a216a4c4cee74072a1b5268c7d5431241e4caf"
+      },
+      "repair": {
+        "date": "2026-10-30",
+        "issue": "PG-011",
+        "reason": "User visual review rejected smoke-damage-like dark upper-surface shading.",
+        "method": "The OpenAI built-in image editor supplied a clean-lighting reference. scripts/repair-plane-lighting.mjs used only its median neutral upper-surface luminance as a correction target; original RGB detail, geometry, branding, text, and alpha remained the pixel source.",
+        "sourceSha256": "23aec28cea94898678d71df7ebb7a6badb0d5b26d8ea3d5b944b97e083a012c6",
+        "referenceSha256": "8211371fb7dbdd9696c7f488abf6d2d1adc333a16c643bc85911fcea0aa1f693",
+        "correctedPngSha256": "c684372b72ea943b4730570e7cd8e5d410aa38b9ca5c8bac612ade4a9fc35c85",
+        "outputSha256": "10890870d8ded51e6d6575a397a216a4c4cee74072a1b5268c7d5431241e4caf"
       }
     },
     {
@@ -2326,12 +2373,22 @@
       ],
       "styleReferenceKey": "fdx-widebody:right:v1",
       "generatedAt": "2026-10-30T12:28:20.4538817+00:00",
-      "candidateNotes": "Vertex request 8e910b34476ef6a571c2 in northamerica-northeast1 returned one independently generated left-facing candidate using the approved right-facing production result as a style and livery reference; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
-      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, cargo category, widebody anatomy, two-engine configuration, crop, baseline, alpha edges, readable FedEx wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
+      "candidateNotes": "Vertex request 8e910b34476ef6a571c2 in northamerica-northeast1 returned one independently generated left-facing candidate using the approved right-facing production result as a style and livery reference; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, cargo category, widebody anatomy, two-engine configuration, crop, baseline, alpha edges, readable FedEx wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
       "output": {
         "manifestKey": "fdx-widebody:left",
         "url": "/assets/planes/v1/fdx-widebody-left.webp",
-        "sha256": "4e00062d48f0d677f1a39cdebf40e1950f3e90be73b2b8916aafc4d17a1ea537"
+        "sha256": "870e99abd252482d541f76780db1e8c3320b5a7747bbfdec57145a921a2f17e7"
+      },
+      "repair": {
+        "date": "2026-10-30",
+        "issue": "PG-011",
+        "reason": "User visual review rejected smoke-damage-like dark upper-surface shading.",
+        "method": "The OpenAI built-in image editor supplied a clean-lighting reference. scripts/repair-plane-lighting.mjs used only its median neutral upper-surface luminance as a correction target; original RGB detail, geometry, branding, text, and alpha remained the pixel source.",
+        "sourceSha256": "4e00062d48f0d677f1a39cdebf40e1950f3e90be73b2b8916aafc4d17a1ea537",
+        "referenceSha256": "022db423cb825f8d5bb38c260a302febe7d48e66cb789d23b31a1713817cca2b",
+        "correctedPngSha256": "7efa358c32c820b1faceaf7b0dcb786c87e2dce99dba94065f91963c91ec0e2d",
+        "outputSha256": "870e99abd252482d541f76780db1e8c3320b5a7747bbfdec57145a921a2f17e7"
       }
     },
     {
@@ -2726,12 +2783,22 @@
       ],
       "styleReferenceKey": null,
       "generatedAt": "2026-10-30T03:11:40.1014757+00:00",
-      "candidateNotes": "Vertex request 53fac708b2d964cf5e81 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
-      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, scheduled-passenger category, regional-jet anatomy, two-engine configuration, crop, baseline, alpha edges, readable American Eagle wordmark, and tail branding pass. Regional partnership mapping is restricted to confident ENY and JIA callsigns. The directional pair was reviewed together and matches one aircraft family and livery.",
+      "candidateNotes": "Vertex request 53fac708b2d964cf5e81 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, scheduled-passenger category, regional-jet anatomy, two-engine configuration, crop, baseline, alpha edges, readable American Eagle wordmark, and tail branding pass. Regional partnership mapping is restricted to confident ENY and JIA callsigns. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
       "output": {
         "manifestKey": "american-eagle-regional:right",
         "url": "/assets/planes/v1/american-eagle-regional-right.webp",
-        "sha256": "cf7a7f0207b3bfafc5278eb45773cb84ce489995ea1dee19af37e6f72a47e744"
+        "sha256": "48dc89297729e1719c8722c244794cdda30eb148ae5f82eefe028bf3b258ae29"
+      },
+      "repair": {
+        "date": "2026-10-30",
+        "issue": "PG-011",
+        "reason": "User visual review rejected smoke-damage-like dark upper-surface shading.",
+        "method": "The OpenAI built-in image editor supplied a clean-lighting reference. scripts/repair-plane-lighting.mjs used only its median neutral upper-surface luminance as a correction target; original RGB detail, geometry, branding, text, and alpha remained the pixel source.",
+        "sourceSha256": "cf7a7f0207b3bfafc5278eb45773cb84ce489995ea1dee19af37e6f72a47e744",
+        "referenceSha256": "0b7b21134d4831913463fadff9b9e938e70f466542d44349a7e9a526239f0c2a",
+        "correctedPngSha256": "4af2be3e72a1ea09f87305bb746ac3c4ecab106e27bb05941a460d12c07a1e0e",
+        "outputSha256": "48dc89297729e1719c8722c244794cdda30eb148ae5f82eefe028bf3b258ae29"
       }
     },
     {
@@ -3166,12 +3233,22 @@
       ],
       "styleReferenceKey": null,
       "generatedAt": "2026-10-30T12:15:25.4418317+00:00",
-      "candidateNotes": "Vertex request 6b32c38c7e20cd204874 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
-      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral narrowbody anatomy, two-engine configuration, crop, baseline, alpha edges, and attractive unbranded livery pass. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and matches one aircraft family and neutral treatment.",
+      "candidateNotes": "Vertex request 6b32c38c7e20cd204874 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral narrowbody anatomy, two-engine configuration, crop, baseline, alpha edges, and attractive unbranded livery pass. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and matches one aircraft family and neutral treatment. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
       "output": {
         "manifestKey": "generic-narrowbody:right",
         "url": "/assets/planes/v1/generic-narrowbody-right.webp",
-        "sha256": "48f65f8e14661e2634c6aaa410db31df5561ec4ee88b6818e50011bfb18a93fa"
+        "sha256": "605d4a61d28b9767728f6da59432d117bb372ff96e96721d3b715a1a1e88f240"
+      },
+      "repair": {
+        "date": "2026-10-30",
+        "issue": "PG-011",
+        "reason": "User visual review rejected smoke-damage-like dark upper-surface shading.",
+        "method": "The OpenAI built-in image editor supplied a clean-lighting reference. scripts/repair-plane-lighting.mjs used only its median neutral upper-surface luminance as a correction target; original RGB detail, geometry, branding, text, and alpha remained the pixel source.",
+        "sourceSha256": "48f65f8e14661e2634c6aaa410db31df5561ec4ee88b6818e50011bfb18a93fa",
+        "referenceSha256": "a9c7d14c637d6c2bc3cc5aace4581b1b0acbf7a13557d45a5fce711964c366c0",
+        "correctedPngSha256": "f2e4e426d75dba782b62e9cfb95757f95f363357e58f073c02c5a97565ed491e",
+        "outputSha256": "605d4a61d28b9767728f6da59432d117bb372ff96e96721d3b715a1a1e88f240"
       }
     },
     {
@@ -3210,12 +3287,22 @@
       ],
       "styleReferenceKey": "generic-narrowbody:right:v1",
       "generatedAt": "2026-10-30T12:16:17.4972264+00:00",
-      "candidateNotes": "Vertex request 9efb4d2c066df6bb1337 returned one independently generated left-facing candidate using the approved right-facing production result as a style and treatment reference; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
-      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral narrowbody anatomy, two-engine configuration, crop, baseline, alpha edges, and attractive unbranded livery pass. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and matches one aircraft family and neutral treatment.",
+      "candidateNotes": "Vertex request 9efb4d2c066df6bb1337 returned one independently generated left-facing candidate using the approved right-facing production result as a style and treatment reference; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral narrowbody anatomy, two-engine configuration, crop, baseline, alpha edges, and attractive unbranded livery pass. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and matches one aircraft family and neutral treatment. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
       "output": {
         "manifestKey": "generic-narrowbody:left",
         "url": "/assets/planes/v1/generic-narrowbody-left.webp",
-        "sha256": "8d7415ff5bd708238ad265e41539edceb997683165aad5ab73c31566d33f59cc"
+        "sha256": "221ea258b7775b534153eba63e97381b0915026360bba45404d6f828b67fb53c"
+      },
+      "repair": {
+        "date": "2026-10-30",
+        "issue": "PG-011",
+        "reason": "User visual review rejected smoke-damage-like dark upper-surface shading.",
+        "method": "The OpenAI built-in image editor supplied a clean-lighting reference. scripts/repair-plane-lighting.mjs used only its median neutral upper-surface luminance as a correction target; original RGB detail, geometry, branding, text, and alpha remained the pixel source.",
+        "sourceSha256": "8d7415ff5bd708238ad265e41539edceb997683165aad5ab73c31566d33f59cc",
+        "referenceSha256": "a5fff0c83adfebfbc12c5baa28a7c1cd1550a6365aee3514afcb7c3950a437f7",
+        "correctedPngSha256": "84ad0ab87155b1cb983ecec229015a1d29500e8137f21877f70441744d47e2d8",
+        "outputSha256": "221ea258b7775b534153eba63e97381b0915026360bba45404d6f828b67fb53c"
       }
     },
     {
@@ -3254,12 +3341,22 @@
       ],
       "styleReferenceKey": null,
       "generatedAt": "2026-10-30T12:22:58.0907380+00:00",
-      "candidateNotes": "Vertex request 10e32528e7c9668e6a06 in us-central1 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
-      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral widebody anatomy, two-engine configuration, crop, baseline, alpha edges, and attractive unbranded treatment pass. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and matches one aircraft family and neutral treatment.",
+      "candidateNotes": "Vertex request 10e32528e7c9668e6a06 in us-central1 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral widebody anatomy, two-engine configuration, crop, baseline, alpha edges, and attractive unbranded treatment pass. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and matches one aircraft family and neutral treatment. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
       "output": {
         "manifestKey": "generic-widebody:right",
         "url": "/assets/planes/v1/generic-widebody-right.webp",
-        "sha256": "0d50c288ff7cb9012592176dc300d7c2201007bd3eb5c9644ab1324a7ce14d23"
+        "sha256": "8795268b62a02fd5c0dc3bb5f64caf35357e37b1f3956d497688ef50d5ce23cb"
+      },
+      "repair": {
+        "date": "2026-10-30",
+        "issue": "PG-011",
+        "reason": "User visual review rejected smoke-damage-like dark upper-surface shading.",
+        "method": "The OpenAI built-in image editor supplied a clean-lighting reference. scripts/repair-plane-lighting.mjs used only its median neutral upper-surface luminance as a correction target; original RGB detail, geometry, branding, text, and alpha remained the pixel source.",
+        "sourceSha256": "0d50c288ff7cb9012592176dc300d7c2201007bd3eb5c9644ab1324a7ce14d23",
+        "referenceSha256": "7370dda4c9577f7403cdb3121b615d0a3a98b08b516320196716c654703c872f",
+        "correctedPngSha256": "70abde2b75ede0fa3181dfff32ba0598a681a94c06643742aa0031ff23588242",
+        "outputSha256": "8795268b62a02fd5c0dc3bb5f64caf35357e37b1f3956d497688ef50d5ce23cb"
       }
     },
     {
@@ -3298,12 +3395,22 @@
       ],
       "styleReferenceKey": "generic-widebody:right:v1",
       "generatedAt": "2026-10-30T12:26:44.4833064+00:00",
-      "candidateNotes": "Vertex request 380a1f8345d7ecfa6d05 in europe-west1 returned the approved independently generated left-facing candidate using the approved right-facing result as a style and treatment reference; processed from candidate-1.png using the standard edge-connected white-matte workflow. Earlier Vertex candidates 4a0aa412e5fbd617be5e and d426b20c86b241ac41aa were rejected and never promoted because one copied shape-guide captions and pointed right, while the other resembled a recognizable branded tail treatment.",
-      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral widebody anatomy, two-engine configuration, crop, baseline, alpha edges, and attractive unbranded treatment pass. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and matches one aircraft family and neutral treatment.",
+      "candidateNotes": "Vertex request 380a1f8345d7ecfa6d05 in europe-west1 returned the approved independently generated left-facing candidate using the approved right-facing result as a style and treatment reference; processed from candidate-1.png using the standard edge-connected white-matte workflow. Earlier Vertex candidates 4a0aa412e5fbd617be5e and d426b20c86b241ac41aa were rejected and never promoted because one copied shape-guide captions and pointed right, while the other resembled a recognizable branded tail treatment. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, neutral widebody anatomy, two-engine configuration, crop, baseline, alpha edges, and attractive unbranded treatment pass. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and matches one aircraft family and neutral treatment. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
       "output": {
         "manifestKey": "generic-widebody:left",
         "url": "/assets/planes/v1/generic-widebody-left.webp",
-        "sha256": "596272d4ddf716a786f82a82ea565f84537b979cbff072fa679c42531f407192"
+        "sha256": "16cc9cab7c48459c20be3b66fc0597a798b73b4751a368dc5f281f25636b437f"
+      },
+      "repair": {
+        "date": "2026-10-30",
+        "issue": "PG-011",
+        "reason": "User visual review rejected smoke-damage-like dark upper-surface shading.",
+        "method": "The OpenAI built-in image editor supplied a clean-lighting reference. scripts/repair-plane-lighting.mjs used only its median neutral upper-surface luminance as a correction target; original RGB detail, geometry, branding, text, and alpha remained the pixel source.",
+        "sourceSha256": "596272d4ddf716a786f82a82ea565f84537b979cbff072fa679c42531f407192",
+        "referenceSha256": "a754e2431f06588ffb471dc3ca5510039834e155e37072e6f91be626ab42b316",
+        "correctedPngSha256": "3057f171ad84eda7eb2adb90e819b0721e6d4a49af98d622627d438e20bab779",
+        "outputSha256": "16cc9cab7c48459c20be3b66fc0597a798b73b4751a368dc5f281f25636b437f"
       }
     },
     {

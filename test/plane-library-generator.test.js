@@ -44,6 +44,7 @@ async function fixture({ guideStatus = 'available', rightApproved = false } = {}
   }));
   const catalog = {
     schemaVersion: 2,
+    generationAmendments: [{ id: 'pg011-lighting-1', text: 'Use clean, even upper-surface daylight without smoke-like dark shading.' }],
     referenceCatalog: [
       { id: 'production-spec', file: rel(spec) },
       { id: 'vertex-style-proof', file: rel(reference) },
@@ -86,7 +87,7 @@ test('PG-004 dry run reports exact request inputs and outputs without creating g
   assert.equal(result.status, 0, result.stderr);
   assert.match(result.stdout, /Estimated Vertex requests: 1/);
   assert.match(result.stdout, /\[GENERATE\] test-plane right/);
-  assert.match(result.stdout, /prompt revision: test-plane:right:v1/);
+  assert.match(result.stdout, /prompt revision: test-plane:right:v1\+pg011-lighting-1/);
   assert.match(result.stdout, /input: shape-guide:test-shape/);
   assert.match(result.stdout, /raw output: .*candidates.*test-plane.*right/i);
   assert.match(result.stdout, /Model: gemini-3\.1-flash-image/);

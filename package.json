@@ -15,6 +15,8 @@
     "plane-art:validate": "node scripts/validate-plane-library.mjs",
     "plane-art:generate": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/generate-plane-library.ps1",
     "plane-art:process": "node scripts/process-plane-art.mjs",
+    "plane-art:repair-lighting": "node scripts/repair-plane-lighting.mjs",
+    "plane-art:audit-phase1": "node scripts/audit-phase1-plane-art.mjs",
     "test": "node --test \"test/*.test.js\"",
     "deploy:api": "npx wrangler@4 deploy --config api/wrangler.toml"
   },

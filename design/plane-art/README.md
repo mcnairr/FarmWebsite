@@ -5,6 +5,14 @@ Status: **approved for production** on 2026-10-29 by implementation of
 decision record for every production batch. A later change requires an approval
 note here before assets are regenerated.
 
+The complete Phase 1 visual gate froze this recipe on 2026-10-30 under
+[PG-011](https://github.com/mcnairr/FarmWebsite/issues/11), after adding a
+reviewer-driven rejection rule and deterministic repair for smoke-like dark
+upper-surface shading.
+The consolidated 16-pair review, byte distribution, exceptions, alpha results,
+approval rubric, and exact Phase 2 freeze are recorded in
+[`phase1-production-freeze.md`](phase1-production-freeze.md).
+
 ## Approved treatment matrix and phases
 
 The 74 IDs, display names/treatments, categories, and aircraft shapes are
@@ -217,6 +225,13 @@ approved target, prompt revision, model, and estimated Vertex request count. It
 does not authenticate or call Vertex. Current catalog entries intentionally
 fail this gate until PG-003's missing shape-guide tasks are completed.
 
+After the Phase 1 visual gate, the generator also appends every authored
+`generationAmendments` entry in `prompts.json` to the immutable source prompt.
+The current effective future revision is `v1+pg011-lighting-1`; its clean-even-
+daylight rule is included in the request key, printed revision, sent prompt, and
+request metadata without rewriting the v1 text that records how Phase 1 was
+originally generated.
+
 For a paid run, either pass an arbitrary service-account JSON location with
 `-CredentialPath` or omit it to use configured Application Default Credentials.
 No credential filename is assumed. `-ProjectId`, `-Location`, `-Model`, and
@@ -413,6 +428,19 @@ edge-connected white-matte workflow. Pair review covered direction, silhouette,
 engine and propeller count, fixed/retracted gear, agricultural hardware,
 relative scale, crop, baseline, alpha edges, and recognition at 272 px hero and
 46 px blip sizes over both production sky and checkerboard backgrounds.
+
+## Phase 1 complete-batch freeze (PG-011)
+
+The complete 16-pair gate passed after ten reviewer-rejected dark-upper-surface
+directions received the constrained lighting correction recorded in their
+prompt provenance. The full batch was screened against the amended clean-even-
+daylight rule; the other 22 directions already passed and were not changed. Run
+`npm run plane-art:audit-phase1` for the reproducible dimensions, byte
+distribution, alpha bounds, padding, baseline, prompt-revision, and model
+report. [`phase1-production-freeze.md`](phase1-production-freeze.md) is the
+frozen decision record that Phase 2 must follow; its ten below-target files have
+explicit approval notes, no file exceeds the byte ceiling, and all 32 assets
+pass the library validator.
 
 ### Adding a future asset-library version
 

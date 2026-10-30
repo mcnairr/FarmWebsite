@@ -102,6 +102,7 @@ try {
   $inventory = Get-Content -Raw -LiteralPath $resolvedInventoryPath | ConvertFrom-Json
   if (-not $catalog.records) { throw 'Prompt catalog has no records.' }
   if (-not $inventory.guides) { throw 'Shape-guide inventory has no guides.' }
+  $generationAmendments = @($catalog.generationAmendments | Where-Object { $_.id -and $_.text })
 
   $knownIds = @($catalog.records | Select-Object -ExpandProperty artworkId -Unique | Sort-Object)
   $requestedIds = @($ArtworkId | ForEach-Object { if ($_){ $_.Trim() } } | Where-Object { $_ } | Select-Object -Unique)
@@ -151,6 +152,8 @@ try {
   foreach ($record in $records) {
     if (-not $record.prompt -or -not $record.key) { throw "Prompt definition is incomplete for '$($record.artworkId):$($record.direction)'." }
     if ([string]$record.status -like 'blocked*') { throw "Prompt '$($record.key)' is blocked: $($record.blockedReason)" }
+    $effectivePrompt = ((@([string]$record.prompt) + @($generationAmendments | ForEach-Object { [string]$_.text })) -join "`n`n")
+    $promptRevision = ((@([string]$record.key) + @($generationAmendments | ForEach-Object { [string]$_.id })) -join '+')
     $guide = $guideById[[string]$record.shapeGuideId]
     if (-not $guide -or $guide.status -ne 'available' -or -not $guide.file) {
       throw "Shape guide '$($record.shapeGuideId)' is not available for '$($record.artworkId)'."
@@ -183,10 +186,10 @@ try {
 
     $approvedOutput = Join-Path $resolvedApprovedRoot ("$($record.artworkId)-$($record.direction).webp")
     if (Test-Path -LiteralPath $approvedOutput) { throw "Approved output already exists for '$($record.artworkId):$($record.direction)'; generation will not overwrite it." }
-    $requestIdentity = @($record.key, $Model, $Location, $ProjectId, $CandidateCount, (Get-TextSha256 ([string]$record.prompt))) + @($inputs | ForEach-Object { $_.sha256 })
+    $requestIdentity = @($promptRevision, $Model, $Location, $ProjectId, $CandidateCount, (Get-TextSha256 $effectivePrompt)) + @($inputs | ForEach-Object { $_.sha256 })
     $requestKey = (Get-TextSha256 ($requestIdentity -join '|')).Substring(0, 20)
     $outputDirectory = Join-Path (Join-Path (Join-Path $resolvedGeneratedRoot 'candidates') ([string]$record.artworkId)) (Join-Path ([string]$record.direction) $requestKey)
-    $plan += [pscustomobject]@{ record = $record; inputs = $inputs.ToArray(); approvedOutput = $approvedOutput; requestKey = $requestKey; outputDirectory = $outputDirectory }
+    $plan += [pscustomobject]@{ record = $record; prompt = $effectivePrompt; promptRevision = $promptRevision; inputs = $inputs.ToArray(); approvedOutput = $approvedOutput; requestKey = $requestKey; outputDirectory = $outputDirectory }
   }
 
   $ledgerPath = Join-Path $resolvedGeneratedRoot 'ledger.json'
@@ -211,7 +214,7 @@ try {
   foreach ($item in $plan) {
     $state = if ($item.skipped) { 'SKIP completed' } else { 'GENERATE' }
     Write-Output "[$state] $($item.record.artworkId) $($item.record.direction)"
-    Write-Output "  prompt revision: $($item.record.key)"
+    Write-Output "  prompt revision: $($item.promptRevision)"
     foreach ($input in $item.inputs) { Write-Output "  input: $($input.id) => $($input.path) (sha256:$($input.sha256))" }
     Write-Output "  raw output: $($item.outputDirectory)"
     Write-Output "  approved target (read-only): $($item.approvedOutput)"
@@ -251,7 +254,7 @@ try {
     foreach ($input in @($item.inputs | Where-Object { $_.image })) {
       $parts.Add(@{ inlineData = @{ mimeType = Get-MimeType $input.path; data = [Convert]::ToBase64String([System.IO.File]::ReadAllBytes($input.path)) } })
     }
-    $parts.Add(@{ text = [string]$item.record.prompt })
+    $parts.Add(@{ text = [string]$item.prompt })
     $body = @{ contents = @(@{ role = 'user'; parts = $parts }); generationConfig = @{ candidateCount = $CandidateCount; responseModalities = @('TEXT', 'IMAGE'); imageConfig = @{ aspectRatio = '16:9' } } } | ConvertTo-Json -Depth 14 -Compress
     $requestId = [guid]::NewGuid().ToString('N')
     $bodyPath = Join-Path $script:cloudConfig ($requestId + '-body.json')
@@ -280,7 +283,7 @@ try {
     }
     if ($candidateFiles.Count -eq 0) { throw "Vertex returned no image candidates for '$($item.record.key)'." }
     $requestTime = [DateTimeOffset]::UtcNow.ToString('o')
-    $metadata = [ordered]@{ schemaVersion = 1; requestKey = $item.requestKey; artworkId = [string]$item.record.artworkId; direction = [string]$item.record.direction; promptRevision = [string]$item.record.key; promptSha256 = Get-TextSha256 ([string]$item.record.prompt); provider = 'Google Cloud Vertex AI'; modelId = $Model; location = $Location; projectId = $ProjectId; requestTime = $requestTime; requestedCandidateCount = $CandidateCount; returnedCandidateCount = $candidateFiles.Count; references = @($item.inputs | ForEach-Object { [ordered]@{ id = $_.id; sha256 = $_.sha256 } }); candidates = $candidateFiles.ToArray() }
+    $metadata = [ordered]@{ schemaVersion = 1; requestKey = $item.requestKey; artworkId = [string]$item.record.artworkId; direction = [string]$item.record.direction; promptRevision = [string]$item.promptRevision; promptSha256 = Get-TextSha256 ([string]$item.prompt); provider = 'Google Cloud Vertex AI'; modelId = $Model; location = $Location; projectId = $ProjectId; requestTime = $requestTime; requestedCandidateCount = $CandidateCount; returnedCandidateCount = $candidateFiles.Count; references = @($item.inputs | ForEach-Object { [ordered]@{ id = $_.id; sha256 = $_.sha256 } }); candidates = $candidateFiles.ToArray() }
     Write-JsonAtomic -Value $metadata -Path $item.metadataPath
     $ledger.requests = @($ledger.requests | Where-Object { $_.requestKey -ne $item.requestKey }) + @([pscustomobject]@{ requestKey = $item.requestKey; artworkId = [string]$item.record.artworkId; direction = [string]$item.record.direction; status = 'completed'; completedAt = $requestTime; metadata = $item.metadataPath.Substring($resolvedGeneratedRoot.Length).TrimStart('\', '/') })
     Write-JsonAtomic -Value $ledger -Path $ledgerPath
