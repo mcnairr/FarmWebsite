@@ -253,9 +253,9 @@ async function start(endpointUrl, root) {
     // Narrow screens have little open sky; show the most relevant few there.
     // Every aircraft stays reachable through the card's ‹ › buttons.
     const others = aircraft.filter((a) => a.id !== selectedId).slice(0, area.width < 600 ? MAX_BLIPS_NARROW : undefined);
-    // Keep small planes clear of the whole selected-flight block (card,
-    // details, route) as one region so they settle in open sky around it.
-    const parts = [el.card, el.details, el.route].filter((n) => !n.hidden).map((n) => n.getBoundingClientRect());
+    // Keep small planes clear of the selected card and route as one region so
+    // they settle in open sky around the main flight.
+    const parts = [el.card, el.route].filter((n) => !n.hidden).map((n) => n.getBoundingClientRect());
     const avoid = el.flight.hidden || parts.length === 0
       ? []
       : [{
