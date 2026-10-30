@@ -28,6 +28,7 @@ import {
 /** Keep showing the last aircraft through brief outages, but not stale ones. */
 const KEEP_LAST_DATA_MS = 45_000;
 const REQUEST_TIMEOUT_MS = 8_000;
+const AUTO_ADVANCE_MS = 30_000;
 const SWITCH_MS = 180;
 const MAX_BLIPS_NARROW = 4;
 
@@ -77,6 +78,8 @@ async function start(endpointUrl, root) {
   let radiusNm = 30;
   /** @type {ReturnType<typeof setTimeout> | undefined} */
   let timer;
+  /** @type {ReturnType<typeof setTimeout> | undefined} */
+  let autoAdvanceTimer;
   /** @type {Map<string, HTMLButtonElement>} */
   const blips = new Map();
 
@@ -104,6 +107,7 @@ async function start(endpointUrl, root) {
       if (!res.ok || !data || !Array.isArray(data.aircraft)) throw new Error('bad response');
       if (data.status === 'disabled') {
         root.hidden = true;
+        clearAutoAdvance();
         return;
       }
       failures = 0;
@@ -132,8 +136,13 @@ async function start(endpointUrl, root) {
 
   // Don't poll in background tabs; refresh as soon as the visitor returns.
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) clearTimeout(timer);
-    else if (!root.hidden) poll();
+    if (document.hidden) {
+      clearTimeout(timer);
+      clearAutoAdvance();
+    } else if (!root.hidden) {
+      scheduleAutoAdvance();
+      poll();
+    }
   });
 
   // ----- state -> view -----
@@ -166,6 +175,7 @@ async function start(endpointUrl, root) {
     aircraft = next;
     selectedId = reconcileSelection(selectedId, previousIds, next.map((a) => a.id));
     renderSelected(false);
+    scheduleAutoAdvance();
   }
 
   /** @param {boolean} userInitiated */
@@ -299,17 +309,40 @@ async function start(endpointUrl, root) {
 
   // ----- interaction -----
 
-  /** @param {string} id */
-  function select(id) {
+  /** @param {string} id @param {boolean} [userInitiated] */
+  function select(id, userInitiated = true) {
     if (!aircraft.some((a) => a.id === id) || id === selectedId) return;
     selectedId = id;
-    renderSelected(true);
+    renderSelected(userInitiated);
+    if (userInitiated) restartAutoAdvance();
   }
 
-  /** @param {number} delta */
-  function step(delta) {
+  /** @param {number} delta @param {boolean} [userInitiated] */
+  function step(delta, userInitiated = true) {
     const next = stepSelection(aircraft.map((a) => a.id), selectedId, delta);
-    if (next) select(next);
+    if (next) select(next, userInitiated);
+  }
+
+  function clearAutoAdvance() {
+    clearTimeout(autoAdvanceTimer);
+    autoAdvanceTimer = undefined;
+  }
+
+  function scheduleAutoAdvance() {
+    if (autoAdvanceTimer || aircraft.length < 2 || document.hidden || root.hidden) {
+      if (aircraft.length < 2) clearAutoAdvance();
+      return;
+    }
+    autoAdvanceTimer = setTimeout(() => {
+      autoAdvanceTimer = undefined;
+      step(1, false);
+      scheduleAutoAdvance();
+    }, AUTO_ADVANCE_MS);
+  }
+
+  function restartAutoAdvance() {
+    clearAutoAdvance();
+    scheduleAutoAdvance();
   }
 
   // ‹ and › on either side of the card step through nearby aircraft; arrow
