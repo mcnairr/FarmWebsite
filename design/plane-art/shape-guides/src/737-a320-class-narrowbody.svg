@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
+    <path d="M180 364 C270 315 470 302 1120 312 C1280 315 1390 342 1440 375 C1384 409 1270 430 1080 432 L420 430 C300 427 222 408 180 382 Z"/>
+    <path d="M300 350 L190 224 L235 214 L438 343 Z"/>
+    <path d="M360 416 L216 501 L190 486 L292 397 Z"/>
+    <path d="M660 350 L425 150 L510 140 L875 342 Z"/>
+    <path d="M690 421 L486 650 L420 635 L566 407 Z"/>
+    <ellipse cx="690" cy="438" rx="82" ry="45"/><ellipse cx="905" cy="438" rx="82" ry="45"/>
+  </g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12">
+    <line x1="130" y1="454" x2="1480" y2="454"/><line x1="800" y1="110" x2="800" y2="680"/>
+  </g>
+  <g fill="#132a46" font-family="Arial, sans-serif">
+    <text x="100" y="90" font-size="46" font-weight="700">737 / A320-class narrowbody shape guide</text>
+    <text x="100" y="780" font-size="30">Twin underwing engines · single aisle · swept low wing · conventional tail · gear retracted</text>
+    <text x="100" y="826" font-size="25" fill="#52677d">Original McNair Farms project diagram — silhouette and proportions only; no livery or registration reference.</text>
+  </g>
+</svg>

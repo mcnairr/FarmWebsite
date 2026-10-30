@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
+    <path d="M120 356 C235 300 452 284 1140 297 C1315 301 1418 337 1480 374 C1418 418 1272 445 1045 447 L365 444 C235 440 152 414 120 389 Z"/>
+    <path d="M278 340 L150 168 L219 158 L477 337 Z"/>
+    <path d="M335 424 L166 538 L132 516 L265 399 Z"/>
+    <path d="M658 342 L340 118 L450 102 L925 334 Z"/>
+    <path d="M716 430 L438 695 L345 681 L566 407 Z"/>
+    <ellipse cx="648" cy="448" rx="107" ry="64"/><ellipse cx="952" cy="449" rx="107" ry="64"/>
+    <path d="M196 350 L125 310 L145 289 L300 340 Z"/>
+  </g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12">
+    <line x1="82" y1="478" x2="1520" y2="478"/><line x1="800" y1="70" x2="800" y2="720"/>
+  </g>
+  <g fill="#132a46" font-family="Arial, sans-serif">
+    <text x="100" y="70" font-size="46" font-weight="700">A330 / A350-class widebody shape guide</text>
+    <text x="100" y="790" font-size="30">Twin large underwing engines · broad twin-aisle fuselage · long swept wings · conventional tail · gear retracted</text>
+    <text x="100" y="836" font-size="25" fill="#52677d">Original McNair Farms project diagram — silhouette and proportions only; no livery or registration reference.</text>
+  </g>
+</svg>

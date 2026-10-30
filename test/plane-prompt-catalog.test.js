@@ -65,16 +65,25 @@ test('PG-003 validator detects missing prompt fields and reference files', async
   assert.ok((await validatePlanePromptCatalog({ root, prompts: missingReference, inventory, plan })).some((error) => error.includes('reference file does not exist')));
 });
 
-test('PG-003 missing shape guides are explicit blocked tasks with provenance', () => {
+test('PG-003 shape guides have availability-consistent tasks and provenance', () => {
   assert.ok(inventory.guides.length > 0);
   for (const guide of inventory.guides) {
-    assert.equal(guide.status, 'missing');
-    assert.equal(guide.file, null);
-    assert.ok(guide.provenance && guide.ownership && guide.permission && guide.blockedTask);
+    assert.ok(guide.provenance && guide.ownership && guide.permission);
     for (const treatmentId of guide.treatmentIds) {
       const records = prompts.records.filter((record) => record.artworkId === treatmentId);
       assert.equal(records.length, 2);
-      assert.ok(records.every((record) => record.status === 'blocked-missing-shape-guide' && record.shapeGuideId === guide.id));
+      assert.ok(records.every((record) => record.shapeGuideId === guide.id));
+      if (guide.status === 'missing') {
+        assert.equal(guide.file, null);
+        assert.ok(guide.blockedTask);
+        assert.ok(records.every((record) => record.status === 'blocked-missing-shape-guide'));
+      } else {
+        assert.equal(guide.status, 'available');
+        assert.equal(typeof guide.file, 'string');
+        assert.ok(guide.file.length > 0);
+        assert.equal(guide.blockedTask, null);
+        assert.ok(records.every((record) => record.status !== 'blocked-missing-shape-guide'));
+      }
     }
   }
 });

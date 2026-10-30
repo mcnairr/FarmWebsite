@@ -58,8 +58,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -77,13 +77,13 @@
         "shape-guide:737-a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T02:52:53.7507698+00:00",
+      "candidateNotes": "Vertex request 34a2a0e235208ebf8c9f returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "aal-narrowbody:right",
         "url": "/assets/planes/v1/aal-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "3ffec1d10efca3dcd025ac8dd452e9b6bd17305891118fcd357210685d96ce25"
       }
     },
     {
@@ -102,8 +102,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -121,13 +121,13 @@
         "shape-guide:737-a320-class-narrowbody"
       ],
       "styleReferenceKey": "aal-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T02:57:36.7744515+00:00",
+      "candidateNotes": "Vertex request e19019ffd4000ac4bff4 returned one independently generated left-facing candidate; processed from candidate-1.png with the recorded transparent-background manual repair. Manual alpha-repair SHA-256: a37901f366130d4df544ecf4642a7931228331f1a991f5df6d5208ebaf65d1de. The OpenAI image background-extraction edit was used only for transparency repair; the aircraft master remains the linked Vertex candidate.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "aal-narrowbody:left",
         "url": "/assets/planes/v1/aal-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "1a22b021f48768b82077e70719e553da3cc75d501ec65249c1062dbdd4d6b03b"
       }
     },
     {
@@ -146,8 +146,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-777-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 787-777-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -165,13 +165,13 @@
         "shape-guide:787-777-class-widebody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T02:53:02.0620239+00:00",
+      "candidateNotes": "Vertex request 4572dc6fac07b44d7f13 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-29 visual approval: 960x330 sky and checkerboard review preserves readable American wordmark, tail bars, anatomy, and clean alpha edges below the 40 KB target; quality-90 settings remain unchanged.",
       "output": {
         "manifestKey": "aal-widebody:right",
         "url": "/assets/planes/v1/aal-widebody-right.webp",
-        "sha256": null
+        "sha256": "c213dd36f74b69ea1bffe2917b03ac87ee541e841509c9f33981a03ccf31a3fb"
       }
     },
     {
@@ -190,8 +190,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-777-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 787-777-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -209,13 +209,13 @@
         "shape-guide:787-777-class-widebody"
       ],
       "styleReferenceKey": "aal-widebody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T02:57:45.2801625+00:00",
+      "candidateNotes": "Vertex request 064a8f55c8f3e19ab9be returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-29 visual approval: left-facing American widebody preserves readable wordmark, tail bars, anatomy, pair consistency, and clean alpha at hero and blip sizes below the 40 KB target; quality-90 settings remain unchanged.",
       "output": {
         "manifestKey": "aal-widebody:left",
         "url": "/assets/planes/v1/aal-widebody-left.webp",
-        "sha256": null
+        "sha256": "6986166d27a9ed11c026f5bab0382b282857661e0618b3ef444ea5d07be75e45"
       }
     },
     {
@@ -234,8 +234,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -253,13 +253,13 @@
         "shape-guide:737-a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T02:53:37.2753718+00:00",
+      "candidateNotes": "Vertex request 496f342cd23ee7ddb830 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "ual-narrowbody:right",
         "url": "/assets/planes/v1/ual-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "db41c18eaec3c593de81b0ff6114feac2e7960f2394c65c185097f7e3599bc44"
       }
     },
     {
@@ -278,8 +278,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -297,13 +297,13 @@
         "shape-guide:737-a320-class-narrowbody"
       ],
       "styleReferenceKey": "ual-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T03:00:45.6901865+00:00",
+      "candidateNotes": "Vertex request 454427c293d523ebf36a returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "ual-narrowbody:left",
         "url": "/assets/planes/v1/ual-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "04f947e85e59ba9100f667816818b8a9495bec800db100c9acf6c1d2cdea543d"
       }
     },
     {
@@ -322,8 +322,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-777-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 787-777-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -341,13 +341,13 @@
         "shape-guide:787-777-class-widebody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T02:53:45.3103479+00:00",
+      "candidateNotes": "Vertex request 43e43c98b3a6331341da returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "ual-widebody:right",
         "url": "/assets/planes/v1/ual-widebody-right.webp",
-        "sha256": null
+        "sha256": "4840c43fad0ff3239948f739d4b3a9e7ab2d8ab83d0fd682f83b09fcfc344c26"
       }
     },
     {
@@ -366,8 +366,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-777-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 787-777-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -385,13 +385,13 @@
         "shape-guide:787-777-class-widebody"
       ],
       "styleReferenceKey": "ual-widebody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T03:01:22.4045332+00:00",
+      "candidateNotes": "Vertex request 673e628754eff996b38e returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "ual-widebody:left",
         "url": "/assets/planes/v1/ual-widebody-left.webp",
-        "sha256": null
+        "sha256": "e660ce09908d2900156e721cbb15aa2724618e79a711cd1daefcda60e0717f34"
       }
     },
     {
@@ -410,8 +410,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -429,13 +429,13 @@
         "shape-guide:737-a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T02:53:10.4045965+00:00",
+      "candidateNotes": "Vertex request ff514aaaaff8e7125d43 returned one independently generated right-facing candidate; processed from candidate-1.png with the recorded transparent-background manual repair. Manual alpha-repair SHA-256: cede2a405ba3c67905ab67a4b59a1ba69abc63e7e4cf2614078cfa3484b2f240. The OpenAI image background-extraction edit was used only for transparency repair; the aircraft master remains the linked Vertex candidate.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-29 visual approval: repaired full-size Delta narrowbody remains sharp and readable at hero and blip sizes below the 40 KB target; quality-90 settings remain unchanged.",
       "output": {
         "manifestKey": "dal-narrowbody:right",
         "url": "/assets/planes/v1/dal-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "d2479b5db5f1e8635454f9ad7f903223677b29117e138e6c89c8dd2c91602c9e"
       }
     },
     {
@@ -454,8 +454,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -473,13 +473,13 @@
         "shape-guide:737-a320-class-narrowbody"
       ],
       "styleReferenceKey": "dal-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T02:57:52.9255150+00:00",
+      "candidateNotes": "Vertex request 08edd8058d8062ac5504 returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "dal-narrowbody:left",
         "url": "/assets/planes/v1/dal-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "328976ed2db2cc992a5ada3dfe0b45149e642d083c55dab2cef7551cfcff1d31"
       }
     },
     {
@@ -498,8 +498,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a330-a350-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a330-a350-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -517,13 +517,13 @@
         "shape-guide:a330-a350-class-widebody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T02:53:19.0275485+00:00",
+      "candidateNotes": "Vertex request 453a7adf457f7c5d91c4 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "dal-widebody:right",
         "url": "/assets/planes/v1/dal-widebody-right.webp",
-        "sha256": null
+        "sha256": "c77ab68bbef61bb6e8596bc8ead3bd521313a7327d314c6a3e53dbf3711df25c"
       }
     },
     {
@@ -542,8 +542,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a330-a350-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a330-a350-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -561,13 +561,13 @@
         "shape-guide:a330-a350-class-widebody"
       ],
       "styleReferenceKey": "dal-widebody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T03:03:00.0597467+00:00",
+      "candidateNotes": "Vertex request a5e938e37221b9e4a08e returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. The initial left candidate was rejected for tail-livery mismatch; the authorized forced regeneration produced this selected candidate.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "dal-widebody:left",
         "url": "/assets/planes/v1/dal-widebody-left.webp",
-        "sha256": null
+        "sha256": "23aec28cea94898678d71df7ebb7a6badb0d5b26d8ea3d5b944b97e083a012c6"
       }
     },
     {
@@ -586,8 +586,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -605,13 +605,13 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T02:53:28.8613887+00:00",
+      "candidateNotes": "Vertex request 709892f7e7bbf2b8091c returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-29 visual approval: 960x330 sky and checkerboard review preserves readable Southwest wordmark, Heart livery, anatomy, and clean alpha edges below the 40 KB target; quality-90 settings remain unchanged.",
       "output": {
         "manifestKey": "swa-narrowbody:right",
         "url": "/assets/planes/v1/swa-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "7950e18def4ff5bc831b62e62d709d8245dd4086d36aa58fd1e98c2932185e7f"
       }
     },
     {
@@ -630,8 +630,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -649,13 +649,13 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": "swa-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-30T03:00:06.1910182+00:00",
+      "candidateNotes": "Vertex request d23216d68e9612053519 returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-29 visual approval: left-facing Southwest narrowbody preserves readable wordmark, Heart livery, anatomy, pair consistency, and clean alpha at hero and blip sizes below the 40 KB target; quality-90 settings remain unchanged.",
       "output": {
         "manifestKey": "swa-narrowbody:left",
         "url": "/assets/planes/v1/swa-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "f51185d427a6b929397c73c70bf589bc47b2f9bf23ae927e1ec801f4c7a98808"
       }
     },
     {
@@ -674,8 +674,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -718,8 +718,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1114,8 +1114,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1158,8 +1158,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1554,8 +1554,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1598,8 +1598,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1642,8 +1642,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1686,8 +1686,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 737-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1818,8 +1818,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-777-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 787-777-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1862,8 +1862,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-777-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 787-777-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2082,8 +2082,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-777-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 787-777-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2126,8 +2126,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-777-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 787-777-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "ready",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",

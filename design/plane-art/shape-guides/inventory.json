@@ -6,12 +6,12 @@
   },
   "guides": [
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/737-a320-class-narrowbody.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/737-a320-class-narrowbody.svg on 2026-10-29.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original 737/A320-class narrowbody shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "737-a320-class-narrowbody",
       "family": "737/A320-class narrowbody",
       "treatmentIds": [
@@ -21,12 +21,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/787-777-class-widebody.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/787-777-class-widebody.svg on 2026-10-29.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original 787/777-class widebody shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "787-777-class-widebody",
       "family": "787/777-class widebody",
       "treatmentIds": [
@@ -37,12 +37,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/a330-a350-class-widebody.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/a330-a350-class-widebody.svg on 2026-10-29.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original A330/A350-class widebody shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "a330-a350-class-widebody",
       "family": "A330/A350-class widebody",
       "treatmentIds": [
@@ -50,12 +50,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/737-class-narrowbody.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/737-class-narrowbody.svg on 2026-10-29.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original 737-class narrowbody shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "737-class-narrowbody",
       "family": "737-class narrowbody",
       "treatmentIds": [

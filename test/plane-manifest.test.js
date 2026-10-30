@@ -72,8 +72,42 @@ test('PG-002 prompt provenance and manifest output links are reciprocal', () => 
       assert.ok(record[field].length > 0);
     }
     assert.ok(Array.isArray(record.referenceIds));
-    assert.equal(record.generatedAt, null);
-    assert.equal(record.output.sha256, null);
+    if (asset.approvalStatus === 'approved') {
+      assert.match(record.generatedAt, /^\d{4}-\d{2}-\d{2}T/);
+      assert.match(record.output.sha256, /^[a-f0-9]{64}$/);
+    } else {
+      assert.equal(record.generatedAt, null);
+      assert.equal(record.output.sha256, null);
+    }
+  }
+});
+
+test('PG-008 mainline passenger pairs are independently generated and approved', () => {
+  const artworkIds = [
+    'aal-narrowbody', 'aal-widebody', 'ual-narrowbody', 'ual-widebody',
+    'dal-narrowbody', 'dal-widebody', 'swa-narrowbody',
+  ];
+  const recordsByKey = Object.fromEntries(prompts.records.map((record) => [record.key, record]));
+  const assets = PLANE_ASSETS.filter(({ artworkId }) => artworkIds.includes(artworkId));
+
+  assert.equal(assets.length, 14);
+  assert.equal(new Set(assets.map(({ artworkId }) => artworkId)).size, 7);
+  assert.equal(new Set(assets.map(({ direction }) => direction)).size, 2);
+  assert.equal(new Set(assets.map(({ artworkId, direction }) => `${artworkId}:${direction}`)).size, 14);
+
+  for (const artworkId of artworkIds) {
+    const pair = assets.filter((asset) => asset.artworkId === artworkId);
+    assert.deepEqual(pair.map(({ direction }) => direction).sort(), ['left', 'right']);
+    assert.ok(pair.every(({ approvalStatus }) => approvalStatus === 'approved'));
+    const pairRecords = pair.map((asset) => recordsByKey[asset.promptRecordKey]);
+    assert.ok(pairRecords.every(({ status }) => status === 'approved'));
+    assert.equal(new Set(pairRecords.map(({ output }) => output.sha256)).size, 2, `${artworkId} directions must have independent bytes`);
+    for (const record of pairRecords) {
+      assert.match(record.generatedAt, /^\d{4}-\d{2}-\d{2}T/);
+      assert.match(record.output.sha256, /^[a-f0-9]{64}$/);
+      assert.match(record.approvalNotes, /272 px hero and 46 px blip/);
+      assert.match(record.approvalNotes, /directional pair was reviewed together/i);
+    }
   }
 });
 

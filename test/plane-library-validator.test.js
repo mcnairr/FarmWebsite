@@ -76,8 +76,10 @@ test('PG-006 accepts a complete approved WebP pair with matching hashes', async 
   await mkdir(directory, { recursive: true });
   const bytes = await sharp({ create: { width: 960, height: 330, channels: 4, background: { r: 20, g: 30, b: 40, alpha: 0.5 } } }).webp().toBuffer();
   const hash = createHash('sha256').update(bytes).digest('hex');
-  const assets = PLANE_ASSETS.slice(0, 4).map((asset, index) => ({
-    ...asset, approvalStatus: index < 2 ? 'approved' : asset.approvalStatus,
+  const assets = PLANE_ASSETS
+    .filter(({ artworkId }) => ['aal-narrowbody', 'generic-narrowbody'].includes(artworkId))
+    .map((asset) => ({
+    ...asset, approvalStatus: asset.artworkId === 'aal-narrowbody' ? 'approved' : 'planned',
   }));
   for (const asset of assets.filter(({ approvalStatus }) => approvalStatus === 'approved')) {
     await writeFile(join(directory, `${asset.artworkId}-${asset.direction}.webp`), bytes);

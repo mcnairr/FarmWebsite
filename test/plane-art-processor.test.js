@@ -7,9 +7,9 @@ import sharp from 'sharp';
 import { PROCESSING_SETTINGS, processPlaneArt } from '../scripts/process-plane-art.mjs';
 
 const root = process.cwd();
-const output = join(root, 'assets', 'planes', 'v1', 'aal-narrowbody-right.webp');
+const output = join(root, 'assets', 'planes', 'v1', 'generic-narrowbody-right.webp');
 const generated = join(root, '.generated', 'plane-art');
-const report = join(generated, 'processed', 'aal-narrowbody-right.json');
+const report = join(generated, 'processed', 'generic-narrowbody-right.json');
 const sourceImage = join(root, 'design', 'plane-art', 'proofs', 'vertex', 'american-branded.png');
 const digest = (buffer) => createHash('sha256').update(buffer).digest('hex');
 
@@ -21,10 +21,10 @@ test('PG-005 processor is deterministic and enforces the production checks', asy
   const proofPath = join(fixture, 'proof.png');
   const sourceBytes = await readFile(sourceImage);
   await writeFile(metadataPath, `${JSON.stringify({
-    artworkId: 'aal-narrowbody',
+    artworkId: 'generic-narrowbody',
     direction: 'right',
     requestKey: 'deterministic-fixture',
-    promptRevision: 'aal-narrowbody:right:v1',
+    promptRevision: 'generic-narrowbody:right:v1',
     candidates: [{ file: 'american-branded.png', sha256: digest(sourceBytes) }],
   }, null, 2)}\n`);
   t.after(async () => {
@@ -34,7 +34,7 @@ test('PG-005 processor is deterministic and enforces the production checks', asy
   });
 
   const options = {
-    artworkId: 'aal-narrowbody', direction: 'right', inputPath: sourceImage,
+    artworkId: 'generic-narrowbody', direction: 'right', inputPath: sourceImage,
     sourceMetadataPath: metadataPath, proofPath,
   };
   const first = await processPlaneArt(options);
