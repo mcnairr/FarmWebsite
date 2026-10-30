@@ -260,11 +260,11 @@
 .ff-type { font-size: 1.12rem; font-weight: 700; letter-spacing: .02em; line-height: 1.2; }
 .ff-flight-id { display: flex; flex-wrap: wrap; gap: 0 .65rem; }
 .ff-callsign,
-.ff-registration { font-size: .86rem; line-height: 1.35; }
+.ff-registration,
+.ff-airline { font-size: .86rem; line-height: 1.35; }
 .ff-registration { color: inherit; text-decoration-color: currentColor; text-underline-offset: .14em; }
 .ff-registration:hover { text-decoration-thickness: 2px; }
-.ff-flight-id > :not([hidden]) + :not([hidden])::before { content: "\00b7"; margin-right: .65rem; color: var(--ff-muted); }
-.ff-airline { font-size: .86rem; line-height: 1.35; }
+.ff-separator { color: var(--ff-muted); }
 .ff-airline { color: var(--ff-muted); letter-spacing: .02em; }
 .ff-card-metrics {
   display: flex;

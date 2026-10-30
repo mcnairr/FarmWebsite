@@ -45,6 +45,7 @@ async function start(endpointUrl, root) {
     card: $('.ff-card'),
     position: $('.ff-position'),
     callsign: $('.ff-callsign'),
+    separator: $('.ff-separator'),
     registration: $('.ff-registration'),
     airline: $('.ff-airline'),
     type: $('.ff-type'),
@@ -206,6 +207,7 @@ async function start(endpointUrl, root) {
     renderBadge();
     setText(el.callsign, a.callsign);
     setText(el.registration, a.registration);
+    el.separator.hidden = !a.airline || !a.callsign;
     if (a.registration) {
       el.registration.setAttribute('href', `https://airport-data.com/aircraft/${encodeURIComponent(a.registration)}`);
     } else {
