@@ -427,12 +427,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/citation-phenom-class-jet.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/citation-phenom-class-jet.svg on 2026-10-30.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Citation/Phenom-class jet shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "citation-phenom-class-jet",
       "family": "Citation/Phenom-class jet",
       "treatmentIds": [
@@ -453,12 +453,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/c150-c172-c182-c206.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/c150-c172-c182-c206.svg on 2026-10-30.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original C150/C172/C182/C206 shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "c150-c172-c182-c206",
       "family": "C150/C172/C182/C206",
       "treatmentIds": [
@@ -596,12 +596,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/air-tractor.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/air-tractor.svg on 2026-10-30.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Air Tractor shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "air-tractor",
       "family": "Air Tractor",
       "treatmentIds": [

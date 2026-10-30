@@ -349,6 +349,36 @@ a dated byte-range exception in its approval notes. All 14 remain below the
 padding, baseline, clipping, and fringe checks. Pair approval was performed at
 272 px hero and 46 px blip sizes over the production sky and checkerboard.
 
+## Phase 1 business, light-aircraft, and agricultural pairs (PG-010)
+
+The Phase 1 `generic-bizjet-small`, `cessna-high-wing`, and
+`air-tractor-yellow` treatments are approved in both independently generated
+directions. Their six production WebPs live beneath `assets/planes/v1/`; the
+manifest and matching `prompts.json` records contain the approval state,
+generation timestamps, source request keys, output hashes, and review notes.
+
+Three original project-owned guides were added for the Citation/Phenom-class
+jet, C150/C172/C182/C206 high-wing family, and Air Tractor family. Their PNGs,
+editable SVG sources, ownership, permission, and provenance are recorded under
+`shape-guides/`. The neutral/private-aircraft prompt contract explicitly
+forbids copied organizations, logos, recognizable brand marks, and real private
+registrations; omission of a registration is preferred.
+
+All six final aircraft masters were independently generated with the pinned
+`gemini-3.1-flash-image` Vertex workflow. Rejected candidates that copied the
+airline style proof, a registration, or technical-guide captions were not
+promoted. Unbranded business, general-aviation, agricultural, helicopter, and
+military requests now omit the airline style proof while approved records keep
+their original reference lists for accurate provenance.
+
+The two neutral business-jet outputs required the documented manual alpha-only
+repair path and dated below-range exceptions; their aircraft masters remain the
+linked Vertex candidates. The Cessna and Air Tractor pairs passed the standard
+edge-connected white-matte workflow. Pair review covered direction, silhouette,
+engine and propeller count, fixed/retracted gear, agricultural hardware,
+relative scale, crop, baseline, alpha edges, and recognition at 272 px hero and
+46 px blip sizes over both production sky and checkerboard backgrounds.
+
 ### Adding a future asset-library version
 
 A future library is added beside this one, for example

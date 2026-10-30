@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
+    <path d="M240 392 C350 361 540 354 1085 359 C1220 361 1332 378 1400 403 C1324 430 1198 445 1000 446 L470 443 C355 441 276 424 240 407 Z"/>
+    <path d="M354 384 L280 273 L324 267 L494 381 Z"/>
+    <path d="M390 430 L301 493 L270 479 L349 417 Z"/>
+    <path d="M690 371 L526 221 L608 212 L875 369 Z"/>
+    <path d="M730 428 L578 587 L505 577 L635 416 Z"/>
+    <rect x="1386" y="368" width="26" height="71" rx="7"/>
+    <path d="M1399 344 L1410 392 L1399 462 L1388 392 Z"/>
+    <path d="M540 442 L527 550 L548 550 L566 443 Z M1040 445 L1028 550 L1049 550 L1067 445 Z"/>
+    <circle cx="537" cy="556" r="18"/><circle cx="1038" cy="556" r="18"/>
+  </g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12">
+    <line x1="195" y1="572" x2="1450" y2="572"/><line x1="800" y1="140" x2="800" y2="615"/>
+  </g>
+  <g fill="#132a46" font-family="Arial, sans-serif">
+    <text x="100" y="88" font-size="46" font-weight="700">C150 / C172 / C182 / C206 shape guide</text>
+    <text x="100" y="790" font-size="30">Single tractor propeller - high strut-braced wing - conventional tail - fixed tricycle gear visible</text>
+    <text x="100" y="836" font-size="25" fill="#52677d">Original McNair Farms project diagram - silhouette and proportions only; no livery or registration reference.</text>
+  </g>
+</svg>

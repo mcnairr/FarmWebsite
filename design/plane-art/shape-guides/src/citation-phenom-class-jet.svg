@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
+    <path d="M205 384 C320 349 520 337 1095 342 C1240 344 1350 363 1418 391 C1345 422 1215 438 1015 440 L445 438 C330 436 240 417 205 401 Z"/>
+    <path d="M338 375 L267 251 L317 245 L492 371 Z"/>
+    <path d="M374 425 L274 494 L244 479 L331 410 Z"/>
+    <path d="M754 377 L568 237 L638 229 L905 373 Z"/>
+    <path d="M790 425 L621 578 L558 568 L696 413 Z"/>
+    <ellipse cx="422" cy="405" rx="72" ry="38"/><ellipse cx="529" cy="407" rx="72" ry="38"/>
+  </g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12">
+    <line x1="165" y1="462" x2="1450" y2="462"/><line x1="800" y1="145" x2="800" y2="610"/>
+  </g>
+  <g fill="#132a46" font-family="Arial, sans-serif">
+    <text x="100" y="88" font-size="46" font-weight="700">Citation / Phenom-class jet shape guide</text>
+    <text x="100" y="790" font-size="30">Compact business jet - twin rear-mounted engines - low swept wing - T-tail - gear retracted</text>
+    <text x="100" y="836" font-size="25" fill="#52677d">Original McNair Farms project diagram - silhouette and proportions only; no livery or registration reference.</text>
+  </g>
+</svg>

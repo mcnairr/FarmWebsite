@@ -72,7 +72,7 @@ function identityRules(treatment, treatmentCategory) {
     const branded = treatment.id === 'netjets-bizjet' || treatment.id === 'flexjet-bizjet';
     return branded
       ? `Apply recognizable ${treatment.name} branding, correctly oriented and readable. Any registration must be fictional or omitted.`
-      : `Apply the specified ${treatment.name} treatment as original paint with no copied private identity. Any registration must be fictional or omitted.`;
+      : `Apply the specified ${treatment.name} treatment as original paint with no copied private identity. Include no real organization name, logo, or recognizable brand mark. Any registration must be fictional or omitted; omission is preferred.`;
   }
   if (treatment.id.startsWith('generic-')) return `Use ${treatment.name}; include no airline name, logo, registration, or recognizable brand mark.`;
   return `Apply recognizable ${treatment.name} branding and livery with the primary name correctly oriented and readable.`;
@@ -134,6 +134,12 @@ for (const treatment of treatments) {
   const specificConstraints = categoryConstraints(treatment.id, treatmentCategory);
   const countText = `exactly ${counts.engineCount} engine${counts.engineCount === 1 ? '' : 's'}, ${counts.propellerCount} propeller${counts.propellerCount === 1 ? '' : 's'}, ${counts.mainRotorCount} main rotor${counts.mainRotorCount === 1 ? '' : 's'}, and ${counts.tailRotorCount} tail rotor${counts.tailRotorCount === 1 ? '' : 's'}`;
   const identity = identityRules(treatment, treatmentCategory);
+  const brandedStyleReference = !['business', 'general-aviation', 'turboprop', 'crop-duster', 'helicopter', 'military'].includes(treatmentCategory)
+    || treatment.id === 'netjets-bizjet'
+    || treatment.id === 'flexjet-bizjet';
+  const referenceExclusion = ['business', 'general-aviation', 'turboprop', 'crop-duster', 'helicopter'].includes(treatmentCategory)
+    ? 'Use reference images only for production style and aircraft silhouette. Do not reproduce any reference title, caption, label, guide annotation, instructional text, livery, logo, or registration.'
+    : '';
   for (const direction of ['right', 'left']) {
     const key = `${treatment.id}:${direction}:v1`;
     const previous = existingRecords.get(key);
@@ -151,9 +157,11 @@ for (const treatment of treatments) {
       status: guideMissing ? 'blocked-missing-shape-guide' : previous?.status === 'blocked-missing-shape-guide' ? 'ready' : (previous?.status ?? 'ready'),
       blockedReason: guideMissing ? `Shape guide ${guideId} is missing; generation is prohibited until its inventory status is available.` : null,
       provider: 'Google Cloud Vertex AI', projectId: 'simbusiness-13e1f', modelId: 'gemini-3.1-flash-image',
-      prompt: `${consistency}Create one ${treatment.shape} aircraft in the approved lightly polished photorealistic production style, ${directionText}. Preserve this treatment's aircraft family and show ${countText}; landing gear must be ${counts.landingGear}. ${specificConstraints.join(' ')} ${identity} Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this ${direction}-facing view.`,
+      prompt: `${consistency}Create one ${treatment.shape} aircraft in the approved lightly polished photorealistic production style, ${directionText}. ${referenceExclusion} Preserve this treatment's aircraft family and show ${countText}; landing gear must be ${counts.landingGear}. ${specificConstraints.join(' ')} ${identity} Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this ${direction}-facing view.`,
       sharedConstraintIds: sharedConstraints.map((_, index) => `global-${index + 1}`),
-      referenceIds: ['production-spec', 'vertex-style-proof', `shape-guide:${guideId}`],
+      referenceIds: previous?.status === 'approved'
+        ? previous.referenceIds
+        : ['production-spec', ...(brandedStyleReference ? ['vertex-style-proof'] : []), `shape-guide:${guideId}`],
       styleReferenceKey: direction === 'left' ? `${treatment.id}:right:v1` : null,
       generatedAt: previous?.generatedAt ?? null,
       candidateNotes: previous?.candidateNotes ?? 'Generation is blocked until the original shape guide is created, documented, and reviewed.',

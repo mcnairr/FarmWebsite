@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
+    <path d="M220 398 C330 365 515 358 1048 362 C1190 363 1312 379 1390 406 C1300 436 1165 450 957 451 L448 448 C334 446 258 429 220 414 Z"/>
+    <path d="M333 390 L276 285 L323 279 L482 387 Z"/>
+    <path d="M370 436 L292 492 L258 480 L334 423 Z"/>
+    <path d="M730 373 L533 228 L627 219 L927 371 Z"/>
+    <path d="M772 435 L594 591 L507 580 L672 421 Z"/>
+    <rect x="1377" y="365" width="28" height="82" rx="7"/>
+    <path d="M1391 329 L1403 405 L1391 482 L1379 405 Z"/>
+    <path d="M560 449 L540 565 L566 565 L589 449 Z M1050 451 L1030 565 L1056 565 L1079 451 Z"/>
+    <circle cx="552" cy="572" r="23"/><circle cx="1042" cy="572" r="23"/>
+    <rect x="450" y="474" width="720" height="11" rx="5"/>
+    <path d="M472 485 L458 516 M548 485 L540 520 M1070 485 L1078 520 M1148 485 L1162 516" fill="none" stroke-width="9"/>
+  </g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12">
+    <line x1="180" y1="595" x2="1450" y2="595"/><line x1="800" y1="135" x2="800" y2="625"/>
+  </g>
+  <g fill="#132a46" font-family="Arial, sans-serif">
+    <text x="100" y="88" font-size="46" font-weight="700">Air Tractor agricultural aircraft shape guide</text>
+    <text x="100" y="790" font-size="30">Single tractor propeller - low straight wing - robust fixed gear - spray booms and application hardware</text>
+    <text x="100" y="836" font-size="25" fill="#52677d">Original McNair Farms project diagram - silhouette and proportions only; no livery or registration reference.</text>
+  </g>
+</svg>

@@ -111,6 +111,36 @@ test('PG-008 mainline passenger pairs are independently generated and approved',
   }
 });
 
+test('PG-010 business, light-aircraft, and agricultural pairs are independently generated and approved', () => {
+  const artworkIds = ['generic-bizjet-small', 'cessna-high-wing', 'air-tractor-yellow'];
+  const recordsByKey = Object.fromEntries(prompts.records.map((record) => [record.key, record]));
+  const assets = PLANE_ASSETS.filter(({ artworkId }) => artworkIds.includes(artworkId));
+
+  assert.equal(assets.length, 6);
+  assert.equal(new Set(assets.map(({ artworkId }) => artworkId)).size, 3);
+  assert.equal(new Set(assets.map(({ direction }) => direction)).size, 2);
+
+  for (const artworkId of artworkIds) {
+    const pair = assets.filter((asset) => asset.artworkId === artworkId);
+    assert.deepEqual(pair.map(({ direction }) => direction).sort(), ['left', 'right']);
+    assert.ok(pair.every(({ approvalStatus }) => approvalStatus === 'approved'));
+    const pairRecords = pair.map((asset) => recordsByKey[asset.promptRecordKey]);
+    assert.ok(pairRecords.every(({ status }) => status === 'approved'));
+    assert.equal(new Set(pairRecords.map(({ output }) => output.sha256)).size, 2, `${artworkId} directions must have independent bytes`);
+    for (const record of pairRecords) {
+      assert.match(record.generatedAt, /^\d{4}-\d{2}-\d{2}T/);
+      assert.match(record.output.sha256, /^[a-f0-9]{64}$/);
+      assert.match(record.prompt, /registration must be fictional or omitted/i);
+      assert.match(record.approvalNotes, /272 px hero and 46 px blip/);
+      assert.match(record.approvalNotes, /directional pair was reviewed together/i);
+    }
+  }
+
+  assert.ok(assets.filter(({ artworkId }) => artworkId === 'generic-bizjet-small').every(({ category }) => category === 'business'));
+  assert.ok(assets.filter(({ artworkId }) => artworkId === 'cessna-high-wing').every(({ category }) => category === 'general-aviation'));
+  assert.ok(assets.filter(({ artworkId }) => artworkId === 'air-tractor-yellow').every(({ category }) => category === 'crop-duster'));
+});
+
 test('PG-002 public manifest contains no generation runtime or private paths', async () => {
   const source = await readFile(join(root, 'assets', 'planes', 'v1', 'manifest.js'), 'utf8');
   for (const forbidden of ['.secrets', 'credential', 'private_key', 'access_token', 'vertexai', '.generated', 'proofs/']) {
