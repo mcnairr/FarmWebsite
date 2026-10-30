@@ -29,7 +29,7 @@ const FAILURE_TTL = 2 * 60_000;
  * @param {import('./types.js').RouteProvider[]} deps.routeProviders  tried in order until one knows the route
  * @param {import('./types.js').AircraftInfoProvider | null} deps.aircraftInfoProvider
  * @param {import('./cache.js').TtlCache} deps.cache
- * @param {{ warn: (key: string, message: string) => void }} deps.logger
+ * @param {{ info?: (event: string, fields?: Record<string, unknown>) => void, warn: (key: string, message: string, fields?: Record<string, unknown>) => void }} deps.logger
  * @param {(promise: Promise<unknown>) => void} [deps.defer]  keeps background enrichment alive (Workers ctx.waitUntil)
  * @param {() => number} [deps.now]
  */
@@ -110,7 +110,18 @@ export function createFlightFeed({ config, aircraftProvider, routeProviders, air
     try {
       positions = await aircraftProvider.getNearbyAircraft(farm.latitude, farm.longitude, config.queryRadiusNm, { scenario });
     } catch (err) {
-      logger.warn('positions', `aircraft positions unavailable: ${message(err)}`);
+      logger.warn('positions', `aircraft positions unavailable: ${message(err)}`, {
+        provider: aircraftProvider.source,
+        upstreamStatus: errorStatus(err),
+      });
+      logger.info?.('flight_snapshot_built', {
+        feedStatus: 'unavailable',
+        provider: aircraftProvider.source,
+        durationMs: Math.max(0, now() - snapshotAt),
+        positionsReceived: 0,
+        candidatesSelected: 0,
+        aircraftReturned: 0,
+      });
       return respond('unavailable', [], snapshotAt);
     }
 
@@ -123,7 +134,17 @@ export function createFlightFeed({ config, aircraftProvider, routeProviders, air
       })
       .sort((a, b) => relevanceScore(a) - relevanceScore(b) || a.id.localeCompare(b.id));
 
-    return respond(config.demo ? 'demo' : 'live', aircraft, snapshotAt);
+    const status = config.demo ? 'demo' : 'live';
+    logger.info?.('flight_snapshot_built', {
+      feedStatus: status,
+      provider: aircraftProvider.source,
+      durationMs: Math.max(0, now() - snapshotAt),
+      positionsReceived: positions.length,
+      candidatesSelected: candidates.length,
+      aircraftReturned: aircraft.length,
+      enrichmentLookups: candidates.length,
+    });
+    return respond(status, aircraft, snapshotAt);
   }
 
   /** @param {FeedStatus} status @param {NormalizedAircraft[]} aircraft @param {number} at */
@@ -322,4 +343,9 @@ function round(n, places) {
 /** @param {unknown} err */
 function message(err) {
   return err instanceof Error ? err.message : String(err);
+}
+
+/** @param {unknown} err */
+function errorStatus(err) {
+  return err && typeof err === 'object' && 'status' in err && typeof err.status === 'number' ? err.status : null;
 }

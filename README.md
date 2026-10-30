@@ -25,10 +25,10 @@ drawn in the blue sky of the farm photograph:
 - **Its route**, when known, runs through the plane: the origin city behind
   it, the destination ahead with an arrow (e.g. *From Denver DEN → To Chicago
   ORD*). The plane's position on the line reflects how far along the trip it is.
-- **A glass card below the plane** shows the aircraft type, flight number,
-  airline, altitude, speed in mph, and heading such as **NE (45°)**. A small line at the top gives
-  its registration and position, such as **● N8607M IS 15 MI NORTHEAST OF THE
-  FARM**, plus the position, such as **2 OF 4**, when several aircraft are
+- **A glass card below the plane** shows the aircraft type, airline, flight number,
+  tail number, altitude, speed in mph, and a 16-point heading such as **SSE (158°)**. A small line at the top gives
+  its position, such as **● 15 MI NORTHEAST OF THE FARM**, plus the position,
+  such as **2 OF 4**, when several aircraft are
   nearby.
 - **‹ and › on the sides of the card** step to the previous or next aircraft,
   wrapping around. Arrow keys work while the card has focus, and on phones
@@ -213,6 +213,7 @@ with Google and GitHub.
 | --- | --- |
 | Update the API after editing `api/` | `npm run deploy:api` again |
 | Watch live server logs | `npx wrangler@4 tail --config api/wrangler.toml` |
+| Search stored logs | Cloudflare dashboard → Workers & Pages → mcnair-flight-feed → Observability |
 | Hide the feature immediately | Set `FLIGHT_FEED_ENABLED = "false"` in `api/wrangler.toml` and redeploy, or empty the `<meta>` content and push |
 | Remove the Worker entirely | Empty the `<meta>` content and push, then `npx wrangler@4 delete --config api/wrangler.toml` |
 | See usage | Cloudflare dashboard → Workers & Pages → mcnair-flight-feed |
@@ -220,6 +221,14 @@ with Google and GitHub.
 **Usage limits:** the free plan allows 100,000 requests a day, about 400
 hours of visitors with the page open. If that's ever exceeded, the sky stays
 empty until the next day. The free plan never bills.
+
+**Logging:** Workers Logs is enabled at 100% sampling. Each request stores an
+invocation event plus a structured `http_response` event with the airplanes
+sent to the browser and latency, traffic, error, and saturation fields. Feed
+refreshes emit `flight_snapshot_built`; upstream and application problems emit
+`application_failure`. The free plan currently includes 200,000 log events per
+day with three-day retention. Cloudflare changes this on December 1, 2026 to
+0.5 GB ingested per day with seven-day retention.
 
 **Custom address (optional):** a name like `flights.mcnair-farms.com` instead
 of `workers.dev` requires the domain's DNS to move to Cloudflare. It's

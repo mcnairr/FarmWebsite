@@ -57,17 +57,24 @@ export function formatDistance(nm) {
   return miles < 1 ? 'Overhead' : `${number.format(Math.round(miles))} mi`;
 }
 
-const COMPASS = ['north', 'northeast', 'east', 'southeast', 'south', 'southwest', 'west', 'northwest'];
-const COMPASS_ABBREVIATIONS = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+const COMPASS = ['North', 'Northeast', 'East', 'Southeast', 'South', 'Southwest', 'West', 'Northwest'];
+
+// Four cardinal points plus all 12 compound points on a 16-point compass.
+const COMPASS_ABBREVIATIONS = [
+  'N', 'NNE', 'NE', 'ENE',
+  'E', 'ESE', 'SE', 'SSE',
+  'S', 'SSW', 'SW', 'WSW',
+  'W', 'WNW', 'NW', 'NNW',
+];
 
 /** @param {number} deg */
 export function compassWord(deg) {
   return COMPASS[Math.round((((deg % 360) + 360) % 360) / 45) % 8];
 }
 
-/** Short compass direction for a heading, such as NE. @param {number} deg */
+/** Short 16-point compass direction for a heading, such as SSE. @param {number} deg */
 export function compassAbbreviation(deg) {
-  return COMPASS_ABBREVIATIONS[Math.round((((deg % 360) + 360) % 360) / 45) % 8];
+  return COMPASS_ABBREVIATIONS[Math.round((((deg % 360) + 360) % 360) / 22.5) % 16];
 }
 
 /** Main label for an aircraft card. @param {Aircraft} a */

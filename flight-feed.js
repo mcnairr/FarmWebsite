@@ -45,6 +45,7 @@ async function start(endpointUrl, root) {
     card: $('.ff-card'),
     position: $('.ff-position'),
     callsign: $('.ff-callsign'),
+    registration: $('.ff-registration'),
     airline: $('.ff-airline'),
     type: $('.ff-type'),
     metrics: $('.ff-card-metrics'),
@@ -144,7 +145,7 @@ async function start(endpointUrl, root) {
     renderBadge();
   }
 
-  /** Registration and position of the selected aircraft relative to the farm. */
+  /** Position of the selected aircraft relative to the farm. */
   function renderBadge() {
     const state = /** @type {ViewState} */ (root.dataset.state);
     const selected = aircraft.find((a) => a.id === selectedId);
@@ -152,11 +153,10 @@ async function start(endpointUrl, root) {
       el.badge.textContent = '';
       return;
     }
-    const aircraftName = selected.registration ?? displayTitle(selected);
     const distance = formatDistance(selected.distanceFromFarmNm);
     el.badge.textContent = distance === 'Overhead'
-      ? `${aircraftName} is overhead the farm.`
-      : `${aircraftName} is ${distance} ${compassWord(selected.directionFromFarmDeg)} of the farm.`;
+      ? 'Overhead the Farm'
+      : `${distance} ${compassWord(selected.directionFromFarmDeg)} of the Farm`;
   }
 
   /** @param {Aircraft[]} next */
@@ -204,7 +204,13 @@ async function start(endpointUrl, root) {
   /** @param {Aircraft} a */
   function fillFlight(a) {
     renderBadge();
-    setText(el.callsign, displayTitle(a));
+    setText(el.callsign, a.callsign);
+    setText(el.registration, a.registration);
+    if (a.registration) {
+      el.registration.setAttribute('href', `https://airport-data.com/aircraft/${encodeURIComponent(a.registration)}`);
+    } else {
+      el.registration.removeAttribute('href');
+    }
     setText(el.airline, a.airline);
     setText(el.type, a.aircraftType);
     const altitude = formatAltitude(a.altitudeFt);

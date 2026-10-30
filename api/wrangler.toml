@@ -5,6 +5,17 @@ name = "mcnair-flight-feed"
 main = "src/worker.js"
 compatibility_date = "2026-10-01"
 
+# Persist searchable structured logs in Workers Observability. Invocation logs
+# provide Cloudflare CPU/wall-time metadata; application logs add flight data
+# and SRE golden-signal fields. Application logs record paths, never queries.
+[observability]
+enabled = true
+
+  [observability.logs]
+  enabled = true
+  invocation_logs = true
+  head_sampling_rate = 1
+
 # Non-secret settings. Demo mode must stay "false" here.
 [vars]
 FLIGHT_FEED_ENABLED = "true"

@@ -49,9 +49,17 @@ test('formats altitude and speed for visitors', () => {
 
 test('formats headings as short compass directions', () => {
   assert.equal(compassAbbreviation(0), 'N');
+  assert.equal(compassAbbreviation(22.5), 'NNE');
   assert.equal(compassAbbreviation(45), 'NE');
+  assert.equal(compassAbbreviation(67.5), 'ENE');
+  assert.equal(compassAbbreviation(112.5), 'ESE');
+  assert.equal(compassAbbreviation(157.5), 'SSE');
   assert.equal(compassAbbreviation(181), 'S');
+  assert.equal(compassAbbreviation(202.5), 'SSW');
+  assert.equal(compassAbbreviation(247.5), 'WSW');
+  assert.equal(compassAbbreviation(292.5), 'WNW');
   assert.equal(compassAbbreviation(315), 'NW');
+  assert.equal(compassAbbreviation(337.5), 'NNW');
   assert.equal(compassAbbreviation(360), 'N');
 });
 

@@ -300,6 +300,49 @@ test('handler: CORS for allowed origins only, 404 for other paths, no stack trac
   assert.doesNotMatch(text, /Error|at \w+ \(/);
 });
 
+test('handler logs returned aircraft and Google SRE golden signals', async () => {
+  const events = [];
+  const logger = {
+    info(event, fields) { events.push({ event, ...fields }); },
+    warn() {},
+    error() {},
+  };
+  const fetchImpl = fakeFetch(() => jsonResponse({ ac: [{
+    hex: 'abc123', flight: 'UAL248', r: 'N78511', t: 'B738', category: 'A3',
+    lat: 40.51, lon: -101.62, alt_baro: 24000, gs: 430, track: 80, seen_pos: 1,
+  }] }));
+  const app = createAppFromEnv({}, { fetchImpl, logger });
+
+  const response = await app.handle(new Request('http://x/api/flights', { headers: { 'cf-ray': 'test-ray' } }));
+  assert.equal(response.status, 200);
+
+  const log = events.find((event) => event.event === 'http_response');
+  assert.ok(log);
+  assert.equal(log.request.cfRay, 'test-ray');
+  assert.equal(log.response.aircraftCount, 1);
+  assert.equal(log.aircraft[0].id, 'abc123');
+  assert.equal(log.aircraft[0].registration, 'N78511');
+  assert.deepEqual(Object.keys(log.goldenSignals).sort(), ['errors', 'latency', 'saturation', 'traffic']);
+  assert.equal(log.goldenSignals.traffic.requests, 1);
+  assert.equal(log.goldenSignals.errors.count, 0);
+});
+
+test('upstream outages produce structured application failure events', async () => {
+  const warnings = [];
+  const logger = {
+    info() {},
+    warn(component, message, fields) { warnings.push({ component, message, ...fields }); },
+    error() {},
+  };
+  const app = createAppFromEnv({}, { fetchImpl: fakeFetch(() => jsonResponse({}, 503)), logger });
+
+  const body = await (await app.handle(new Request('http://x/api/flights'))).json();
+  assert.equal(body.status, 'unavailable');
+  assert.equal(warnings[0].component, 'positions');
+  assert.equal(warnings[0].provider, 'adsb_lol');
+  assert.equal(warnings[0].upstreamStatus, 503);
+});
+
 test('farm coordinates come from env, with validated fallback', () => {
   assert.equal(loadConfig({ FARM_LATITUDE: '40.61', FARM_LONGITUDE: '-101.70' }).farm.latitude, 40.61);
   assert.equal(loadConfig({ FARM_LATITUDE: 'banana' }).farm.latitude, 40.5097);
