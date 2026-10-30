@@ -108,6 +108,8 @@ test('response follows the public contract with converted units', async () => {
   assert.deepEqual(a.origin, { icao: 'KDEN', iata: 'DEN', city: 'Denver' });
   assert.deepEqual(a.destination, { icao: 'KORD', iata: 'ORD', city: 'Chicago' });
   assert.ok(a.routeProgress > 0.1 && a.routeProgress < 0.5, `progress ${a.routeProgress}`);
+  assert.ok(a.distanceFromOriginNm > 100 && a.distanceFromOriginNm < 300);
+  assert.ok(a.distanceToDestinationNm > 500 && a.distanceToDestinationNm < 800);
   assert.ok(Math.abs(a.distanceFromFarmNm - 2.2) < 0.15);
   assert.ok(a.directionFromFarmDeg > 320 && a.directionFromFarmDeg < 340);
   assert.equal(a.source, 'adsb_lol');

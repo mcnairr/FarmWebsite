@@ -9,6 +9,7 @@ import {
   placeTraffic,
   planePose,
   reconcileSelection,
+  routeDistanceLabel,
   routeLinePosition,
   stepSelection,
 } from '../flight-feed-model.js';
@@ -45,6 +46,12 @@ test('formats altitude and speed for visitors', () => {
   assert.equal(formatAltitude(null), null);
   assert.equal(formatSpeed(494.8), '495 mph');
   assert.equal(formatSpeed(null), null);
+});
+
+test('formats live route mileage for origin and destination labels', () => {
+  assert.equal(routeDistanceLabel(505, 'From'), '581 mi from');
+  assert.equal(routeDistanceLabel(1000, 'To'), '1,151 mi to');
+  assert.equal(routeDistanceLabel(null, 'From'), 'From');
 });
 
 test('formats headings as short compass directions', () => {

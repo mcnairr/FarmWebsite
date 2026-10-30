@@ -16,6 +16,7 @@ import {
   placeTraffic,
   planePose,
   reconcileSelection,
+  routeDistanceLabel,
   routeLinePosition,
   stepSelection,
 } from './flight-feed-model.js';
@@ -231,16 +232,17 @@ async function start(endpointUrl, root) {
 
     const routed = hasRoute(a);
     el.route.classList.toggle('has-route', routed);
-    fillEnd(el.from, routed ? airportLabel(a.origin) : null);
-    fillEnd(el.to, routed ? airportLabel(a.destination) : null);
+    fillEnd(el.from, routed ? airportLabel(a.origin) : null, routeDistanceLabel(a.distanceFromOriginNm, 'From'));
+    fillEnd(el.to, routed ? airportLabel(a.destination) : null, routeDistanceLabel(a.distanceToDestinationNm, 'To'));
     const position = routed ? routeLinePosition(a.routeProgress) : 0.5;
     el.lineDone.style.flexGrow = String(position);
     el.lineAhead.style.flexGrow = String(1 - position);
   }
 
-  /** @param {HTMLElement} end @param {{ city: string, code: string | null } | null} label */
-  function fillEnd(end, label) {
+  /** @param {HTMLElement} end @param {{ city: string, code: string | null } | null} label @param {string} direction */
+  function fillEnd(end, label, direction) {
     end.hidden = !label;
+    setText(/** @type {HTMLElement} */ (end.querySelector('.ff-end-label')), label ? direction : null);
     setText(/** @type {HTMLElement} */ (end.querySelector('.ff-city')), label?.city ?? null);
     setText(/** @type {HTMLElement} */ (end.querySelector('.ff-code')), label?.code ?? null);
   }

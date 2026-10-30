@@ -107,6 +107,8 @@
  * @property {PublicAirport | null} destination
  * @property {boolean} routeKnown
  * @property {number | null} routeProgress  0–1 along origin→destination
+ * @property {number | null} distanceFromOriginNm
+ * @property {number | null} distanceToDestinationNm
  * @property {number} dataAgeSeconds
  * @property {FeedSource} source
  */

@@ -241,7 +241,10 @@ function toPublicAircraft(c, route, info) {
     registration = null;
   }
   const plausible = route ? routeIsPlausible(route, c) : false;
-  const progress = plausible && route ? routeProgress(route, c) : null;
+  const distances = plausible && route ? routeDistances(route, c) : null;
+  const progress = distances && distances.fromOriginNm + distances.toDestinationNm > 0
+    ? Math.min(1, Math.max(0, distances.fromOriginNm / (distances.fromOriginNm + distances.toDestinationNm)))
+    : null;
   return {
     id: c.id,
     callsign: c.callsign,
@@ -263,6 +266,8 @@ function toPublicAircraft(c, route, info) {
     destination: plausible && route ? publicAirport(route.destination) : null,
     routeKnown: plausible,
     routeProgress: progress === null ? null : round(progress, 2),
+    distanceFromOriginNm: distances === null ? null : round(distances.fromOriginNm, 1),
+    distanceToDestinationNm: distances === null ? null : round(distances.toDestinationNm, 1),
     dataAgeSeconds: Math.round(c.seenSeconds),
     source: c.source,
   };
@@ -295,14 +300,21 @@ export function routeIsPlausible(route, c) {
   return true;
 }
 
-/** @param {FlightRoute} route @param {Candidate} c @returns {number | null} */
-function routeProgress(route, c) {
+/**
+ * Great-circle mileage already flown from the origin and still remaining to
+ * the destination. Airport coordinates stay server-side; only distances are
+ * included in the public response.
+ * @param {FlightRoute} route @param {Candidate} c
+ * @returns {{ fromOriginNm: number, toDestinationNm: number } | null}
+ */
+function routeDistances(route, c) {
   const o = route.origin;
   const d = route.destination;
   if (!o || !d || o.latitude === null || o.longitude === null || d.latitude === null || d.longitude === null) return null;
-  const done = distanceNm(o.latitude, o.longitude, c.latitude, c.longitude);
-  const left = distanceNm(c.latitude, c.longitude, d.latitude, d.longitude);
-  return done + left > 0 ? Math.min(1, Math.max(0, done / (done + left))) : null;
+  return {
+    fromOriginNm: distanceNm(o.latitude, o.longitude, c.latitude, c.longitude),
+    toDestinationNm: distanceNm(c.latitude, c.longitude, d.latitude, d.longitude),
+  };
 }
 
 /** @param {Airport | null} a */

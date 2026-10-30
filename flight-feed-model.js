@@ -57,6 +57,13 @@ export function formatDistance(nm) {
   return miles < 1 ? 'Overhead' : `${number.format(Math.round(miles))} mi`;
 }
 
+/** Mileage prefix for an origin or destination label. */
+export function routeDistanceLabel(nm, direction) {
+  if (nm === null || nm === undefined || !Number.isFinite(nm)) return direction;
+  const miles = Math.max(0, Math.round(nm * 1.15078));
+  return `${number.format(miles)} mi ${direction.toLowerCase()}`;
+}
+
 const COMPASS = ['North', 'Northeast', 'East', 'Southeast', 'South', 'Southwest', 'West', 'Northwest'];
 
 // Four cardinal points plus all 12 compound points on a 16-point compass.
