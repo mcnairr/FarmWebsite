@@ -1,0 +1,85 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import test from 'node:test';
+import {
+  LEGACY_PLANE_FALLBACKS,
+  PLANE_APPROVAL_STATUSES,
+  PLANE_ASSETS,
+  PLANE_ASSETS_BY_KEY,
+  PLANE_CATEGORIES,
+  PLANE_DIRECTIONS,
+  PLANE_SIZE_CLASSES,
+} from '../assets/planes/v1/manifest.js';
+
+const root = process.cwd();
+const prompts = JSON.parse(await readFile(join(root, 'design', 'plane-art', 'prompts.json'), 'utf8'));
+
+test('PG-002 manifest has unique stable directional records and controlled values', () => {
+  assert.equal(new Set(PLANE_ASSETS.map(({ key }) => key)).size, PLANE_ASSETS.length);
+  assert.equal(new Set(PLANE_ASSETS.map(({ artworkId, direction }) => `${artworkId}:${direction}`)).size, PLANE_ASSETS.length);
+  assert.deepEqual(Object.keys(PLANE_ASSETS_BY_KEY), PLANE_ASSETS.map(({ key }) => key));
+
+  for (const asset of PLANE_ASSETS) {
+    assert.equal(asset.key, `${asset.artworkId}:${asset.direction}`);
+    assert.ok(PLANE_DIRECTIONS.includes(asset.direction));
+    assert.ok(PLANE_CATEGORIES.includes(asset.category));
+    assert.ok(PLANE_SIZE_CLASSES.includes(asset.sizeClass));
+    assert.ok(PLANE_APPROVAL_STATUSES.includes(asset.approvalStatus));
+    assert.equal(asset.url, `/assets/planes/v1/${asset.artworkId}-${asset.direction}.webp`);
+    assert.deepEqual([asset.width, asset.height], [960, 330]);
+    assert.ok(Array.isArray(asset.applicableIcaoTypes));
+    assert.ok(Array.isArray(asset.allowedCallsignPrefixes));
+  }
+
+  for (const artworkId of ['aal-narrowbody', 'generic-narrowbody', 'cessna-high-wing']) {
+    const directions = PLANE_ASSETS.filter((asset) => asset.artworkId === artworkId)
+      .map(({ direction }) => direction).sort();
+    assert.deepEqual(directions, ['left', 'right']);
+  }
+});
+
+test('PG-002 fallback chains are cycle-free and terminate safely', () => {
+  const terminals = new Set(LEGACY_PLANE_FALLBACKS);
+  for (const start of PLANE_ASSETS) {
+    const visited = new Set();
+    let current = start;
+    while (!terminals.has(current.fallbackId)) {
+      assert.ok(!visited.has(current.key), `fallback cycle from ${start.key}`);
+      visited.add(current.key);
+      current = PLANE_ASSETS_BY_KEY[`${current.fallbackId}:${start.direction}`];
+      assert.ok(current, `missing fallback ${start.direction} record for ${start.key}`);
+    }
+  }
+});
+
+test('PG-002 prompt provenance and manifest output links are reciprocal', () => {
+  assert.equal(prompts.schemaVersion, 1);
+  assert.equal(prompts.records.length, PLANE_ASSETS.length);
+  assert.equal(new Set(prompts.records.map(({ key }) => key)).size, prompts.records.length);
+  const byKey = Object.fromEntries(prompts.records.map((record) => [record.key, record]));
+
+  for (const asset of PLANE_ASSETS) {
+    const record = byKey[asset.promptRecordKey];
+    assert.ok(record, `missing ${asset.promptRecordKey}`);
+    assert.equal(record.artworkId, asset.artworkId);
+    assert.equal(record.direction, asset.direction);
+    assert.equal(record.modelId, asset.generationModel);
+    assert.equal(record.output.manifestKey, asset.key);
+    assert.equal(record.output.url, asset.url);
+    for (const field of ['provider', 'projectId', 'modelId', 'prompt', 'candidateNotes', 'approvalNotes']) {
+      assert.equal(typeof record[field], 'string');
+      assert.ok(record[field].length > 0);
+    }
+    assert.ok(Array.isArray(record.references));
+    assert.equal(record.generatedAt, null);
+    assert.equal(record.output.sha256, null);
+  }
+});
+
+test('PG-002 public manifest contains no generation runtime or private paths', async () => {
+  const source = await readFile(join(root, 'assets', 'planes', 'v1', 'manifest.js'), 'utf8');
+  for (const forbidden of ['.secrets', 'credential', 'private_key', 'access_token', 'vertexai', '.generated', 'proofs/']) {
+    assert.equal(source.toLowerCase().includes(forbidden), false, `public manifest contains ${forbidden}`);
+  }
+});

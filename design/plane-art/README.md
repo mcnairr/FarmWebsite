@@ -133,3 +133,50 @@ edge-connected matte (or recorded manual repair), the 960 × 330 normalization
 contract, quality-90 WebP encoding, and the 40–110 KB approval gate. Generated
 art is never published automatically; visual approval over the production sky
 and checkerboard remains mandatory.
+
+## Version 1 manifest and provenance contracts
+
+[`../../assets/planes/v1/manifest.js`](../../assets/planes/v1/manifest.js) is the
+canonical public contract. It exports controlled values for direction, category,
+visual size class, and approval status, followed by one record per directional
+asset. A record's stable key is `<artwork-id>:<direction>`; it does not change
+when an image is regenerated. Left and right are independent records and files,
+never browser-mirrored variants.
+
+The following fields are hand-authored: `key`, `artworkId`, `direction`,
+`category`, `url`, `sizeClass`, ICAO mappings, allowed callsign prefixes,
+`fallbackId`, and `promptRecordKey`. URLs are reviewed string constants. Runtime
+code may normalize an API value and use it in a table lookup, but must never put
+a callsign, ICAO type, airline name, or other API string into a file path.
+
+The processing pipeline supplies `width` and `height` from the normalized output
+and the generation workflow supplies `generationModel`. A reviewer sets
+`approvalStatus`; generation and processing never promote a candidate to
+`approved`. PG-002 records use `planned` because their production WebPs have not
+yet been generated.
+
+[`prompts.json`](prompts.json) is development-only provenance. Every manifest
+record links to exactly one prompt record, and each prompt record links back by
+manifest key and authored output URL. Provider, non-secret project ID, pinned
+model ID, complete prompt, references, generation timestamp, candidate notes,
+approval notes, and output SHA-256 are recorded there. `generatedAt` and
+`sha256` remain `null` only while an asset is planned; generation fills the UTC
+timestamp and processing fills the hash before approval.
+
+Validation enforces controlled values, stable-key uniqueness, exactly one record
+per artwork/direction pair, 960 × 330 intrinsic dimensions, matching authored
+v1 URLs, reciprocal prompt/output links, and complete provenance fields. It also
+walks same-direction fallbacks: each chain must be cycle-free and end at a
+generic artwork record or `legacy-svg-jet` / `legacy-svg-prop`. The legacy IDs
+refer to the existing inline SVG load-error fallback and are deliberately not
+asset URLs.
+
+### Adding a future asset-library version
+
+A future library is added beside this one, for example
+`assets/planes/v2/manifest.js` and `/assets/planes/v2/*.webp`. Do not replace v1
+files in place or reuse their URLs for different bytes. The application imports
+one explicit manifest version per deployment; already open pages can continue
+using cached v1 URLs while newly deployed pages select v2. Keep v1 published
+until its cache lifetime and any supported rollback window have passed. Prompt
+keys and output links include their version so v1 and v2 provenance can coexist.

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "key": "aal-narrowbody:right:v1", "artworkId": "aal-narrowbody", "direction": "right",
+      "provider": "Google Cloud Vertex AI", "projectId": "simbusiness-13e1f", "modelId": "gemini-3.1-flash-image",
+      "prompt": "Create the approved lightly polished photorealistic American Airlines narrowbody treatment, nose pointing right, with accurate narrowbody anatomy, exactly two under-wing engines, retracted landing gear, readable correctly oriented primary branding, the full aircraft in frame, and a plain white removable background. Apply the shared production constraints in design/plane-art/README.md.",
+      "references": ["design/plane-art/proofs/vertex/american-branded.png", "design/plane-art/README.md"],
+      "generatedAt": null, "candidateNotes": "Contract example; generation and candidate selection are pending.",
+      "approvalNotes": "Not approved. A human must review the processed output over the production sky and checkerboard.",
+      "output": { "manifestKey": "aal-narrowbody:right", "url": "/assets/planes/v1/aal-narrowbody-right.webp", "sha256": null }
+    },
+    {
+      "key": "aal-narrowbody:left:v1", "artworkId": "aal-narrowbody", "direction": "left",
+      "provider": "Google Cloud Vertex AI", "projectId": "simbusiness-13e1f", "modelId": "gemini-3.1-flash-image",
+      "prompt": "Using the approved right-facing American Airlines narrowbody as a style and livery reference, create an independent left-facing view with accurate narrowbody anatomy, exactly two under-wing engines, retracted landing gear, and readable correctly oriented primary branding. Do not mirror text. Apply the shared production constraints in design/plane-art/README.md.",
+      "references": ["aal-narrowbody:right:v1", "design/plane-art/README.md"],
+      "generatedAt": null, "candidateNotes": "Contract example; generate only after the right-facing candidate is approved.",
+      "approvalNotes": "Not approved. Review direction and branding independently from the right-facing asset.",
+      "output": { "manifestKey": "aal-narrowbody:left", "url": "/assets/planes/v1/aal-narrowbody-left.webp", "sha256": null }
+    },
+    {
+      "key": "generic-narrowbody:right:v1", "artworkId": "generic-narrowbody", "direction": "right",
+      "provider": "Google Cloud Vertex AI", "projectId": "simbusiness-13e1f", "modelId": "gemini-3.1-flash-image",
+      "prompt": "Create the approved lightly polished photorealistic neutral narrowbody fallback, nose pointing right, with realistic anatomy, exactly two under-wing engines, retracted landing gear, no airline identity or text, the full aircraft in frame, and a plain white removable background. Apply the shared production constraints in design/plane-art/README.md.",
+      "references": ["design/plane-art/proofs/vertex/american-inspired-no-logo.png", "design/plane-art/README.md"],
+      "generatedAt": null, "candidateNotes": "Contract example; generation and candidate selection are pending.",
+      "approvalNotes": "Not approved. Confirm that no recognizable brand mark or text is present.",
+      "output": { "manifestKey": "generic-narrowbody:right", "url": "/assets/planes/v1/generic-narrowbody-right.webp", "sha256": null }
+    },
+    {
+      "key": "generic-narrowbody:left:v1", "artworkId": "generic-narrowbody", "direction": "left",
+      "provider": "Google Cloud Vertex AI", "projectId": "simbusiness-13e1f", "modelId": "gemini-3.1-flash-image",
+      "prompt": "Using the approved right-facing neutral narrowbody as a style reference, create an independent left-facing view with realistic anatomy, exactly two under-wing engines, retracted landing gear, and no airline identity or text. Apply the shared production constraints in design/plane-art/README.md.",
+      "references": ["generic-narrowbody:right:v1", "design/plane-art/README.md"],
+      "generatedAt": null, "candidateNotes": "Contract example; generate only after the right-facing candidate is approved.",
+      "approvalNotes": "Not approved. Confirm direction and absence of branding independently.",
+      "output": { "manifestKey": "generic-narrowbody:left", "url": "/assets/planes/v1/generic-narrowbody-left.webp", "sha256": null }
+    },
+    {
+      "key": "cessna-high-wing:right:v1", "artworkId": "cessna-high-wing", "direction": "right",
+      "provider": "Google Cloud Vertex AI", "projectId": "simbusiness-13e1f", "modelId": "gemini-3.1-flash-image",
+      "prompt": "Create the approved lightly polished photorealistic classic high-wing Cessna-family propeller aircraft, nose pointing right, with one tractor propeller, fixed tricycle landing gear, believable light-aircraft anatomy, tasteful original paint, no real registration or branding, the full aircraft in frame, and a plain white removable background. Apply the shared production constraints in design/plane-art/README.md.",
+      "references": ["design/plane-art/README.md"],
+      "generatedAt": null, "candidateNotes": "Contract example; generation and candidate selection are pending.",
+      "approvalNotes": "Not approved. Confirm propeller, high wing, fixed gear, and fictional-or-absent registration.",
+      "output": { "manifestKey": "cessna-high-wing:right", "url": "/assets/planes/v1/cessna-high-wing-right.webp", "sha256": null }
+    },
+    {
+      "key": "cessna-high-wing:left:v1", "artworkId": "cessna-high-wing", "direction": "left",
+      "provider": "Google Cloud Vertex AI", "projectId": "simbusiness-13e1f", "modelId": "gemini-3.1-flash-image",
+      "prompt": "Using the approved right-facing high-wing Cessna-family aircraft as a style reference, create an independent left-facing view with one tractor propeller, fixed tricycle landing gear, believable anatomy, tasteful original paint, and no real registration or branding. Apply the shared production constraints in design/plane-art/README.md.",
+      "references": ["cessna-high-wing:right:v1", "design/plane-art/README.md"],
+      "generatedAt": null, "candidateNotes": "Contract example; generate only after the right-facing candidate is approved.",
+      "approvalNotes": "Not approved. Confirm direction and private-aircraft identity rules independently.",
+      "output": { "manifestKey": "cessna-high-wing:left", "url": "/assets/planes/v1/cessna-high-wing-left.webp", "sha256": null }
+    }
+  ]
+}
