@@ -22,7 +22,7 @@ FLIGHT_FEED_ENABLED = "true"
 FLIGHT_FEED_DEMO = "false"
 FLIGHT_QUERY_RADIUS_NM = "50"
 FLIGHT_DISPLAY_RADIUS_NM = "30"
-FLIGHT_REFRESH_SECONDS = "15"
+FLIGHT_REFRESH_SECONDS = "10"
 FLIGHT_ALLOWED_ORIGINS = "https://www.mcnair-farms.com,https://mcnair-farms.com"
 
 # Exact farm coordinates are secrets, not vars, so they stay out of git:
