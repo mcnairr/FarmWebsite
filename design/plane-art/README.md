@@ -144,6 +144,15 @@ and checkerboard remains mandatory.
 
 ## Version 1 manifest and provenance contracts
 
+[`../../plane-art.js`](../../plane-art.js) is the pure, DOM-free Phase 1 runtime
+resolver. `planeFamily(icaoType, aircraftClass)` classifies only normalized
+ICAO values from an authored table, `planeArtwork(aircraft)` applies the approved
+brand/partnership/special/generic precedence, and `planeAsset(artworkId,
+direction)` returns an independent reviewed manifest record. Unknown or hostile
+values fall back to authored generic records; they are never interpolated into
+asset paths. Callers pass `planePose(...).facing` as the direction. Legacy SVGs
+remain an image-load error fallback and are not normal resolver results.
+
 [`../../assets/planes/v1/manifest.js`](../../assets/planes/v1/manifest.js) is the
 canonical public contract. It exports controlled values for direction, category,
 visual size class, and approval status, followed by one record per directional

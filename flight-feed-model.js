@@ -3,6 +3,8 @@
 // stepping, display formatting, plane pose and sky placement. Kept separate
 // from flight-feed.js so it can be unit tested in Node.
 
+export { planeAsset, planeArtwork, planeFamily } from './plane-art.js';
+
 /** @typedef {import('./api/src/types.js').NormalizedAircraft} Aircraft */
 
 const number = new Intl.NumberFormat('en-US');
