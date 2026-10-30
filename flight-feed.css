@@ -257,14 +257,12 @@
 .ff-position::before { content: "·"; margin-right: .6rem; }
 .ff-card-body { display: flex; align-items: stretch; gap: .8rem; }
 .ff-card-id { display: flex; flex-direction: column; min-width: 0; }
-.ff-type { font-size: 1.12rem; font-weight: 700; letter-spacing: .02em; line-height: 1.2; }
+.ff-type { font-size: .86rem; line-height: 1.35; }
 .ff-flight-id { display: flex; flex-wrap: wrap; gap: 0 .65rem; }
 .ff-callsign,
-.ff-registration,
 .ff-airline { font-size: .86rem; line-height: 1.35; }
-.ff-registration { color: inherit; text-decoration-color: currentColor; text-underline-offset: .14em; }
+.ff-registration { color: inherit; font-size: 1.12rem; font-weight: 700; letter-spacing: .02em; line-height: 1.2; text-decoration-color: currentColor; text-underline-offset: .14em; }
 .ff-registration:hover { text-decoration-thickness: 2px; }
-.ff-separator { color: var(--ff-muted); }
 .ff-airline { color: var(--ff-muted); letter-spacing: .02em; }
 .ff-card-metrics {
   display: flex;
@@ -324,9 +322,9 @@
   .ff-card-main { padding: .55rem .5rem .65rem; }
   .ff-card-body { gap: 1.1rem; }
   .ff-card-metrics { padding-left: 1.1rem; }
-  .ff-type { font-size: 1.3rem; }
+  .ff-type { font-size: .95rem; }
   .ff-callsign { font-size: .95rem; }
-  .ff-registration { font-size: .95rem; }
+  .ff-registration { font-size: 1.3rem; }
   .ff-airline { font-size: .95rem; }
   .ff-metrics-text { font-size: .95rem; }
   .ff-eyebrow { font-size: .62rem; }
