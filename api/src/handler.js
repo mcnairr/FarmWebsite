@@ -71,6 +71,24 @@ export function createApp(config, { fetchImpl, now = Date.now, logger = createSt
       const aircraft = body?.aircraft ?? [];
       const failed = response.status >= 500 || body?.status === 'unavailable';
       const responseBytes = Number(response.headers.get('content-length')) || null;
+
+      // Emit each aircraft as its own event so Workers Observability can group
+      // and count distinct airplanes without needing to unnest an array.
+      for (const plane of aircraft) {
+        logger.info?.('aircraft_observed', {
+          aircraftKey: plane.registration || plane.id,
+          aircraftId: plane.id,
+          registration: plane.registration ?? 'unknown',
+          callsign: plane.callsign ?? 'unknown',
+          airline: plane.airline ?? 'unknown',
+          equipment: plane.aircraftType ?? 'unknown',
+          icaoType: plane.icaoType ?? 'unknown',
+          aircraftClass: plane.aircraftClass,
+          source: plane.source,
+          routeKnown: plane.routeKnown,
+        });
+      }
+
       logger.info?.('http_response', {
         request: {
           method: request.method,

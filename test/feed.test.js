@@ -327,6 +327,16 @@ test('handler logs returned aircraft and Google SRE golden signals', async () =>
   assert.deepEqual(Object.keys(log.goldenSignals).sort(), ['errors', 'latency', 'saturation', 'traffic']);
   assert.equal(log.goldenSignals.traffic.requests, 1);
   assert.equal(log.goldenSignals.errors.count, 0);
+
+  const aircraftLog = events.find((event) => event.event === 'aircraft_observed');
+  assert.ok(aircraftLog);
+  assert.equal(aircraftLog.aircraftKey, 'N78511');
+  assert.equal(aircraftLog.aircraftId, 'abc123');
+  assert.equal(aircraftLog.registration, 'N78511');
+  assert.equal(aircraftLog.callsign, 'UAL248');
+  assert.equal(aircraftLog.airline, 'United Airlines');
+  assert.equal(aircraftLog.equipment, 'Boeing 737-800');
+  assert.equal(aircraftLog.icaoType, 'B738');
 });
 
 test('upstream outages produce structured application failure events', async () => {

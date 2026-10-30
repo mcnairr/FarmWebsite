@@ -225,10 +225,12 @@ empty until the next day. The free plan never bills.
 **Logging:** Workers Logs is enabled at 100% sampling. Each request stores an
 invocation event plus a structured `http_response` event with the airplanes
 sent to the browser and latency, traffic, error, and saturation fields. Feed
-refreshes emit `flight_snapshot_built`; upstream and application problems emit
-`application_failure`. The free plan currently includes 200,000 log events per
-day with three-day retention. Cloudflare changes this on December 1, 2026 to
-0.5 GB ingested per day with seven-day retention.
+refreshes emit `flight_snapshot_built`, and each returned airplane emits an
+`aircraft_observed` event with top-level airline, equipment, registration, and
+aircraft identity fields for grouping in Workers Observability. Upstream and
+application problems emit `application_failure`. The free plan currently
+includes 200,000 log events per day with three-day retention. Cloudflare changes
+this on December 1, 2026 to 0.5 GB ingested per day with seven-day retention.
 
 **Custom address (optional):** a name like `flights.mcnair-farms.com` instead
 of `workers.dev` requires the domain's DNS to move to Cloudflare. It's
