@@ -283,6 +283,22 @@ Processing never changes `approvalStatus`: a reviewer still updates manifest
 and prompt metadata and approves both the sky/checkerboard proof and directional
 pair after processing.
 
+## Automated library validation (PG-006)
+
+Run `npm run plane-art:validate` locally and in CI before publishing plane-art
+changes. The command reports every detected problem in one run. It validates
+stable IDs and authored URLs, reciprocal prompt links, mapping uniqueness and
+category compatibility, terminating fallbacks, and hostile-input containment.
+It also scans public modules and assets for credential material and Vertex
+runtime/SDK references.
+
+Planned records may point to files that have not been generated yet. Once a
+manifest direction or prompt record is marked `approved`, validation requires
+an approved left/right pair, both production WebPs, the 960 × 330 canvas and
+alpha channel, the byte ceiling, and a SHA-256 that matches approved prompt
+metadata. Approval therefore cannot get ahead of either its counterpart,
+provenance, or committed image.
+
 ### Adding a future asset-library version
 
 A future library is added beside this one, for example

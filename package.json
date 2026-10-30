@@ -12,6 +12,7 @@
     "plane-art:reference": "node scripts/build-plane-art-reference.mjs",
     "plane-art:prompts": "node scripts/build-plane-prompt-catalog.mjs",
     "plane-art:validate-prompts": "node scripts/validate-plane-prompt-catalog.mjs",
+    "plane-art:validate": "node scripts/validate-plane-library.mjs",
     "plane-art:generate": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/generate-plane-library.ps1",
     "plane-art:process": "node scripts/process-plane-art.mjs",
     "test": "node --test \"test/*.test.js\"",
