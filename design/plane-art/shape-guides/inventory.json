@@ -1,0 +1,731 @@
+{
+  "schemaVersion": 1,
+  "policy": {
+    "description": "Shape guides must be original project-authored diagrams or inputs with documented reuse permission. Unlicensed model/reference inputs are prohibited.",
+    "missingGuideBehavior": "Block generation and record the task; never substitute a merely similar or incompatible silhouette."
+  },
+  "guides": [
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original 737/A320-class narrowbody shape guide before generation.",
+      "id": "737-a320-class-narrowbody",
+      "family": "737/A320-class narrowbody",
+      "treatmentIds": [
+        "aal-narrowbody",
+        "ual-narrowbody",
+        "dal-narrowbody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original 787/777-class widebody shape guide before generation.",
+      "id": "787-777-class-widebody",
+      "family": "787/777-class widebody",
+      "treatmentIds": [
+        "aal-widebody",
+        "ual-widebody",
+        "baw-widebody",
+        "klm-widebody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original A330/A350-class widebody shape guide before generation.",
+      "id": "a330-a350-class-widebody",
+      "family": "A330/A350-class widebody",
+      "treatmentIds": [
+        "dal-widebody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original 737-class narrowbody shape guide before generation.",
+      "id": "737-class-narrowbody",
+      "family": "737-class narrowbody",
+      "treatmentIds": [
+        "swa-narrowbody",
+        "asa-narrowbody",
+        "scx-narrowbody",
+        "wja-narrowbody",
+        "amx-narrowbody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original A320-class narrowbody shape guide before generation.",
+      "id": "a320-class-narrowbody",
+      "family": "A320-class narrowbody",
+      "treatmentIds": [
+        "jbu-narrowbody",
+        "fft-narrowbody",
+        "nks-narrowbody",
+        "aay-narrowbody",
+        "voi-narrowbody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original A321-class narrowbody shape guide before generation.",
+      "id": "a321-class-narrowbody",
+      "family": "A321-class narrowbody",
+      "treatmentIds": [
+        "hal-narrowbody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original A330/787-class widebody shape guide before generation.",
+      "id": "a330-787-class-widebody",
+      "family": "A330/787-class widebody",
+      "treatmentIds": [
+        "hal-widebody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original A220/737-class narrowbody shape guide before generation.",
+      "id": "a220-737-class-narrowbody",
+      "family": "A220/737-class narrowbody",
+      "treatmentIds": [
+        "aca-narrowbody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original 787-class widebody shape guide before generation.",
+      "id": "787-class-widebody",
+      "family": "787-class widebody",
+      "treatmentIds": [
+        "aca-widebody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original A350/747-class widebody shape guide before generation.",
+      "id": "a350-747-class-widebody",
+      "family": "A350/747-class widebody",
+      "treatmentIds": [
+        "dlh-widebody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original 777/A350-class widebody shape guide before generation.",
+      "id": "777-a350-class-widebody",
+      "family": "777/A350-class widebody",
+      "treatmentIds": [
+        "afr-widebody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original MD-11 trijet shape guide before generation.",
+      "id": "md-11-trijet",
+      "family": "MD-11 trijet",
+      "treatmentIds": [
+        "fdx-trijet",
+        "ups-trijet"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original 767/777-class cargo widebody shape guide before generation.",
+      "id": "767-777-class-cargo-widebody",
+      "family": "767/777-class cargo widebody",
+      "treatmentIds": [
+        "fdx-widebody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original 767-class cargo widebody shape guide before generation.",
+      "id": "767-class-cargo-widebody",
+      "family": "767-class cargo widebody",
+      "treatmentIds": [
+        "ups-widebody",
+        "dhl-widebody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original 747/767-class cargo widebody shape guide before generation.",
+      "id": "747-767-class-cargo-widebody",
+      "family": "747/767-class cargo widebody",
+      "treatmentIds": [
+        "gti-widebody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original E175/CRJ-class regional jet shape guide before generation.",
+      "id": "e175-crj-class-regional-jet",
+      "family": "E175/CRJ-class regional jet",
+      "treatmentIds": [
+        "american-eagle-regional",
+        "delta-connection-regional",
+        "united-express-regional"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original E175-class regional jet shape guide before generation.",
+      "id": "e175-class-regional-jet",
+      "family": "E175-class regional jet",
+      "treatmentIds": [
+        "alaska-regional"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original regional jet shape guide before generation.",
+      "id": "regional-jet",
+      "family": "regional jet",
+      "treatmentIds": [
+        "generic-regional"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original narrowbody shape guide before generation.",
+      "id": "narrowbody",
+      "family": "narrowbody",
+      "treatmentIds": [
+        "generic-narrowbody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original widebody shape guide before generation.",
+      "id": "widebody",
+      "family": "widebody",
+      "treatmentIds": [
+        "generic-widebody"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Boeing 717 rear-engine jet shape guide before generation.",
+      "id": "boeing-717-rear-engine-jet",
+      "family": "Boeing 717 rear-engine jet",
+      "treatmentIds": [
+        "dal-b717"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Boeing 757 long narrowbody shape guide before generation.",
+      "id": "boeing-757-long-narrowbody",
+      "family": "Boeing 757 long narrowbody",
+      "treatmentIds": [
+        "dal-b757"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Boeing 787 Dreamliner shape guide before generation.",
+      "id": "boeing-787-dreamliner",
+      "family": "Boeing 787 Dreamliner",
+      "treatmentIds": [
+        "ual-b787"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Boeing 777 widebody shape guide before generation.",
+      "id": "boeing-777-widebody",
+      "family": "Boeing 777 widebody",
+      "treatmentIds": [
+        "aal-b777"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Boeing 747-8 jumbo shape guide before generation.",
+      "id": "boeing-747-8-jumbo",
+      "family": "Boeing 747-8 jumbo",
+      "treatmentIds": [
+        "dlh-b747"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Airbus A380 super-jumbo shape guide before generation.",
+      "id": "airbus-a380-super-jumbo",
+      "family": "Airbus A380 super-jumbo",
+      "treatmentIds": [
+        "baw-a380"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Airbus A220 shape guide before generation.",
+      "id": "airbus-a220",
+      "family": "Airbus A220",
+      "treatmentIds": [
+        "jbu-a220"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Embraer E190 shape guide before generation.",
+      "id": "embraer-e190",
+      "family": "Embraer E190",
+      "treatmentIds": [
+        "jbu-e190"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Bombardier CRJ-200 shape guide before generation.",
+      "id": "bombardier-crj-200",
+      "family": "Bombardier CRJ-200",
+      "treatmentIds": [
+        "united-express-crj200"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Bombardier CRJ-900 shape guide before generation.",
+      "id": "bombardier-crj-900",
+      "family": "Bombardier CRJ-900",
+      "treatmentIds": [
+        "delta-connection-crj900"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original midsize business jet shape guide before generation.",
+      "id": "midsize-business-jet",
+      "family": "midsize business jet",
+      "treatmentIds": [
+        "netjets-bizjet",
+        "flexjet-bizjet"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Citation/Phenom-class jet shape guide before generation.",
+      "id": "citation-phenom-class-jet",
+      "family": "Citation/Phenom-class jet",
+      "treatmentIds": [
+        "generic-bizjet-small"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Gulfstream/Global-class jet shape guide before generation.",
+      "id": "gulfstream-global-class-jet",
+      "family": "Gulfstream/Global-class jet",
+      "treatmentIds": [
+        "generic-bizjet-large"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original C150/C172/C182/C206 shape guide before generation.",
+      "id": "c150-c172-c182-c206",
+      "family": "C150/C172/C182/C206",
+      "treatmentIds": [
+        "cessna-high-wing"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original C208 Caravan shape guide before generation.",
+      "id": "c208-caravan",
+      "family": "C208 Caravan",
+      "treatmentIds": [
+        "cessna-caravan"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original PA-28/PA-32/PA-46 shape guide before generation.",
+      "id": "pa-28-pa-32-pa-46",
+      "family": "PA-28/PA-32/PA-46",
+      "treatmentIds": [
+        "piper-low-wing"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original SR20/SR22 shape guide before generation.",
+      "id": "sr20-sr22",
+      "family": "SR20/SR22",
+      "treatmentIds": [
+        "cirrus-low-wing"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Bonanza/Baron shape guide before generation.",
+      "id": "bonanza-baron",
+      "family": "Bonanza/Baron",
+      "treatmentIds": [
+        "beech-piston"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original King Air twin turboprop shape guide before generation.",
+      "id": "king-air-twin-turboprop",
+      "family": "King Air twin turboprop",
+      "treatmentIds": [
+        "king-air"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original PC-12 shape guide before generation.",
+      "id": "pc-12",
+      "family": "PC-12",
+      "treatmentIds": [
+        "pilatus-pc12"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original TBM single turboprop shape guide before generation.",
+      "id": "tbm-single-turboprop",
+      "family": "TBM single turboprop",
+      "treatmentIds": [
+        "daher-tbm"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Dash 8/Q400 shape guide before generation.",
+      "id": "dash-8-q400",
+      "family": "Dash 8/Q400",
+      "treatmentIds": [
+        "dash8"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original ATR 72 shape guide before generation.",
+      "id": "atr-72",
+      "family": "ATR 72",
+      "treatmentIds": [
+        "atr"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original light piston twin shape guide before generation.",
+      "id": "light-piston-twin",
+      "family": "light piston twin",
+      "treatmentIds": [
+        "generic-twin-piston"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Air Tractor shape guide before generation.",
+      "id": "air-tractor",
+      "family": "Air Tractor",
+      "treatmentIds": [
+        "air-tractor-yellow",
+        "air-tractor-red-white"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Thrush crop duster shape guide before generation.",
+      "id": "thrush-crop-duster",
+      "family": "Thrush crop duster",
+      "treatmentIds": [
+        "thrush-yellow-blue"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original generic crop duster shape guide before generation.",
+      "id": "generic-crop-duster",
+      "family": "generic crop duster",
+      "treatmentIds": [
+        "crop-duster-green"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Bell 206 helicopter shape guide before generation.",
+      "id": "bell-206-helicopter",
+      "family": "Bell 206 helicopter",
+      "treatmentIds": [
+        "bell-206"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Bell 407 helicopter shape guide before generation.",
+      "id": "bell-407-helicopter",
+      "family": "Bell 407 helicopter",
+      "treatmentIds": [
+        "bell-407"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original Airbus H135 helicopter shape guide before generation.",
+      "id": "airbus-h135-helicopter",
+      "family": "Airbus H135 helicopter",
+      "treatmentIds": [
+        "h135-medical"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original light helicopter shape guide before generation.",
+      "id": "light-helicopter",
+      "family": "light helicopter",
+      "treatmentIds": [
+        "police-helicopter",
+        "utility-helicopter"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original C-130 Hercules shape guide before generation.",
+      "id": "c-130-hercules",
+      "family": "C-130 Hercules",
+      "treatmentIds": [
+        "c130-military"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original C-17 Globemaster shape guide before generation.",
+      "id": "c-17-globemaster",
+      "family": "C-17 Globemaster",
+      "treatmentIds": [
+        "c17-military"
+      ]
+    },
+    {
+      "status": "missing",
+      "file": null,
+      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "ownership": "McNair Farms project",
+      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
+      "blockedTask": "Create and review an original KC-135 tanker shape guide before generation.",
+      "id": "kc-135-tanker",
+      "family": "KC-135 tanker",
+      "treatmentIds": [
+        "kc135-military"
+      ]
+    }
+  ]
+}

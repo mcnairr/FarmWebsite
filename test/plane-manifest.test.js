@@ -54,8 +54,8 @@ test('PG-002 fallback chains are cycle-free and terminate safely', () => {
 });
 
 test('PG-002 prompt provenance and manifest output links are reciprocal', () => {
-  assert.equal(prompts.schemaVersion, 1);
-  assert.equal(prompts.records.length, PLANE_ASSETS.length);
+  assert.equal(prompts.schemaVersion, 2);
+  assert.ok(prompts.records.length >= PLANE_ASSETS.length);
   assert.equal(new Set(prompts.records.map(({ key }) => key)).size, prompts.records.length);
   const byKey = Object.fromEntries(prompts.records.map((record) => [record.key, record]));
 
@@ -71,7 +71,7 @@ test('PG-002 prompt provenance and manifest output links are reciprocal', () => 
       assert.equal(typeof record[field], 'string');
       assert.ok(record[field].length > 0);
     }
-    assert.ok(Array.isArray(record.references));
+    assert.ok(Array.isArray(record.referenceIds));
     assert.equal(record.generatedAt, null);
     assert.equal(record.output.sha256, null);
   }

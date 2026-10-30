@@ -171,6 +171,31 @@ generic artwork record or `legacy-svg-jet` / `legacy-svg-prop`. The legacy IDs
 refer to the existing inline SVG load-error fallback and are deliberately not
 asset URLs.
 
+## PG-003 prompt catalog and shape-guide gate
+
+[`prompts.json`](prompts.json) now contains all 74 approved treatments in both
+directions (148 prompt records). Each record copies its canonical treatment
+name and aircraft shape from the approved matrix, then adds explicit category,
+engine, propeller, rotor, landing-gear, paint/branding, crop, background, and
+identity constraints. A left-facing record names its right-facing result as a
+style/livery reference while requiring a new independent image; mirroring is
+always prohibited.
+
+[`shape-guides/inventory.json`](shape-guides/inventory.json) inventories the 54
+distinct aircraft-family descriptions currently used by the matrix. No shape
+guide is silently inferred from a proof or a similar aircraft: every current
+entry is truthfully marked `missing`, carries provenance/ownership/permission
+notes, and has a concrete blocked task. Consequently all 148 prompt records are
+`blocked-missing-shape-guide` until their exact original guide is created and
+reviewed. Unlicensed third-party model or reference inputs are prohibited.
+
+Run `npm run plane-art:prompts` after an approved matrix change to rebuild the
+deterministic catalog and inventory. Run `npm run plane-art:validate-prompts`
+before generation or committing changes. The validator rejects unknown or
+missing IDs, missing fields, duplicate prompt keys, bad left/right links,
+unknown guide/reference IDs, incomplete provenance, and missing files for any
+reference or guide that claims to exist.
+
 ### Adding a future asset-library version
 
 A future library is added beside this one, for example
