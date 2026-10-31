@@ -67,8 +67,11 @@ The footer gains a one-line data credit while the feed is on.
 - **GitHub Pages can't run server code**, so `/api/flights` runs as a
   Cloudflare Worker: a small program Cloudflare hosts for free and runs on
   demand. The website itself stays on GitHub Pages exactly as before.
-- **Nothing to install or build.** The site and API are plain JavaScript,
-  CSS and SVG with no dependencies.
+- **Nothing to install or build in production.** The public site serves plain
+  JavaScript, CSS, and 32 committed directional WebPs. The inline jet and
+  propeller SVGs are load-error fallbacks. Google credentials, Vertex AI,
+  billing, generation SDKs, and the development-only image tools are not
+  needed to serve the approved aircraft library.
 - **Data sources are pluggable.** Each source sits behind a small interface
   (`api/src/types.js`), and the browser only sees our own normalized JSON. A
   future receiver at the farm can replace or add to adsb.lol without any
@@ -313,6 +316,8 @@ Cloudflare's own runtime, at http://127.0.0.1:8787/api/flights.
 | `api/src/types.js` | Data shapes, including the public `/api/flights` contract |
 | `flight-feed.js`, `flight-feed-model.js`, `flight-feed.css` | Homepage feature (CSS loads only when enabled) |
 | `assets/planes/v1/manifest.js`, `design/plane-art/prompts.json` | Versioned plane-asset contract and development provenance |
+| `design/plane-art/README.md` | Plane-art generation, review, processing, approval, replacement, validation, and archival runbook |
+| `design/plane-art/phase1-release-baseline.md` | Released Phase 1 inventory and cold-cache behavior baseline |
 | `scripts/process-plane-art.mjs` | Deterministic alpha cleanup, 960 × 330 normalization, WebP encoding, checks, and proof output |
 | `scripts/repair-plane-lighting.mjs` | PG-011 reviewer-driven, alpha-preserving correction for smoke-like neutral upper-surface shading (`npm run plane-art:repair-lighting`) |
 | `scripts/audit-phase1-plane-art.mjs` | Reproducible PG-011 dimensions, byte distribution, alpha, pair, model, and prompt-revision audit (`npm run plane-art:audit-phase1`) |
@@ -331,8 +336,10 @@ Cloudflare's own runtime, at http://127.0.0.1:8787/api/flights.
   Taylor and Jim Mason and may not be copied into other databases without
   permission. This site only looks routes up on demand and holds them
   briefly in memory; don't add permanent storage of route data.
-- No third-party databases or aircraft photographs are stored here. The
-  aircraft illustrations are original SVG artwork.
+- No third-party databases or aircraft photographs are stored here. Aircraft
+  are rendered from reviewed, independently generated left/right WebPs. The
+  original project-owned SVG shape guides document silhouettes, and the inline
+  jet and propeller SVGs remain only as resilient load-error fallbacks.
 
 ### Future: a receiver at the farm
 

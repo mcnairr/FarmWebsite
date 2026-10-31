@@ -451,6 +451,54 @@ frozen decision record that Phase 2 must follow; its ten below-target files have
 explicit approval notes, no file exceeds the byte ceiling, and all 32 assets
 pass the library validator.
 
+## Phase 1 release runbook (PG-016)
+
+The production workflow is deliberately split from the public runtime. Only
+the approved WebPs, the authored manifest, and browser modules are published;
+generation credentials, Vertex availability, billing, and Google SDKs are not
+runtime dependencies.
+
+Use this sequence for a new candidate or an approved replacement:
+
+1. **Generate.** Validate the prompt catalog, run a scoped dry run, and then
+   use `npm run plane-art:generate -- -ArtworkId <id> -Direction <direction>`.
+   Generation writes candidates and request metadata only below the gitignored
+   `.generated/plane-art/candidates/` tree. It never publishes an image.
+2. **Review candidates.** Reject incorrect direction, anatomy, branding,
+   identity details, lighting, crop, or style before processing. For a left
+   view, compare it with the approved right view while still requiring an
+   independently generated image. Record the chosen candidate and rejected
+   alternatives in its provenance notes.
+3. **Process.** Run `npm run plane-art:process` with the artwork ID, direction,
+   chosen input, and its `metadata.json`. Inspect the generated production-sky
+   and checkerboard proof at both hero and blip sizes. Use the documented
+   manual alpha-repair or byte-exception options only when their required
+   dated notes and review exist.
+4. **Approve.** After pair review, update both manifest directions and their
+   reciprocal `prompts.json` records together. Set approval status, generation
+   time, candidate/approval notes, and the exact production SHA-256. Approval
+   is a human decision; generation and processing never set it.
+5. **Replace.** Never overwrite an approved file implicitly. Re-run processing
+   with `--replace-approved --replacement-note "<dated reason>"`, review the
+   new proof and pair, update the recorded hash and notes, then revalidate. A
+   different library contract belongs in a new versioned directory instead of
+   silently changing stable URLs.
+6. **Validate and release.** Run `npm run plane-art:validate`, `npm test`, and
+   `npm run test:browser`. Confirm the change contains only reviewed public
+   outputs and metadata; no credential, raw candidate, or generation runtime
+   belongs in the public tree.
+7. **Archive.** The approved committed WebP plus prompt, request/reference
+   hashes, processing settings, approval notes, and output hash is the durable
+   master. Raw candidates and working PNGs remain under `.generated/` and may
+   be discarded after the approved WebP and metadata are committed. There is
+   no external raw-master archive for Phase 1.
+
+The released inventory and the behavior that a browser with an empty cache
+must preserve are frozen in
+[`phase1-release-baseline.md`](phase1-release-baseline.md). PG-017 may add
+throttled performance measurements, but must compare them with this baseline
+rather than changing the Phase 1 release definition.
+
 ### Adding a future asset-library version
 
 A future library is added beside this one, for example
