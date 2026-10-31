@@ -78,7 +78,10 @@ async function serveStatic(pathname, res, scenario) {
       body.toString('utf8').replace(/(<meta name="flight-feed-endpoint" content=")[^"]*(")/, `$1/api/flights${demoQuery(scenario)}$2`),
     );
   }
-  res.writeHead(200, { 'content-type': TYPES[extname(path).toLowerCase()] ?? 'application/octet-stream', 'cache-control': 'no-cache' });
+  const cacheControl = path.includes(`${sep}assets${sep}planes${sep}v1${sep}`)
+    ? 'public, max-age=31536000, immutable'
+    : 'no-cache';
+  res.writeHead(200, { 'content-type': TYPES[extname(path).toLowerCase()] ?? 'application/octet-stream', 'cache-control': cacheControl });
   res.end(body);
 }
 

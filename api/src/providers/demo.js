@@ -40,6 +40,16 @@ const DEMO_FLIGHTS = [
     route: { airline: 'Frontier Airlines', airlineIcao: 'FFT', origin: AIRPORTS.DEN, destination: AIRPORTS.MCI } },
 ];
 
+const DUPLICATE_FLIGHTS = Array.from({ length: 8 }, (_, index) => ({
+  ...DEMO_FLIGHTS[7],
+  id: `duplicate${index + 1}`,
+  registration: `N${910 + index}DM`,
+  east: -18 + index * 5,
+  north: index % 2 ? 8 : -8,
+}));
+
+const ALL_DEMO_FLIGHTS = [...DEMO_FLIGHTS, ...DUPLICATE_FLIGHTS];
+
 /**
  * Named scenarios for exercising UI edge cases: /api/flights?scenario=...
  * Only honoured in demo mode.
@@ -51,6 +61,8 @@ export const DEMO_SCENARIOS = Object.freeze({
   two: ['demo01', 'demo04'],
   four: ['demo01', 'demo02', 'demo03', 'demo04'],
   eight: DEMO_FLIGHTS.map((f) => f.id),
+  'four-duplicate': DUPLICATE_FLIGHTS.slice(0, 4).map((f) => f.id),
+  'eight-duplicate': DUPLICATE_FLIGHTS.map((f) => f.id),
   noroute: ['demo05', 'demo06'],
   outage: null,
 });
@@ -64,7 +76,7 @@ export function createDemoProviders({ now = Date.now } = {}) {
   /** @type {import('../types.js').RouteProvider} */
   const routes = {
     async lookupRoute(callsign) {
-      const flight = DEMO_FLIGHTS.find((f) => f.callsign === callsign);
+      const flight = ALL_DEMO_FLIGHTS.find((f) => f.callsign === callsign);
       return flight?.route ? { callsign, ...flight.route } : null;
     },
   };
@@ -82,7 +94,7 @@ export function createDemoProviders({ now = Date.now } = {}) {
       // Drift each aircraft gently along its track, looping every 10 minutes
       // so demo planes never wander out of the display radius.
       const minutes = ((now() / 60_000) % 10) - 5;
-      return DEMO_FLIGHTS.filter((f) => ids.includes(f.id)).map((f) => {
+      return ALL_DEMO_FLIGHTS.filter((f) => ids.includes(f.id)).map((f) => {
         const travelled = ((f.gs / 60) * minutes) / 6;
         const rad = (f.track * Math.PI) / 180;
         const north = f.north + travelled * Math.cos(rad);

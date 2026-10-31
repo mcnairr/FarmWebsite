@@ -269,6 +269,15 @@ test('demo mode labels data as demo and never calls real services', async () => 
   assert.equal(outage.status, 'unavailable');
 });
 
+test('demo performance scenarios provide four and eight duplicate assets', async () => {
+  const app = createAppFromEnv({ FLIGHT_FEED_DEMO: 'true' });
+  for (const [scenario, count] of [['four-duplicate', 4], ['eight-duplicate', 8]]) {
+    const body = await (await app.handle(new Request(`http://localhost/api/flights?scenario=${scenario}`))).json();
+    assert.equal(body.aircraft.length, count);
+    assert.equal(new Set(body.aircraft.map((item) => `${item.callsign}:${item.icaoType}:${item.headingDeg}`)).size, 1);
+  }
+});
+
 test('demo mode is off by default and scenario params are ignored in live mode', async () => {
   assert.equal(loadConfig({}).demo, false);
   const fetchImpl = fakeFetch((url) => (url.includes('adsb') ? jsonResponse({ ac: [] }) : jsonResponse({}, 404)));
