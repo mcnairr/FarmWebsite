@@ -231,7 +231,7 @@ async function start(endpointUrl, root) {
     setText(el.callsign, a.callsign);
     setText(el.registration, a.registration);
     if (a.registration) {
-      el.registration.setAttribute('href', `https://airport-data.com/aircraft/${encodeURIComponent(a.registration)}`);
+      el.registration.setAttribute('href', `https://www.flightaware.com/resources/registration/${encodeURIComponent(a.registration)}`);
     } else {
       el.registration.removeAttribute('href');
     }
