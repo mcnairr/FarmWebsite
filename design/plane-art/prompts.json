@@ -3,6 +3,26 @@
   "canonicalMatrix": "design/plane-graphics-plan2.md#planned-artwork-matrix",
   "scopedGenerationExceptions": [
     {
+      "id": "pg009-chroma-magenta-1",
+      "approvedOn": "2026-10-31",
+      "rationale": "Issue #18 demonstrated that white-background extraction can erase pale aircraft pixels. Issue #9 replacements use the same uniform contrasting chroma background and deterministic alpha extraction while preserving cargo branding and neutral generic identities.",
+      "text": "PG-009 asset-specific background override for extraction: ignore the pure-white-background instruction for this request only. Place the complete aircraft on a perfectly uniform solid chroma-key magenta (#FF00FF) background. Use no gradient, texture, checkerboard, floor, horizon, scenery, shadow, magenta spill, magenta aircraft paint, or outline. Preserve the requested direction, aircraft family, engine count, landing-gear treatment, cargo or regional branding where specified, neutral identity for generic treatments, crop, lighting, and all other frozen anatomy constraints.",
+      "recordKeys": [
+        "fdx-widebody:right:v1",
+        "fdx-widebody:left:v1",
+        "ups-widebody:right:v1",
+        "ups-widebody:left:v1",
+        "american-eagle-regional:right:v1",
+        "american-eagle-regional:left:v1",
+        "generic-regional:right:v1",
+        "generic-regional:left:v1",
+        "generic-narrowbody:right:v1",
+        "generic-narrowbody:left:v1",
+        "generic-widebody:right:v1",
+        "generic-widebody:left:v1"
+      ]
+    },
+    {
       "id": "pg008-chroma-magenta-1",
       "approvedOn": "2026-10-31",
       "rationale": "Issue #18 demonstrated that white-background extraction can erase pale aircraft pixels. Issue #8 replacements use the same uniform contrasting chroma background and deterministic edge-connected alpha extraction while preserving the frozen branded-aircraft requirements.",
