@@ -45,6 +45,7 @@ async function start(endpointUrl, root) {
   const el = {
     sky: $('.ff-sky'),
     traffic: $('.ff-traffic'),
+    empty: $('.ff-empty'),
     flight: $('.ff-flight'),
     card: $('.ff-card'),
     position: $('.ff-position'),
@@ -155,12 +156,16 @@ async function start(endpointUrl, root) {
 
   // ----- state -> view -----
 
-  // With no aircraft, or no data, the sky is simply left empty: no message.
-
   /** @param {ViewState} state */
   function setState(state) {
     root.dataset.state = state;
     renderBadge();
+    renderEmpty();
+  }
+
+  function renderEmpty() {
+    const state = /** @type {ViewState} */ (root.dataset.state);
+    el.empty.hidden = aircraft.length > 0 || (state !== 'live' && state !== 'demo');
   }
 
   /** Position of the selected aircraft relative to the farm. */
@@ -182,6 +187,7 @@ async function start(endpointUrl, root) {
     const previousIds = aircraft.map((a) => a.id);
     aircraft = next;
     selectedId = reconcileSelection(selectedId, previousIds, next.map((a) => a.id));
+    renderEmpty();
     renderSelected(false);
     scheduleAutoAdvance();
   }
