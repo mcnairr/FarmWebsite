@@ -90,8 +90,13 @@
   filter: drop-shadow(0 2px 4px rgba(3, 14, 38, .35));
   transition: transform 3s cubic-bezier(.4, 0, .2, 1), opacity .6s ease;
 }
-.ff-blip svg { display: block; width: 100%; height: auto; }
-.ff-blip[data-facing="left"] svg { transform: scaleX(-1); }
+.ff-blip-image,
+.ff-blip-fallback {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: rotate(var(--ff-tilt, 0deg));
+}
 .ff-blip.is-light { width: 2.3rem; margin-left: -1.15rem; }
 .ff-blip:hover { opacity: 1; }
 .ff-blip.is-entering,

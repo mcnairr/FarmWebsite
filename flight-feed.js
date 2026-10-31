@@ -21,6 +21,7 @@ import {
   stepSelection,
 } from './flight-feed-model.js';
 import { createSelectedPlaneRenderer } from './selected-plane.js';
+import { createTrafficPlaneRenderer } from './traffic-plane.js';
 
 /** @typedef {import('./api/src/types.js').NormalizedAircraft} Aircraft */
 /** @typedef {import('./api/src/types.js').FlightFeedResponse} FeedResponse */
@@ -87,6 +88,8 @@ async function start(endpointUrl, root) {
   let switchTimer;
   /** @type {Map<string, HTMLButtonElement>} */
   const blips = new Map();
+  /** @type {WeakMap<HTMLButtonElement, ReturnType<typeof createTrafficPlaneRenderer>>} */
+  const blipRenderers = new WeakMap();
 
   root.hidden = false;
   document.querySelector('.flight-credit')?.removeAttribute('hidden');
@@ -300,18 +303,22 @@ async function start(endpointUrl, root) {
         node.type = 'button';
         node.tabIndex = -1; // the ‹ › buttons are the keyboard path; these are a pointer shortcut
         node.className = 'ff-blip is-entering';
-        node.innerHTML = '<svg viewBox="0 0 320 110" focusable="false"><use></use></svg>';
+        node.innerHTML = '<img class="ff-blip-image" width="960" height="330" alt="" aria-hidden="true" decoding="async"><svg class="ff-blip-fallback" viewBox="0 0 320 110" aria-hidden="true" focusable="false" hidden><use></use></svg>';
         node.addEventListener('click', () => select(/** @type {string} */ (node?.dataset.id)));
         node.dataset.id = a.id;
         el.traffic.append(node);
         blips.set(a.id, node);
+        blipRenderers.set(node, createTrafficPlaneRenderer(
+          /** @type {HTMLImageElement} */ (node.querySelector('.ff-blip-image')),
+          /** @type {SVGElement} */ (node.querySelector('.ff-blip-fallback')),
+        ));
         requestAnimationFrame(() => node?.classList.remove('is-entering'));
       }
       const pose = planePose(a.headingDeg, a.verticalRateFpm);
       node.style.transform = `translate(${pos.x}px, ${pos.y}px)`;
-      node.dataset.facing = pose.facing;
+      node.style.setProperty('--ff-tilt', `${pose.tiltDeg}deg`);
       node.classList.toggle('is-light', a.aircraftClass === 'light');
-      node.querySelector('use')?.setAttribute('href', a.aircraftClass === 'light' ? '#ff-prop' : '#ff-jet');
+      blipRenderers.get(node)?.render(a, pose.facing);
     }
   }
 

@@ -34,10 +34,12 @@ drawn in the blue sky of the farm photograph:
   wrapping around. Arrow keys work while the card has focus, and on phones
   you can also swipe left or right across the sky. With one aircraft the
   arrows are hidden.
-- **Other nearby aircraft** appear as small, faded planes placed by their
-  real direction and distance from the farm (east to the right, north up).
-  Clicking one selects it. Phones show the four most relevant; every aircraft
-  is still reachable with ‹ ›.
+- **Other nearby aircraft** use the same reviewed directional WebPs as the
+  selected aircraft, shown as small, faded planes placed by their real
+  direction and distance from the farm (east to the right, north up). A failed
+  image falls back to the matching legacy jet or propeller SVG. Clicking one
+  selects it. Phones show the four most relevant; every aircraft is still
+  reachable with ‹ ›.
 - **No aircraft nearby, or a data outage:** the sky is left empty, with no
   message. The farm photo and title are never affected.
 
