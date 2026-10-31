@@ -6,11 +6,15 @@ import sharp from 'sharp';
 const COLORS = Object.freeze({ magenta: [255, 0, 255], green: [0, 255, 0] });
 const clamp = (value) => Math.max(0, Math.min(255, value));
 
-export async function extractPlaneChroma({ inputPath, outputPath, color = 'magenta', scope = 'connected' }) {
+export async function extractPlaneChroma({ inputPath, outputPath, color = 'magenta', scope = 'connected', transparentDistance = 8 }) {
   if (!inputPath || !outputPath) throw new Error('inputPath and outputPath are required.');
   const background = COLORS[color];
   if (!background) throw new Error("color must be 'magenta' or 'green'.");
   if (!['connected', 'global'].includes(scope)) throw new Error("scope must be 'connected' or 'global'.");
+  if (!Number.isFinite(Number(transparentDistance)) || Number(transparentDistance) < 0 || Number(transparentDistance) >= 200) {
+    throw new Error('transparentDistance must be a number from 0 through 199.');
+  }
+  transparentDistance = Number(transparentDistance);
   const { data, info } = await sharp(resolve(inputPath), { failOn: 'warning' })
     .rotate().removeAlpha().toColourspace('srgb').raw().toBuffer({ resolveWithObject: true });
   const count = info.width * info.height;
@@ -50,7 +54,9 @@ export async function extractPlaneChroma({ inputPath, outputPath, color = 'magen
   for (let pixel = 0; pixel < count; pixel += 1) {
     const source = pixel * 3;
     const target = pixel * 4;
-    const alpha = connected[pixel] ? clamp(Math.round(((distance(pixel) - 8) / 192) * 255)) : 255;
+    const alpha = connected[pixel]
+      ? clamp(Math.round(((distance(pixel) - transparentDistance) / (200 - transparentDistance)) * 255))
+      : 255;
     const opacity = alpha / 255;
     for (let channel = 0; channel < 3; channel += 1) {
       rgba[target + channel] = alpha
@@ -87,12 +93,12 @@ export async function extractPlaneChroma({ inputPath, outputPath, color = 'magen
   await mkdir(dirname(resolve(outputPath)), { recursive: true });
   await sharp(output, { raw: { width: info.width, height: info.height, channels: 4 } })
     .png().toFile(resolve(outputPath));
-  return { width: info.width, height: info.height, color, scope };
+  return { width: info.width, height: info.height, color, scope, transparentDistance };
 }
 
 function parseArguments(argv) {
   const options = {};
-  const names = new Map([['--input', 'inputPath'], ['--output', 'outputPath'], ['--color', 'color'], ['--scope', 'scope']]);
+  const names = new Map([['--input', 'inputPath'], ['--output', 'outputPath'], ['--color', 'color'], ['--scope', 'scope'], ['--transparent-distance', 'transparentDistance']]);
   for (let index = 0; index < argv.length; index += 2) {
     const key = names.get(argv[index]);
     if (!key || index + 1 >= argv.length) throw new Error(`Unknown or incomplete argument '${argv[index]}'.`);

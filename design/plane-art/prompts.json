@@ -3,6 +3,28 @@
   "canonicalMatrix": "design/plane-graphics-plan2.md#planned-artwork-matrix",
   "scopedGenerationExceptions": [
     {
+      "id": "pg008-chroma-magenta-1",
+      "approvedOn": "2026-10-31",
+      "rationale": "Issue #18 demonstrated that white-background extraction can erase pale aircraft pixels. Issue #8 replacements use the same uniform contrasting chroma background and deterministic edge-connected alpha extraction while preserving the frozen branded-aircraft requirements.",
+      "text": "PG-008 asset-specific background override for extraction: ignore the pure-white-background instruction for this request only. Place the complete aircraft on a perfectly uniform solid chroma-key magenta (#FF00FF) background. Use no gradient, texture, checkerboard, floor, horizon, scenery, shadow, magenta spill, magenta aircraft paint, or outline. The aircraft must point in the requested nose direction, show exactly two structurally correct underwing engines, and preserve all other frozen photorealistic, branding, crop, lighting, and anatomy constraints.",
+      "recordKeys": [
+        "aal-narrowbody:right:v1",
+        "aal-narrowbody:left:v1",
+        "aal-widebody:right:v1",
+        "aal-widebody:left:v1",
+        "ual-narrowbody:right:v1",
+        "ual-narrowbody:left:v1",
+        "ual-widebody:right:v1",
+        "ual-widebody:left:v1",
+        "dal-narrowbody:right:v1",
+        "dal-narrowbody:left:v1",
+        "dal-widebody:right:v1",
+        "dal-widebody:left:v1",
+        "swa-narrowbody:right:v1",
+        "swa-narrowbody:left:v1"
+      ]
+    },
+    {
       "id": "pg010-chroma-magenta-1",
       "approvedOn": "2026-10-31",
       "rationale": "Issue #18 demonstrated that white-background extraction can erase pale aircraft pixels. Issue #10 replacements use a uniform contrasting chroma background and deterministic edge-connected alpha extraction.",
@@ -140,7 +162,7 @@
       "output": {
         "manifestKey": "aal-narrowbody:right",
         "url": "/assets/planes/v1/aal-narrowbody-right.webp",
-        "sha256": "36c2fae80b6f81342774d7ef736fa32871570e5f9ca3219eee3daca4e23d6a85"
+        "sha256": "f2f1b22aca814c9e34c1f1ad60552df7dc52b27891888f773f5ad75d69f70def"
       },
       "repair": {
         "date": "2026-10-30",
@@ -194,7 +216,7 @@
       "output": {
         "manifestKey": "aal-narrowbody:left",
         "url": "/assets/planes/v1/aal-narrowbody-left.webp",
-        "sha256": "1a22b021f48768b82077e70719e553da3cc75d501ec65249c1062dbdd4d6b03b"
+        "sha256": "dd8e0dcfb8738ff64226a2a4239568ac1a1ee6ebe6b5c2fb05abc15f809978ed"
       }
     },
     {
@@ -238,7 +260,7 @@
       "output": {
         "manifestKey": "aal-widebody:right",
         "url": "/assets/planes/v1/aal-widebody-right.webp",
-        "sha256": "c213dd36f74b69ea1bffe2917b03ac87ee541e841509c9f33981a03ccf31a3fb"
+        "sha256": "6df0f03bca671251a82f4b0aeb0fa7d8870c1529516802a7146c5ebcf2acc4ca"
       }
     },
     {
@@ -282,7 +304,7 @@
       "output": {
         "manifestKey": "aal-widebody:left",
         "url": "/assets/planes/v1/aal-widebody-left.webp",
-        "sha256": "6986166d27a9ed11c026f5bab0382b282857661e0618b3ef444ea5d07be75e45"
+        "sha256": "8faed60b494617906d46574547e0bd00f0b88da510edc75c023ef7ff84092d11"
       }
     },
     {
@@ -326,7 +348,7 @@
       "output": {
         "manifestKey": "ual-narrowbody:right",
         "url": "/assets/planes/v1/ual-narrowbody-right.webp",
-        "sha256": "db41c18eaec3c593de81b0ff6114feac2e7960f2394c65c185097f7e3599bc44"
+        "sha256": "b2565ded7dbdb290ff4e66050a3d153847dea89d55e28e974ceaa92197aec082"
       }
     },
     {
@@ -364,13 +386,17 @@
         "shape-guide:737-a320-class-narrowbody"
       ],
       "styleReferenceKey": "ual-narrowbody:right:v1",
+      "generationException": {
+        "id": "pg008-ual-narrowbody-left-direction-1",
+        "text": "Rejected-candidate correction: the new aircraft must face LEFT. Put the nose and cockpit at the left edge of the composition and the vertical tail at the right edge. The right-facing reference is for livery and style only; do not copy its direction and do not mirror it. Preserve readable, normally oriented United branding, retracted landing gear, two-engine narrowbody anatomy, and the uniform magenta background."
+      },
       "generatedAt": "2026-10-30T03:00:45.6901865+00:00",
       "candidateNotes": "Vertex request 454427c293d523ebf36a returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
       "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
       "output": {
         "manifestKey": "ual-narrowbody:left",
         "url": "/assets/planes/v1/ual-narrowbody-left.webp",
-        "sha256": "04f947e85e59ba9100f667816818b8a9495bec800db100c9acf6c1d2cdea543d"
+        "sha256": "3d403c707d7e7cdf3a3ae30bac7f1ea7aef8970045e4091048c969763efc8595"
       }
     },
     {
@@ -414,7 +440,7 @@
       "output": {
         "manifestKey": "ual-widebody:right",
         "url": "/assets/planes/v1/ual-widebody-right.webp",
-        "sha256": "4840c43fad0ff3239948f739d4b3a9e7ab2d8ab83d0fd682f83b09fcfc344c26"
+        "sha256": "d583de41b4571800fed68fd7f447ca8f2b3b43664b7f47efc94b67c8edc8f0a3"
       }
     },
     {
@@ -458,7 +484,7 @@
       "output": {
         "manifestKey": "ual-widebody:left",
         "url": "/assets/planes/v1/ual-widebody-left.webp",
-        "sha256": "e660ce09908d2900156e721cbb15aa2724618e79a711cd1daefcda60e0717f34"
+        "sha256": "245f74203d7d9517ccfddee894e566ba7a8139894fb59009c8404b8edfa27f03"
       }
     },
     {
@@ -496,13 +522,17 @@
         "shape-guide:737-a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": {
+        "id": "pg008-dal-narrowbody-gear-1",
+        "text": "Rejected-candidate correction: render the aircraft in clean flight configuration with every landing-gear door closed and all wheels, struts, and landing gear fully retracted and invisible. Do not show deployed, extended, or partially visible landing gear. Preserve the requested direction, Delta livery, two-engine narrowbody anatomy, crop, and uniform magenta background."
+      },
       "generatedAt": "2026-10-30T02:53:10.4045965+00:00",
       "candidateNotes": "Vertex request ff514aaaaff8e7125d43 returned one independently generated right-facing candidate; processed from candidate-1.png with the recorded transparent-background manual repair. Manual alpha-repair SHA-256: cede2a405ba3c67905ab67a4b59a1ba69abc63e7e4cf2614078cfa3484b2f240. The OpenAI image background-extraction edit was used only for transparency repair; the aircraft master remains the linked Vertex candidate.",
       "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-29 visual approval: repaired full-size Delta narrowbody remains sharp and readable at hero and blip sizes below the 40 KB target; quality-90 settings remain unchanged.",
       "output": {
         "manifestKey": "dal-narrowbody:right",
         "url": "/assets/planes/v1/dal-narrowbody-right.webp",
-        "sha256": "d2479b5db5f1e8635454f9ad7f903223677b29117e138e6c89c8dd2c91602c9e"
+        "sha256": "ba077a55d6752ab62023a0445394b68dc068483f3dd7bd092cd9832c83cfb80d"
       }
     },
     {
@@ -546,7 +576,7 @@
       "output": {
         "manifestKey": "dal-narrowbody:left",
         "url": "/assets/planes/v1/dal-narrowbody-left.webp",
-        "sha256": "8b8c7682735510255cd8c517c8362073524c6b363f5b7eda5e204a8b4dc70353"
+        "sha256": "201675214db09ba3cf672ef2b16be8ff8f2232f0062422078943886c84750e55"
       },
       "repair": {
         "date": "2026-10-30",
@@ -600,7 +630,7 @@
       "output": {
         "manifestKey": "dal-widebody:right",
         "url": "/assets/planes/v1/dal-widebody-right.webp",
-        "sha256": "88eb3c23f8bc7ea5eb6337eda7ac2f978ba9dfca4822743e10363e7cb740b4fa"
+        "sha256": "d69a844073db8487cc5e5f86201091dee67f31631e3b715417e6dc3174d72da4"
       },
       "repair": {
         "date": "2026-10-30",
@@ -648,13 +678,17 @@
         "shape-guide:a330-a350-class-widebody"
       ],
       "styleReferenceKey": "dal-widebody:right:v1",
+      "generationException": {
+        "id": "pg008-dal-widebody-left-family-1",
+        "text": "Rejected-candidate correction: render an A330/A350-class twin-engine widebody facing left, with the nose and cockpit at the left and tail at the right. Do not add any aircraft model designation, type number, registration, or small text such as A220, A320, A330, or A350 anywhere on the aircraft. Preserve recognizable Delta branding, widebody proportions, retracted landing gear, and the uniform magenta background."
+      },
       "generatedAt": "2026-10-30T03:03:00.0597467+00:00",
       "candidateNotes": "Vertex request a5e938e37221b9e4a08e returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. The initial left candidate was rejected for tail-livery mismatch; the authorized forced regeneration produced this selected candidate. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
       "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
       "output": {
         "manifestKey": "dal-widebody:left",
         "url": "/assets/planes/v1/dal-widebody-left.webp",
-        "sha256": "10890870d8ded51e6d6575a397a216a4c4cee74072a1b5268c7d5431241e4caf"
+        "sha256": "3caec87cc18a94b2699f20f490daca9ef789773d31a43ea9e1949c1a39cf19b1"
       },
       "repair": {
         "date": "2026-10-30",
@@ -708,7 +742,7 @@
       "output": {
         "manifestKey": "swa-narrowbody:right",
         "url": "/assets/planes/v1/swa-narrowbody-right.webp",
-        "sha256": "7950e18def4ff5bc831b62e62d709d8245dd4086d36aa58fd1e98c2932185e7f"
+        "sha256": "6e30cacf90a0254368ea2a3af0b70c7d3afff6a64a3b18dddc5ac1526c070953"
       }
     },
     {
@@ -752,7 +786,7 @@
       "output": {
         "manifestKey": "swa-narrowbody:left",
         "url": "/assets/planes/v1/swa-narrowbody-left.webp",
-        "sha256": "f51185d427a6b929397c73c70bf589bc47b2f9bf23ae927e1ec801f4c7a98808"
+        "sha256": "c6a42efc105bd70c649fa190801230719306e5c4d19b2798f484bcbae14ba789"
       }
     },
     {

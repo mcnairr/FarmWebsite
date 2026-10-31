@@ -36,3 +36,18 @@ test('PG-010 global chroma extraction removes enclosed key pixels when the subje
   assert.ok(alpha(20, 12) < 128);
   assert.equal(alpha(10, 12), 255);
 });
+
+test('PG-008 chroma extraction can zero small generated key-color variation without changing the default cutoff', async (t) => {
+  const directory = await mkdtemp(join(process.cwd(), '.generated', 'chroma-test-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const input = join(directory, 'input.png');
+  const output = join(directory, 'output.png');
+  await sharp({ create: { width: 40, height: 24, channels: 3, background: '#fc12f9' } })
+    .composite([{ input: Buffer.from('<svg width="40" height="24" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="6" width="24" height="12" rx="3" fill="white"/></svg>') }])
+    .png().toFile(input);
+  await extractPlaneChroma({ inputPath: input, outputPath: output, transparentDistance: 32 });
+  const { data, info } = await sharp(output).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  const alpha = (x, y) => data[(y * info.width + x) * 4 + 3];
+  assert.equal(alpha(0, 0), 0);
+  assert.equal(alpha(20, 12), 255);
+});
