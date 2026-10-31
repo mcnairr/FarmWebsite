@@ -182,18 +182,17 @@
 
 .ff-plane {
   --ff-tilt: 0deg;
-  --ff-flip: 1;
   flex: 0 1 auto;
   min-width: 5.5rem;
   width: clamp(9rem, 44vw, 15.5rem);
   height: auto;
   aspect-ratio: 320 / 110;
   margin: 0 -.35rem;
-  transform: rotate(var(--ff-tilt)) scaleX(var(--ff-flip));
+  transform: rotate(var(--ff-tilt));
   filter: drop-shadow(0 8px 12px rgba(3, 18, 52, .35));
   transition: transform .6s ease;
 }
-.ff-route[data-facing="left"] .ff-plane { --ff-flip: -1; }
+.ff-plane.is-loading { visibility: hidden; }
 .ff-plane.is-light { width: clamp(6.5rem, 28vw, 11rem); }
 
 /* Card: ‹ previous | flight information | next › */

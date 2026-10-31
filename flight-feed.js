@@ -20,6 +20,7 @@ import {
   routeLinePosition,
   stepSelection,
 } from './flight-feed-model.js';
+import { createSelectedPlaneRenderer } from './selected-plane.js';
 
 /** @typedef {import('./api/src/types.js').NormalizedAircraft} Aircraft */
 /** @typedef {import('./api/src/types.js').FlightFeedResponse} FeedResponse */
@@ -59,12 +60,14 @@ async function start(endpointUrl, root) {
     to: $('.ff-to'),
     lineDone: $('.ff-line-done'),
     lineAhead: $('.ff-line-ahead'),
-    plane: $('.ff-plane'),
+    plane: /** @type {HTMLImageElement} */ ($('.ff-plane-image')),
+    planeFallback: /** @type {SVGElement} */ (/** @type {unknown} */ ($('.ff-plane-fallback'))),
     steps: /** @type {HTMLButtonElement[]} */ ([...root.querySelectorAll('.ff-step')]),
     badge: $('.ff-badge-text'),
     announcer: $('.ff-announcer'),
   };
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const selectedPlane = createSelectedPlaneRenderer(el.plane, el.planeFallback);
 
   /** @type {Aircraft[]} */
   let aircraft = [];
@@ -80,6 +83,8 @@ async function start(endpointUrl, root) {
   let timer;
   /** @type {ReturnType<typeof setTimeout> | undefined} */
   let autoAdvanceTimer;
+  /** @type {ReturnType<typeof setTimeout> | undefined} */
+  let switchTimer;
   /** @type {Map<string, HTMLButtonElement>} */
   const blips = new Map();
 
@@ -180,6 +185,8 @@ async function start(endpointUrl, root) {
 
   /** @param {boolean} userInitiated */
   function renderSelected(userInitiated) {
+    clearTimeout(switchTimer);
+    switchTimer = undefined;
     const index = aircraft.findIndex((a) => a.id === selectedId);
     const selected = index >= 0 ? aircraft[index] : null;
     const single = aircraft.length < 2;
@@ -189,6 +196,7 @@ async function start(endpointUrl, root) {
 
     if (!selected) {
       el.flight.hidden = true;
+      el.flight.classList.remove('is-switching');
       renderedId = null;
       renderTraffic();
       return;
@@ -199,13 +207,15 @@ async function start(endpointUrl, root) {
     el.flight.hidden = false; // before renderTraffic(), which measures it
     if (changed && !reducedMotion.matches) {
       el.flight.classList.add('is-switching');
-      setTimeout(() => {
+      switchTimer = setTimeout(() => {
+        switchTimer = undefined;
         fillFlight(selected);
         el.flight.classList.remove('is-switching');
         renderTraffic();
       }, SWITCH_MS);
     } else {
       fillFlight(selected);
+      el.flight.classList.remove('is-switching');
       renderTraffic();
     }
 
@@ -235,10 +245,8 @@ async function start(endpointUrl, root) {
     const pose = planePose(a.headingDeg, a.verticalRateFpm);
     el.route.dataset.facing = pose.facing;
     el.plane.style.setProperty('--ff-tilt', `${pose.tiltDeg}deg`);
-    const symbol = a.aircraftClass === 'light' ? '#ff-prop' : '#ff-jet';
-    const use = el.plane.querySelector('use');
-    if (use && use.getAttribute('href') !== symbol) use.setAttribute('href', symbol);
-    el.plane.classList.toggle('is-light', a.aircraftClass === 'light');
+    el.planeFallback.style.setProperty('--ff-tilt', `${pose.tiltDeg}deg`);
+    selectedPlane.render(a, pose.facing);
 
     const routed = hasRoute(a);
     el.route.classList.toggle('has-route', routed);

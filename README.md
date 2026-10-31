@@ -19,8 +19,8 @@ Design references (such as the live flight tracker mockup) live in
 The homepage shows the aircraft actually flying near the farm right now,
 drawn in the blue sky of the farm photograph:
 
-- **The selected aircraft** appears as a large airliner (or a small
-  high-wing plane for light aircraft), facing its real direction of travel
+- **The selected aircraft** uses a reviewed directional WebP (with the legacy
+  jet or propeller SVG as a load-error fallback), facing its real direction of travel
   with a slight nose-up or nose-down tilt when climbing or descending.
 - **Its route**, when known, runs through the plane: the origin city behind
   it, the destination ahead with an arrow (e.g. *From Denver DEN → To Chicago
