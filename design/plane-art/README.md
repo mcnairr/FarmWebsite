@@ -164,6 +164,13 @@ npm run plane-art:chroma -- --input <candidate.png> --output <transparent.png> -
 node scripts/process-plane-art.mjs --artwork-id <id> --direction <direction> --input <candidate.png> --source-metadata <metadata.json> --manual-repair <transparent.png> --proof <proof.png>
 ```
 
+The default `--scope connected` preserves enclosed subject pixels that match the
+key color. A narrowly scoped batch whose protected subject palette explicitly
+excludes the key color may use `--scope global` to remove enclosed background
+visible through windows, landing gear, or equipment gaps. PG-010's neutral,
+white/blue, and yellow treatments use this recorded exception because none of
+their protected paint or markings contain magenta.
+
 The extractor flood-fills only edge-connected chroma pixels, unmattes
 antialiased edges against the exact background color, and replaces translucent
 edge RGB with the nearest fully opaque aircraft color to remove color spill.

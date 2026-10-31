@@ -3,6 +3,20 @@
   "canonicalMatrix": "design/plane-graphics-plan2.md#planned-artwork-matrix",
   "scopedGenerationExceptions": [
     {
+      "id": "pg010-chroma-magenta-1",
+      "approvedOn": "2026-10-31",
+      "rationale": "Issue #18 demonstrated that white-background extraction can erase pale aircraft pixels. Issue #10 replacements use a uniform contrasting chroma background and deterministic edge-connected alpha extraction.",
+      "text": "PG-010 asset-specific background override for extraction: ignore the pure-white-background instruction for this request only. Place the complete aircraft on a perfectly uniform solid chroma-key magenta (#FF00FF) background. Use no gradient, texture, checkerboard, floor, horizon, scenery, shadow, magenta spill, magenta aircraft paint, or outline. Preserve the requested direction, aircraft family, engine and propeller count, landing-gear treatment, agricultural equipment where applicable, neutral identity, crop, lighting, and all other frozen anatomy constraints.",
+      "recordKeys": [
+        "generic-bizjet-small:right:v1",
+        "generic-bizjet-small:left:v1",
+        "cessna-high-wing:right:v1",
+        "cessna-high-wing:left:v1",
+        "air-tractor-yellow:right:v1",
+        "air-tractor-yellow:left:v1"
+      ]
+    },
+    {
       "id": "pg018-chroma-magenta-1",
       "approvedOn": "2026-10-31",
       "rationale": "White-background generation repeatedly caused pale fuselage, cockpit, and nose pixels to be removed with the background. Issue #18 approved a uniform contrasting chroma background and deterministic alpha extraction.",
@@ -4552,13 +4566,17 @@
         "shape-guide:citation-phenom-class-jet"
       ],
       "styleReferenceKey": null,
-      "generatedAt": "2026-10-30T12:15:33.9146065+00:00",
-      "candidateNotes": "Vertex request 4e8a8640e6b57fcd4650 returned one independently generated right-facing candidate after two rejected prompt iterations copied reference branding or guide text. The selected candidate was processed from candidate-1.png with a recorded transparent-background manual repair; repair SHA-256: 4e694f03f43b3e2e46d5954e64c744a7ea485f1661985174059434181e02882c. The background-extraction edit changed transparency only; the aircraft master remains the linked Vertex candidate.",
-      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, business-jet category, compact twin rear-engine anatomy, retracted landing gear, neutral unbranded paint, crop, baseline, and alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. The 31,836-byte output is approved below the target range because it remains sharp and recognizable with frozen quality-90 settings.",
+      "generationException": {
+        "id": "pg010-bizjet-neutral-cockpit-1",
+        "text": "Rejected-candidate correction: render a recognizable compact business jet with clearly visible dark cockpit glazing and plausible cockpit/nose anatomy. Omit every registration, letter, number, wordmark, logo, and organization identity; leave all exterior surfaces completely unmarked."
+      },
+      "generatedAt": "2026-10-31T18:04:16.5765882+00:00",
+      "candidateNotes": "Vertex request 61e4e6b3a02e4e2e5c2c in global returned the independently generated right-facing PG-010 replacement after a rejected candidate lacked a recognizable cockpit and carried a registration. The selected candidate was processed through the recorded global magenta extraction and frozen quality-90 workflow; manual repair SHA-256: 1b8001efcd1a8154f393367c6fcc63e2a8007a5b2c4dbba2980649ab5384094e.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Right-facing direction, compact twin rear-engine anatomy, retracted landing gear, visible cockpit, neutral unbranded paint, crop, baseline, and spill-free alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. Output is 53,486 bytes.",
       "output": {
         "manifestKey": "generic-bizjet-small:right",
         "url": "/assets/planes/v1/generic-bizjet-small-right.webp",
-        "sha256": "ac9385e5e91df402c3514c7153c3fa2e6c3337bc0a98ce0ae95d83b9a56db832"
+        "sha256": "f4f00da5f14f501dd545acac1868b7aa7ba48a44cd9ce7bc6db772dcc70f43e5"
       }
     },
     {
@@ -4596,13 +4614,17 @@
         "shape-guide:citation-phenom-class-jet"
       ],
       "styleReferenceKey": "generic-bizjet-small:right:v1",
-      "generatedAt": "2026-10-30T12:18:40.1596424+00:00",
-      "candidateNotes": "Vertex request e6282e4b85f8955accf3 returned one independently generated left-facing candidate using the approved right treatment only as a style reference; processed from candidate-1.png with a recorded transparent-background manual repair. Repair SHA-256: 1a506ca76670c5245e73f854552f53ace9aaba5c999ea7bba5d0396c40cacb58. The background-extraction edit changed transparency only; the aircraft master remains the linked Vertex candidate.",
-      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, business-jet category, compact twin rear-engine anatomy, retracted landing gear, neutral unbranded paint, crop, baseline, and alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. The 31,962-byte output is approved below the target range because it remains sharp and recognizable with frozen quality-90 settings.",
+      "generationException": {
+        "id": "pg010-bizjet-neutral-cockpit-1",
+        "text": "Rejected-candidate correction: render a recognizable compact business jet with clearly visible dark cockpit glazing and plausible cockpit/nose anatomy. Omit every registration, letter, number, wordmark, logo, and organization identity; leave all exterior surfaces completely unmarked."
+      },
+      "generatedAt": "2026-10-31T18:05:46.9970296+00:00",
+      "candidateNotes": "Vertex request b94e20da2d746726414f in global returned the independently generated left-facing PG-010 replacement using the new right treatment only as a style reference. The selected candidate was processed through the recorded global magenta extraction and frozen quality-90 workflow; manual repair SHA-256: 7931670902899fdfc910fae46a20791804e85d98dc815b3e788abdc51d22c690.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Left-facing direction, compact twin rear-engine anatomy, retracted landing gear, visible cockpit, neutral unbranded paint, crop, baseline, and spill-free alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. Output is 21,390 bytes with a recorded frozen-quality byte exception.",
       "output": {
         "manifestKey": "generic-bizjet-small:left",
         "url": "/assets/planes/v1/generic-bizjet-small-left.webp",
-        "sha256": "5bf48f5ad0b9db9a70a0cc79b6aa01d8bcac5d2d713ce849fd96ba2fc4db8c3b"
+        "sha256": "b38efe6313ea0ac4b8136d8e8c79804c69ba1771b87b58b6462b7b7ce46d18b6"
       }
     },
     {
@@ -4729,13 +4751,17 @@
         "shape-guide:c150-c172-c182-c206"
       ],
       "styleReferenceKey": null,
-      "generatedAt": "2026-10-30T12:20:09.0489230+00:00",
-      "candidateNotes": "Vertex request 7e26a4d0bd3172c5659e returned one independently generated right-facing candidate after the initial prompt revision produced a registration-bearing treatment. The selected candidate was processed from candidate-1.png using the standard edge-connected white-matte workflow.",
-      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Right-facing direction, high-wing single-prop anatomy, one engine, fixed tricycle landing gear, original registration-free paint, crop, baseline, and alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment.",
+      "generationException": {
+        "id": "pg010-cessna-opaque-glazing-1",
+        "text": "Rejected-candidate correction: render every cockpit and cabin window as fully opaque black or neutral charcoal aircraft glazing with no colored reflection. No magenta, pink, purple, transparency, background show-through, or chroma spill may appear in any window or on the aircraft. Omit every registration, letter, number, wordmark, logo, and organization identity; leave the exterior identity-free."
+      },
+      "generatedAt": "2026-10-31T18:09:34.9032996+00:00",
+      "candidateNotes": "Vertex request bdb8c91d8c601ab8fa89 in global returned the independently generated right-facing PG-010 replacement after rejected candidates retained magenta glazing spill or a registration. The selected identity-free candidate has opaque neutral glazing and was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 6e6127b022911cb9f75a1cb4740c3c158ca2db68c9c288257fdde961aee9809d.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Right-facing direction, high-wing single-prop anatomy, one engine, fixed tricycle landing gear, original registration-free paint, opaque neutral glazing, crop, baseline, and spill-free alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. Output is 80,992 bytes.",
       "output": {
         "manifestKey": "cessna-high-wing:right",
         "url": "/assets/planes/v1/cessna-high-wing-right.webp",
-        "sha256": "b88cab4ec9f40cfa87f77aee048e6ccd8ab4f9497daa6bad0c675b0ffa7febd7"
+        "sha256": "420402f9225bc366a662a2e9627146144c48dfa2defebd1942fbac1c27b9f62c"
       }
     },
     {
@@ -4775,13 +4801,17 @@
         "shape-guide:c150-c172-c182-c206"
       ],
       "styleReferenceKey": "cessna-high-wing:right:v1",
-      "generatedAt": "2026-10-30T12:21:42.4640310+00:00",
-      "candidateNotes": "Vertex request ad18270eaf6353b8f6e6 returned one independently generated left-facing candidate using the approved right treatment as a style reference and omitting the airline style proof after a rejected candidate copied airline tail markings and a registration. The selected candidate was processed from candidate-1.png using the standard edge-connected white-matte workflow.",
-      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Left-facing direction, high-wing single-prop anatomy, one engine, fixed tricycle landing gear, original registration-free paint, crop, baseline, and alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment.",
+      "generationException": {
+        "id": "pg010-cessna-opaque-glazing-1",
+        "text": "Rejected-candidate correction: render every cockpit and cabin window as fully opaque black or neutral charcoal aircraft glazing with no colored reflection. No magenta, pink, purple, transparency, background show-through, or chroma spill may appear in any window or on the aircraft. Omit every registration, letter, number, wordmark, logo, and organization identity; leave the exterior identity-free."
+      },
+      "generatedAt": "2026-10-31T18:10:18.9240463+00:00",
+      "candidateNotes": "Vertex request 057f92dbd1d217b206a4 in global returned the independently generated left-facing PG-010 replacement using the corrected right treatment only as a style reference. The selected identity-free candidate has opaque neutral glazing and was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 479a77bd7454cbd76717959a883217f2b84692e66df805bc2f65ea0c7f6689cc.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Left-facing direction, high-wing single-prop anatomy, one engine, fixed tricycle landing gear, original registration-free paint, opaque neutral glazing, crop, baseline, and spill-free alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. Output is 27,956 bytes with a recorded frozen-quality byte exception.",
       "output": {
         "manifestKey": "cessna-high-wing:left",
         "url": "/assets/planes/v1/cessna-high-wing-left.webp",
-        "sha256": "05c1aebffb1ae9c0d33ac4e1d35d56403e6d680276e74c9735cd2470e2ba59a2"
+        "sha256": "0f7cd5c3ce0f677b62723d62544da4f71e1cbbedb7c9b2732036252df81c68dc"
       }
     },
     {
@@ -5728,13 +5758,17 @@
         "shape-guide:air-tractor"
       ],
       "styleReferenceKey": null,
-      "generatedAt": "2026-10-30T12:22:51.8644882+00:00",
-      "candidateNotes": "Vertex request 0ea198a16f9b56799a51 returned one independently generated right-facing candidate after two rejected attempts reproduced shape-guide captions or markings. The selected request omitted the airline style proof and was processed from candidate-1.png using the standard edge-connected white-matte workflow.",
-      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Right-facing direction, single tractor propeller, one engine, robust fixed landing gear, agricultural spray hardware, bright yellow registration-free treatment, crop, baseline, alpha edges, and small-family relative visual scale pass. The directional pair was reviewed together and matches one aircraft family and treatment.",
+      "generationException": {
+        "id": "pg010-air-tractor-neutral-identity-1",
+        "text": "Rejected-candidate correction: render a complete, recognizable Air Tractor-style agricultural airplane with a clearly visible enclosed cockpit and glazing, one nose-mounted turboprop engine, one propeller, two main wheels plus a tailwheel, intact wings and tail, and believable spray-boom hardware. Omit every registration, letter, number, manufacturer name, wordmark, logo, and organization identity; leave the bright-yellow exterior completely unmarked."
+      },
+      "generatedAt": "2026-10-31T18:04:56.2454043+00:00",
+      "candidateNotes": "Vertex request 7b877e98bc38c7912f6e in global returned the independently generated right-facing PG-010 replacement after rejected candidates carried identity markings or malformed the cockpit and landing gear. The selected candidate was processed through the recorded global magenta extraction and frozen quality-90 workflow; manual repair SHA-256: 6ee0da24aa48292bb437a3c1cadfc9cbb248960c948cfd37eaf9f5bf4ac69d0b.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Right-facing direction, single tractor propeller, one engine, complete fixed landing gear, agricultural spray hardware, bright-yellow identity-free treatment, crop, baseline, and spill-free alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. Output is 32,914 bytes with a recorded frozen-quality byte exception.",
       "output": {
         "manifestKey": "air-tractor-yellow:right",
         "url": "/assets/planes/v1/air-tractor-yellow-right.webp",
-        "sha256": "3131685b9a910fbd6996b66873dd53bef3b063ddb97bbbdabaa627c22be4a890"
+        "sha256": "bc4c8c7ba8cd67a806ca851c3fe6e47c74cbf2ea2a7de3ffc2fd4efb3dd0db6b"
       }
     },
     {
@@ -5775,13 +5809,17 @@
         "shape-guide:air-tractor"
       ],
       "styleReferenceKey": "air-tractor-yellow:right:v1",
-      "generatedAt": "2026-10-30T12:24:13.9570892+00:00",
-      "candidateNotes": "Vertex request 0f37de20b4b19bf368a4 returned one independently generated left-facing candidate using the approved right treatment as a style reference and no airline style proof. It was processed from candidate-1.png using the standard edge-connected white-matte workflow.",
-      "approvalNotes": "Approved 2026-10-30 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Left-facing direction, single tractor propeller, one engine, robust fixed landing gear, agricultural spray hardware, bright yellow registration-free treatment, crop, baseline, alpha edges, and small-family relative visual scale pass. The directional pair was reviewed together and matches one aircraft family and treatment.",
+      "generationException": {
+        "id": "pg010-air-tractor-neutral-identity-1",
+        "text": "Rejected-candidate correction: render a complete, recognizable Air Tractor-style agricultural airplane with a clearly visible enclosed cockpit and glazing, one nose-mounted turboprop engine, one propeller, two main wheels plus a tailwheel, intact wings and tail, and believable spray-boom hardware. Omit every registration, letter, number, manufacturer name, wordmark, logo, and organization identity; leave the bright-yellow exterior completely unmarked."
+      },
+      "generatedAt": "2026-10-31T18:06:11.0488291+00:00",
+      "candidateNotes": "Vertex request fa22ceb199578bc78003 in global returned the independently generated left-facing PG-010 replacement using the new right treatment only as a style reference. The selected candidate was processed through the recorded global magenta extraction and frozen quality-90 workflow; manual repair SHA-256: 58aaa1968de52a046329b6288b8cb697231b7bc6ea908f02b8ecbb817b399288.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Left-facing direction, single tractor propeller, one engine, complete fixed landing gear, agricultural spray hardware, bright-yellow identity-free treatment, crop, baseline, and spill-free alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. Output is 63,030 bytes.",
       "output": {
         "manifestKey": "air-tractor-yellow:left",
         "url": "/assets/planes/v1/air-tractor-yellow-left.webp",
-        "sha256": "773c0b57fc733e6268364134815e3c0cfded3054195a7e2c4f7a83b0ae8baa53"
+        "sha256": "3ad406f2ccb8658389510fcdcf48abf0a191bc36e9312922bc4e706ce44fa86d"
       }
     },
     {
