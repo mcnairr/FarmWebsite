@@ -44,6 +44,9 @@ h1 {
   line-height: 1.12;
   text-shadow: 0 2px 20px rgba(0, 0, 0, .3);
 }
+.location-heading {
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+}
 header p {
   margin: 1rem 0 0;
   font-family: system-ui, sans-serif;
@@ -56,6 +59,10 @@ footer {
   padding: 2rem 1rem 1.25rem;
   font: .6rem/1.6 system-ui, sans-serif;
   letter-spacing: .02em;
+}
+.footer-copyright {
+  display: block;
+  font-size: .7rem;
 }
 .not-found {
   margin: auto 1.25rem;
