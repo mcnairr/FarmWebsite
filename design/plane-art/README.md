@@ -142,6 +142,36 @@ contract, quality-90 WebP encoding, and the 40–110 KB approval gate. Generated
 art is never published automatically; visual approval over the production sky
 and checkerboard remains mandatory.
 
+### Chroma-background transparency workflow
+
+Issue [#18](https://github.com/mcnairr/FarmWebsite/issues/18) demonstrated that
+a white aircraft on a white generated background can defeat the standard
+edge-connected white matte: the flood fill may cross a pale boundary and erase
+the upper fuselage, cockpit, or nose. Do not approve or hand-paint around that
+damage.
+
+When a batch has a recorded chroma exception, generation uses a perfectly
+uniform, fully saturated background that contrasts with every protected livery
+color. Phase 2 North American airline pairs use magenta (`#FF00FF`) because
+Frontier and several peers contain green. The exception must name every affected
+prompt record and remains subordinate to the frozen direction, anatomy,
+branding, lighting, crop, and independent-pair requirements.
+
+Extract a generated candidate before normal production processing:
+
+```powershell
+npm run plane-art:chroma -- --input <candidate.png> --output <transparent.png> --color magenta
+node scripts/process-plane-art.mjs --artwork-id <id> --direction <direction> --input <candidate.png> --source-metadata <metadata.json> --manual-repair <transparent.png> --proof <proof.png>
+```
+
+The extractor flood-fills only edge-connected chroma pixels, unmattes
+antialiased edges against the exact background color, and replaces translucent
+edge RGB with the nearest fully opaque aircraft color to remove color spill.
+It never mirrors, redraws, or changes aircraft geometry. Review the result on
+the production sky and checkerboard at hero and blip sizes. Reject wrong
+direction, malformed anatomy, a missing or ambiguous engine, residual chroma
+fringe, transparent aircraft pixels, or an opaque background.
+
 ## Version 1 manifest and provenance contracts
 
 [`../../plane-art.js`](../../plane-art.js) is the pure, DOM-free Phase 1 runtime

@@ -13,6 +13,7 @@ const FAMILY_BY_ICAO = Object.freeze({
   E75S: 'regional', E190: 'regional', E195: 'regional', E290: 'regional',
 
   // Single-aisle mainline aircraft.
+  A220: 'narrowbody', A223: 'narrowbody',
   A319: 'narrowbody', A320: 'narrowbody', A321: 'narrowbody',
   B37M: 'narrowbody', B38M: 'narrowbody', B39M: 'narrowbody',
   B737: 'narrowbody', B738: 'narrowbody', B739: 'narrowbody',
@@ -46,6 +47,17 @@ const BRANDED_FAMILIES = Object.freeze({
   SWA: Object.freeze({ narrowbody: 'swa-narrowbody' }),
   FDX: Object.freeze({ widebody: 'fdx-widebody' }),
   UPS: Object.freeze({ widebody: 'ups-widebody' }),
+  ASA: Object.freeze({ narrowbody: 'asa-narrowbody' }),
+  JBU: Object.freeze({ narrowbody: 'jbu-narrowbody' }),
+  FFT: Object.freeze({ narrowbody: 'fft-narrowbody' }),
+  NKS: Object.freeze({ narrowbody: 'nks-narrowbody' }),
+  AAY: Object.freeze({ narrowbody: 'aay-narrowbody' }),
+  SCX: Object.freeze({ narrowbody: 'scx-narrowbody' }),
+  HAL: Object.freeze({ narrowbody: 'hal-narrowbody', widebody: 'hal-widebody' }),
+  ACA: Object.freeze({ narrowbody: 'aca-narrowbody', widebody: 'aca-widebody' }),
+  WJA: Object.freeze({ narrowbody: 'wja-narrowbody' }),
+  AMX: Object.freeze({ narrowbody: 'amx-narrowbody' }),
+  VOI: Object.freeze({ narrowbody: 'voi-narrowbody' }),
 });
 
 const REGIONAL_PARTNERS = Object.freeze({

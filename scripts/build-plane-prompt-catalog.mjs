@@ -163,6 +163,8 @@ for (const treatment of treatments) {
         ? previous.referenceIds
         : ['production-spec', ...(brandedStyleReference ? ['vertex-style-proof'] : []), `shape-guide:${guideId}`],
       styleReferenceKey: direction === 'left' ? `${treatment.id}:right:v1` : null,
+      generationException: previous?.generationException ?? null,
+      repair: previous?.repair ?? null,
       generatedAt: previous?.generatedAt ?? null,
       candidateNotes: previous?.candidateNotes ?? 'Generation is blocked until the original shape guide is created, documented, and reviewed.',
       approvalNotes: previous?.approvalNotes ?? 'Not generated or approved.',
@@ -174,6 +176,8 @@ for (const treatment of treatments) {
 const catalog = {
   schemaVersion: 2,
   canonicalMatrix: 'design/plane-graphics-plan2.md#planned-artwork-matrix',
+  generationAmendments: existingCatalog?.generationAmendments ?? [],
+  scopedGenerationExceptions: existingCatalog?.scopedGenerationExceptions ?? [],
   sharedConstraints: sharedConstraints.map((text, index) => ({ id: `global-${index + 1}`, text })),
   referenceCatalog: [
     { id: 'production-spec', type: 'file', file: 'design/plane-art/README.md', provenance: 'Project-authored production decision record.', ownership: 'McNair Farms project', permission: 'Project-owned; approved for this production workflow.' },

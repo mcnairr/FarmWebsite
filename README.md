@@ -320,6 +320,7 @@ Cloudflare's own runtime, at http://127.0.0.1:8787/api/flights.
 | `design/plane-art/phase1-release-baseline.md` | Released Phase 1 inventory and cold-cache behavior baseline |
 | `design/plane-art/phase1-mobile-performance.md` | PG-017 throttled mobile measurements and shared-image decision |
 | `scripts/process-plane-art.mjs` | Deterministic alpha cleanup, 960 × 330 normalization, WebP encoding, checks, and proof output |
+| `scripts/extract-plane-chroma.mjs` | Edge-connected magenta/green chroma extraction for pale aircraft; use the documented magenta workflow before normal processing (`npm run plane-art:chroma`) |
 | `scripts/repair-plane-lighting.mjs` | PG-011 reviewer-driven, alpha-preserving correction for smoke-like neutral upper-surface shading (`npm run plane-art:repair-lighting`) |
 | `scripts/audit-phase1-plane-art.mjs` | Reproducible PG-011 dimensions, byte distribution, alpha, pair, model, and prompt-revision audit (`npm run plane-art:audit-phase1`) |
 | `scripts/measure-plane-art-performance.mjs` | Repeatable throttled Chromium cold/warm benchmark (`npm run plane-art:measure-performance`) |

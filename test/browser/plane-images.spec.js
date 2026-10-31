@@ -46,7 +46,7 @@ test('loads directional jet, propeller, and generic artwork in hero and blips', 
   await expect(page.locator('.ff-plane-image')).toHaveAttribute('src', '/assets/planes/v1/aal-narrowbody-right.webp');
   await expect(page.locator('.ff-blip[data-id="02"] img')).toHaveAttribute('src', '/assets/planes/v1/ual-narrowbody-left.webp');
   await expect(page.locator('.ff-blip[data-id="03"] img')).toHaveAttribute('src', '/assets/planes/v1/cessna-high-wing-left.webp');
-  await expect(page.locator('.ff-blip[data-id="04"] img')).toHaveAttribute('src', '/assets/planes/v1/generic-narrowbody-right.webp');
+  await expect(page.locator('.ff-blip[data-id="04"] img')).toHaveAttribute('src', '/assets/planes/v1/fft-narrowbody-right.webp');
   await expect(page.locator('.ff-plane-image')).toHaveJSProperty('naturalWidth', 960);
 
   await page.locator('.ff-blip[data-id="03"]').click();
@@ -115,20 +115,20 @@ test('requests only visible unique art, reuses cache and keyed blips, and does n
   expect(after).toEqual(before);
 
   expect(new Set(requests)).toEqual(new Set([
-    '/assets/planes/v1/generic-narrowbody-right.webp',
+    '/assets/planes/v1/fft-narrowbody-right.webp',
     '/assets/planes/v1/aal-narrowbody-left.webp',
   ]));
   expect(requests).not.toContain('/assets/planes/v1/dal-narrowbody-right.webp');
   expect(requests.length).toBeLessThan(16 * 2);
 
   await page.locator('.ff-blip[data-id="same-art"]').click();
-  await expect(page.locator('.ff-plane-image')).toHaveAttribute('src', '/assets/planes/v1/generic-narrowbody-right.webp');
-  expect(requests.filter((url) => url.endsWith('generic-narrowbody-right.webp'))).toHaveLength(1);
+  await expect(page.locator('.ff-plane-image')).toHaveAttribute('src', '/assets/planes/v1/fft-narrowbody-right.webp');
+  expect(requests.filter((url) => url.endsWith('fft-narrowbody-right.webp'))).toHaveLength(1);
 
   items = [items[0], { ...items[1], distanceFromFarmNm: 12 }, { ...items[2], distanceFromFarmNm: 3 }];
   await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
   await expect.poll(() => page.evaluate(() => [...document.querySelectorAll('.ff-blip')].every(
     (node) => !window.__blipNodes[node.dataset.id] || window.__blipNodes[node.dataset.id] === node,
   ))).toBe(true);
-  expect(requests.filter((url) => url.endsWith('generic-narrowbody-right.webp'))).toHaveLength(1);
+  expect(requests.filter((url) => url.endsWith('fft-narrowbody-right.webp'))).toHaveLength(1);
 });

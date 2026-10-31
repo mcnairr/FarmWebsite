@@ -103,6 +103,7 @@ try {
   if (-not $catalog.records) { throw 'Prompt catalog has no records.' }
   if (-not $inventory.guides) { throw 'Shape-guide inventory has no guides.' }
   $generationAmendments = @($catalog.generationAmendments | Where-Object { $_.id -and $_.text })
+  $scopedGenerationExceptions = @($catalog.scopedGenerationExceptions | Where-Object { $_.id -and $_.text -and $_.recordKeys })
 
   $knownIds = @($catalog.records | Select-Object -ExpandProperty artworkId -Unique | Sort-Object)
   $requestedIds = @($ArtworkId | ForEach-Object { if ($_){ $_.Trim() } } | Where-Object { $_ } | Select-Object -Unique)
@@ -152,8 +153,20 @@ try {
   foreach ($record in $records) {
     if (-not $record.prompt -or -not $record.key) { throw "Prompt definition is incomplete for '$($record.artworkId):$($record.direction)'." }
     if ([string]$record.status -like 'blocked*') { throw "Prompt '$($record.key)' is blocked: $($record.blockedReason)" }
-    $effectivePrompt = ((@([string]$record.prompt) + @($generationAmendments | ForEach-Object { [string]$_.text })) -join "`n`n")
-    $promptRevision = ((@([string]$record.key) + @($generationAmendments | ForEach-Object { [string]$_.id })) -join '+')
+    $recordException = if ($record.generationException -and $record.generationException.id -and $record.generationException.text) {
+      @($record.generationException)
+    } else {
+      @()
+    }
+    $scopedExceptions = @($scopedGenerationExceptions | Where-Object { @($_.recordKeys) -contains [string]$record.key })
+    $effectivePrompt = ((@([string]$record.prompt) +
+      @($generationAmendments | ForEach-Object { [string]$_.text }) +
+      @($scopedExceptions | ForEach-Object { [string]$_.text }) +
+      @($recordException | ForEach-Object { [string]$_.text })) -join "`n`n")
+    $promptRevision = ((@([string]$record.key) +
+      @($generationAmendments | ForEach-Object { [string]$_.id }) +
+      @($scopedExceptions | ForEach-Object { [string]$_.id }) +
+      @($recordException | ForEach-Object { [string]$_.id })) -join '+')
     $guide = $guideById[[string]$record.shapeGuideId]
     if (-not $guide -or $guide.status -ne 'available' -or -not $guide.file) {
       throw "Shape guide '$($record.shapeGuideId)' is not available for '$($record.artworkId)'."

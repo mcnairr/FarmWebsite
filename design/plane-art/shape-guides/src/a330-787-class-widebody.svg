@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round"><path d="M110 374 C215 305 450 289 1125 298 C1316 301 1432 338 1490 378 C1428 426 1292 450 1048 451 L340 446 C220 442 141 415 110 394 Z"/><path d="M277 344 L161 190 L226 178 L458 337 Z"/><path d="M330 428 L171 533 L139 510 L269 408 Z"/><path d="M678 337 L408 120 L510 105 L920 329 Z"/><path d="M714 437 L470 700 L379 684 L574 415 Z"/><ellipse cx="650" cy="454" rx="99" ry="58"/><ellipse cx="962" cy="456" rx="99" ry="58"/></g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12"><line x1="80" y1="485" x2="1520" y2="485"/><line x1="800" y1="80" x2="800" y2="720"/></g>
+  <g fill="#132a46" font-family="Arial, sans-serif"><text x="100" y="75" font-size="44" font-weight="700">A330 / 787-class widebody shape guide</text><text x="100" y="790" font-size="29">Twin-aisle fuselage · two large underwing turbofans · long swept wings · conventional tail</text><text x="100" y="835" font-size="25" fill="#52677d">Original McNair Farms project diagram — silhouette and proportions only; no livery or registration reference.</text></g>
+</svg>

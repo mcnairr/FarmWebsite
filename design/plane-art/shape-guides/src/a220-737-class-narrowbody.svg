@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round"><path d="M155 382 C254 323 468 308 1114 316 C1288 319 1401 350 1455 383 C1398 420 1270 440 1055 441 L398 437 C280 433 197 414 155 397 Z"/><path d="M289 359 L177 216 L232 207 L439 352 Z"/><path d="M341 422 L190 511 L163 492 L280 406 Z"/><path d="M674 352 L445 159 L524 147 L892 347 Z"/><path d="M702 426 L507 651 L435 638 L575 412 Z"/><ellipse cx="678" cy="440" rx="73" ry="43"/><ellipse cx="917" cy="441" rx="73" ry="43"/></g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12"><line x1="120" y1="464" x2="1490" y2="464"/><line x1="800" y1="110" x2="800" y2="680"/></g>
+  <g fill="#132a46" font-family="Arial, sans-serif"><text x="100" y="90" font-size="46" font-weight="700">A220 / 737-class narrowbody shape guide</text><text x="100" y="780" font-size="30">Modern single-aisle proportions · twin underwing engines · swept low wing · conventional tail</text><text x="100" y="826" font-size="25" fill="#52677d">Original McNair Farms project diagram — silhouette and proportions only; no livery or registration reference.</text></g>
+</svg>

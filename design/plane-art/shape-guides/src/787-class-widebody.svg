@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round"><path d="M105 377 C220 306 450 291 1125 299 C1325 302 1443 341 1495 381 C1423 428 1294 451 1046 452 L338 447 C217 443 137 417 105 396 Z"/><path d="M274 345 L157 188 L226 177 L462 338 Z"/><path d="M328 429 L167 535 L135 511 L267 409 Z"/><path d="M683 338 L399 117 L505 102 L932 329 Z"/><path d="M718 438 L464 704 L372 687 L577 415 Z"/><ellipse cx="645" cy="456" rx="103" ry="60"/><ellipse cx="973" cy="457" rx="103" ry="60"/></g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12"><line x1="75" y1="488" x2="1525" y2="488"/><line x1="800" y1="75" x2="800" y2="725"/></g>
+  <g fill="#132a46" font-family="Arial, sans-serif"><text x="100" y="72" font-size="44" font-weight="700">787-class widebody shape guide</text><text x="100" y="790" font-size="29">Twin-aisle fuselage · two large turbofans · long raked flexible wings · smooth swept tail</text><text x="100" y="835" font-size="25" fill="#52677d">Original McNair Farms project diagram — silhouette and proportions only; no livery or registration reference.</text></g>
+</svg>

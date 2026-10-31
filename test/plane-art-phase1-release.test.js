@@ -9,11 +9,12 @@ test('PG-016 releases exactly 16 approved pairs and 32 production WebPs', async 
   const phase1 = PLANE_ASSETS.filter(({ artworkId }) => PHASE1_TREATMENT_IDS.includes(artworkId));
   const files = (await readdir(new URL('../assets/planes/v1/', import.meta.url)))
     .filter((name) => name.endsWith('.webp'));
+  const phase1Files = new Set(phase1.map(({ url }) => url.split('/').at(-1)));
 
   assert.equal(new Set(phase1.map(({ artworkId }) => artworkId)).size, 16);
   assert.equal(phase1.length, 32);
   assert.equal(phase1.every(({ approvalStatus }) => approvalStatus === 'approved'), true);
-  assert.equal(files.length, 32);
+  assert.equal(files.filter((name) => phase1Files.has(name)).length, 32);
   assert.deepEqual(await validatePlaneLibrary(), []);
 });
 

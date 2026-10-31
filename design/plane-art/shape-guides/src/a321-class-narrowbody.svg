@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round"><path d="M118 386 C224 326 430 311 1168 317 C1330 320 1432 350 1480 385 C1414 423 1292 440 1082 441 L350 438 C233 434 151 415 118 399 Z"/><path d="M267 361 L161 218 L216 209 L426 354 Z"/><path d="M318 423 L168 514 L142 494 L260 407 Z"/><path d="M676 353 L452 160 L528 148 L888 348 Z"/><path d="M705 427 L510 650 L440 638 L578 413 Z"/><ellipse cx="696" cy="440" rx="70" ry="41"/><ellipse cx="920" cy="441" rx="70" ry="41"/></g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12"><line x1="90" y1="463" x2="1510" y2="463"/><line x1="800" y1="110" x2="800" y2="680"/></g>
+  <g fill="#132a46" font-family="Arial, sans-serif"><text x="100" y="90" font-size="46" font-weight="700">A321-class narrowbody shape guide</text><text x="100" y="780" font-size="30">Elongated single-aisle fuselage · twin underwing engines · low swept wing · conventional tail</text><text x="100" y="826" font-size="25" fill="#52677d">Original McNair Farms project diagram — silhouette and proportions only; no livery or registration reference.</text></g>
+</svg>

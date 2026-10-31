@@ -1,6 +1,49 @@
 {
   "schemaVersion": 2,
   "canonicalMatrix": "design/plane-graphics-plan2.md#planned-artwork-matrix",
+  "scopedGenerationExceptions": [
+    {
+      "id": "pg018-chroma-magenta-1",
+      "approvedOn": "2026-10-31",
+      "rationale": "White-background generation repeatedly caused pale fuselage, cockpit, and nose pixels to be removed with the background. Issue #18 approved a uniform contrasting chroma background and deterministic alpha extraction.",
+      "text": "PG-018 asset-specific background override for extraction: ignore the pure-white-background instruction for this request only. Place the complete aircraft on a perfectly uniform solid chroma-key magenta (#FF00FF) background. Use no gradient, texture, checkerboard, floor, horizon, scenery, shadow, magenta spill, magenta aircraft paint, or outline. The aircraft must point in the requested nose direction, show exactly two structurally correct underwing engines, and preserve all other frozen photorealistic, branding, crop, lighting, and anatomy constraints.",
+      "recordKeys": [
+        "asa-narrowbody:right:v1",
+        "asa-narrowbody:left:v1",
+        "jbu-narrowbody:right:v1",
+        "jbu-narrowbody:left:v1",
+        "fft-narrowbody:right:v1",
+        "fft-narrowbody:left:v1",
+        "nks-narrowbody:right:v1",
+        "nks-narrowbody:left:v1",
+        "aay-narrowbody:right:v1",
+        "aay-narrowbody:left:v1",
+        "scx-narrowbody:right:v1",
+        "scx-narrowbody:left:v1",
+        "hal-narrowbody:right:v1",
+        "hal-narrowbody:left:v1",
+        "hal-widebody:right:v1",
+        "hal-widebody:left:v1",
+        "aca-narrowbody:right:v1",
+        "aca-narrowbody:left:v1",
+        "aca-widebody:right:v1",
+        "aca-widebody:left:v1",
+        "wja-narrowbody:right:v1",
+        "wja-narrowbody:left:v1",
+        "amx-narrowbody:right:v1",
+        "amx-narrowbody:left:v1",
+        "voi-narrowbody:right:v1",
+        "voi-narrowbody:left:v1"
+      ]
+    }
+  ],
+  "generationAmendments": [
+    {
+      "id": "pg011-lighting-1",
+      "effectiveOn": "2026-10-30",
+      "text": "Use clean, even daylight across all upper aircraft surfaces. Reject and regenerate any candidate with a smoky, soot-like, burned, dirty, or unnaturally dark upper-surface cast. Preserve realistic gentle curvature shading and normal underside shadows."
+    }
+  ],
   "sharedConstraints": [
     {
       "id": "global-1",
@@ -21,13 +64,6 @@
     {
       "id": "global-5",
       "text": "do not mirror or flip an image"
-    }
-  ],
-  "generationAmendments": [
-    {
-      "id": "pg011-lighting-1",
-      "effectiveOn": "2026-10-30",
-      "text": "Use clean, even daylight across all upper aircraft surfaces. Reject and regenerate any candidate with a smoky, soot-like, burned, dirty, or unnaturally dark upper-surface cast. Preserve realistic gentle curvature shading and normal underside shadows."
     }
   ],
   "referenceCatalog": [
@@ -721,7 +757,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -740,13 +776,13 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:07:32.0199659+00:00",
+      "candidateNotes": "Vertex request aaf84fc4ad3712e33613 in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: b2e2e70ac0af79e1761c18d6ab388d4cd31b11f0db52ebb2ed01773fc525f194.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 83858 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "asa-narrowbody:right",
         "url": "/assets/planes/v1/asa-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "de4cd5dd5c9a6f4e4b5c446d49bc04766bc1a1f13a347014a29608dfea5536c7"
       }
     },
     {
@@ -765,7 +801,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -784,13 +820,17 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": "asa-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": {
+        "id": "pg018-asa-left-direction-1",
+        "text": "Direction correction for this rejected candidate: the aircraft nose and cockpit must be on the LEFT edge of the image and the tail must be on the RIGHT edge. Do not reproduce the right-facing reference orientation."
+      },
+      "generatedAt": "2026-10-31T14:36:59.1438253+00:00",
+      "candidateNotes": "Vertex request db827b13774d69f8ecf2 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 59fe63a959b123860b5a837353a0b3881520665bb403113a7ddf0bcf2a9a01f0.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 21660 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "asa-narrowbody:left",
         "url": "/assets/planes/v1/asa-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "410ae77c28c83ad4daecbfafcbcfbb5de168229d26f6d5cce49e6e08ab518e23"
       }
     },
     {
@@ -809,8 +849,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -828,13 +868,13 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:10:29.5084114+00:00",
+      "candidateNotes": "Vertex request c3b770b0f661547f5026 in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: da7bd2ace94e2128712ca250569b7f8a30a152725483b287fe596330a5ab5baf.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 20516 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "jbu-narrowbody:right",
         "url": "/assets/planes/v1/jbu-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "4709ed195d47c3620c5082a7bbda2a33399dc71bc6d34b44b2f9569b5513789c"
       }
     },
     {
@@ -853,8 +893,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -872,13 +912,13 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": "jbu-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:20:49.0532978+00:00",
+      "candidateNotes": "Vertex request 1014be8c91c3d8f7f41f in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: e3d9dcb6f90f83ea0f8e6944c7b624c6a5f3cc621072b5f0c1289750ee568275.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 19926 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "jbu-narrowbody:left",
         "url": "/assets/planes/v1/jbu-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "90ea363fc917ab910a5cc1acbffd096b2aea24c6e84a7bd81a688773001787d8"
       }
     },
     {
@@ -897,8 +937,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -916,13 +956,13 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T13:42:18.5062686+00:00",
+      "candidateNotes": "Vertex request dd90321cfe8f5d53fc20 in global returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: d181f0313b5f62ae2f78021f4346fa2c515200bb3b0b456d86ea868352089ff7.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 28190 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "fft-narrowbody:right",
         "url": "/assets/planes/v1/fft-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "8ab290412ebcb7a2ca203b0c7b3226903a76ee965a0d594060bcdbf0a1b09e55"
       }
     },
     {
@@ -941,8 +981,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -960,13 +1000,13 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": "fft-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:19:56.4596110+00:00",
+      "candidateNotes": "Vertex request e0f4a7c92ad2441557e7 in europe-west1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: d33b5c2ec53f34d063e22f0820d232885da2a9b10c4920ec64274e455dd37759.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 86226 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "fft-narrowbody:left",
         "url": "/assets/planes/v1/fft-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "c528cdf1fab4d51e0385897a445dcd9015036d6708b3e417900d6afb264c2f7f"
       }
     },
     {
@@ -985,8 +1025,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1004,13 +1044,13 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:10:38.1657738+00:00",
+      "candidateNotes": "Vertex request 55573bbb146d2523f816 in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 9d9d64fbd965f0a4cdb64e7d94fae23ce361c6cd054dcf35f9ed14f229ea36c9.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 74530 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "nks-narrowbody:right",
         "url": "/assets/planes/v1/nks-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "df0f52fd356b77a0d997380f9241b2ca82690a81caac6f97d842f30e8959d5da"
       }
     },
     {
@@ -1029,8 +1069,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1048,13 +1088,13 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": "nks-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:21:45.0294212+00:00",
+      "candidateNotes": "Vertex request 5b69e35a3692e956076e in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 9fcc456b9f4c810cb6d932d3e0e7088b0a94f5a57f16df3bed7bff994f15294d.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 43690 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "nks-narrowbody:left",
         "url": "/assets/planes/v1/nks-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "69067b90746ee19d9d2c976095f02ad99462cb0ad22d8976dc83033939ed8a12"
       }
     },
     {
@@ -1073,8 +1113,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1092,13 +1132,13 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:06:55.4234982+00:00",
+      "candidateNotes": "Vertex request 431bbaddaa2b7cccf16f in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: c46ea7ec790a643986dd38e1eef80e09f136f35251203b1277e6f4876074800d.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 27068 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "aay-narrowbody:right",
         "url": "/assets/planes/v1/aay-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "13b5025036d49341c3f9a1791e17f87a9a7118ad340e88dc643612a6045e2dad"
       }
     },
     {
@@ -1117,8 +1157,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1136,13 +1176,13 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": "aay-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:15:45.4851646+00:00",
+      "candidateNotes": "Vertex request 341473d135278d7dbc4c in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: ca1119f29dd6dbf5f1c0aa77a4e07f5e463f723123bb7bf7045cd95ec6e3cf39.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 90658 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "aay-narrowbody:left",
         "url": "/assets/planes/v1/aay-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "b9d01ce198673818b17593d52a232363c41596e7f40732b3648f20fe59338caa"
       }
     },
     {
@@ -1161,7 +1201,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -1180,13 +1220,13 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:10:46.1404520+00:00",
+      "candidateNotes": "Vertex request 7a421b6d4de7b6e7ca6c in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: ddcab7b461c58b5509c6648c90983f0aa772da805bd1fe638370fdf9874a179e.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 26584 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "scx-narrowbody:right",
         "url": "/assets/planes/v1/scx-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "a1d34b05eb2be72df287cd9802dbda123f7bb83a466165af3b1ca343a7363d25"
       }
     },
     {
@@ -1205,7 +1245,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -1224,13 +1264,13 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": "scx-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:22:45.0840649+00:00",
+      "candidateNotes": "Vertex request 27dab1d1abeb00e76752 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 3567bc2564d0f3ee1069f6765736614605dbbef07e7938c47dde3c0306180728.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 20138 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "scx-narrowbody:left",
         "url": "/assets/planes/v1/scx-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "74c47ae6f1229c12638dc67fd940aae3a2e3ea83d37f525352db6ac9c4bb80c8"
       }
     },
     {
@@ -1249,8 +1289,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a321-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a321-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1268,13 +1308,13 @@
         "shape-guide:a321-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:10:09.4497610+00:00",
+      "candidateNotes": "Vertex request c11bde4377f3337cc4c4 in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 2bff01f1e1858938449d248412f6bb6b00959261bcd7112409c221d34b66db2c.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 54328 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "hal-narrowbody:right",
         "url": "/assets/planes/v1/hal-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "f77feec5a4caa32f102d47b13e1ac97347bf31a3a2fae89de70accf160691ce2"
       }
     },
     {
@@ -1293,8 +1333,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a321-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a321-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1312,13 +1352,13 @@
         "shape-guide:a321-class-narrowbody"
       ],
       "styleReferenceKey": "hal-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:23:35.0170193+00:00",
+      "candidateNotes": "Vertex request 867d5a6cb3bb00affbc5 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: f70993de2ae55d683de4984c27db1f8414d08520be6378dce2af7e8ba96659a2.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 29070 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "hal-narrowbody:left",
         "url": "/assets/planes/v1/hal-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "f6071a10af9535868abf0e4d66ea3309728adbe785fded3f1d12fddea9843d3c"
       }
     },
     {
@@ -1337,8 +1377,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a330-787-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a330-787-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1356,13 +1396,13 @@
         "shape-guide:a330-787-class-widebody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:10:18.0735688+00:00",
+      "candidateNotes": "Vertex request 4b0c6abbefc937f87ecd in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: c82f075d20b47aa738203dc0ea14161b565c70f208e89c8f8365a6f4f99fac6c.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 39658 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "hal-widebody:right",
         "url": "/assets/planes/v1/hal-widebody-right.webp",
-        "sha256": null
+        "sha256": "943f18fa23f66f729694f5217dbfd146d81da17db9c435993f5bfb7751abd474"
       }
     },
     {
@@ -1381,8 +1421,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a330-787-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a330-787-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1400,13 +1440,13 @@
         "shape-guide:a330-787-class-widebody"
       ],
       "styleReferenceKey": "hal-widebody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:33:28.5140175+00:00",
+      "candidateNotes": "Vertex request b9573a903081f234bf23 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 772c3a27c18db110c5cc5049f2a2c00e61f975f74854dbe6caeebf59067f9b51.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 22932 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "hal-widebody:left",
         "url": "/assets/planes/v1/hal-widebody-left.webp",
-        "sha256": null
+        "sha256": "5ab0217a9d88b4165329c6fc51e5b7a65207cb806513f638c361aae09af6badc"
       }
     },
     {
@@ -1425,8 +1465,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a220-737-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a220-737-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1444,13 +1484,13 @@
         "shape-guide:a220-737-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:07:04.1740157+00:00",
+      "candidateNotes": "Vertex request 08c849830984c5582b63 in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 6da07aed5cbec8bc0c89ac0c076fc1e100d83640b9d59d11121b83ad94e5106a.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 26534 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "aca-narrowbody:right",
         "url": "/assets/planes/v1/aca-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "07335e45316ef896c4f63c9443b0c91f0853c31476ca18fd1bfee3d564b02e25"
       }
     },
     {
@@ -1469,8 +1509,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a220-737-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a220-737-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1488,13 +1528,13 @@
         "shape-guide:a220-737-class-narrowbody"
       ],
       "styleReferenceKey": "aca-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:18:33.3741654+00:00",
+      "candidateNotes": "Vertex request 1be106b33b4c0877a8b1 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 9e09a03e9b5af9865a10bde9367f2feb843e6f937b6ec69d654c974574e9eb71.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 20164 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "aca-narrowbody:left",
         "url": "/assets/planes/v1/aca-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "3995744e8e4fa73d042a824a4088bccfe00ee3c9173f88075fb170bcb6ee5038"
       }
     },
     {
@@ -1513,8 +1553,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 787-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1532,13 +1572,13 @@
         "shape-guide:787-class-widebody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:07:14.0767523+00:00",
+      "candidateNotes": "Vertex request 53eb7c0b8037d0e67f1c in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: d25c787485dc5ca63dddfafb1fb3783aef993acf2cf7bd138320ab9eaeeeccf0.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 19946 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "aca-widebody:right",
         "url": "/assets/planes/v1/aca-widebody-right.webp",
-        "sha256": null
+        "sha256": "4c66f6350d4423877e411d01943736b93d7ff22d0bd6129952b47449f8ef7507"
       }
     },
     {
@@ -1557,8 +1597,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 787-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1576,13 +1616,13 @@
         "shape-guide:787-class-widebody"
       ],
       "styleReferenceKey": "aca-widebody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:26:36.0574983+00:00",
+      "candidateNotes": "Vertex request 27ddf8f6505841c36ceb in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 64383b0cb067e7a698bf666f346370d8a4d9a29a528a9e437f83d8bb77090921.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 23320 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "aca-widebody:left",
         "url": "/assets/planes/v1/aca-widebody-left.webp",
-        "sha256": null
+        "sha256": "3a7474d3dec087d1c2ccf8906614be1f35eb7ae6d0173e10c110268f08564437"
       }
     },
     {
@@ -1601,7 +1641,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -1620,13 +1660,13 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:13:06.7596305+00:00",
+      "candidateNotes": "Vertex request d1b719c2d5cc721e697f in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 45b030a50a09355d7a79f4dc36a432d3663f480b4117caca1d0720ebf7ecc184.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 67512 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "wja-narrowbody:right",
         "url": "/assets/planes/v1/wja-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "b62cc908df47866243a46ca51797b1d5246c0b2070e8f2a429e700ecb8616ac7"
       }
     },
     {
@@ -1645,7 +1685,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -1664,13 +1704,13 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": "wja-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:28:03.6176954+00:00",
+      "candidateNotes": "Vertex request 6c55bd93fd37a63749cb in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 11fd2720ccceb3468a40d1e9c416b1445d4d0a4f5603bda9bc9f34a4e5307d66.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 58916 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "wja-narrowbody:left",
         "url": "/assets/planes/v1/wja-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "248946ac5fb939b88fc5083ee07544a37439ec911f7614bfc768b5a985abe05b"
       }
     },
     {
@@ -1689,7 +1729,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -1708,13 +1748,13 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:07:23.2969112+00:00",
+      "candidateNotes": "Vertex request 6bcd5f6663b52d2f275c in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: e93a1238b87b48a2a1c10e05f5963fe539866b4454a91e4d8d9bd8278eff5172.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 81872 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "amx-narrowbody:right",
         "url": "/assets/planes/v1/amx-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "12ebf7f29b845aea4735c8d8b54886a8e00e7b425c03c236d9b54da45e8321e4"
       }
     },
     {
@@ -1733,7 +1773,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "737-class-narrowbody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -1752,13 +1792,13 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": "amx-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:29:36.7403543+00:00",
+      "candidateNotes": "Vertex request 0f3fc38cc5962aee0338 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 13a057e1710cb6367870b49b300b45d43765f3170dea82a72a89cef91b755c53.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 81962 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "amx-narrowbody:left",
         "url": "/assets/planes/v1/amx-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "d463987f9acbaf68a15dae4fd33aa1873ec4cc91e73e18b5e3e1e4d608cf19e0"
       }
     },
     {
@@ -1777,8 +1817,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1796,13 +1836,13 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:11:55.8124521+00:00",
+      "candidateNotes": "Vertex request c02e3c3a1be977bc0e4e in global returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 40e824c37b3936a4147d4c6f43f7c5c2843a789ca7419ae454aae1a8a75ad4ca.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 49892 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "voi-narrowbody:right",
         "url": "/assets/planes/v1/voi-narrowbody-right.webp",
-        "sha256": null
+        "sha256": "1cb1db41dad24e3efe15f3bedc30f00aca68ca4cdebc195016e6564238b60bfe"
       }
     },
     {
@@ -1821,8 +1861,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a320-class-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a320-class-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -1840,13 +1880,13 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": "voi-narrowbody:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-10-31T14:31:01.2539603+00:00",
+      "candidateNotes": "Vertex request ccc58cb2311653746ab9 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: d20de185ccc8773836943a5dbfa99984d9eaa1e862aadfa6879e295a4a5a45c8.",
+      "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 68932 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
       "output": {
         "manifestKey": "voi-narrowbody:left",
         "url": "/assets/planes/v1/voi-narrowbody-left.webp",
-        "sha256": null
+        "sha256": "93b9357700676911d5c12e03a1311a10d619ca9a5bc0b105218e7f12bf6b3259"
       }
     },
     {

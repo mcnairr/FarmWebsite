@@ -31,6 +31,13 @@ test('planeArtwork covers all Phase 1 exact brand mappings', () => {
     ['SWA1', 'B38M', 'swa-narrowbody'], ['FDX1', 'B763', 'fdx-widebody'],
     ['UPS1', 'B764', 'ups-widebody'], ['ENY1', 'E75L', 'american-eagle-regional'],
     ['JIA1', 'CRJ9', 'american-eagle-regional'],
+    ['ASA1', 'B739', 'asa-narrowbody'], ['JBU1', 'A320', 'jbu-narrowbody'],
+    ['FFT1', 'A321', 'fft-narrowbody'], ['NKS1', 'A319', 'nks-narrowbody'],
+    ['AAY1', 'A320', 'aay-narrowbody'], ['SCX1', 'B738', 'scx-narrowbody'],
+    ['HAL1', 'A321', 'hal-narrowbody'], ['HAL2', 'B789', 'hal-widebody'],
+    ['ACA1', 'A223', 'aca-narrowbody'], ['ACA2', 'B788', 'aca-widebody'],
+    ['WJA1', 'B38M', 'wja-narrowbody'], ['AMX1', 'B739', 'amx-narrowbody'],
+    ['VOI1', 'A320', 'voi-narrowbody'],
   ];
   for (const [callsign, icaoType, expected] of cases) {
     assert.equal(planeArtwork({ callsign, icaoType, aircraftClass: 'airliner' }), expected);
