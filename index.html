@@ -21,23 +21,10 @@
       <source media="(max-aspect-ratio: 3/4)" srcset="/assets/oats-portrait-640.webp 640w, /assets/oats-portrait-1080.webp 1080w" sizes="max(100vw, 50vh)">
       <img src="/assets/oats-landscape-1600.webp" srcset="/assets/oats-landscape-1600.webp 1600w, /assets/oats-landscape-2560.webp 2560w" sizes="max(100vw, 134vh)" width="1600" height="1200" alt="" fetchpriority="high" decoding="async">
     </picture>
-    <header>
-      <h1 class="location-heading">Chase County, Nebraska, USA</h1>
-    </header>
     <section class="flight-feed" id="flight-feed" aria-label="Aircraft flying near McNair Farms" data-state="connecting" hidden>
       <div class="ff-sky">
         <div class="ff-traffic" aria-hidden="true"></div>
         <article class="ff-flight" hidden>
-          <div class="ff-route" data-facing="right">
-            <p class="ff-end ff-from"><span class="ff-end-label">From</span> <span class="ff-city"></span> <span class="ff-code"></span></p>
-            <div class="ff-path">
-              <span class="ff-line ff-line-done" aria-hidden="true"></span>
-              <img class="ff-plane ff-plane-image is-loading" width="960" height="330" alt="" aria-hidden="true" decoding="async" fetchpriority="high">
-              <svg class="ff-plane ff-plane-fallback" viewBox="0 0 320 110" aria-hidden="true" focusable="false" hidden><use href="#ff-jet"></use></svg>
-              <span class="ff-line ff-line-ahead" aria-hidden="true"></span>
-            </div>
-            <p class="ff-end ff-to"><span class="ff-end-label">To</span> <span class="ff-city"></span> <span class="ff-code"></span></p>
-          </div>
           <div class="ff-card" role="group" aria-label="Selected aircraft">
             <button class="ff-step ff-prev" type="button" data-step="-1" aria-label="Previous aircraft">
               <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M14.5 5.5 8 12l6.5 6.5"/></svg>
@@ -70,13 +57,24 @@
               <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="m9.5 5.5 6.5 6.5-6.5 6.5"/></svg>
             </button>
           </div>
+          <div class="ff-route" data-facing="right">
+            <p class="ff-end ff-from"><span class="ff-end-label">From</span> <span class="ff-city"></span> <span class="ff-code"></span></p>
+            <div class="ff-path">
+              <span class="ff-line ff-line-done" aria-hidden="true"></span>
+              <img class="ff-plane ff-plane-image is-loading" width="960" height="330" alt="" aria-hidden="true" decoding="async" fetchpriority="high">
+              <svg class="ff-plane ff-plane-fallback" viewBox="0 0 320 110" aria-hidden="true" focusable="false" hidden><use href="#ff-jet"></use></svg>
+              <span class="ff-line ff-line-ahead" aria-hidden="true"></span>
+            </div>
+            <p class="ff-end ff-to"><span class="ff-end-label">To</span> <span class="ff-city"></span> <span class="ff-code"></span></p>
+          </div>
         </article>
       </div>
       <p class="ff-announcer" aria-live="polite"></p>
     </section>
     <footer>
       <span class="footer-copyright">&copy; 2026 McNair Farms Inc.</span>
-      <span>All rights reserved.</span><span class="flight-credit" hidden>Contains information from <a href="https://www.adsb.lol/">adsb.lol</a>, made available under the <a href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL</a>. Routes from <a href="https://www.adsbdb.com/">ADSBDB</a>.</span>
+      <span class="footer-location">Chase County, Nebraska, USA</span>
+      <span class="footer-legal">All rights reserved.<span class="flight-credit" hidden>Contains information from <a href="https://www.adsb.lol/">adsb.lol</a>, made available under the <a href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL</a>. Routes from <a href="https://www.adsbdb.com/">ADSBDB</a>.</span></span>
     </footer>
   </main>
   <svg class="ff-sprite" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute">

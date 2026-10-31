@@ -62,7 +62,20 @@ footer {
 }
 .footer-copyright {
   display: block;
-  font-size: .7rem;
+  font-size: 21px;
+  line-height: 1.3;
+}
+.footer-location {
+  display: block;
+  font-size: 19px;
+  line-height: 1.35;
+}
+.footer-legal {
+  display: block;
+}
+@media (max-width: 30rem) {
+  .footer-copyright { font-size: 18px; }
+  .footer-location { font-size: 16px; }
 }
 .not-found {
   margin: auto 1.25rem;

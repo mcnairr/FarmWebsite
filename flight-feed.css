@@ -13,7 +13,7 @@
   position: relative;
   width: 100%;
   max-width: 72rem;
-  margin-top: -.75rem;
+  margin-top: clamp(1.75rem, 4vh, 2.5rem);
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
@@ -78,8 +78,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 2.9rem;
-  margin: -.55rem 0 0 -1.45rem;
+  width: 3.2rem;
+  margin: -.55rem 0 0 -1.6rem;
   padding: .25rem;
   border: 0;
   background: none;
@@ -97,12 +97,12 @@
   height: auto;
   transform: rotate(var(--ff-tilt, 0deg));
 }
-.ff-blip.is-light { width: 2.3rem; margin-left: -1.15rem; }
+.ff-blip.is-light { width: 2.55rem; margin-left: -1.275rem; }
 .ff-blip:hover { opacity: 1; }
 .ff-blip.is-entering,
 .ff-blip.is-leaving { opacity: 0; }
 
-/* ----- selected flight: airliner and route on top, card beneath ----- */
+/* ----- selected flight: glass information card on top, aircraft beneath ----- */
 
 .ff-flight {
   position: relative;
@@ -337,7 +337,7 @@
   .ff-city { font-size: 1.2rem; }
   .ff-code { font-size: .76rem; }
   .ff-plane { width: clamp(12rem, 24vw, 17rem); }
-  .ff-blip { width: 3.4rem; margin-left: -1.7rem; }
+  .ff-blip { width: 3.75rem; margin-left: -1.875rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
