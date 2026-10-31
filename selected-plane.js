@@ -21,13 +21,13 @@ export function createSelectedPlaneRenderer(image, fallback) {
     if (!isExpectedRequest(image, expectedUrl)) return;
     image.hidden = false;
     image.classList.remove('is-loading');
-    fallback.hidden = true;
+    setSvgHidden(fallback, true);
   });
 
   image.addEventListener('error', () => {
     if (!isExpectedRequest(image, expectedUrl)) return;
     image.hidden = true;
-    fallback.hidden = false;
+    setSvgHidden(fallback, false);
   });
 
   return {
@@ -47,7 +47,7 @@ export function createSelectedPlaneRenderer(image, fallback) {
       if (expectedUrl === asset.url) return asset;
 
       expectedUrl = asset.url;
-      fallback.hidden = true;
+      setSvgHidden(fallback, true);
       image.hidden = false;
       image.classList.add('is-loading');
       image.width = asset.width;
@@ -61,6 +61,12 @@ export function createSelectedPlaneRenderer(image, fallback) {
       return asset;
     },
   };
+}
+
+/** SVGElement.hidden is not consistently reflected to the hidden attribute. */
+function setSvgHidden(element, hidden) {
+  if (typeof element.toggleAttribute === 'function') element.toggleAttribute('hidden', hidden);
+  else element.hidden = hidden;
 }
 
 /** @param {HTMLImageElement} image @param {string | null} expectedUrl */

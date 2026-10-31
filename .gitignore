@@ -5,3 +5,5 @@ node_modules/
 .secrets/
 .generated/
 .vscode/
+test-results/
+playwright-report/

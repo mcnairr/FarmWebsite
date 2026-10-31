@@ -16,12 +16,12 @@ export function createTrafficPlaneRenderer(image, fallback) {
   image.addEventListener('load', () => {
     if (!isExpectedRequest(image, expectedUrl)) return;
     image.hidden = false;
-    fallback.hidden = true;
+    setSvgHidden(fallback, true);
   });
   image.addEventListener('error', () => {
     if (!isExpectedRequest(image, expectedUrl)) return;
     image.hidden = true;
-    fallback.hidden = false;
+    setSvgHidden(fallback, false);
   });
 
   return {
@@ -32,7 +32,7 @@ export function createTrafficPlaneRenderer(image, fallback) {
       if (fallbackUse?.getAttribute('href') !== legacySymbol) fallbackUse?.setAttribute('href', legacySymbol);
       if (expectedUrl === asset.url) return asset;
       expectedUrl = asset.url;
-      fallback.hidden = true;
+      setSvgHidden(fallback, true);
       image.hidden = false;
       image.width = asset.width;
       image.height = asset.height;
@@ -40,6 +40,12 @@ export function createTrafficPlaneRenderer(image, fallback) {
       return asset;
     },
   };
+}
+
+/** SVGElement.hidden is not consistently reflected to the hidden attribute. */
+function setSvgHidden(element, hidden) {
+  if (typeof element.toggleAttribute === 'function') element.toggleAttribute('hidden', hidden);
+  else element.hidden = hidden;
 }
 
 /** @param {HTMLImageElement} image @param {string | null} expectedUrl */

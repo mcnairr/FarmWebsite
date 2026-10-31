@@ -285,7 +285,12 @@ Requires Node.js 20+. No install step.
 npm run demo   # fictional flights   → http://localhost:8080/
 npm run dev    # real live data      → http://localhost:8080/
 npm test       # unit tests
+npm run test:browser # browser image loading, fallback, switching, caching, and layout tests
+npm run test:all     # unit and browser suites
 ```
+
+The browser suite uses Playwright Chromium. On a new machine, install its
+browser once with `npx playwright install chromium` before running it.
 
 In demo mode, preview edge cases by adding `?scenario=` with `empty`, `one`,
 `two`, `four`, `eight`, `noroute` or `outage` to the page address. Demo data
