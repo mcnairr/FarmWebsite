@@ -2983,7 +2983,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "approved",
+      "status": "ready",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -3002,15 +3002,13 @@
         "shape-guide:e175-crj-class-regional-jet"
       ],
       "styleReferenceKey": null,
-      "generationException": null,
-      "repair": null,
-      "generatedAt": "2026-10-31T23:11:54.9210476+00:00",
-      "candidateNotes": "Vertex request e66f4a356a443d0c8925 in global returned the independently generated right-facing Delta Connection regional jet after a rejected wrong-direction candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 5936fc4c0567ce9fe75608c453f49a14fbe9149d3c59ca8892302bccc1cb71cc.",
-      "approvalNotes": "Approved after the independent directional pair was reviewed together on the production sky and checkerboard at all three tilts, 272 px hero, and 46 px blip sizes. Direction, regional-family anatomy, readable Delta Connection branding, scale, lighting, and transparent edges pass. Approved 2026-10-31 byte exception: this clean low-noise render is 23,770 bytes at frozen quality 90; no encoder setting changed.",
+      "generatedAt": null,
+      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
+      "approvalNotes": "Not generated or approved.",
       "output": {
         "manifestKey": "delta-connection-regional:right",
         "url": "/assets/planes/v1/delta-connection-regional-right.webp",
-        "sha256": "aae215f0fb836c1f30ddb78014d8314424e01c5c398fb020078cfeeda9f3add7"
+        "sha256": null
       }
     },
     {
@@ -3029,7 +3027,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "approved",
+      "status": "ready",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -3048,15 +3046,13 @@
         "shape-guide:e175-crj-class-regional-jet"
       ],
       "styleReferenceKey": "delta-connection-regional:right:v1",
-      "generationException": null,
-      "repair": null,
-      "generatedAt": "2026-11-01T16:33:01.5159458+00:00",
-      "candidateNotes": "Vertex request 81e709084d9997a49766 in global returned the independently generated left-facing Delta Connection regional jet using the approved right treatment only as a style reference. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 8c3e214e615a113510390de92e1f81bdb862fdff7efb83f10bb2f593501f14e1.",
-      "approvalNotes": "Approved after the independent directional pair was reviewed together on the production sky and checkerboard at all three tilts, 272 px hero, and 46 px blip sizes. Direction, regional-family anatomy, readable Delta Connection branding, scale, lighting, and transparent edges pass. Approved 2026-11-01 byte exception: this clean low-noise render is 22,930 bytes at frozen quality 90; no encoder setting changed.",
+      "generatedAt": null,
+      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
+      "approvalNotes": "Not generated or approved.",
       "output": {
         "manifestKey": "delta-connection-regional:left",
         "url": "/assets/planes/v1/delta-connection-regional-left.webp",
-        "sha256": "410e1fa2f92b6910bcf41ee2a1422c67ddd089587abc68561ec860eb7b0fa90f"
+        "sha256": null
       }
     },
     {
@@ -3075,7 +3071,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "approved",
+      "status": "ready",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -3094,15 +3090,13 @@
         "shape-guide:e175-crj-class-regional-jet"
       ],
       "styleReferenceKey": null,
-      "generationException": null,
-      "repair": null,
-      "generatedAt": "2026-10-31T23:10:51.8749378+00:00",
-      "candidateNotes": "Vertex request 71cfacca74cef1d38c2f in global returned the independently generated right-facing United Express regional jet. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 4a365871d1f5580f2ed1686336300c9d8d2f8ea0ab149f15e1c5a1053f7eafae.",
-      "approvalNotes": "Approved after the independent directional pair was reviewed together on the production sky and checkerboard at all three tilts, 272 px hero, and 46 px blip sizes. Direction, regional-family anatomy, readable United Express branding, scale, lighting, byte range, and transparent edges pass. Small plausible commercial incidental lettering is permitted by the frozen rubric.",
+      "generatedAt": null,
+      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
+      "approvalNotes": "Not generated or approved.",
       "output": {
         "manifestKey": "united-express-regional:right",
         "url": "/assets/planes/v1/united-express-regional-right.webp",
-        "sha256": "0696b62024c348bebc3538cd4ac79dd3259bcc32d364b0a179b375510b18aa36"
+        "sha256": null
       }
     },
     {
@@ -3121,7 +3115,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "approved",
+      "status": "ready",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -3140,15 +3134,13 @@
         "shape-guide:e175-crj-class-regional-jet"
       ],
       "styleReferenceKey": "united-express-regional:right:v1",
-      "generationException": null,
-      "repair": null,
-      "generatedAt": "2026-11-01T16:33:52.8100445+00:00",
-      "candidateNotes": "Vertex request 70f9cfbebb52099a8c27 in global returned the independently generated left-facing United Express regional jet using the approved right treatment only as a style reference after a rejected candidate omitted the Express partner name. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: ebdb10836bc27152292962adf18d152e2deebcb4054683d05a1aa102a77b0a69.",
-      "approvalNotes": "Approved after the independent directional pair was reviewed together on the production sky and checkerboard at all three tilts, 272 px hero, and 46 px blip sizes. Direction, regional-family anatomy, readable United Express branding, scale, lighting, byte range, and transparent edges pass.",
+      "generatedAt": null,
+      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
+      "approvalNotes": "Not generated or approved.",
       "output": {
         "manifestKey": "united-express-regional:left",
         "url": "/assets/planes/v1/united-express-regional-left.webp",
-        "sha256": "1f6a10934a4fd51cc8604152b7a30d00e2574ac6f25a7089170df6b1076238ea"
+        "sha256": null
       }
     },
     {
@@ -3167,8 +3159,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-class-regional-jet",
-      "status": "approved",
-      "blockedReason": null,
+      "status": "blocked-missing-shape-guide",
+      "blockedReason": "Shape guide e175-class-regional-jet is missing; generation is prohibited until its inventory status is available.",
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3186,15 +3178,13 @@
         "shape-guide:e175-class-regional-jet"
       ],
       "styleReferenceKey": null,
-      "generationException": null,
-      "repair": null,
-      "generatedAt": "2026-10-31T23:11:03.0196699+00:00",
-      "candidateNotes": "Vertex request 6f7cdd14a445ee6ae422 in global returned the independently generated right-facing Alaska regional E175. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 148a2f7ca03e9ce0f51cd28aa04737b650efca364ea378889a4de5148a5e56d9.",
-      "approvalNotes": "Approved after the independent directional pair was reviewed together on the production sky and checkerboard at all three tilts, 272 px hero, and 46 px blip sizes. Direction, E175-family anatomy, readable Alaska branding, scale, lighting, byte range, and transparent edges pass.",
+      "generatedAt": null,
+      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
+      "approvalNotes": "Not generated or approved.",
       "output": {
         "manifestKey": "alaska-regional:right",
         "url": "/assets/planes/v1/alaska-regional-right.webp",
-        "sha256": "71e02915d2a1cd43f10533ca88e34bbdd8f0ea7caab545172653ead7ce151016"
+        "sha256": null
       }
     },
     {
@@ -3213,8 +3203,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-class-regional-jet",
-      "status": "approved",
-      "blockedReason": null,
+      "status": "blocked-missing-shape-guide",
+      "blockedReason": "Shape guide e175-class-regional-jet is missing; generation is prohibited until its inventory status is available.",
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3232,15 +3222,13 @@
         "shape-guide:e175-class-regional-jet"
       ],
       "styleReferenceKey": "alaska-regional:right:v1",
-      "generationException": null,
-      "repair": null,
-      "generatedAt": "2026-11-01T16:34:04.3389526+00:00",
-      "candidateNotes": "Vertex request 3dedc533a424c12fa46b in global returned the independently generated left-facing Alaska regional E175 using the approved right treatment only as a style reference after the initial request returned no image. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: f5e1258cc51446255ae24f430306b7f8db4d0c72712c71992416090eebca39c9.",
-      "approvalNotes": "Approved after the independent directional pair was reviewed together on the production sky and checkerboard at all three tilts, 272 px hero, and 46 px blip sizes. Direction, E175-family anatomy, readable Alaska branding, scale, lighting, byte range, and transparent edges pass.",
+      "generatedAt": null,
+      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
+      "approvalNotes": "Not generated or approved.",
       "output": {
         "manifestKey": "alaska-regional:left",
         "url": "/assets/planes/v1/alaska-regional-left.webp",
-        "sha256": "553d89a9c9e6a36f5a64c22aa73c1f526064c2308165092378ff76bb141ba90d"
+        "sha256": null
       }
     },
     {
