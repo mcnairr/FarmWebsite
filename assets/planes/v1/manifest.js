@@ -543,6 +543,23 @@ export const PLANE_ASSETS = Object.freeze([
     fallbackId: 'generic-narrowbody', promptRecordKey: 'voi-narrowbody:left:v1',
     generationModel: 'gemini-3.1-flash-image', approvalStatus: 'approved',
   },
+  ...[
+    ['netjets-bizjet', 'business', 'medium', ['C56X','CL30','CL35','CL60'], ['EJA'], 'generic-bizjet-large'],
+    ['flexjet-bizjet', 'business', 'medium', ['C56X','CL30','CL35','CL60'], ['LXJ'], 'generic-bizjet-large'],
+    ['generic-bizjet-large', 'business', 'large', ['GL5T','GL6T','GL7T','GLEX','GLF4','GLF5','GLF6'], [], 'generic-bizjet-small'],
+    ['cessna-caravan', 'general-aviation', 'small', ['C208'], [], 'cessna-high-wing'],
+    ['piper-low-wing', 'general-aviation', 'small', ['PA28','PA32','PA46'], [], 'cessna-high-wing'],
+    ['king-air', 'turboprop', 'medium', ['BE20','BE30','B350'], [], 'legacy-svg-prop'],
+    ['dash8', 'turboprop', 'medium', ['DH8A','DH8B','DH8C','DH8D'], [], 'legacy-svg-prop'],
+    ['air-tractor-red-white', 'crop-duster', 'small', [], [], 'legacy-svg-prop'],
+  ].flatMap(([artworkId, category, sizeClass, applicableIcaoTypes, allowedCallsignPrefixes, fallbackId]) =>
+    ['right', 'left'].map((direction) => ({
+      key: `${artworkId}:${direction}`, artworkId, direction, category,
+      url: `/assets/planes/v1/${artworkId}-${direction}.webp`, width: 960, height: 330, sizeClass,
+      applicableIcaoTypes, allowedCallsignPrefixes, fallbackId,
+      promptRecordKey: `${artworkId}:${direction}:v1`, generationModel: 'gemini-3.1-flash-image',
+      approvalStatus: 'approved',
+    }))),
 ]);
 
 export const PLANE_ASSETS_BY_KEY = Object.freeze(Object.fromEntries(

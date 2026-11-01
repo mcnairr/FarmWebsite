@@ -201,6 +201,33 @@ test('PG-019 regional partner pairs are independent, approved, and narrowly mapp
   }
 });
 
+test('PG-020 business, GA, turboprop, and agricultural pairs are independently generated and approved', () => {
+  const artworkIds = [
+    'netjets-bizjet', 'flexjet-bizjet', 'generic-bizjet-large', 'cessna-caravan',
+    'piper-low-wing', 'king-air', 'dash8', 'air-tractor-red-white',
+  ];
+  const recordsByKey = Object.fromEntries(prompts.records.map((record) => [record.key, record]));
+  const assets = PLANE_ASSETS.filter(({ artworkId }) => artworkIds.includes(artworkId));
+  assert.equal(assets.length, 16);
+  assert.equal(new Set(assets.map(({ artworkId }) => artworkId)).size, 8);
+  for (const artworkId of artworkIds) {
+    const pair = assets.filter((asset) => asset.artworkId === artworkId);
+    assert.deepEqual(pair.map(({ direction }) => direction).sort(), ['left', 'right']);
+    assert.ok(pair.every(({ approvalStatus }) => approvalStatus === 'approved'));
+    const pairRecords = pair.map((asset) => recordsByKey[asset.promptRecordKey]);
+    assert.ok(pairRecords.every(({ status }) => status === 'approved'));
+    assert.equal(new Set(pairRecords.map(({ output }) => output.sha256)).size, 2,
+      `${artworkId} directions must have independent bytes`);
+    for (const record of pairRecords) {
+      assert.match(record.generatedAt, /^\d{4}-\d{2}-\d{2}T/);
+      assert.match(record.output.sha256, /^[a-f0-9]{64}$/);
+      assert.match(record.approvalNotes, /272 px hero and 46 px blip/);
+    }
+  }
+  assert.deepEqual(assets.find(({ artworkId }) => artworkId === 'netjets-bizjet').allowedCallsignPrefixes, ['EJA']);
+  assert.deepEqual(assets.find(({ artworkId }) => artworkId === 'flexjet-bizjet').allowedCallsignPrefixes, ['LXJ']);
+});
+
 test('PG-002 public manifest contains no generation runtime or private paths', async () => {
   const source = await readFile(join(root, 'assets', 'planes', 'v1', 'manifest.js'), 'utf8');
   for (const forbidden of ['.secrets', 'credential', 'private_key', 'access_token', 'vertexai', '.generated', 'proofs/']) {

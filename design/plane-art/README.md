@@ -574,6 +574,27 @@ must preserve are frozen in
 throttled performance measurements, but must compare them with this baseline
 rather than changing the Phase 1 release definition.
 
+## PG-020 Phase 2 business, GA, turboprop, and agricultural batch
+
+Issue #20 adds independently generated left/right production pairs for
+`netjets-bizjet`, `flexjet-bizjet`, `generic-bizjet-large`, `cessna-caravan`,
+`piper-low-wing`, `king-air`, `dash8`, and `air-tractor-red-white`.
+
+The batch uses Google Cloud Vertex AI with the catalog-pinned model and
+project-owned shape guides. Every request uses the
+`pg020-chroma-magenta-1` scoped exception: Vertex renders over uniform
+`#FF00FF`, then `extract-plane-chroma.mjs` performs deterministic global
+chroma extraction before the existing 960 x 330, quality-90 production
+processor runs. Left images are independent Vertex generations that receive
+the approved right WebP only as a style/livery reference; production images
+are never mirrored.
+
+Manual review checks the production sky and checkerboard at 272 px hero and
+46 px blip sizes. Branded business jets must remain visually distinct from
+the neutral fallback and must omit or fictionalize registrations. Review also
+checks aircraft-family silhouette, engine/propeller count, fixed or retracted
+gear, baseline, relative size, transparent edges, and byte ceiling.
+
 ### Adding a future asset-library version
 
 A future library is added beside this one, for example

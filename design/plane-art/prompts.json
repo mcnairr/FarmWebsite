@@ -1,7 +1,38 @@
 {
   "schemaVersion": 2,
   "canonicalMatrix": "design/plane-graphics-plan2.md#planned-artwork-matrix",
+  "generationAmendments": [
+    {
+      "id": "pg011-lighting-1",
+      "effectiveOn": "2026-10-30",
+      "text": "Use clean, even daylight across all upper aircraft surfaces. Reject and regenerate any candidate with a smoky, soot-like, burned, dirty, or unnaturally dark upper-surface cast. Preserve realistic gentle curvature shading and normal underside shadows."
+    }
+  ],
   "scopedGenerationExceptions": [
+    {
+      "id": "pg020-chroma-magenta-1",
+      "approvedOn": "2026-10-31",
+      "rationale": "Issue #20 uses the established contrasting magenta background so pale business, general-aviation, turboprop, and agricultural aircraft details remain intact during deterministic alpha extraction.",
+      "text": "PG-020 asset-specific background override for extraction: ignore the pure-white-background instruction for this request only. Place the complete aircraft on a perfectly uniform solid chroma-key magenta (#FF00FF) background. Use no gradient, texture, checkerboard, floor, horizon, scenery, shadow, magenta spill, magenta aircraft paint, or outline. Preserve the requested direction, aircraft family, engine and propeller counts, fixed or retracted landing gear, branding or neutral identity, crop, lighting, and all other frozen anatomy constraints.",
+      "recordKeys": [
+        "netjets-bizjet:right:v1",
+        "netjets-bizjet:left:v1",
+        "flexjet-bizjet:right:v1",
+        "flexjet-bizjet:left:v1",
+        "generic-bizjet-large:right:v1",
+        "generic-bizjet-large:left:v1",
+        "cessna-caravan:right:v1",
+        "cessna-caravan:left:v1",
+        "piper-low-wing:right:v1",
+        "piper-low-wing:left:v1",
+        "king-air:right:v1",
+        "king-air:left:v1",
+        "dash8:right:v1",
+        "dash8:left:v1",
+        "air-tractor-red-white:right:v1",
+        "air-tractor-red-white:left:v1"
+      ]
+    },
     {
       "id": "pg019-chroma-magenta-1",
       "approvedOn": "2026-10-31",
@@ -107,13 +138,6 @@
       ]
     }
   ],
-  "generationAmendments": [
-    {
-      "id": "pg011-lighting-1",
-      "effectiveOn": "2026-10-30",
-      "text": "Use clean, even daylight across all upper aircraft surfaces. Reject and regenerate any candidate with a smoky, soot-like, burned, dirty, or unnaturally dark upper-surface cast. Preserve realistic gentle curvature shading and normal underside shadows."
-    }
-  ],
   "sharedConstraints": [
     {
       "id": "global-1",
@@ -190,14 +214,7 @@
         "shape-guide:737-a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": "2026-10-30T02:52:53.7507698+00:00",
-      "candidateNotes": "Vertex request 34a2a0e235208ebf8c9f returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
-      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
-      "output": {
-        "manifestKey": "aal-narrowbody:right",
-        "url": "/assets/planes/v1/aal-narrowbody-right.webp",
-        "sha256": "f2f1b22aca814c9e34c1f1ad60552df7dc52b27891888f773f5ad75d69f70def"
-      },
+      "generationException": null,
       "repair": {
         "date": "2026-10-30",
         "issue": "PG-011",
@@ -207,6 +224,14 @@
         "referenceSha256": "fbf7dd283630c82fd7ef5b3970326378ffc36102afa939faf2349cd5ba41e502",
         "correctedPngSha256": "663c8f1679a5db669abf6d6ddc13c5d54935bf62355b56bfee6bd0e4b6812f5b",
         "outputSha256": "36c2fae80b6f81342774d7ef736fa32871570e5f9ca3219eee3daca4e23d6a85"
+      },
+      "generatedAt": "2026-10-30T02:52:53.7507698+00:00",
+      "candidateNotes": "Vertex request 34a2a0e235208ebf8c9f returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
+      "output": {
+        "manifestKey": "aal-narrowbody:right",
+        "url": "/assets/planes/v1/aal-narrowbody-right.webp",
+        "sha256": "f2f1b22aca814c9e34c1f1ad60552df7dc52b27891888f773f5ad75d69f70def"
       }
     },
     {
@@ -244,6 +269,8 @@
         "shape-guide:737-a320-class-narrowbody"
       ],
       "styleReferenceKey": "aal-narrowbody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-30T02:57:36.7744515+00:00",
       "candidateNotes": "Vertex request e19019ffd4000ac4bff4 returned one independently generated left-facing candidate; processed from candidate-1.png with the recorded transparent-background manual repair. Manual alpha-repair SHA-256: a37901f366130d4df544ecf4642a7931228331f1a991f5df6d5208ebaf65d1de. The OpenAI image background-extraction edit was used only for transparency repair; the aircraft master remains the linked Vertex candidate.",
       "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
@@ -288,6 +315,8 @@
         "shape-guide:787-777-class-widebody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-30T02:53:02.0620239+00:00",
       "candidateNotes": "Vertex request 4572dc6fac07b44d7f13 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
       "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-29 visual approval: 960x330 sky and checkerboard review preserves readable American wordmark, tail bars, anatomy, and clean alpha edges below the 40 KB target; quality-90 settings remain unchanged.",
@@ -332,6 +361,8 @@
         "shape-guide:787-777-class-widebody"
       ],
       "styleReferenceKey": "aal-widebody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-30T02:57:45.2801625+00:00",
       "candidateNotes": "Vertex request 064a8f55c8f3e19ab9be returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
       "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-29 visual approval: left-facing American widebody preserves readable wordmark, tail bars, anatomy, pair consistency, and clean alpha at hero and blip sizes below the 40 KB target; quality-90 settings remain unchanged.",
@@ -376,6 +407,8 @@
         "shape-guide:737-a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-30T02:53:37.2753718+00:00",
       "candidateNotes": "Vertex request 496f342cd23ee7ddb830 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
       "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
@@ -424,6 +457,7 @@
         "id": "pg008-ual-narrowbody-left-direction-1",
         "text": "Rejected-candidate correction: the new aircraft must face LEFT. Put the nose and cockpit at the left edge of the composition and the vertical tail at the right edge. The right-facing reference is for livery and style only; do not copy its direction and do not mirror it. Preserve readable, normally oriented United branding, retracted landing gear, two-engine narrowbody anatomy, and the uniform magenta background."
       },
+      "repair": null,
       "generatedAt": "2026-10-30T03:00:45.6901865+00:00",
       "candidateNotes": "Vertex request 454427c293d523ebf36a returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
       "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
@@ -468,6 +502,8 @@
         "shape-guide:787-777-class-widebody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-30T02:53:45.3103479+00:00",
       "candidateNotes": "Vertex request 43e43c98b3a6331341da returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
       "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
@@ -512,6 +548,8 @@
         "shape-guide:787-777-class-widebody"
       ],
       "styleReferenceKey": "ual-widebody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-30T03:01:22.4045332+00:00",
       "candidateNotes": "Vertex request 673e628754eff996b38e returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
       "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
@@ -560,6 +598,7 @@
         "id": "pg008-dal-narrowbody-gear-1",
         "text": "Rejected-candidate correction: render the aircraft in clean flight configuration with every landing-gear door closed and all wheels, struts, and landing gear fully retracted and invisible. Do not show deployed, extended, or partially visible landing gear. Preserve the requested direction, Delta livery, two-engine narrowbody anatomy, crop, and uniform magenta background."
       },
+      "repair": null,
       "generatedAt": "2026-10-30T02:53:10.4045965+00:00",
       "candidateNotes": "Vertex request ff514aaaaff8e7125d43 returned one independently generated right-facing candidate; processed from candidate-1.png with the recorded transparent-background manual repair. Manual alpha-repair SHA-256: cede2a405ba3c67905ab67a4b59a1ba69abc63e7e4cf2614078cfa3484b2f240. The OpenAI image background-extraction edit was used only for transparency repair; the aircraft master remains the linked Vertex candidate.",
       "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-29 visual approval: repaired full-size Delta narrowbody remains sharp and readable at hero and blip sizes below the 40 KB target; quality-90 settings remain unchanged.",
@@ -604,14 +643,7 @@
         "shape-guide:737-a320-class-narrowbody"
       ],
       "styleReferenceKey": "dal-narrowbody:right:v1",
-      "generatedAt": "2026-10-30T02:57:52.9255150+00:00",
-      "candidateNotes": "Vertex request 08edd8058d8062ac5504 returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
-      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
-      "output": {
-        "manifestKey": "dal-narrowbody:left",
-        "url": "/assets/planes/v1/dal-narrowbody-left.webp",
-        "sha256": "201675214db09ba3cf672ef2b16be8ff8f2232f0062422078943886c84750e55"
-      },
+      "generationException": null,
       "repair": {
         "date": "2026-10-30",
         "issue": "PG-011",
@@ -621,6 +653,14 @@
         "referenceSha256": "48781c8e352019414be2d3e7f6281a2f50f617b4243855e161aebb4e33c95913",
         "correctedPngSha256": "08be7af14a95d092109898b85f07a3870bec210f9ba4afafc8f29abd4c541d04",
         "outputSha256": "8b8c7682735510255cd8c517c8362073524c6b363f5b7eda5e204a8b4dc70353"
+      },
+      "generatedAt": "2026-10-30T02:57:52.9255150+00:00",
+      "candidateNotes": "Vertex request 08edd8058d8062ac5504 returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
+      "output": {
+        "manifestKey": "dal-narrowbody:left",
+        "url": "/assets/planes/v1/dal-narrowbody-left.webp",
+        "sha256": "201675214db09ba3cf672ef2b16be8ff8f2232f0062422078943886c84750e55"
       }
     },
     {
@@ -658,14 +698,7 @@
         "shape-guide:a330-a350-class-widebody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": "2026-10-30T02:53:19.0275485+00:00",
-      "candidateNotes": "Vertex request 453a7adf457f7c5d91c4 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
-      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
-      "output": {
-        "manifestKey": "dal-widebody:right",
-        "url": "/assets/planes/v1/dal-widebody-right.webp",
-        "sha256": "d69a844073db8487cc5e5f86201091dee67f31631e3b715417e6dc3174d72da4"
-      },
+      "generationException": null,
       "repair": {
         "date": "2026-10-30",
         "issue": "PG-011",
@@ -675,6 +708,14 @@
         "referenceSha256": "1a69363e531f2a20398001b4db4a8a757df0aa5800837f71c7ca2c4b32233404",
         "correctedPngSha256": "332f522bdf15a99590de560779b8b01ac2f5a4e6254807e077e4790bd05182fd",
         "outputSha256": "88eb3c23f8bc7ea5eb6337eda7ac2f978ba9dfca4822743e10363e7cb740b4fa"
+      },
+      "generatedAt": "2026-10-30T02:53:19.0275485+00:00",
+      "candidateNotes": "Vertex request 453a7adf457f7c5d91c4 returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
+      "output": {
+        "manifestKey": "dal-widebody:right",
+        "url": "/assets/planes/v1/dal-widebody-right.webp",
+        "sha256": "d69a844073db8487cc5e5f86201091dee67f31631e3b715417e6dc3174d72da4"
       }
     },
     {
@@ -716,14 +757,6 @@
         "id": "pg008-dal-widebody-left-family-1",
         "text": "Rejected-candidate correction: render an A330/A350-class twin-engine widebody facing left, with the nose and cockpit at the left and tail at the right. Do not add any aircraft model designation, type number, registration, or small text such as A220, A320, A330, or A350 anywhere on the aircraft. Preserve recognizable Delta branding, widebody proportions, retracted landing gear, and the uniform magenta background."
       },
-      "generatedAt": "2026-10-30T03:03:00.0597467+00:00",
-      "candidateNotes": "Vertex request a5e938e37221b9e4a08e returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. The initial left candidate was rejected for tail-livery mismatch; the authorized forced regeneration produced this selected candidate. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
-      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
-      "output": {
-        "manifestKey": "dal-widebody:left",
-        "url": "/assets/planes/v1/dal-widebody-left.webp",
-        "sha256": "3caec87cc18a94b2699f20f490daca9ef789773d31a43ea9e1949c1a39cf19b1"
-      },
       "repair": {
         "date": "2026-10-30",
         "issue": "PG-011",
@@ -733,6 +766,14 @@
         "referenceSha256": "8211371fb7dbdd9696c7f488abf6d2d1adc333a16c643bc85911fcea0aa1f693",
         "correctedPngSha256": "c684372b72ea943b4730570e7cd8e5d410aa38b9ca5c8bac612ade4a9fc35c85",
         "outputSha256": "10890870d8ded51e6d6575a397a216a4c4cee74072a1b5268c7d5431241e4caf"
+      },
+      "generatedAt": "2026-10-30T03:03:00.0597467+00:00",
+      "candidateNotes": "Vertex request a5e938e37221b9e4a08e returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow. The initial left candidate was rejected for tail-livery mismatch; the authorized forced regeneration produced this selected candidate. PG-011 lighting repair on 2026-10-30 used a generated clean-lighting reference only to derive a median luminance target; the deterministic alpha-preserving correction retained the original production asset as the pixel source.",
+      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-30 PG-011 re-review: corrected the user-reported smoke-damage-like upper-surface cast; identity, branding or neutral treatment, anatomy, geometry, alpha, and frozen quality-90 processing remain unchanged and pass production-sky/checkerboard review.",
+      "output": {
+        "manifestKey": "dal-widebody:left",
+        "url": "/assets/planes/v1/dal-widebody-left.webp",
+        "sha256": "3caec87cc18a94b2699f20f490daca9ef789773d31a43ea9e1949c1a39cf19b1"
       }
     },
     {
@@ -770,6 +811,8 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-30T02:53:28.8613887+00:00",
       "candidateNotes": "Vertex request 709892f7e7bbf2b8091c returned one independently generated right-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
       "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-29 visual approval: 960x330 sky and checkerboard review preserves readable Southwest wordmark, Heart livery, anatomy, and clean alpha edges below the 40 KB target; quality-90 settings remain unchanged.",
@@ -814,6 +857,8 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": "swa-narrowbody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-30T03:00:06.1910182+00:00",
       "candidateNotes": "Vertex request d23216d68e9612053519 returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
       "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery. 2026-10-29 visual approval: left-facing Southwest narrowbody preserves readable wordmark, Heart livery, anatomy, pair consistency, and clean alpha at hero and blip sizes below the 40 KB target; quality-90 settings remain unchanged.",
@@ -858,6 +903,8 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:07:32.0199659+00:00",
       "candidateNotes": "Vertex request aaf84fc4ad3712e33613 in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: b2e2e70ac0af79e1761c18d6ab388d4cd31b11f0db52ebb2ed01773fc525f194.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 83858 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -906,6 +953,7 @@
         "id": "pg018-asa-left-direction-1",
         "text": "Direction correction for this rejected candidate: the aircraft nose and cockpit must be on the LEFT edge of the image and the tail must be on the RIGHT edge. Do not reproduce the right-facing reference orientation."
       },
+      "repair": null,
       "generatedAt": "2026-10-31T14:36:59.1438253+00:00",
       "candidateNotes": "Vertex request db827b13774d69f8ecf2 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 59fe63a959b123860b5a837353a0b3881520665bb403113a7ddf0bcf2a9a01f0.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 21660 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -950,6 +998,8 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:10:29.5084114+00:00",
       "candidateNotes": "Vertex request c3b770b0f661547f5026 in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: da7bd2ace94e2128712ca250569b7f8a30a152725483b287fe596330a5ab5baf.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 20516 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -994,6 +1044,8 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": "jbu-narrowbody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:20:49.0532978+00:00",
       "candidateNotes": "Vertex request 1014be8c91c3d8f7f41f in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: e3d9dcb6f90f83ea0f8e6944c7b624c6a5f3cc621072b5f0c1289750ee568275.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 19926 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1038,6 +1090,8 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T13:42:18.5062686+00:00",
       "candidateNotes": "Vertex request dd90321cfe8f5d53fc20 in global returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: d181f0313b5f62ae2f78021f4346fa2c515200bb3b0b456d86ea868352089ff7.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 28190 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1082,6 +1136,8 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": "fft-narrowbody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:19:56.4596110+00:00",
       "candidateNotes": "Vertex request e0f4a7c92ad2441557e7 in europe-west1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: d33b5c2ec53f34d063e22f0820d232885da2a9b10c4920ec64274e455dd37759.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 86226 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1126,6 +1182,8 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:10:38.1657738+00:00",
       "candidateNotes": "Vertex request 55573bbb146d2523f816 in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 9d9d64fbd965f0a4cdb64e7d94fae23ce361c6cd054dcf35f9ed14f229ea36c9.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 74530 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1170,6 +1228,8 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": "nks-narrowbody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:21:45.0294212+00:00",
       "candidateNotes": "Vertex request 5b69e35a3692e956076e in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 9fcc456b9f4c810cb6d932d3e0e7088b0a94f5a57f16df3bed7bff994f15294d.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 43690 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1214,6 +1274,8 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:06:55.4234982+00:00",
       "candidateNotes": "Vertex request 431bbaddaa2b7cccf16f in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: c46ea7ec790a643986dd38e1eef80e09f136f35251203b1277e6f4876074800d.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 27068 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1258,6 +1320,8 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": "aay-narrowbody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:15:45.4851646+00:00",
       "candidateNotes": "Vertex request 341473d135278d7dbc4c in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: ca1119f29dd6dbf5f1c0aa77a4e07f5e463f723123bb7bf7045cd95ec6e3cf39.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 90658 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1302,6 +1366,8 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:10:46.1404520+00:00",
       "candidateNotes": "Vertex request 7a421b6d4de7b6e7ca6c in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: ddcab7b461c58b5509c6648c90983f0aa772da805bd1fe638370fdf9874a179e.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 26584 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1346,6 +1412,8 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": "scx-narrowbody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:22:45.0840649+00:00",
       "candidateNotes": "Vertex request 27dab1d1abeb00e76752 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 3567bc2564d0f3ee1069f6765736614605dbbef07e7938c47dde3c0306180728.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 20138 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1390,6 +1458,8 @@
         "shape-guide:a321-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:10:09.4497610+00:00",
       "candidateNotes": "Vertex request c11bde4377f3337cc4c4 in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 2bff01f1e1858938449d248412f6bb6b00959261bcd7112409c221d34b66db2c.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 54328 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1434,6 +1504,8 @@
         "shape-guide:a321-class-narrowbody"
       ],
       "styleReferenceKey": "hal-narrowbody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:23:35.0170193+00:00",
       "candidateNotes": "Vertex request 867d5a6cb3bb00affbc5 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: f70993de2ae55d683de4984c27db1f8414d08520be6378dce2af7e8ba96659a2.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 29070 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1478,6 +1550,8 @@
         "shape-guide:a330-787-class-widebody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:10:18.0735688+00:00",
       "candidateNotes": "Vertex request 4b0c6abbefc937f87ecd in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: c82f075d20b47aa738203dc0ea14161b565c70f208e89c8f8365a6f4f99fac6c.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 39658 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1522,6 +1596,8 @@
         "shape-guide:a330-787-class-widebody"
       ],
       "styleReferenceKey": "hal-widebody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:33:28.5140175+00:00",
       "candidateNotes": "Vertex request b9573a903081f234bf23 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 772c3a27c18db110c5cc5049f2a2c00e61f975f74854dbe6caeebf59067f9b51.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 22932 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1566,6 +1642,8 @@
         "shape-guide:a220-737-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:07:04.1740157+00:00",
       "candidateNotes": "Vertex request 08c849830984c5582b63 in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 6da07aed5cbec8bc0c89ac0c076fc1e100d83640b9d59d11121b83ad94e5106a.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 26534 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1610,6 +1688,8 @@
         "shape-guide:a220-737-class-narrowbody"
       ],
       "styleReferenceKey": "aca-narrowbody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:18:33.3741654+00:00",
       "candidateNotes": "Vertex request 1be106b33b4c0877a8b1 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 9e09a03e9b5af9865a10bde9367f2feb843e6f937b6ec69d654c974574e9eb71.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 20164 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1654,6 +1734,8 @@
         "shape-guide:787-class-widebody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:07:14.0767523+00:00",
       "candidateNotes": "Vertex request 53eb7c0b8037d0e67f1c in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: d25c787485dc5ca63dddfafb1fb3783aef993acf2cf7bd138320ab9eaeeeccf0.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 19946 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1698,6 +1780,8 @@
         "shape-guide:787-class-widebody"
       ],
       "styleReferenceKey": "aca-widebody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:26:36.0574983+00:00",
       "candidateNotes": "Vertex request 27ddf8f6505841c36ceb in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 64383b0cb067e7a698bf666f346370d8a4d9a29a528a9e437f83d8bb77090921.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 23320 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1742,6 +1826,8 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:13:06.7596305+00:00",
       "candidateNotes": "Vertex request d1b719c2d5cc721e697f in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 45b030a50a09355d7a79f4dc36a432d3663f480b4117caca1d0720ebf7ecc184.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 67512 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1786,6 +1872,8 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": "wja-narrowbody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:28:03.6176954+00:00",
       "candidateNotes": "Vertex request 6c55bd93fd37a63749cb in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 11fd2720ccceb3468a40d1e9c416b1445d4d0a4f5603bda9bc9f34a4e5307d66.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 58916 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1830,6 +1918,8 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:07:23.2969112+00:00",
       "candidateNotes": "Vertex request 6bcd5f6663b52d2f275c in us-central1 returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: e93a1238b87b48a2a1c10e05f5963fe539866b4454a91e4d8d9bd8278eff5172.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 81872 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1874,6 +1964,8 @@
         "shape-guide:737-class-narrowbody"
       ],
       "styleReferenceKey": "amx-narrowbody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:29:36.7403543+00:00",
       "candidateNotes": "Vertex request 0f3fc38cc5962aee0338 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 13a057e1710cb6367870b49b300b45d43765f3170dea82a72a89cef91b755c53.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 81962 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1918,6 +2010,8 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:11:55.8124521+00:00",
       "candidateNotes": "Vertex request c02e3c3a1be977bc0e4e in global returned the independently generated right-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: 40e824c37b3936a4147d4c6f43f7c5c2843a789ca7419ae454aae1a8a75ad4ca.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 49892 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -1962,6 +2056,8 @@
         "shape-guide:a320-class-narrowbody"
       ],
       "styleReferenceKey": "voi-narrowbody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T14:31:01.2539603+00:00",
       "candidateNotes": "Vertex request ccc58cb2311653746ab9 in us-central1 returned the independently generated left-facing candidate selected for PG-018. The candidate was processed through the recorded magenta chroma extraction and frozen quality-90 production workflow; manual repair SHA-256: d20de185ccc8773836943a5dbfa99984d9eaa1e862aadfa6879e295a4a5a45c8.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review: correct direction, recognizable branding, assigned family, intact aircraft anatomy, opaque fuselage/cockpit/nose, clean spill-free alpha, and pair consistency. Output is 68932 bytes; the recorded per-asset byte exception preserves the reviewed quality-90 result where applicable.",
@@ -2006,8 +2102,10 @@
         "shape-guide:787-777-class-widebody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
+      "candidateNotes": "Generation is ready after the original shape guide was created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
       "output": {
         "manifestKey": "baw-widebody:right",
@@ -2050,6 +2148,8 @@
         "shape-guide:787-777-class-widebody"
       ],
       "styleReferenceKey": "baw-widebody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2094,6 +2194,8 @@
         "shape-guide:a350-747-class-widebody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2138,6 +2240,8 @@
         "shape-guide:a350-747-class-widebody"
       ],
       "styleReferenceKey": "dlh-widebody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2182,6 +2286,8 @@
         "shape-guide:777-a350-class-widebody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2226,6 +2332,8 @@
         "shape-guide:777-a350-class-widebody"
       ],
       "styleReferenceKey": "afr-widebody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2270,6 +2378,8 @@
         "shape-guide:787-777-class-widebody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2314,6 +2424,8 @@
         "shape-guide:787-777-class-widebody"
       ],
       "styleReferenceKey": "klm-widebody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2360,6 +2472,8 @@
         "shape-guide:md-11-trijet"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2406,6 +2520,8 @@
         "shape-guide:md-11-trijet"
       ],
       "styleReferenceKey": "fdx-trijet:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2450,6 +2566,8 @@
         "shape-guide:767-777-class-cargo-widebody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T19:42:21.9872058+00:00",
       "candidateNotes": "Vertex request 8e14dba1eba5aaa63ab1 in global returned the independently generated right-facing PG-009 replacement. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: 170001740cc537f569c04b0c10bb90b351549cfcc50a02f0e785aae4583cb059.",
       "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. Cargo branding or neutral generic identity remains appropriate for the treatment. The directional pair was reviewed together and uses independently generated masters. Output is 29,188 bytes with a recorded frozen-quality byte-range exception.",
@@ -2494,14 +2612,7 @@
         "shape-guide:767-777-class-cargo-widebody"
       ],
       "styleReferenceKey": "fdx-widebody:right:v1",
-      "generatedAt": "2026-10-31T19:43:48.7878030+00:00",
-      "candidateNotes": "Vertex request 5b88f6d876dc6ffe6b3e in us-central1 returned the independently generated left-facing PG-009 replacement using the approved right-side treatment as a style reference. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: f3ce17092b40236a09dbfeda3b4fd1afe6b0714b609f8bc8463b12a12d237e7d.",
-      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. Cargo branding or neutral generic identity remains appropriate for the treatment. The directional pair was reviewed together and uses independently generated masters. Output is 31,418 bytes with a recorded frozen-quality byte-range exception.",
-      "output": {
-        "manifestKey": "fdx-widebody:left",
-        "url": "/assets/planes/v1/fdx-widebody-left.webp",
-        "sha256": "569e4c993e9b7891edae54a1b6d7ffe2f8e88adf770b2f4a91f3d97eae2d5b4e"
-      },
+      "generationException": null,
       "repair": {
         "date": "2026-10-30",
         "issue": "PG-011",
@@ -2511,6 +2622,14 @@
         "referenceSha256": "022db423cb825f8d5bb38c260a302febe7d48e66cb789d23b31a1713817cca2b",
         "correctedPngSha256": "7efa358c32c820b1faceaf7b0dcb786c87e2dce99dba94065f91963c91ec0e2d",
         "outputSha256": "870e99abd252482d541f76780db1e8c3320b5a7747bbfdec57145a921a2f17e7"
+      },
+      "generatedAt": "2026-10-31T19:43:48.7878030+00:00",
+      "candidateNotes": "Vertex request 5b88f6d876dc6ffe6b3e in us-central1 returned the independently generated left-facing PG-009 replacement using the approved right-side treatment as a style reference. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: f3ce17092b40236a09dbfeda3b4fd1afe6b0714b609f8bc8463b12a12d237e7d.",
+      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. Cargo branding or neutral generic identity remains appropriate for the treatment. The directional pair was reviewed together and uses independently generated masters. Output is 31,418 bytes with a recorded frozen-quality byte-range exception.",
+      "output": {
+        "manifestKey": "fdx-widebody:left",
+        "url": "/assets/planes/v1/fdx-widebody-left.webp",
+        "sha256": "569e4c993e9b7891edae54a1b6d7ffe2f8e88adf770b2f4a91f3d97eae2d5b4e"
       }
     },
     {
@@ -2550,6 +2669,8 @@
         "shape-guide:md-11-trijet"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2596,6 +2717,8 @@
         "shape-guide:md-11-trijet"
       ],
       "styleReferenceKey": "ups-trijet:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2640,6 +2763,8 @@
         "shape-guide:767-class-cargo-widebody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T19:42:57.2594196+00:00",
       "candidateNotes": "Vertex request 6bf7440b35010ff6b056 in global returned the independently generated right-facing PG-009 replacement. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: 8b3eedc9d3d2ab4aaa11f32a97cb201ec62b9958c0221e64b54680bea2607bd9.",
       "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. Cargo branding or neutral generic identity remains appropriate for the treatment. The directional pair was reviewed together and uses independently generated masters. Output is 30,486 bytes with a recorded frozen-quality byte-range exception.",
@@ -2684,6 +2809,8 @@
         "shape-guide:767-class-cargo-widebody"
       ],
       "styleReferenceKey": "ups-widebody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T23:06:54.5298566+00:00",
       "candidateNotes": "Vertex request b38f384525f990e7eed8 in europe-west1 returned the independently generated left-facing PG-009 replacement using the approved right-side treatment as a style reference. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: 2d5a1d08bf6e3a85780d90354affc712ba7090b803652e688fcbb3ded2fedbca.",
       "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. Cargo branding or neutral generic identity remains appropriate for the treatment. The directional pair was reviewed together and uses independently generated masters. Output is 31,294 bytes with a recorded frozen-quality byte-range exception.",
@@ -2728,6 +2855,8 @@
         "shape-guide:747-767-class-cargo-widebody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2772,6 +2901,8 @@
         "shape-guide:747-767-class-cargo-widebody"
       ],
       "styleReferenceKey": "gti-widebody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2816,6 +2947,8 @@
         "shape-guide:767-class-cargo-widebody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2860,6 +2993,8 @@
         "shape-guide:767-class-cargo-widebody"
       ],
       "styleReferenceKey": "dhl-widebody:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -2904,14 +3039,7 @@
         "shape-guide:e175-crj-class-regional-jet"
       ],
       "styleReferenceKey": null,
-      "generatedAt": "2026-10-31T19:42:13.1949634+00:00",
-      "candidateNotes": "Vertex request 9214f44c47517fec3a15 in global returned the independently generated right-facing PG-009 replacement. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: 81a3a3a713a7d0a5fa02a4d4e260c1227b133cf90d74d712a10c6b530d4f5f7d.",
-      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. Cargo branding or neutral generic identity remains appropriate for the treatment. The directional pair was reviewed together and uses independently generated masters. Output is 32,144 bytes with a recorded frozen-quality byte-range exception.",
-      "output": {
-        "manifestKey": "american-eagle-regional:right",
-        "url": "/assets/planes/v1/american-eagle-regional-right.webp",
-        "sha256": "f2e04642d5740a0e6f6b6a54d229a265d6d0917ebf81ab1ddb950ffb0b23353e"
-      },
+      "generationException": null,
       "repair": {
         "date": "2026-10-30",
         "issue": "PG-011",
@@ -2921,6 +3049,14 @@
         "referenceSha256": "0b7b21134d4831913463fadff9b9e938e70f466542d44349a7e9a526239f0c2a",
         "correctedPngSha256": "4af2be3e72a1ea09f87305bb746ac3c4ecab106e27bb05941a460d12c07a1e0e",
         "outputSha256": "48dc89297729e1719c8722c244794cdda30eb148ae5f82eefe028bf3b258ae29"
+      },
+      "generatedAt": "2026-10-31T19:42:13.1949634+00:00",
+      "candidateNotes": "Vertex request 9214f44c47517fec3a15 in global returned the independently generated right-facing PG-009 replacement. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: 81a3a3a713a7d0a5fa02a4d4e260c1227b133cf90d74d712a10c6b530d4f5f7d.",
+      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. Cargo branding or neutral generic identity remains appropriate for the treatment. The directional pair was reviewed together and uses independently generated masters. Output is 32,144 bytes with a recorded frozen-quality byte-range exception.",
+      "output": {
+        "manifestKey": "american-eagle-regional:right",
+        "url": "/assets/planes/v1/american-eagle-regional-right.webp",
+        "sha256": "f2e04642d5740a0e6f6b6a54d229a265d6d0917ebf81ab1ddb950ffb0b23353e"
       }
     },
     {
@@ -2958,6 +3094,8 @@
         "shape-guide:e175-crj-class-regional-jet"
       ],
       "styleReferenceKey": "american-eagle-regional:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T19:43:40.3821831+00:00",
       "candidateNotes": "Vertex request 4851f6a6d45e0b691fb0 in us-central1 returned the independently generated left-facing PG-009 replacement using the approved right-side treatment as a style reference. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: db8813c891ad6239271bff746f7ce2d1f70e5768e52b513766d441c417b440b7.",
       "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. Cargo branding or neutral generic identity remains appropriate for the treatment. The directional pair was reviewed together and uses independently generated masters. Output is 34,304 bytes with a recorded frozen-quality byte-range exception.",
@@ -2983,7 +3121,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -3002,13 +3140,15 @@
         "shape-guide:e175-crj-class-regional-jet"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-10-31T23:11:54.9210476+00:00",
+      "candidateNotes": "Vertex request e66f4a356a443d0c8925 in global returned the independently generated right-facing Delta Connection regional jet after a rejected wrong-direction candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 5936fc4c0567ce9fe75608c453f49a14fbe9149d3c59ca8892302bccc1cb71cc.",
+      "approvalNotes": "Approved after the independent directional pair was reviewed together on the production sky and checkerboard at all three tilts, 272 px hero, and 46 px blip sizes. Direction, regional-family anatomy, readable Delta Connection branding, scale, lighting, and transparent edges pass. Approved 2026-10-31 byte exception: this clean low-noise render is 23,770 bytes at frozen quality 90; no encoder setting changed.",
       "output": {
         "manifestKey": "delta-connection-regional:right",
         "url": "/assets/planes/v1/delta-connection-regional-right.webp",
-        "sha256": null
+        "sha256": "aae215f0fb836c1f30ddb78014d8314424e01c5c398fb020078cfeeda9f3add7"
       }
     },
     {
@@ -3027,7 +3167,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -3046,13 +3186,15 @@
         "shape-guide:e175-crj-class-regional-jet"
       ],
       "styleReferenceKey": "delta-connection-regional:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T16:33:01.5159458+00:00",
+      "candidateNotes": "Vertex request 81e709084d9997a49766 in global returned the independently generated left-facing Delta Connection regional jet using the approved right treatment only as a style reference. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 8c3e214e615a113510390de92e1f81bdb862fdff7efb83f10bb2f593501f14e1.",
+      "approvalNotes": "Approved after the independent directional pair was reviewed together on the production sky and checkerboard at all three tilts, 272 px hero, and 46 px blip sizes. Direction, regional-family anatomy, readable Delta Connection branding, scale, lighting, and transparent edges pass. Approved 2026-11-01 byte exception: this clean low-noise render is 22,930 bytes at frozen quality 90; no encoder setting changed.",
       "output": {
         "manifestKey": "delta-connection-regional:left",
         "url": "/assets/planes/v1/delta-connection-regional-left.webp",
-        "sha256": null
+        "sha256": "410e1fa2f92b6910bcf41ee2a1422c67ddd089587abc68561ec860eb7b0fa90f"
       }
     },
     {
@@ -3071,7 +3213,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -3090,13 +3232,15 @@
         "shape-guide:e175-crj-class-regional-jet"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-10-31T23:10:51.8749378+00:00",
+      "candidateNotes": "Vertex request 71cfacca74cef1d38c2f in global returned the independently generated right-facing United Express regional jet. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 4a365871d1f5580f2ed1686336300c9d8d2f8ea0ab149f15e1c5a1053f7eafae.",
+      "approvalNotes": "Approved after the independent directional pair was reviewed together on the production sky and checkerboard at all three tilts, 272 px hero, and 46 px blip sizes. Direction, regional-family anatomy, readable United Express branding, scale, lighting, byte range, and transparent edges pass. Small plausible commercial incidental lettering is permitted by the frozen rubric.",
       "output": {
         "manifestKey": "united-express-regional:right",
         "url": "/assets/planes/v1/united-express-regional-right.webp",
-        "sha256": null
+        "sha256": "0696b62024c348bebc3538cd4ac79dd3259bcc32d364b0a179b375510b18aa36"
       }
     },
     {
@@ -3115,7 +3259,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-crj-class-regional-jet",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -3134,13 +3278,15 @@
         "shape-guide:e175-crj-class-regional-jet"
       ],
       "styleReferenceKey": "united-express-regional:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T16:33:52.8100445+00:00",
+      "candidateNotes": "Vertex request 70f9cfbebb52099a8c27 in global returned the independently generated left-facing United Express regional jet using the approved right treatment only as a style reference after a rejected candidate omitted the Express partner name. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: ebdb10836bc27152292962adf18d152e2deebcb4054683d05a1aa102a77b0a69.",
+      "approvalNotes": "Approved after the independent directional pair was reviewed together on the production sky and checkerboard at all three tilts, 272 px hero, and 46 px blip sizes. Direction, regional-family anatomy, readable United Express branding, scale, lighting, byte range, and transparent edges pass.",
       "output": {
         "manifestKey": "united-express-regional:left",
         "url": "/assets/planes/v1/united-express-regional-left.webp",
-        "sha256": null
+        "sha256": "1f6a10934a4fd51cc8604152b7a30d00e2574ac6f25a7089170df6b1076238ea"
       }
     },
     {
@@ -3159,8 +3305,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-class-regional-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide e175-class-regional-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3178,13 +3324,15 @@
         "shape-guide:e175-class-regional-jet"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-10-31T23:11:03.0196699+00:00",
+      "candidateNotes": "Vertex request 6f7cdd14a445ee6ae422 in global returned the independently generated right-facing Alaska regional E175. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 148a2f7ca03e9ce0f51cd28aa04737b650efca364ea378889a4de5148a5e56d9.",
+      "approvalNotes": "Approved after the independent directional pair was reviewed together on the production sky and checkerboard at all three tilts, 272 px hero, and 46 px blip sizes. Direction, E175-family anatomy, readable Alaska branding, scale, lighting, byte range, and transparent edges pass.",
       "output": {
         "manifestKey": "alaska-regional:right",
         "url": "/assets/planes/v1/alaska-regional-right.webp",
-        "sha256": null
+        "sha256": "71e02915d2a1cd43f10533ca88e34bbdd8f0ea7caab545172653ead7ce151016"
       }
     },
     {
@@ -3203,8 +3351,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "e175-class-regional-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide e175-class-regional-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3222,13 +3370,15 @@
         "shape-guide:e175-class-regional-jet"
       ],
       "styleReferenceKey": "alaska-regional:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T16:34:04.3389526+00:00",
+      "candidateNotes": "Vertex request 3dedc533a424c12fa46b in global returned the independently generated left-facing Alaska regional E175 using the approved right treatment only as a style reference after the initial request returned no image. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: f5e1258cc51446255ae24f430306b7f8db4d0c72712c71992416090eebca39c9.",
+      "approvalNotes": "Approved after the independent directional pair was reviewed together on the production sky and checkerboard at all three tilts, 272 px hero, and 46 px blip sizes. Direction, E175-family anatomy, readable Alaska branding, scale, lighting, byte range, and transparent edges pass.",
       "output": {
         "manifestKey": "alaska-regional:left",
         "url": "/assets/planes/v1/alaska-regional-left.webp",
-        "sha256": null
+        "sha256": "553d89a9c9e6a36f5a64c22aa73c1f526064c2308165092378ff76bb141ba90d"
       }
     },
     {
@@ -3266,6 +3416,8 @@
         "shape-guide:regional-jet"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T19:42:52.3944142+00:00",
       "candidateNotes": "Vertex request 19adb4b59ee6b6ce25e9 in us-central1 returned the independently generated right-facing PG-009 replacement. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: 902832c51f1242587c02849c687fdf60946622944208e8ee55bc8d2d114a88f2.",
       "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. The neutral generic identity remains appropriate for the treatment. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and uses independently generated masters. Output is 27,640 bytes with a recorded frozen-quality byte-range exception.",
@@ -3310,6 +3462,8 @@
         "shape-guide:regional-jet"
       ],
       "styleReferenceKey": "generic-regional:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": "2026-10-31T19:44:17.1222801+00:00",
       "candidateNotes": "Vertex request cee69cbd715830008e89 in us-central1 returned the independently generated left-facing PG-009 replacement using the approved right-side treatment as a style reference. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: 5e5483c564a07c75509f0af3651b1f2ea1c1db4dbb5e0359c03f44a9b03b7705.",
       "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. The neutral generic identity remains appropriate for the treatment. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and uses independently generated masters. Output is 28,970 bytes with a recorded frozen-quality byte-range exception.",
@@ -3354,14 +3508,7 @@
         "shape-guide:narrowbody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": "2026-10-31T19:42:31.1941203+00:00",
-      "candidateNotes": "Vertex request 7e3a9d5c20f260f46af7 in global returned the independently generated right-facing PG-009 replacement. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: 2beb9fe5234e27aea3b15d50d353d57e1147b96ff9487f3cb12c5baca5c4f017.",
-      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. The neutral generic identity remains appropriate for the treatment. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and uses independently generated masters. Output is 28,878 bytes with a recorded frozen-quality byte-range exception.",
-      "output": {
-        "manifestKey": "generic-narrowbody:right",
-        "url": "/assets/planes/v1/generic-narrowbody-right.webp",
-        "sha256": "a10e83f61caaf9c4f2440d4fcf56d6e00530d4af0c4b12da76bcc0e38d3f727f"
-      },
+      "generationException": null,
       "repair": {
         "date": "2026-10-30",
         "issue": "PG-011",
@@ -3371,6 +3518,14 @@
         "referenceSha256": "a9c7d14c637d6c2bc3cc5aace4581b1b0acbf7a13557d45a5fce711964c366c0",
         "correctedPngSha256": "f2e4e426d75dba782b62e9cfb95757f95f363357e58f073c02c5a97565ed491e",
         "outputSha256": "605d4a61d28b9767728f6da59432d117bb372ff96e96721d3b715a1a1e88f240"
+      },
+      "generatedAt": "2026-10-31T19:42:31.1941203+00:00",
+      "candidateNotes": "Vertex request 7e3a9d5c20f260f46af7 in global returned the independently generated right-facing PG-009 replacement. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: 2beb9fe5234e27aea3b15d50d353d57e1147b96ff9487f3cb12c5baca5c4f017.",
+      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. The neutral generic identity remains appropriate for the treatment. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and uses independently generated masters. Output is 28,878 bytes with a recorded frozen-quality byte-range exception.",
+      "output": {
+        "manifestKey": "generic-narrowbody:right",
+        "url": "/assets/planes/v1/generic-narrowbody-right.webp",
+        "sha256": "a10e83f61caaf9c4f2440d4fcf56d6e00530d4af0c4b12da76bcc0e38d3f727f"
       }
     },
     {
@@ -3408,14 +3563,7 @@
         "shape-guide:narrowbody"
       ],
       "styleReferenceKey": "generic-narrowbody:right:v1",
-      "generatedAt": "2026-10-31T19:43:56.9654318+00:00",
-      "candidateNotes": "Vertex request 635f0cff1a425434bb0c in us-central1 returned the independently generated left-facing PG-009 replacement using the approved right-side treatment as a style reference. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: f50d0ea9c220816eb197b40e62b8daf55b49c5cc8bc72effc2b28e9aca25d8db.",
-      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. The neutral generic identity remains appropriate for the treatment. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and uses independently generated masters. Output is 29,424 bytes with a recorded frozen-quality byte-range exception.",
-      "output": {
-        "manifestKey": "generic-narrowbody:left",
-        "url": "/assets/planes/v1/generic-narrowbody-left.webp",
-        "sha256": "a9b250445217597dada57854056b41165a4783b2fcee60a20486846ef51b8798"
-      },
+      "generationException": null,
       "repair": {
         "date": "2026-10-30",
         "issue": "PG-011",
@@ -3425,6 +3573,14 @@
         "referenceSha256": "a5fff0c83adfebfbc12c5baa28a7c1cd1550a6365aee3514afcb7c3950a437f7",
         "correctedPngSha256": "84ad0ab87155b1cb983ecec229015a1d29500e8137f21877f70441744d47e2d8",
         "outputSha256": "221ea258b7775b534153eba63e97381b0915026360bba45404d6f828b67fb53c"
+      },
+      "generatedAt": "2026-10-31T19:43:56.9654318+00:00",
+      "candidateNotes": "Vertex request 635f0cff1a425434bb0c in us-central1 returned the independently generated left-facing PG-009 replacement using the approved right-side treatment as a style reference. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: f50d0ea9c220816eb197b40e62b8daf55b49c5cc8bc72effc2b28e9aca25d8db.",
+      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. The neutral generic identity remains appropriate for the treatment. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and uses independently generated masters. Output is 29,424 bytes with a recorded frozen-quality byte-range exception.",
+      "output": {
+        "manifestKey": "generic-narrowbody:left",
+        "url": "/assets/planes/v1/generic-narrowbody-left.webp",
+        "sha256": "a9b250445217597dada57854056b41165a4783b2fcee60a20486846ef51b8798"
       }
     },
     {
@@ -3462,14 +3618,7 @@
         "shape-guide:widebody"
       ],
       "styleReferenceKey": null,
-      "generatedAt": "2026-10-31T19:42:48.5215247+00:00",
-      "candidateNotes": "Vertex request eeb890ad152141b4a085 in global returned the independently generated right-facing PG-009 replacement. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: 7d11c3c5c7e8225846a12cc85885eeb2464cbd52f172c506ccd529e7cff98d67.",
-      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. The neutral generic identity remains appropriate for the treatment. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and uses independently generated masters. Output is 29,466 bytes with a recorded frozen-quality byte-range exception.",
-      "output": {
-        "manifestKey": "generic-widebody:right",
-        "url": "/assets/planes/v1/generic-widebody-right.webp",
-        "sha256": "8de6aceabd19e1173df0a5b2baa986a68ed0153099220c3856e92095f0fde160"
-      },
+      "generationException": null,
       "repair": {
         "date": "2026-10-30",
         "issue": "PG-011",
@@ -3479,6 +3628,14 @@
         "referenceSha256": "7370dda4c9577f7403cdb3121b615d0a3a98b08b516320196716c654703c872f",
         "correctedPngSha256": "70abde2b75ede0fa3181dfff32ba0598a681a94c06643742aa0031ff23588242",
         "outputSha256": "8795268b62a02fd5c0dc3bb5f64caf35357e37b1f3956d497688ef50d5ce23cb"
+      },
+      "generatedAt": "2026-10-31T19:42:48.5215247+00:00",
+      "candidateNotes": "Vertex request eeb890ad152141b4a085 in global returned the independently generated right-facing PG-009 replacement. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: 7d11c3c5c7e8225846a12cc85885eeb2464cbd52f172c506ccd529e7cff98d67.",
+      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. The neutral generic identity remains appropriate for the treatment. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and uses independently generated masters. Output is 29,466 bytes with a recorded frozen-quality byte-range exception.",
+      "output": {
+        "manifestKey": "generic-widebody:right",
+        "url": "/assets/planes/v1/generic-widebody-right.webp",
+        "sha256": "8de6aceabd19e1173df0a5b2baa986a68ed0153099220c3856e92095f0fde160"
       }
     },
     {
@@ -3516,14 +3673,7 @@
         "shape-guide:widebody"
       ],
       "styleReferenceKey": "generic-widebody:right:v1",
-      "generatedAt": "2026-10-31T23:07:14.8895835+00:00",
-      "candidateNotes": "Vertex request a75175dc2bd4e182cd69 in europe-west1 returned the independently generated left-facing PG-009 replacement using the approved right-side treatment as a style reference. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: a541f778c042a8889465bd9d16f5a7ad4ca931072c170fcebab5ea3c996f6bb2.",
-      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. The neutral generic identity remains appropriate for the treatment. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and uses independently generated masters. Output is 26,104 bytes with a recorded frozen-quality byte-range exception.",
-      "output": {
-        "manifestKey": "generic-widebody:left",
-        "url": "/assets/planes/v1/generic-widebody-left.webp",
-        "sha256": "bcb3198f5fa8006bb2fe57fb586b2310f685246c98518862790637b53beb3940"
-      },
+      "generationException": null,
       "repair": {
         "date": "2026-10-30",
         "issue": "PG-011",
@@ -3533,6 +3683,14 @@
         "referenceSha256": "a754e2431f06588ffb471dc3ca5510039834e155e37072e6f91be626ab42b316",
         "correctedPngSha256": "3057f171ad84eda7eb2adb90e819b0721e6d4a49af98d622627d438e20bab779",
         "outputSha256": "16cc9cab7c48459c20be3b66fc0597a798b73b4751a368dc5f281f25636b437f"
+      },
+      "generatedAt": "2026-10-31T23:07:14.8895835+00:00",
+      "candidateNotes": "Vertex request a75175dc2bd4e182cd69 in europe-west1 returned the independently generated left-facing PG-009 replacement using the approved right-side treatment as a style reference. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: a541f778c042a8889465bd9d16f5a7ad4ca931072c170fcebab5ea3c996f6bb2.",
+      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. The neutral generic identity remains appropriate for the treatment. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and uses independently generated masters. Output is 26,104 bytes with a recorded frozen-quality byte-range exception.",
+      "output": {
+        "manifestKey": "generic-widebody:left",
+        "url": "/assets/planes/v1/generic-widebody-left.webp",
+        "sha256": "bcb3198f5fa8006bb2fe57fb586b2310f685246c98518862790637b53beb3940"
       }
     },
     {
@@ -3570,6 +3728,8 @@
         "shape-guide:boeing-717-rear-engine-jet"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -3614,6 +3774,8 @@
         "shape-guide:boeing-717-rear-engine-jet"
       ],
       "styleReferenceKey": "dal-b717:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -3658,6 +3820,8 @@
         "shape-guide:boeing-757-long-narrowbody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -3702,6 +3866,8 @@
         "shape-guide:boeing-757-long-narrowbody"
       ],
       "styleReferenceKey": "dal-b757:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -3746,6 +3912,8 @@
         "shape-guide:boeing-787-dreamliner"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -3790,6 +3958,8 @@
         "shape-guide:boeing-787-dreamliner"
       ],
       "styleReferenceKey": "ual-b787:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -3834,6 +4004,8 @@
         "shape-guide:boeing-777-widebody"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -3878,6 +4050,8 @@
         "shape-guide:boeing-777-widebody"
       ],
       "styleReferenceKey": "aal-b777:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -3924,6 +4098,8 @@
         "shape-guide:boeing-747-8-jumbo"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -3970,6 +4146,8 @@
         "shape-guide:boeing-747-8-jumbo"
       ],
       "styleReferenceKey": "dlh-b747:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -4016,6 +4194,8 @@
         "shape-guide:airbus-a380-super-jumbo"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -4062,6 +4242,8 @@
         "shape-guide:airbus-a380-super-jumbo"
       ],
       "styleReferenceKey": "baw-a380:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -4106,6 +4288,8 @@
         "shape-guide:airbus-a220"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -4150,6 +4334,8 @@
         "shape-guide:airbus-a220"
       ],
       "styleReferenceKey": "jbu-a220:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -4194,6 +4380,8 @@
         "shape-guide:embraer-e190"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -4238,6 +4426,8 @@
         "shape-guide:embraer-e190"
       ],
       "styleReferenceKey": "jbu-e190:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -4282,6 +4472,8 @@
         "shape-guide:bombardier-crj-200"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -4326,6 +4518,8 @@
         "shape-guide:bombardier-crj-200"
       ],
       "styleReferenceKey": "united-express-crj200:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -4370,6 +4564,8 @@
         "shape-guide:bombardier-crj-900"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -4414,6 +4610,8 @@
         "shape-guide:bombardier-crj-900"
       ],
       "styleReferenceKey": "delta-connection-crj900:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -4439,8 +4637,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "midsize-business-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide midsize-business-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4458,13 +4656,15 @@
         "shape-guide:midsize-business-jet"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request 6905a211d456b00d4c49 returned one independently generated right-facing candidate on uniform magenta; processed with deterministic global chroma extraction. Recognizable NetJets branding, twin rear-engine business-jet anatomy, retracted gear, and no registration.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, and alpha edges pass. The independently generated directional pair was reviewed together and matches the required aircraft family, treatment, relative size, and production baseline.",
       "output": {
         "manifestKey": "netjets-bizjet:right",
         "url": "/assets/planes/v1/netjets-bizjet-right.webp",
-        "sha256": null
+        "sha256": "c3db9ae6c9e6349e2d97477a32dcae383970e436a0f9911ad19442235f6bb589"
       }
     },
     {
@@ -4483,8 +4683,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "midsize-business-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide midsize-business-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4502,13 +4702,15 @@
         "shape-guide:midsize-business-jet"
       ],
       "styleReferenceKey": "netjets-bizjet:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request 24ab2f5e139521e89500 returned one independently generated left-facing candidate on uniform magenta, using the approved right asset only as a style/livery reference; processed with deterministic global chroma extraction. Recognizable NetJets treatment, twin rear-engine layout, retracted gear, and omitted registration pass.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, branding, crop, baseline, alpha edges, and directional-pair consistency pass. The left image is independently generated and not mirrored.",
       "output": {
         "manifestKey": "netjets-bizjet:left",
         "url": "/assets/planes/v1/netjets-bizjet-left.webp",
-        "sha256": null
+        "sha256": "5d8812cba32119825b4807856c96d77f4360a65e29c2280e0fe654850fff5037"
       }
     },
     {
@@ -4527,8 +4729,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "midsize-business-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide midsize-business-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4546,13 +4748,15 @@
         "shape-guide:midsize-business-jet"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request 5f13ba93a5cf97c7df57 returned one independently generated right-facing candidate on uniform magenta; processed with deterministic global chroma extraction. Recognizable Flexjet branding, twin rear-engine business-jet anatomy, retracted gear, and no intentionally reproduced real registration.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, and alpha edges pass. The independently generated directional pair was reviewed together and matches the required aircraft family, treatment, relative size, and production baseline.",
       "output": {
         "manifestKey": "flexjet-bizjet:right",
         "url": "/assets/planes/v1/flexjet-bizjet-right.webp",
-        "sha256": null
+        "sha256": "bb169deb611f868f7f618ebe7b0a57eb37cec6a002f7591bcec653b58cb05404"
       }
     },
     {
@@ -4571,8 +4775,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "midsize-business-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide midsize-business-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4590,13 +4794,15 @@
         "shape-guide:midsize-business-jet"
       ],
       "styleReferenceKey": "flexjet-bizjet:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request 295dcb3bff818de12a6b returned one independently generated left-facing candidate on uniform magenta, using the approved right asset only as a style/livery reference; processed with deterministic global chroma extraction.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, alpha edges, and directional-pair consistency pass. The left image is independently generated and not mirrored.",
       "output": {
         "manifestKey": "flexjet-bizjet:left",
         "url": "/assets/planes/v1/flexjet-bizjet-left.webp",
-        "sha256": null
+        "sha256": "ffca7a86a082ec60ead9c4312aa5e0de0db94266dd390a7013a253357a3509cd"
       }
     },
     {
@@ -4638,6 +4844,7 @@
         "id": "pg010-bizjet-neutral-cockpit-1",
         "text": "Rejected-candidate correction: render a recognizable compact business jet with clearly visible dark cockpit glazing and plausible cockpit/nose anatomy. Omit every registration, letter, number, wordmark, logo, and organization identity; leave all exterior surfaces completely unmarked."
       },
+      "repair": null,
       "generatedAt": "2026-10-31T18:04:16.5765882+00:00",
       "candidateNotes": "Vertex request 61e4e6b3a02e4e2e5c2c in global returned the independently generated right-facing PG-010 replacement after a rejected candidate lacked a recognizable cockpit and carried a registration. The selected candidate was processed through the recorded global magenta extraction and frozen quality-90 workflow; manual repair SHA-256: 1b8001efcd1a8154f393367c6fcc63e2a8007a5b2c4dbba2980649ab5384094e.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Right-facing direction, compact twin rear-engine anatomy, retracted landing gear, visible cockpit, neutral unbranded paint, crop, baseline, and spill-free alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. Output is 53,486 bytes.",
@@ -4686,6 +4893,7 @@
         "id": "pg010-bizjet-neutral-cockpit-1",
         "text": "Rejected-candidate correction: render a recognizable compact business jet with clearly visible dark cockpit glazing and plausible cockpit/nose anatomy. Omit every registration, letter, number, wordmark, logo, and organization identity; leave all exterior surfaces completely unmarked."
       },
+      "repair": null,
       "generatedAt": "2026-10-31T18:05:46.9970296+00:00",
       "candidateNotes": "Vertex request b94e20da2d746726414f in global returned the independently generated left-facing PG-010 replacement using the new right treatment only as a style reference. The selected candidate was processed through the recorded global magenta extraction and frozen quality-90 workflow; manual repair SHA-256: 7931670902899fdfc910fae46a20791804e85d98dc815b3e788abdc51d22c690.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Left-facing direction, compact twin rear-engine anatomy, retracted landing gear, visible cockpit, neutral unbranded paint, crop, baseline, and spill-free alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. Output is 21,390 bytes with a recorded frozen-quality byte exception.",
@@ -4711,8 +4919,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "gulfstream-global-class-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide gulfstream-global-class-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4729,13 +4937,15 @@
         "shape-guide:gulfstream-global-class-jet"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request c645f8de9b3daa443957 returned one independently generated right-facing candidate on uniform magenta; processed with deterministic global chroma extraction. Neutral large long-range business-jet treatment, twin rear engines, retracted gear, and no private identity.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, and alpha edges pass. The independently generated directional pair was reviewed together and matches the required aircraft family, treatment, relative size, and production baseline.",
       "output": {
         "manifestKey": "generic-bizjet-large:right",
         "url": "/assets/planes/v1/generic-bizjet-large-right.webp",
-        "sha256": null
+        "sha256": "36f6980f0c820f9bb02a645432c8c7b6dea46801c0833a6bdbe4314f047b220f"
       }
     },
     {
@@ -4754,8 +4964,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "gulfstream-global-class-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide gulfstream-global-class-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4772,13 +4982,15 @@
         "shape-guide:gulfstream-global-class-jet"
       ],
       "styleReferenceKey": "generic-bizjet-large:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request 704feabee0398c7dd43f returned one independently generated left-facing candidate on uniform magenta, using the approved right asset only as a style/livery reference; processed with deterministic global chroma extraction.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, alpha edges, and directional-pair consistency pass. The left image is independently generated and not mirrored.",
       "output": {
         "manifestKey": "generic-bizjet-large:left",
         "url": "/assets/planes/v1/generic-bizjet-large-left.webp",
-        "sha256": null
+        "sha256": "a9bf25b5bfa3962bf7a566dcd4c4e8dbf160befab268f60d2d212e2624826cf3"
       }
     },
     {
@@ -4823,6 +5035,7 @@
         "id": "pg010-cessna-opaque-glazing-1",
         "text": "Rejected-candidate correction: render every cockpit and cabin window as fully opaque black or neutral charcoal aircraft glazing with no colored reflection. No magenta, pink, purple, transparency, background show-through, or chroma spill may appear in any window or on the aircraft. Omit every registration, letter, number, wordmark, logo, and organization identity; leave the exterior identity-free."
       },
+      "repair": null,
       "generatedAt": "2026-10-31T18:09:34.9032996+00:00",
       "candidateNotes": "Vertex request bdb8c91d8c601ab8fa89 in global returned the independently generated right-facing PG-010 replacement after rejected candidates retained magenta glazing spill or a registration. The selected identity-free candidate has opaque neutral glazing and was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 6e6127b022911cb9f75a1cb4740c3c158ca2db68c9c288257fdde961aee9809d.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Right-facing direction, high-wing single-prop anatomy, one engine, fixed tricycle landing gear, original registration-free paint, opaque neutral glazing, crop, baseline, and spill-free alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. Output is 80,992 bytes.",
@@ -4873,6 +5086,7 @@
         "id": "pg010-cessna-opaque-glazing-1",
         "text": "Rejected-candidate correction: render every cockpit and cabin window as fully opaque black or neutral charcoal aircraft glazing with no colored reflection. No magenta, pink, purple, transparency, background show-through, or chroma spill may appear in any window or on the aircraft. Omit every registration, letter, number, wordmark, logo, and organization identity; leave the exterior identity-free."
       },
+      "repair": null,
       "generatedAt": "2026-10-31T18:10:18.9240463+00:00",
       "candidateNotes": "Vertex request 057f92dbd1d217b206a4 in global returned the independently generated left-facing PG-010 replacement using the corrected right treatment only as a style reference. The selected identity-free candidate has opaque neutral glazing and was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 479a77bd7454cbd76717959a883217f2b84692e66df805bc2f65ea0c7f6689cc.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Left-facing direction, high-wing single-prop anatomy, one engine, fixed tricycle landing gear, original registration-free paint, opaque neutral glazing, crop, baseline, and spill-free alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. Output is 27,956 bytes with a recorded frozen-quality byte exception.",
@@ -4901,8 +5115,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "c208-caravan",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide c208-caravan is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4919,13 +5133,15 @@
         "shape-guide:c208-caravan"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request 918425d607ef05f585de returned one independently generated right-facing candidate on uniform magenta; processed with deterministic global chroma extraction. Correct C208 high-wing utility silhouette, one propeller, fixed tricycle gear, and neutral paint; detached ground-shadow pixels were removed during deterministic repair.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, and alpha edges pass. The independently generated directional pair was reviewed together and matches the required aircraft family, treatment, relative size, and production baseline.",
       "output": {
         "manifestKey": "cessna-caravan:right",
         "url": "/assets/planes/v1/cessna-caravan-right.webp",
-        "sha256": null
+        "sha256": "0882fcc057ee5b3bba2bda3411984a80a9d2096a012e2fce3aa1cb35c4274837"
       }
     },
     {
@@ -4947,8 +5163,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "c208-caravan",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide c208-caravan is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4965,13 +5181,15 @@
         "shape-guide:c208-caravan"
       ],
       "styleReferenceKey": "cessna-caravan:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request 3fc384e3300378a03dc7 returned one independently generated left-facing candidate on uniform magenta, using the approved right asset only as a style reference; processed with deterministic global chroma extraction and detached-shadow cleanup. Correct C208 high-wing anatomy, one propeller, and fixed gear pass.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, alpha edges, and directional-pair consistency pass. The left image is independently generated and not mirrored.",
       "output": {
         "manifestKey": "cessna-caravan:left",
         "url": "/assets/planes/v1/cessna-caravan-left.webp",
-        "sha256": null
+        "sha256": "5db6ddbe789a5d427aff5491c8846eeff7b127774f2b55019ecec251f6e3ee6a"
       }
     },
     {
@@ -4993,8 +5211,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "pa-28-pa-32-pa-46",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide pa-28-pa-32-pa-46 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5011,13 +5229,18 @@
         "shape-guide:pa-28-pa-32-pa-46"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": {
+        "id": "pg020-piper-anatomy-1",
+        "text": "PG-020 Piper anatomy clarification: depict a conventional PA-28/PA-32/PA-46-family low-wing light airplane with a clearly visible glazed cockpit windshield, side cabin windows, recognizable cabin and door area, short proportionate fuselage, one nose-mounted propeller, and three fixed landing-gear wheels. Do not create a windowless tube, missile-like body, business jet, unmanned aircraft, or duplicate wings."
+      },
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request 4bb7a60977dcfc5e279f returned one independently generated right-facing candidate on uniform magenta after the PG-020 Piper anatomy clarification; processed with deterministic global chroma extraction. Conventional glazed cockpit/cabin, low wing, one propeller, and fixed tricycle gear pass.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, and alpha edges pass. The independently generated directional pair was reviewed together and matches the required aircraft family, treatment, relative size, and production baseline.",
       "output": {
         "manifestKey": "piper-low-wing:right",
         "url": "/assets/planes/v1/piper-low-wing-right.webp",
-        "sha256": null
+        "sha256": "eeba32b798e5aef119039e61106eb829b8f334b67cbb7cbba770dff6ac73a365"
       }
     },
     {
@@ -5039,8 +5262,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "pa-28-pa-32-pa-46",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide pa-28-pa-32-pa-46 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5057,13 +5280,18 @@
         "shape-guide:pa-28-pa-32-pa-46"
       ],
       "styleReferenceKey": "piper-low-wing:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": {
+        "id": "pg020-piper-left-anatomy-direction-2",
+        "text": "PG-020 Piper anatomy and direction correction: the airplane nose and single propeller must be on the LEFT edge of the image and the tail must be on the RIGHT edge. Depict a conventional PA-28/PA-32/PA-46-family low-wing light airplane with a clearly visible glazed cockpit windshield, side cabin windows, recognizable cabin and door area, short proportionate fuselage, one nose-mounted propeller, and three fixed landing-gear wheels. Do not create a right-facing aircraft, windowless tube, missile-like body, business jet, unmanned aircraft, or duplicate wings."
+      },
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request f56ed25f9c698b4218cc returned one independently generated left-facing candidate on uniform magenta after the PG-020 Piper anatomy/direction correction, using the approved right asset only as a style reference; processed with deterministic global chroma extraction. Conventional glazed cockpit/cabin, low wing, one propeller, and fixed tricycle gear pass.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, alpha edges, and directional-pair consistency pass. The left image is independently generated and not mirrored.",
       "output": {
         "manifestKey": "piper-low-wing:left",
         "url": "/assets/planes/v1/piper-low-wing-left.webp",
-        "sha256": null
+        "sha256": "1aa2ca6490d27a64bfcf6c6d9c8389191915eacb6dcf654e30b09cc4487db50a"
       }
     },
     {
@@ -5103,6 +5331,8 @@
         "shape-guide:sr20-sr22"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -5149,6 +5379,8 @@
         "shape-guide:sr20-sr22"
       ],
       "styleReferenceKey": "cirrus-low-wing:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -5194,6 +5426,8 @@
         "shape-guide:bonanza-baron"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -5239,6 +5473,8 @@
         "shape-guide:bonanza-baron"
       ],
       "styleReferenceKey": "beech-piston:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -5266,8 +5502,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "king-air-twin-turboprop",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide king-air-twin-turboprop is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5284,13 +5520,15 @@
         "shape-guide:king-air-twin-turboprop"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request 4c0bfdd78f3d208cd482 returned one independently generated right-facing candidate on uniform magenta; processed with deterministic global chroma extraction. Correct King Air silhouette with two engines and propellers, retracted gear, right direction, and neutral paint.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, and alpha edges pass. The independently generated directional pair was reviewed together and matches the required aircraft family, treatment, relative size, and production baseline.",
       "output": {
         "manifestKey": "king-air:right",
         "url": "/assets/planes/v1/king-air-right.webp",
-        "sha256": null
+        "sha256": "4b79e5bfb1acae87056d5bc810f0844675f6026ba80085df684c6f3b62b53e43"
       }
     },
     {
@@ -5311,8 +5549,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "king-air-twin-turboprop",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide king-air-twin-turboprop is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5329,13 +5567,18 @@
         "shape-guide:king-air-twin-turboprop"
       ],
       "styleReferenceKey": "king-air:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": {
+        "id": "pg020-king-air-left-direction-1",
+        "text": "PG-020 direction correction: the aircraft nose and both propellers must be on the LEFT edge of the image and the tail must be on the RIGHT edge. This is an independently generated left-facing aircraft, never a mirrored file. Preserve exactly two wing-mounted turboprop engines and two propellers."
+      },
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request 5e7035216472eb789e02 returned one independently generated left-facing candidate on uniform magenta after the PG-020 direction correction, using the approved right asset only as a style reference; processed with deterministic global chroma extraction. Two engines/propellers, retracted gear, and neutral paint pass.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, alpha edges, and directional-pair consistency pass. The left image is independently generated and not mirrored.",
       "output": {
         "manifestKey": "king-air:left",
         "url": "/assets/planes/v1/king-air-left.webp",
-        "sha256": null
+        "sha256": "d91849492adce1f5196b7b2cb5455ba754b7133512354bcb29ae71747ad10742"
       }
     },
     {
@@ -5374,6 +5617,8 @@
         "shape-guide:pc-12"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -5419,6 +5664,8 @@
         "shape-guide:pc-12"
       ],
       "styleReferenceKey": "pilatus-pc12:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -5464,6 +5711,8 @@
         "shape-guide:tbm-single-turboprop"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -5509,6 +5758,8 @@
         "shape-guide:tbm-single-turboprop"
       ],
       "styleReferenceKey": "daher-tbm:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -5536,8 +5787,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "dash-8-q400",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide dash-8-q400 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5554,13 +5805,15 @@
         "shape-guide:dash-8-q400"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request 7021945ea773ea6b466e returned one independently generated right-facing candidate on uniform magenta; processed with deterministic global chroma extraction. Credible Dash 8 regional-turboprop silhouette, right direction, retracted gear, and aircraft-family-appropriate twin-engine layout.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, and alpha edges pass. The independently generated directional pair was reviewed together and matches the required aircraft family, treatment, relative size, and production baseline.",
       "output": {
         "manifestKey": "dash8:right",
         "url": "/assets/planes/v1/dash8-right.webp",
-        "sha256": null
+        "sha256": "97f1dfc47586eb33e5d3a785e23ff7dff6c52fee634a7498542528bc3e458f35"
       }
     },
     {
@@ -5581,8 +5834,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "dash-8-q400",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide dash-8-q400 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5599,13 +5852,15 @@
         "shape-guide:dash-8-q400"
       ],
       "styleReferenceKey": "dash8:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request 4e9ef5831645ced36b83 returned one independently generated left-facing candidate on uniform magenta, using the approved right asset only as a style reference; processed with deterministic global chroma extraction. Twin-engine/propeller Dash 8 anatomy and retracted gear pass.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, alpha edges, and directional-pair consistency pass. The left image is independently generated and not mirrored.",
       "output": {
         "manifestKey": "dash8:left",
         "url": "/assets/planes/v1/dash8-left.webp",
-        "sha256": null
+        "sha256": "ba0526ded2b093608bde8c719fe906af561cc956b65eabbcbb6bdaa3e406cfeb"
       }
     },
     {
@@ -5644,6 +5899,8 @@
         "shape-guide:atr-72"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -5689,6 +5946,8 @@
         "shape-guide:atr-72"
       ],
       "styleReferenceKey": "atr:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -5734,6 +5993,8 @@
         "shape-guide:light-piston-twin"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -5779,6 +6040,8 @@
         "shape-guide:light-piston-twin"
       ],
       "styleReferenceKey": "generic-twin-piston:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -5830,6 +6093,7 @@
         "id": "pg010-air-tractor-neutral-identity-1",
         "text": "Rejected-candidate correction: render a complete, recognizable Air Tractor-style agricultural airplane with a clearly visible enclosed cockpit and glazing, one nose-mounted turboprop engine, one propeller, two main wheels plus a tailwheel, intact wings and tail, and believable spray-boom hardware. Omit every registration, letter, number, manufacturer name, wordmark, logo, and organization identity; leave the bright-yellow exterior completely unmarked."
       },
+      "repair": null,
       "generatedAt": "2026-10-31T18:04:56.2454043+00:00",
       "candidateNotes": "Vertex request 7b877e98bc38c7912f6e in global returned the independently generated right-facing PG-010 replacement after rejected candidates carried identity markings or malformed the cockpit and landing gear. The selected candidate was processed through the recorded global magenta extraction and frozen quality-90 workflow; manual repair SHA-256: 6ee0da24aa48292bb437a3c1cadfc9cbb248960c948cfd37eaf9f5bf4ac69d0b.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Right-facing direction, single tractor propeller, one engine, complete fixed landing gear, agricultural spray hardware, bright-yellow identity-free treatment, crop, baseline, and spill-free alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. Output is 32,914 bytes with a recorded frozen-quality byte exception.",
@@ -5881,6 +6145,7 @@
         "id": "pg010-air-tractor-neutral-identity-1",
         "text": "Rejected-candidate correction: render a complete, recognizable Air Tractor-style agricultural airplane with a clearly visible enclosed cockpit and glazing, one nose-mounted turboprop engine, one propeller, two main wheels plus a tailwheel, intact wings and tail, and believable spray-boom hardware. Omit every registration, letter, number, manufacturer name, wordmark, logo, and organization identity; leave the bright-yellow exterior completely unmarked."
       },
+      "repair": null,
       "generatedAt": "2026-10-31T18:06:11.0488291+00:00",
       "candidateNotes": "Vertex request fa22ceb199578bc78003 in global returned the independently generated left-facing PG-010 replacement using the new right treatment only as a style reference. The selected candidate was processed through the recorded global magenta extraction and frozen quality-90 workflow; manual repair SHA-256: 58aaa1968de52a046329b6288b8cb697231b7bc6ea908f02b8ecbb817b399288.",
       "approvalNotes": "Approved 2026-10-31 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Left-facing direction, single tractor propeller, one engine, complete fixed landing gear, agricultural spray hardware, bright-yellow identity-free treatment, crop, baseline, and spill-free alpha edges pass. The directional pair was reviewed together and matches one aircraft family and treatment. Output is 63,030 bytes.",
@@ -5910,7 +6175,7 @@
         "Preserve purpose-built agricultural crop-duster anatomy, including robust fixed gear and believable spray-boom/application hardware."
       ],
       "shapeGuideId": "air-tractor",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -5928,13 +6193,15 @@
         "shape-guide:air-tractor"
       ],
       "styleReferenceKey": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-10-31T23:59:00-05:00",
+      "candidateNotes": "Vertex request 4c7cecd59189171e2239 returned one independently generated right-facing candidate on uniform magenta; processed with deterministic global chroma extraction. Correct Air Tractor silhouette, one propeller, fixed gear, spray hardware, and red/white agricultural scheme.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, and alpha edges pass. The independently generated directional pair was reviewed together and matches the required aircraft family, treatment, relative size, and production baseline.",
       "output": {
         "manifestKey": "air-tractor-red-white:right",
         "url": "/assets/planes/v1/air-tractor-red-white-right.webp",
-        "sha256": null
+        "sha256": "823b3766c926e2e6119765061fedb5c08db2816336bf6c73e2ebc732b4f80ff0"
       }
     },
     {
@@ -5957,7 +6224,7 @@
         "Preserve purpose-built agricultural crop-duster anatomy, including robust fixed gear and believable spray-boom/application hardware."
       ],
       "shapeGuideId": "air-tractor",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -5975,13 +6242,15 @@
         "shape-guide:air-tractor"
       ],
       "styleReferenceKey": "air-tractor-red-white:right:v1",
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-01T00:00:00-05:00",
+      "candidateNotes": "Vertex request c92a5b286f10c4adc009 returned one independently generated left-facing candidate on uniform magenta, using the approved right asset only as a style reference; processed with deterministic global chroma extraction. Correct Air Tractor anatomy, one propeller, fixed gear, spray hardware, and red/white treatment pass.",
+      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, alpha edges, and directional-pair consistency pass. The left image is independently generated and not mirrored.",
       "output": {
         "manifestKey": "air-tractor-red-white:left",
         "url": "/assets/planes/v1/air-tractor-red-white-left.webp",
-        "sha256": null
+        "sha256": "2dbdb7f1362dbe6594e58ae89dad54d358ef9327edd6e7d32a2bd25881ae2f52"
       }
     },
     {
@@ -6022,6 +6291,8 @@
         "shape-guide:thrush-crop-duster"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6069,6 +6340,8 @@
         "shape-guide:thrush-crop-duster"
       ],
       "styleReferenceKey": "thrush-yellow-blue:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6116,6 +6389,8 @@
         "shape-guide:generic-crop-duster"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6163,6 +6438,8 @@
         "shape-guide:generic-crop-duster"
       ],
       "styleReferenceKey": "crop-duster-green:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6208,6 +6485,8 @@
         "shape-guide:bell-206-helicopter"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6253,6 +6532,8 @@
         "shape-guide:bell-206-helicopter"
       ],
       "styleReferenceKey": "bell-206:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6298,6 +6579,8 @@
         "shape-guide:bell-407-helicopter"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6343,6 +6626,8 @@
         "shape-guide:bell-407-helicopter"
       ],
       "styleReferenceKey": "bell-407:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6388,6 +6673,8 @@
         "shape-guide:airbus-h135-helicopter"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6433,6 +6720,8 @@
         "shape-guide:airbus-h135-helicopter"
       ],
       "styleReferenceKey": "h135-medical:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6478,6 +6767,8 @@
         "shape-guide:light-helicopter"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6523,6 +6814,8 @@
         "shape-guide:light-helicopter"
       ],
       "styleReferenceKey": "police-helicopter:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6568,6 +6861,8 @@
         "shape-guide:light-helicopter"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6613,6 +6908,8 @@
         "shape-guide:light-helicopter"
       ],
       "styleReferenceKey": "utility-helicopter:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6658,6 +6955,8 @@
         "shape-guide:c-130-hercules"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6703,6 +7002,8 @@
         "shape-guide:c-130-hercules"
       ],
       "styleReferenceKey": "c130-military:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6746,6 +7047,8 @@
         "shape-guide:c-17-globemaster"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6789,6 +7092,8 @@
         "shape-guide:c-17-globemaster"
       ],
       "styleReferenceKey": "c17-military:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6832,6 +7137,8 @@
         "shape-guide:kc-135-tanker"
       ],
       "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
@@ -6875,6 +7182,8 @@
         "shape-guide:kc-135-tanker"
       ],
       "styleReferenceKey": "kc135-military:right:v1",
+      "generationException": null,
+      "repair": null,
       "generatedAt": null,
       "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
       "approvalNotes": "Not generated or approved.",
