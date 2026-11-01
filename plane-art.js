@@ -1,5 +1,5 @@
 // @ts-check
-// Pure Phase 1 aircraft-art resolution. Every returned URL comes from the
+// Pure aircraft-art resolution. Every returned URL comes from the
 // reviewed manifest; untrusted feed values are used only as allowlist keys.
 
 import { PLANE_ASSETS } from './assets/planes/v1/manifest.js';
@@ -29,9 +29,17 @@ const FAMILY_BY_ICAO = Object.freeze({
   C25A: 'bizjet-small', C25B: 'bizjet-small', C25C: 'bizjet-small',
   C510: 'bizjet-small', C525: 'bizjet-small', E50P: 'bizjet-small',
   E55P: 'bizjet-small',
+  C56X: 'bizjet-large', CL30: 'bizjet-large', CL35: 'bizjet-large', CL60: 'bizjet-large',
+  GL5T: 'bizjet-large', GL6T: 'bizjet-large', GL7T: 'bizjet-large',
+  GLEX: 'bizjet-large', GLF4: 'bizjet-large', GLF5: 'bizjet-large', GLF6: 'bizjet-large',
   C150: 'cessna-high-wing', C152: 'cessna-high-wing',
   C172: 'cessna-high-wing', C182: 'cessna-high-wing', C206: 'cessna-high-wing',
-  AT3P: 'air-tractor', AT5T: 'air-tractor', AT6T: 'air-tractor', AT8T: 'air-tractor',
+  C208: 'cessna-caravan',
+  PA28: 'piper-low-wing', PA32: 'piper-low-wing', PA46: 'piper-low-wing',
+  BE20: 'king-air', BE30: 'king-air', B350: 'king-air',
+  DH8A: 'dash8', DH8B: 'dash8', DH8C: 'dash8', DH8D: 'dash8',
+  AT3P: 'air-tractor-yellow', AT5T: 'air-tractor-yellow', AT6T: 'air-tractor-yellow',
+  AT8T: 'air-tractor-red-white',
 });
 
 const CLASS_FALLBACKS = Object.freeze({
@@ -58,6 +66,8 @@ const BRANDED_FAMILIES = Object.freeze({
   WJA: Object.freeze({ narrowbody: 'wja-narrowbody' }),
   AMX: Object.freeze({ narrowbody: 'amx-narrowbody' }),
   VOI: Object.freeze({ narrowbody: 'voi-narrowbody' }),
+  EJA: Object.freeze({ 'bizjet-large': 'netjets-bizjet' }),
+  LXJ: Object.freeze({ 'bizjet-large': 'flexjet-bizjet' }),
 });
 
 const REGIONAL_PARTNERS = Object.freeze({
@@ -70,8 +80,14 @@ const REGIONAL_PARTNERS = Object.freeze({
 
 const SPECIAL_ARTWORK = Object.freeze({
   'bizjet-small': 'generic-bizjet-small',
+  'bizjet-large': 'generic-bizjet-large',
   'cessna-high-wing': 'cessna-high-wing',
-  'air-tractor': 'air-tractor-yellow',
+  'cessna-caravan': 'cessna-caravan',
+  'piper-low-wing': 'piper-low-wing',
+  'king-air': 'king-air',
+  dash8: 'dash8',
+  'air-tractor-yellow': 'air-tractor-yellow',
+  'air-tractor-red-white': 'air-tractor-red-white',
 });
 
 const GENERIC_ARTWORK = Object.freeze({
@@ -79,8 +95,14 @@ const GENERIC_ARTWORK = Object.freeze({
   narrowbody: 'generic-narrowbody',
   widebody: 'generic-widebody',
   'bizjet-small': 'generic-bizjet-small',
+  'bizjet-large': 'generic-bizjet-large',
   'cessna-high-wing': 'cessna-high-wing',
-  'air-tractor': 'air-tractor-yellow',
+  'cessna-caravan': 'cessna-caravan',
+  'piper-low-wing': 'piper-low-wing',
+  'king-air': 'king-air',
+  dash8: 'dash8',
+  'air-tractor-yellow': 'air-tractor-yellow',
+  'air-tractor-red-white': 'air-tractor-red-white',
 });
 
 const ASSET_BY_KEY = new Map(PLANE_ASSETS.map((asset) => [asset.key, asset]));
@@ -104,7 +126,7 @@ function callsignPrefix(value) {
 }
 
 /**
- * Resolve an ICAO designator to a Phase 1 visual family. Unknown types use
+ * Resolve an ICAO designator to a reviewed visual family. Unknown types use
  * the normalized public aircraft class, then the existing default jet family.
  *
  * @param {unknown} icaoType
@@ -120,7 +142,7 @@ export function planeFamily(icaoType, aircraftClass) {
 }
 
 /**
- * Select a reviewed Phase 1 artwork ID using the documented precedence.
+ * Select a reviewed artwork ID using the documented precedence.
  *
  * @param {Partial<Aircraft> | null | undefined} aircraft
  * @returns {string}

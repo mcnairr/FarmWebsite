@@ -101,14 +101,19 @@ async function inspectAsset(root, asset) {
 }
 
 /** Build the reproducible measurement record used by the PG-011 visual gate. */
-export async function auditPhase1PlaneArt({ root = defaultRoot, assets = PLANE_ASSETS } = {}) {
+export async function auditPlaneArt({
+  root = defaultRoot,
+  assets = PLANE_ASSETS,
+  treatmentIds = PHASE1_TREATMENT_IDS,
+  phase = 'Phase 1',
+} = {}) {
   const promptCatalog = JSON.parse(await readFile(join(root, 'design', 'plane-art', 'prompts.json'), 'utf8'));
   const promptByKey = new Map(promptCatalog.records.map((record) => [record.key, record]));
-  const phase1 = assets.filter((asset) => PHASE1_TREATMENT_IDS.includes(asset.artworkId));
+  const phase1 = assets.filter((asset) => treatmentIds.includes(asset.artworkId));
   const inspected = await Promise.all(phase1.map((asset) => inspectAsset(root, asset)));
-  const byId = new Map(PHASE1_TREATMENT_IDS.map((id) => [id, []]));
+  const byId = new Map(treatmentIds.map((id) => [id, []]));
   for (const asset of inspected) byId.get(asset.artworkId)?.push(asset);
-  const pairs = PHASE1_TREATMENT_IDS.map((artworkId) => {
+  const pairs = treatmentIds.map((artworkId) => {
     const assetsForId = byId.get(artworkId).sort((a, b) => b.direction.localeCompare(a.direction));
     const [right, left] = ['right', 'left'].map((direction) => assetsForId.find((asset) => asset.direction === direction));
     const widthRatio = right && left
@@ -122,8 +127,8 @@ export async function auditPhase1PlaneArt({ root = defaultRoot, assets = PLANE_A
   const exceptions = inspected.filter((asset) => !asset.inTarget);
   return {
     schemaVersion: 1,
-    phase: 'Phase 1',
-    treatmentCount: PHASE1_TREATMENT_IDS.length,
+    phase,
+    treatmentCount: treatmentIds.length,
     imageCount: inspected.length,
     generation: {
       providers: [...new Set(phase1.map((asset) => promptByKey.get(asset.promptRecordKey)?.provider))].sort(),
@@ -155,6 +160,10 @@ export async function auditPhase1PlaneArt({ root = defaultRoot, assets = PLANE_A
     },
     pairs,
   };
+}
+
+export function auditPhase1PlaneArt(options = {}) {
+  return auditPlaneArt(options);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

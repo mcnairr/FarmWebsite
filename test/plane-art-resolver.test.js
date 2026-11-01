@@ -11,7 +11,12 @@ test('planeFamily covers every Phase 1 ICAO family and class fallback', () => {
     [' A359 ', 'other', 'widebody'],
     ['C25A', 'airliner', 'bizjet-small'],
     ['C172', 'airliner', 'cessna-high-wing'],
-    ['AT8T', 'airliner', 'air-tractor'],
+    ['AT8T', 'airliner', 'air-tractor-red-white'],
+    ['C208', 'other', 'cessna-caravan'],
+    ['PA28', 'other', 'piper-low-wing'],
+    ['B350', 'other', 'king-air'],
+    ['DH8D', 'airliner', 'dash8'],
+    ['GLF6', 'other', 'bizjet-large'],
     [null, 'airliner', 'narrowbody'],
     [null, 'light', 'cessna-high-wing'],
     [null, 'other', 'bizjet-small'],
@@ -20,6 +25,29 @@ test('planeFamily covers every Phase 1 ICAO family and class fallback', () => {
   ];
   for (const [icao, aircraftClass, expected] of cases) {
     assert.equal(planeFamily(icao, aircraftClass), expected);
+  }
+});
+
+test('Phase 2 mappings cover positive, incompatible, ambiguous, unknown, and hostile inputs', () => {
+  const cases = [
+    ['positive branded business', { callsign: 'EJA123', icaoType: 'CL35', aircraftClass: 'other' }, 'netjets-bizjet'],
+    ['positive branded business', { callsign: 'LXJ45', icaoType: 'C56X', aircraftClass: 'other' }, 'flexjet-bizjet'],
+    ['positive large business fallback', { callsign: null, icaoType: 'GLF6', aircraftClass: 'other' }, 'generic-bizjet-large'],
+    ['positive special family', { callsign: null, icaoType: 'C208', aircraftClass: 'light' }, 'cessna-caravan'],
+    ['positive special family', { callsign: null, icaoType: 'PA46', aircraftClass: 'light' }, 'piper-low-wing'],
+    ['positive special family', { callsign: null, icaoType: 'B350', aircraftClass: 'other' }, 'king-air'],
+    ['positive special family', { callsign: null, icaoType: 'DH8D', aircraftClass: 'airliner' }, 'dash8'],
+    ['positive agricultural split', { callsign: null, icaoType: 'AT6T', aircraftClass: 'light' }, 'air-tractor-yellow'],
+    ['positive agricultural split', { callsign: null, icaoType: 'AT8T', aircraftClass: 'light' }, 'air-tractor-red-white'],
+    ['incompatible family', { callsign: 'EJA123', icaoType: 'C172', aircraftClass: 'light' }, 'cessna-high-wing'],
+    ['incompatible family', { callsign: 'LXJ45', icaoType: 'B738', aircraftClass: 'airliner' }, 'generic-narrowbody'],
+    ['ambiguous regional', { callsign: 'SKW123', icaoType: 'E75L', aircraftClass: 'airliner' }, 'generic-regional'],
+    ['ambiguous regional', { callsign: 'RPA123', icaoType: 'CRJ9', aircraftClass: 'airliner' }, 'generic-regional'],
+    ['unknown', { callsign: 'ZZZ1', icaoType: 'ZZZZ', aircraftClass: 'other' }, 'generic-bizjet-small'],
+    ['hostile', { callsign: 'EJA/../../x', icaoType: '../CL35', aircraftClass: '<script>' }, 'generic-narrowbody'],
+  ];
+  for (const [label, aircraft, expected] of cases) {
+    assert.equal(planeArtwork(aircraft), expected, label);
   }
 });
 

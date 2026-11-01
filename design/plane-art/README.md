@@ -595,6 +595,15 @@ the neutral fallback and must omit or fictionalize registrations. Review also
 checks aircraft-family silhouette, engine/propeller count, fixed or retracted
 gear, baseline, relative size, transparent edges, and byte ceiling.
 
+## PG-021 Phase 2 release gate
+
+The cumulative Phase 2 library is frozen at exactly 40 approved treatments and
+80 directional WebPs. The gallery review, mapping decisions, audit measurements,
+and repeatable throttled performance results are recorded in
+[`phase2-release-gate.md`](phase2-release-gate.md). Run
+`npm run plane-art:audit-phase2` together with the library validator and test
+suites before changing the released inventory.
+
 ### Adding a future asset-library version
 
 A future library is added beside this one, for example
