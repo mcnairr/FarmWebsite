@@ -3,6 +3,20 @@
   "canonicalMatrix": "design/plane-graphics-plan2.md#planned-artwork-matrix",
   "scopedGenerationExceptions": [
     {
+      "id": "pg019-chroma-magenta-1",
+      "approvedOn": "2026-10-31",
+      "rationale": "Issue #19 uses the established contrasting magenta background so pale regional-jet fuselages and partner paint remain intact during deterministic alpha extraction.",
+      "text": "PG-019 asset-specific background override for extraction: ignore the pure-white-background instruction for this request only. Place the complete aircraft on a perfectly uniform solid chroma-key magenta (#FF00FF) background. Use no gradient, texture, checkerboard, floor, horizon, scenery, shadow, magenta spill, magenta aircraft paint, or outline. Preserve the requested direction, regional-jet family, engine count, landing-gear treatment, partner branding, crop, lighting, and all other frozen anatomy constraints.",
+      "recordKeys": [
+        "delta-connection-regional:right:v1",
+        "delta-connection-regional:left:v1",
+        "united-express-regional:right:v1",
+        "united-express-regional:left:v1",
+        "alaska-regional:right:v1",
+        "alaska-regional:left:v1"
+      ]
+    },
+    {
       "id": "pg009-chroma-magenta-1",
       "approvedOn": "2026-10-31",
       "rationale": "Issue #18 demonstrated that white-background extraction can erase pale aircraft pixels. Issue #9 replacements use the same uniform contrasting chroma background and deterministic alpha extraction while preserving cargo branding and neutral generic identities.",

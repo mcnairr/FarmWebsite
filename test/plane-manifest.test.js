@@ -180,6 +180,27 @@ test('PG-010 business, light-aircraft, and agricultural pairs are independently 
   assert.ok(assets.filter(({ artworkId }) => artworkId === 'air-tractor-yellow').every(({ category }) => category === 'crop-duster'));
 });
 
+test('PG-019 regional partner pairs are independent, approved, and narrowly mapped', () => {
+  const expected = {
+    'delta-connection-regional': { callsigns: ['EDV'], types: ['CRJ7', 'CRJ9', 'E170', 'E75L', 'E75S'] },
+    'united-express-regional': { callsigns: ['GJS'], types: ['CRJ2', 'CRJ7', 'CRJ9', 'E170', 'E75L', 'E75S'] },
+    'alaska-regional': { callsigns: ['QXE'], types: ['E170', 'E75L', 'E75S'] },
+  };
+  const recordsByKey = Object.fromEntries(prompts.records.map((record) => [record.key, record]));
+
+  for (const [artworkId, mapping] of Object.entries(expected)) {
+    const pair = PLANE_ASSETS.filter((asset) => asset.artworkId === artworkId);
+    assert.deepEqual(pair.map(({ direction }) => direction).sort(), ['left', 'right']);
+    assert.ok(pair.every(({ approvalStatus, sizeClass }) => approvalStatus === 'approved' && sizeClass === 'medium'));
+    assert.ok(pair.every(({ allowedCallsignPrefixes }) => JSON.stringify(allowedCallsignPrefixes) === JSON.stringify(mapping.callsigns)));
+    assert.ok(pair.every(({ applicableIcaoTypes }) => JSON.stringify(applicableIcaoTypes) === JSON.stringify(mapping.types)));
+    const pairRecords = pair.map((asset) => recordsByKey[asset.promptRecordKey]);
+    assert.ok(pairRecords.every(({ status }) => status === 'approved'));
+    assert.equal(new Set(pairRecords.map(({ output }) => output.sha256)).size, 2);
+    assert.ok(pairRecords.every(({ approvalNotes }) => /directional pair was reviewed together/i.test(approvalNotes)));
+  }
+});
+
 test('PG-002 public manifest contains no generation runtime or private paths', async () => {
   const source = await readFile(join(root, 'assets', 'planes', 'v1', 'manifest.js'), 'utf8');
   for (const forbidden of ['.secrets', 'credential', 'private_key', 'access_token', 'vertexai', '.generated', 'proofs/']) {

@@ -63,6 +63,9 @@ const BRANDED_FAMILIES = Object.freeze({
 const REGIONAL_PARTNERS = Object.freeze({
   ENY: 'american-eagle-regional',
   JIA: 'american-eagle-regional',
+  EDV: 'delta-connection-regional',
+  GJS: 'united-express-regional',
+  QXE: 'alaska-regional',
 });
 
 const SPECIAL_ARTWORK = Object.freeze({

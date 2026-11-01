@@ -459,6 +459,30 @@ production-ready `generic-regional` pair. Pair review covered direction,
 anatomy, crop, baseline, alpha edges, and recognition at 272 px hero and 46 px
 blip sizes over both the production sky and checkerboard.
 
+## Phase 2 regional partner pairs (PG-019)
+
+The `delta-connection-regional`, `united-express-regional`, and
+`alaska-regional` treatments are approved in both independently generated
+directions. All six were generated with Google Cloud Vertex AI using the
+`pg019-chroma-magenta-1` background exception, extracted globally against
+magenta, normalized to transparent 960 × 330 quality-90 WebPs, and reviewed as
+directional pairs over the production sky and checkerboard at all three tilts,
+272 px hero size, and 46 px blip size. The Delta pair carries dated below-range
+exceptions; encoder settings were not changed.
+
+Resolver exposure is deliberately narrower than livery recognition. `EDV`
+selects Delta Connection, `GJS` selects United Express, and `QXE` selects the
+Alaska regional treatment only when the ICAO type is compatible with that
+asset's regional-jet family. Ambiguous regional callsigns such as `SKW` and
+`RPA` continue to use `generic-regional`. The Alaska mapping accepts only the
+E170/E175 family, while Delta Connection and United Express accept their
+reviewed CRJ/E-Jet sets; mainline narrowbodies never resolve to these assets.
+
+An original project-owned E175-specific shape guide was added for Alaska. Its
+editable SVG, rendered PNG, ownership, permission, and provenance are recorded
+under `shape-guides/`; Delta Connection and United Express use the existing
+approved E175/CRJ-class regional guide.
+
 ## Phase 1 business, light-aircraft, and agricultural pairs (PG-010)
 
 The Phase 1 `generic-bizjet-small`, `cessna-high-wing`, and
