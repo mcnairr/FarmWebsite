@@ -136,12 +136,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/a350-747-class-widebody.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/a350-747-class-widebody.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original A350/747-class widebody shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "a350-747-class-widebody",
       "family": "A350/747-class widebody",
       "treatmentIds": [
@@ -149,12 +149,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/777-a350-class-widebody.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/777-a350-class-widebody.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original 777/A350-class widebody shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "777-a350-class-widebody",
       "family": "777/A350-class widebody",
       "treatmentIds": [
@@ -162,12 +162,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/md-11-trijet.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/md-11-trijet.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original MD-11 trijet shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "md-11-trijet",
       "family": "MD-11 trijet",
       "treatmentIds": [
@@ -203,12 +203,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/747-767-class-cargo-widebody.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/747-767-class-cargo-widebody.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original 747/767-class cargo widebody shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "747-767-class-cargo-widebody",
       "family": "747/767-class cargo widebody",
       "treatmentIds": [
@@ -283,12 +283,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/boeing-717-rear-engine-jet.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/boeing-717-rear-engine-jet.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Boeing 717 rear-engine jet shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "boeing-717-rear-engine-jet",
       "family": "Boeing 717 rear-engine jet",
       "treatmentIds": [
@@ -296,12 +296,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/boeing-757-long-narrowbody.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/boeing-757-long-narrowbody.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Boeing 757 long narrowbody shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "boeing-757-long-narrowbody",
       "family": "Boeing 757 long narrowbody",
       "treatmentIds": [
@@ -309,12 +309,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/boeing-787-dreamliner.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/boeing-787-dreamliner.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Boeing 787 Dreamliner shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "boeing-787-dreamliner",
       "family": "Boeing 787 Dreamliner",
       "treatmentIds": [
@@ -322,12 +322,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/boeing-777-widebody.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/boeing-777-widebody.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Boeing 777 widebody shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "boeing-777-widebody",
       "family": "Boeing 777 widebody",
       "treatmentIds": [
@@ -335,12 +335,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/boeing-747-8-jumbo.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/boeing-747-8-jumbo.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Boeing 747-8 jumbo shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "boeing-747-8-jumbo",
       "family": "Boeing 747-8 jumbo",
       "treatmentIds": [
@@ -348,12 +348,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/airbus-a380-super-jumbo.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/airbus-a380-super-jumbo.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Airbus A380 super-jumbo shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "airbus-a380-super-jumbo",
       "family": "Airbus A380 super-jumbo",
       "treatmentIds": [
@@ -361,12 +361,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/airbus-a220.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/airbus-a220.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Airbus A220 shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "airbus-a220",
       "family": "Airbus A220",
       "treatmentIds": [
@@ -374,12 +374,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/embraer-e190.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/embraer-e190.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Embraer E190 shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "embraer-e190",
       "family": "Embraer E190",
       "treatmentIds": [
@@ -387,12 +387,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/bombardier-crj-200.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/bombardier-crj-200.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Bombardier CRJ-200 shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "bombardier-crj-200",
       "family": "Bombardier CRJ-200",
       "treatmentIds": [
@@ -400,12 +400,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/bombardier-crj-900.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/bombardier-crj-900.svg on 2026-11-01.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Bombardier CRJ-900 shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "bombardier-crj-900",
       "family": "Bombardier CRJ-900",
       "treatmentIds": [

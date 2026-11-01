@@ -10,6 +10,50 @@
   ],
   "scopedGenerationExceptions": [
     {
+      "id": "pg022-chroma-magenta-1",
+      "approvedOn": "2026-11-01",
+      "rationale": "Issue #22 uses the established contrasting magenta background so pale international, cargo, jumbo, trijet, and regional aircraft pixels remain intact during deterministic alpha extraction.",
+      "text": "PG-022 asset-specific background override for extraction: ignore the pure-white-background instruction for this request only. Place the complete aircraft on a perfectly uniform solid chroma-key magenta (#FF00FF) background. Use no gradient, texture, checkerboard, floor, horizon, scenery, shadow, magenta spill, magenta aircraft paint, or outline. Preserve the requested direction, exact aircraft family, distinctive engine count and placement, rear-engine, trijet, jumbo or regional anatomy, landing-gear treatment, readable branding, crop, lighting, and all other frozen constraints.",
+      "recordKeys": [
+        "baw-widebody:right:v1",
+        "baw-widebody:left:v1",
+        "dlh-widebody:right:v1",
+        "dlh-widebody:left:v1",
+        "afr-widebody:right:v1",
+        "afr-widebody:left:v1",
+        "klm-widebody:right:v1",
+        "klm-widebody:left:v1",
+        "fdx-trijet:right:v1",
+        "fdx-trijet:left:v1",
+        "ups-trijet:right:v1",
+        "ups-trijet:left:v1",
+        "gti-widebody:right:v1",
+        "gti-widebody:left:v1",
+        "dhl-widebody:right:v1",
+        "dhl-widebody:left:v1",
+        "dal-b717:right:v1",
+        "dal-b717:left:v1",
+        "dal-b757:right:v1",
+        "dal-b757:left:v1",
+        "ual-b787:right:v1",
+        "ual-b787:left:v1",
+        "aal-b777:right:v1",
+        "aal-b777:left:v1",
+        "dlh-b747:right:v1",
+        "dlh-b747:left:v1",
+        "baw-a380:right:v1",
+        "baw-a380:left:v1",
+        "jbu-a220:right:v1",
+        "jbu-a220:left:v1",
+        "jbu-e190:right:v1",
+        "jbu-e190:left:v1",
+        "united-express-crj200:right:v1",
+        "united-express-crj200:left:v1",
+        "delta-connection-crj900:right:v1",
+        "delta-connection-crj900:left:v1"
+      ]
+    },
+    {
       "id": "pg020-chroma-magenta-1",
       "approvedOn": "2026-10-31",
       "rationale": "Issue #20 uses the established contrasting magenta background so pale business, general-aviation, turboprop, and agricultural aircraft details remain intact during deterministic alpha extraction.",
@@ -2083,7 +2127,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-777-class-widebody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -2104,13 +2148,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is ready after the original shape guide was created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:18:50.0958461+00:00",
+      "candidateNotes": "Vertex request 9ad7d2c66a8c8e1600fe in global returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 69a2871c22c1a71c6a01b7ae21f9983583c8bae551c2925c1dbd3f20a19e3b65.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 56864 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "baw-widebody:right",
         "url": "/assets/planes/v1/baw-widebody-right.webp",
-        "sha256": null
+        "sha256": "821c7fa242166e7e6ab36233b28476de7fbc9793d43a477d86cd4a2103a8aa3a"
       }
     },
     {
@@ -2129,7 +2173,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-777-class-widebody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -2150,13 +2194,13 @@
       "styleReferenceKey": "baw-widebody:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:35:14.3897872+00:00",
+      "candidateNotes": "Vertex request 2fa1fa1475a562e2a546 in europe-west1 returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 672d22e8a760533cc1113c7936c29909d0cccba494ad579aedeefe3100571e5e.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 88472 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "baw-widebody:left",
         "url": "/assets/planes/v1/baw-widebody-left.webp",
-        "sha256": null
+        "sha256": "c9518784295d621a150930962fdb86fcc49b1c5f2a5d7fd6ceb74ca27e2f0b7e"
       }
     },
     {
@@ -2175,8 +2219,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a350-747-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a350-747-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2196,13 +2240,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:20:01.2492412+00:00",
+      "candidateNotes": "Vertex request 1c83cdded29eaec1dfa4 in us-central1 returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: b11cf39df5a8851e0b3bd3a2bd8eace647e40d68e130f2763a652f10ed1827e5.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 19464 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "dlh-widebody:right",
         "url": "/assets/planes/v1/dlh-widebody-right.webp",
-        "sha256": null
+        "sha256": "6cf89800f168eff84da7eb58352a03d70e39bc0e1798a73a0a4a5a52e561c61b"
       }
     },
     {
@@ -2221,8 +2265,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "a350-747-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide a350-747-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2242,13 +2286,13 @@
       "styleReferenceKey": "dlh-widebody:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:36:48.2128391+00:00",
+      "candidateNotes": "Vertex request 14aef6a4a5d59d23afc3 in global returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 6492fa4763d528820c00eb15d74b2324bd1af73cef81a30aaed6a5eaa1633648.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 19796 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "dlh-widebody:left",
         "url": "/assets/planes/v1/dlh-widebody-left.webp",
-        "sha256": null
+        "sha256": "a635b33552ca8250c38b0b64f4151a5f528c57ba835e4da99979524260df0554"
       }
     },
     {
@@ -2267,8 +2311,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "777-a350-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 777-a350-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2288,13 +2332,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:18:34.3342748+00:00",
+      "candidateNotes": "Vertex request 6903c04d44e18db9c5ca in global returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: eb8c2b28f46a1a4d204cd3982cb6dd476bc69e111e1cf41bfb141ddec69e6812.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 109222 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "afr-widebody:right",
         "url": "/assets/planes/v1/afr-widebody-right.webp",
-        "sha256": null
+        "sha256": "4c2eea1d2c827a8df858954d4bc8059bb40d2ffe2b556a3431c17ccc6038f014"
       }
     },
     {
@@ -2313,8 +2357,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "777-a350-class-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 777-a350-class-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2332,15 +2376,19 @@
         "shape-guide:777-a350-class-widebody"
       ],
       "styleReferenceKey": "afr-widebody:right:v1",
-      "generationException": null,
+      "generationException": {
+        "id": "pg022-afr-left-vertex-retry-1",
+        "text": "Retry correction: create the aircraft directly from the production style proof and shape guide without external lookup or web grounding. Render only one photorealistic Air France widebody in clean left-facing side profile with exactly two underwing engines.",
+        "omitStyleReferenceImage": true
+      },
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:49:01.6894031+00:00",
+      "candidateNotes": "Vertex request c6b21e78e474a353f211 in us-central1 returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 474bbaa54f9a5156aa86397bff5abd1eed2741a39de87eee71d0bbc9f2258e15.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 25212 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "afr-widebody:left",
         "url": "/assets/planes/v1/afr-widebody-left.webp",
-        "sha256": null
+        "sha256": "ead4db844fefcfeccda67e61dcb6af9c74835b29b42e01a80f1de84cfe64cab2"
       }
     },
     {
@@ -2359,7 +2407,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-777-class-widebody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -2378,15 +2426,18 @@
         "shape-guide:787-777-class-widebody"
       ],
       "styleReferenceKey": null,
-      "generationException": null,
+      "generationException": {
+        "id": "pg022-klm-guide-copy-retry-1",
+        "text": "Retry correction: render only one photorealistic KLM aircraft in clean side profile. The shape guide is silhouette guidance only. Do not reproduce the guide image, its navy silhouette, labels, title, caption, dashed axes, diagram layout, or multiple aircraft views."
+      },
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:28:00.3137018+00:00",
+      "candidateNotes": "Vertex request 09ff1e004a1c2547dc8c in asia-east1 returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 0de32ff42de0420c3564ed3d289c48a263a3ba01a083295f9dcd93150f057ff0.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 21318 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "klm-widebody:right",
         "url": "/assets/planes/v1/klm-widebody-right.webp",
-        "sha256": null
+        "sha256": "479d0f56e1264f0b731d7e957f11062e566ff646d59567c071a65df1a2e6444d"
       }
     },
     {
@@ -2405,7 +2456,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "787-777-class-widebody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -2426,13 +2477,13 @@
       "styleReferenceKey": "klm-widebody:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:40:35.9225704+00:00",
+      "candidateNotes": "Vertex request edace97af83c2a76cc6c in global returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 5f9bbcaa7197f2babcfb449d020540653e1afebcc5411b844951b8b5e03e2354.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 69958 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "klm-widebody:left",
         "url": "/assets/planes/v1/klm-widebody-left.webp",
-        "sha256": null
+        "sha256": "131e2c7121e82d651898482936b4a89861856987dae94d79bac75de434e37fc9"
       }
     },
     {
@@ -2453,8 +2504,8 @@
         "Preserve the MD-11 trijet layout: two under-wing engines and one distinct tail-mounted center engine."
       ],
       "shapeGuideId": "md-11-trijet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide md-11-trijet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2474,13 +2525,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:20:10.5896191+00:00",
+      "candidateNotes": "Vertex request e5a75bb53335599e7546 in us-central1 returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 03e48b14d807ce9ea815db088e59274d5cac3fe416e46977147b2b282befb280.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 19464 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "fdx-trijet:right",
         "url": "/assets/planes/v1/fdx-trijet-right.webp",
-        "sha256": null
+        "sha256": "c7b6fb47cd5d4c253176a4b3ae687c734fd3b2074c9907a62a5c575e5a68fbc7"
       }
     },
     {
@@ -2501,8 +2552,8 @@
         "Preserve the MD-11 trijet layout: two under-wing engines and one distinct tail-mounted center engine."
       ],
       "shapeGuideId": "md-11-trijet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide md-11-trijet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2522,13 +2573,13 @@
       "styleReferenceKey": "fdx-trijet:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:37:35.8410208+00:00",
+      "candidateNotes": "Vertex request 036c7fb3909edef2049d in us-east4 returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: a80d72bb216b073f7260c6a2867fdc300ea78ada9fed4e9ecc5df706b9bf0d01.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 54396 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "fdx-trijet:left",
         "url": "/assets/planes/v1/fdx-trijet-left.webp",
-        "sha256": null
+        "sha256": "55f3669953ea288bfc5459e68d55caf250738d832b30d41892a3fa89a99da495"
       }
     },
     {
@@ -2650,8 +2701,8 @@
         "Preserve the MD-11 trijet layout: two under-wing engines and one distinct tail-mounted center engine."
       ],
       "shapeGuideId": "md-11-trijet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide md-11-trijet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2671,13 +2722,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:28:27.4635835+00:00",
+      "candidateNotes": "Vertex request be5d8b0dd070d6ba4ada in asia-east1 returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: ce691911c507d7e7d16f21d30f1de2916f4fcd130d9a5162b0fa5e50e01bc0de.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 27738 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "ups-trijet:right",
         "url": "/assets/planes/v1/ups-trijet-right.webp",
-        "sha256": null
+        "sha256": "d6033ed044c7e31a56fad5cb3a49305b56204d48ddc2e4b4c6b2b9a7827e575f"
       }
     },
     {
@@ -2698,8 +2749,8 @@
         "Preserve the MD-11 trijet layout: two under-wing engines and one distinct tail-mounted center engine."
       ],
       "shapeGuideId": "md-11-trijet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide md-11-trijet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2719,13 +2770,13 @@
       "styleReferenceKey": "ups-trijet:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:42:49.7656628+00:00",
+      "candidateNotes": "Vertex request f1234d57d0860c1b56b5 in europe-west1 returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 98f12729b64226e1a96745b516096f137d959b9ef4b3fdcb071ce711446288f8.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 31900 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "ups-trijet:left",
         "url": "/assets/planes/v1/ups-trijet-left.webp",
-        "sha256": null
+        "sha256": "068bce1610e284ccabc70e3d3b46e466048ebca684dea5446e7de1d1419842df"
       }
     },
     {
@@ -2836,8 +2887,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "747-767-class-cargo-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 747-767-class-cargo-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2855,15 +2906,18 @@
         "shape-guide:747-767-class-cargo-widebody"
       ],
       "styleReferenceKey": null,
-      "generationException": null,
+      "generationException": {
+        "id": "pg022-gti-guide-copy-retry-1",
+        "text": "Retry correction: render only one photorealistic Atlas Air cargo aircraft in clean side profile. The shape guide is silhouette guidance only. Do not reproduce the guide image, its labels, title, caption, dashed axes, diagram layout, or multiple aircraft views."
+      },
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:26:22.8017570+00:00",
+      "candidateNotes": "Vertex request efca931989b1d91729bd in europe-west1 returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 719f69a262b33d9c130ed1a4e505bdfb9394a767e59f2fa534e2acf8d113bcc4.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 76164 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "gti-widebody:right",
         "url": "/assets/planes/v1/gti-widebody-right.webp",
-        "sha256": null
+        "sha256": "f57a9cb538da28452b916c495a6d5a6ac11fa2f65f5a07de7177a216386d6a0f"
       }
     },
     {
@@ -2882,8 +2936,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "747-767-class-cargo-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide 747-767-class-cargo-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -2901,15 +2955,18 @@
         "shape-guide:747-767-class-cargo-widebody"
       ],
       "styleReferenceKey": "gti-widebody:right:v1",
-      "generationException": null,
+      "generationException": {
+        "id": "pg022-gti-left-engine-count-retry-1",
+        "text": "Retry correction: this Atlas Air cargo widebody must have exactly two underwing turbofan engines total, one beneath each wing. Do not render four underwing engines. Render only one photorealistic aircraft in clean side profile."
+      },
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:45:42.3802883+00:00",
+      "candidateNotes": "Vertex request 69e4818f4c5f3af24b57 in global returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 3f89396c07c1f34c87ecf91074159aaaea38466c9ce671027219b4246816acab.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 85108 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "gti-widebody:left",
         "url": "/assets/planes/v1/gti-widebody-left.webp",
-        "sha256": null
+        "sha256": "487780f23aab2db693b9b1a619ecc053bd74df1ffc230f87ced9882e9e626ebf"
       }
     },
     {
@@ -2928,7 +2985,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "767-class-cargo-widebody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -2949,13 +3006,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:19:41.2971809+00:00",
+      "candidateNotes": "Vertex request e5810636deedf4351f09 in us-central1 returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: debdd2a08eb3aa19b4ef0ee771d5306b3df820f492b7a5a63cb8aa28a485828b.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 17118 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "dhl-widebody:right",
         "url": "/assets/planes/v1/dhl-widebody-right.webp",
-        "sha256": null
+        "sha256": "699442db37909ee8f02fa36e442c8894a2192cde9c9424cf248661943cb421bc"
       }
     },
     {
@@ -2974,7 +3031,7 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "767-class-cargo-widebody",
-      "status": "ready",
+      "status": "approved",
       "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
@@ -2995,13 +3052,13 @@
       "styleReferenceKey": "dhl-widebody:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:33:07.2475890+00:00",
+      "candidateNotes": "Vertex request b74a9bb55941ffc90cab in global returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: d9bcc4b1a348a1bb923cb9c4138f4399bd240835d8c12201f2ad13e8e8fca1bc.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 73966 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "dhl-widebody:left",
         "url": "/assets/planes/v1/dhl-widebody-left.webp",
-        "sha256": null
+        "sha256": "02f4509d9406e520f72008ebc840208c2fc0b6cb291fadb918161784697f25db"
       }
     },
     {
@@ -3709,8 +3766,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "boeing-717-rear-engine-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide boeing-717-rear-engine-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3730,13 +3787,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:18:58.7353537+00:00",
+      "candidateNotes": "Vertex request 72e9ff5621c5935750b1 in global returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 344a968fe37547efccbf3e7c79e342f8e10248db12ca45dd0717371e4f15301c.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 27302 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "dal-b717:right",
         "url": "/assets/planes/v1/dal-b717-right.webp",
-        "sha256": null
+        "sha256": "657b144cd9679791df0cde1d7ddb720e8590aaac589104b232ac172d36519925"
       }
     },
     {
@@ -3755,8 +3812,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "boeing-717-rear-engine-jet",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide boeing-717-rear-engine-jet is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3776,13 +3833,13 @@
       "styleReferenceKey": "dal-b717:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:30:24.6692684+00:00",
+      "candidateNotes": "Vertex request a06b685b9eaced838097 in global returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 1e4eea65cfa5fa13e03a258a3c4fe4be0e78cfe0a531af6f3b35d92e38c94a47.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 25860 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "dal-b717:left",
         "url": "/assets/planes/v1/dal-b717-left.webp",
-        "sha256": null
+        "sha256": "f659c50d86102f98507708aabc9c94c40ab79b342768277eb4811f1c6716f47d"
       }
     },
     {
@@ -3801,8 +3858,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "boeing-757-long-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide boeing-757-long-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3822,13 +3879,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:19:07.2420912+00:00",
+      "candidateNotes": "Vertex request 1b341812d89830160d8a in global returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 8fbc27774d8c74d8b47490404afc08ff44fe54796477ea7c8b95ece4990a334a.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 58630 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "dal-b757:right",
         "url": "/assets/planes/v1/dal-b757-right.webp",
-        "sha256": null
+        "sha256": "da9c132eb7afa4e6e551866a6f5d3d1fadce0db38f14f5cf86706fe0dfa5665a"
       }
     },
     {
@@ -3847,8 +3904,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "boeing-757-long-narrowbody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide boeing-757-long-narrowbody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3868,13 +3925,13 @@
       "styleReferenceKey": "dal-b757:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:31:06.9658097+00:00",
+      "candidateNotes": "Vertex request 55bbd754f040b489b883 in europe-west1 returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 3583267b7750d98f7a7505b555f201cf67c084a97796b67cb5090157d4c1c406.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 20500 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "dal-b757:left",
         "url": "/assets/planes/v1/dal-b757-left.webp",
-        "sha256": null
+        "sha256": "4de7c85b45945254232aa35976279a44447df0cfadce762225415c7338eccacf"
       }
     },
     {
@@ -3893,8 +3950,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "boeing-787-dreamliner",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide boeing-787-dreamliner is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3914,13 +3971,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:21:30.5289266+00:00",
+      "candidateNotes": "Vertex request e44c2d63efda8e1b6491 in asia-northeast1 returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: eb202646d79c2f4a54888c705c99edcf68938b8011b0b874a9f6b1ae2bddecc0.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 18880 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "ual-b787:right",
         "url": "/assets/planes/v1/ual-b787-right.webp",
-        "sha256": null
+        "sha256": "50976b58fea8e117b7b619a5356b4ea681c2fe95ffe376a7cced2bbc3cfec8da"
       }
     },
     {
@@ -3939,8 +3996,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "boeing-787-dreamliner",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide boeing-787-dreamliner is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -3960,13 +4017,13 @@
       "styleReferenceKey": "ual-b787:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:41:23.6457649+00:00",
+      "candidateNotes": "Vertex request 70b3c3d4b2ef602880d0 in us-east4 returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: f7c706ea4e58c3f089ab84041f402757a89e33a55bf73adca898c96e435d6963.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 39842 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "ual-b787:left",
         "url": "/assets/planes/v1/ual-b787-left.webp",
-        "sha256": null
+        "sha256": "866952d449e5f2f5a4d653ef431f0ae0742be2aa012ab140beed3f1ae1f9122d"
       }
     },
     {
@@ -3985,8 +4042,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "boeing-777-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide boeing-777-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4006,13 +4063,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:18:25.7200188+00:00",
+      "candidateNotes": "Vertex request 6ea1a6819500f2edf862 in global returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 4647f28c5775e536acb4ea1be89b394855a547ea6eee455eed615ae0b9dd7cbc.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 20674 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "aal-b777:right",
         "url": "/assets/planes/v1/aal-b777-right.webp",
-        "sha256": null
+        "sha256": "e75226d333333461b6b0542cee57f53ec0e377591686bec32629ec6dbe8f9f74"
       }
     },
     {
@@ -4031,8 +4088,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "boeing-777-widebody",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide boeing-777-widebody is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4052,13 +4109,13 @@
       "styleReferenceKey": "aal-b777:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:24:31.9244608+00:00",
+      "candidateNotes": "Vertex request ea5d556cf61f21303018 in global returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 29e59ffbdbdd1e96342c7a7243a82cf181c681b288c0a2090315f217eb956a2d.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 25916 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "aal-b777:left",
         "url": "/assets/planes/v1/aal-b777-left.webp",
-        "sha256": null
+        "sha256": "9b148773de5d25f5ee88279f72f43b0a1810952d23f40a4bde55ebf49825264c"
       }
     },
     {
@@ -4079,8 +4136,8 @@
         "Preserve the Boeing 747-8 jumbo silhouette, four under-wing engines, and its distinctive forward upper-deck hump."
       ],
       "shapeGuideId": "boeing-747-8-jumbo",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide boeing-747-8-jumbo is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4100,13 +4157,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:19:51.2537687+00:00",
+      "candidateNotes": "Vertex request 5fa69ca9e9fa9cb54c83 in us-central1 returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 2d265598a02eee5e85eaccda1693d62d32aec5fc5efc75c56cc1cc319e635e70.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 51778 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "dlh-b747:right",
         "url": "/assets/planes/v1/dlh-b747-right.webp",
-        "sha256": null
+        "sha256": "0cef4fae1b2eb4239b3731d90a137977bd4358a672fca77379a3182398257a1d"
       }
     },
     {
@@ -4127,8 +4184,8 @@
         "Preserve the Boeing 747-8 jumbo silhouette, four under-wing engines, and its distinctive forward upper-deck hump."
       ],
       "shapeGuideId": "boeing-747-8-jumbo",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide boeing-747-8-jumbo is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4148,13 +4205,13 @@
       "styleReferenceKey": "dlh-b747:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:36:01.0544263+00:00",
+      "candidateNotes": "Vertex request ffdbb5df5f7b2fdbce22 in asia-east1 returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: bdf3ae0de3d179b9bb9c3bc21fd7aea059a15cca1076b5d2cbe5597e05170ea9.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 46642 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "dlh-b747:left",
         "url": "/assets/planes/v1/dlh-b747-left.webp",
-        "sha256": null
+        "sha256": "7a3ff94f77c1544266442b4dab8e0dfc5affaada983ad4e2d2de08b01de41165"
       }
     },
     {
@@ -4175,8 +4232,8 @@
         "Preserve the Airbus A380 super-jumbo silhouette, four under-wing engines, and full-length double-deck fuselage profile."
       ],
       "shapeGuideId": "airbus-a380-super-jumbo",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide airbus-a380-super-jumbo is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4196,13 +4253,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:18:41.7184353+00:00",
+      "candidateNotes": "Vertex request 062a1114796ac1a8208d in global returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 077ae11e8e0cc363f181ae0bb6cc50165f323d9a241ca91bbd8d0c8e7da3c39a.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 53086 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "baw-a380:right",
         "url": "/assets/planes/v1/baw-a380-right.webp",
-        "sha256": null
+        "sha256": "2941718ac22c9fadf9d0c0737e16040bc769f4d8ad2c3772e808dfed713aad4f"
       }
     },
     {
@@ -4223,8 +4280,8 @@
         "Preserve the Airbus A380 super-jumbo silhouette, four under-wing engines, and full-length double-deck fuselage profile."
       ],
       "shapeGuideId": "airbus-a380-super-jumbo",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide airbus-a380-super-jumbo is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4244,13 +4301,13 @@
       "styleReferenceKey": "baw-a380:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:29:05.9866454+00:00",
+      "candidateNotes": "Vertex request 104384d67114e06f4ee1 in europe-west1 returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: bfca74b3ab1fe4685b3492b90bb62bb60e09a1eff7edf2808b8c5a483e649bb7.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 20560 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "baw-a380:left",
         "url": "/assets/planes/v1/baw-a380-left.webp",
-        "sha256": null
+        "sha256": "68c42497ffd54bc10f9f648742816c54e311da888e19a1eba0d91994c0531348"
       }
     },
     {
@@ -4269,8 +4326,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "airbus-a220",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide airbus-a220 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4290,13 +4347,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:20:39.7222415+00:00",
+      "candidateNotes": "Vertex request fe33c84fb213d4ed9031 in europe-west1 returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: a57cd83255a11733a78b62bfe7dc346d84533e4fb2eda93ed3ea36294114db43.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 56402 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "jbu-a220:right",
         "url": "/assets/planes/v1/jbu-a220-right.webp",
-        "sha256": null
+        "sha256": "2e86566a1bd5f3bea15d0f69df21204b98f79c2b8bec10e1d40630cfdc474f6e"
       }
     },
     {
@@ -4315,8 +4372,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "airbus-a220",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide airbus-a220 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4336,13 +4393,13 @@
       "styleReferenceKey": "jbu-a220:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:46:39.9294337+00:00",
+      "candidateNotes": "Vertex request 3fb3b0c8fe556cf7d08e in us-east4 returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: d51a13cffb3dc862bbd9cb3fdd94231edcafd4a57594d87b0575950ff1f21e3a.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 44944 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "jbu-a220:left",
         "url": "/assets/planes/v1/jbu-a220-left.webp",
-        "sha256": null
+        "sha256": "61bab33c5499098502de153d8bb66384109803707dca6fd40b7319a95155d488"
       }
     },
     {
@@ -4361,8 +4418,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "embraer-e190",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide embraer-e190 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4382,13 +4439,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:20:47.3355528+00:00",
+      "candidateNotes": "Vertex request 1344baded1caa5a39f56 in europe-west1 returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 321fb65ff3d8f1939e3f5727dc1dd43edfda0e20544bc9028b7be3328cf3b782.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 95350 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "jbu-e190:right",
         "url": "/assets/planes/v1/jbu-e190-right.webp",
-        "sha256": null
+        "sha256": "c2dffc24fe94a22462dcf69e7d4415c498cbdc9a86058992edd3dddc68575bed"
       }
     },
     {
@@ -4407,8 +4464,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "embraer-e190",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide embraer-e190 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4428,13 +4485,13 @@
       "styleReferenceKey": "jbu-e190:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:39:49.3780087+00:00",
+      "candidateNotes": "Vertex request 2fefd1ea8a1e2ebd8d9c in asia-east1 returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 49947ca3d50fc4bb16ec4967360cd906de80da367b525c0617cd54d62371c1a7.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 84902 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "jbu-e190:left",
         "url": "/assets/planes/v1/jbu-e190-left.webp",
-        "sha256": null
+        "sha256": "8d3da28b1f0e25273b7c4e52175ef1fc735f9345bf7b46dd8fcc9791222f5247"
       }
     },
     {
@@ -4453,8 +4510,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "bombardier-crj-200",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide bombardier-crj-200 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4474,13 +4531,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:22:07.1775634+00:00",
+      "candidateNotes": "Vertex request f21cd72db33e6b496f87 in us-east4 returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: edfc78a996637d17d6f205346937dc35a265e8535918f18b29ed4c2b4af8d993.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 59762 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "united-express-crj200:right",
         "url": "/assets/planes/v1/united-express-crj200-right.webp",
-        "sha256": null
+        "sha256": "264144ad057153e44da2c535b650f3343d58ca13385d782b6f4b8db956395603"
       }
     },
     {
@@ -4499,8 +4556,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "bombardier-crj-200",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide bombardier-crj-200 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4520,13 +4577,13 @@
       "styleReferenceKey": "united-express-crj200:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:47:37.1738415+00:00",
+      "candidateNotes": "Vertex request 885908a15927585ef3e9 in europe-west1 returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 9dc88aa32513b24d44333663995a7613a42534cf0588f2a3a48c8e161fef0e53.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 23330 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "united-express-crj200:left",
         "url": "/assets/planes/v1/united-express-crj200-left.webp",
-        "sha256": null
+        "sha256": "ad5b3e0e64d44e6c9abb361c797b5deb75ff05ff372b0c98ec10398af3604990"
       }
     },
     {
@@ -4545,8 +4602,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "bombardier-crj-900",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide bombardier-crj-900 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4566,13 +4623,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:19:15.5298990+00:00",
+      "candidateNotes": "Vertex request fd8d3134a1b69efea7c6 in global returned the independently generated right-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: b60646167bea3f79e9b48f4c0a81b74ccea120e3b2aa253d619bb5cb6cc32554.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 46514 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "delta-connection-crj900:right",
         "url": "/assets/planes/v1/delta-connection-crj900-right.webp",
-        "sha256": null
+        "sha256": "1121eb33ccad214919344c7393edc412e19faa000e395a4266e1e845afbe6073"
       }
     },
     {
@@ -4591,8 +4648,8 @@
       },
       "categoryConstraints": [],
       "shapeGuideId": "bombardier-crj-900",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide bombardier-crj-900 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -4612,13 +4669,13 @@
       "styleReferenceKey": "delta-connection-crj900:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-01T19:32:14.4599270+00:00",
+      "candidateNotes": "Vertex request 0da164c60e2145251fc0 in asia-east1 returned the independently generated left-facing PG-022 candidate. The selected candidate was processed through global magenta extraction and the frozen quality-90 workflow; manual repair SHA-256: 7c6546fd326186b6ea58899caf77119b13d6d4c6d39f1ea657aca8965333bb48.",
+      "approvalNotes": "Approved 2026-11-01 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, exact aircraft-family anatomy, engine count and placement, readable branding, scale, crop, baseline, opaque aircraft pixels, and clean spill-free alpha pass. Output is 22222 bytes; the recorded frozen-quality byte exception applies where below the advisory target.",
       "output": {
         "manifestKey": "delta-connection-crj900:left",
         "url": "/assets/planes/v1/delta-connection-crj900-left.webp",
-        "sha256": null
+        "sha256": "ded79c50da33215f2dd15b9cf6dab9d7450ffd33139b5144d06a19f30b14c348"
       }
     },
     {

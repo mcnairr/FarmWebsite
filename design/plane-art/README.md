@@ -245,11 +245,19 @@ always prohibited.
 
 [`shape-guides/inventory.json`](shape-guides/inventory.json) inventories the 54
 distinct aircraft-family descriptions currently used by the matrix. No shape
-guide is silently inferred from a proof or a similar aircraft: every current
-entry is truthfully marked `missing`, carries provenance/ownership/permission
-notes, and has a concrete blocked task. Consequently all 148 prompt records are
-`blocked-missing-shape-guide` until their exact original guide is created and
-reviewed. Unlicensed third-party model or reference inputs are prohibited.
+guide is silently inferred from a proof or a similar aircraft: unavailable
+entries remain `missing` with a concrete blocked task, while completed entries
+name their original editable SVG source in their provenance. Unlicensed
+third-party model or reference inputs are prohibited.
+
+The 14 previously missing airliner families needed by PG-022 are reproducible
+with `node scripts/build-phase3-airliner-shape-guides.mjs`. The command creates original
+project-owned editable SVGs and their 1600 × 900 PNG references, then marks only
+those exact inventory records available. It includes distinct diagrams for the
+MD-11 trijet, rear-engine Boeing 717 and CRJ families, long 757, 777/787,
+747-8/A380 jumbo, A220/E190 regional-mainline, and related widebody/cargo
+families. Run `npm run plane-art:prompts` afterward to move their directional
+prompt records from blocked to ready.
 
 Run `npm run plane-art:prompts` after an approved matrix change to rebuild the
 deterministic catalog and inventory. Run `npm run plane-art:validate-prompts`
@@ -276,8 +284,8 @@ npm run plane-art:generate -- -ArtworkId aal-narrowbody -Direction right -DryRun
 The dry run validates prompts, available guide files, references, safe output
 paths, and approved-output conflicts, then prints every input hash, raw output,
 approved target, prompt revision, model, and estimated Vertex request count. It
-does not authenticate or call Vertex. Current catalog entries intentionally
-fail this gate until PG-003's missing shape-guide tasks are completed.
+does not authenticate or call Vertex. Catalog entries still marked with a
+missing guide intentionally fail this gate until their exact guide is completed.
 
 After the Phase 1 visual gate, the generator also appends every authored
 `generationAmendments` entry in `prompts.json` to the immutable source prompt.
@@ -603,6 +611,14 @@ and repeatable throttled performance results are recorded in
 [`phase2-release-gate.md`](phase2-release-gate.md). Run
 `npm run plane-art:audit-phase2` together with the library validator and test
 suites before changing the released inventory.
+
+## PG-022 Phase 3 exact airliner families
+
+Issue #22 adds 18 exact airline/aircraft treatments and 36 independent
+directional Vertex AI generations. The original shape guides, magenta chroma
+workflow, rejected-candidate corrections, exact resolver precedence, output
+measurements, and verification commands are recorded in
+[`phase3-airliners-release.md`](phase3-airliners-release.md).
 
 ### Adding a future asset-library version
 

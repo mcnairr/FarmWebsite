@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import test from 'node:test';
+import sharp from 'sharp';
 import { validatePlanePromptCatalog } from '../scripts/validate-plane-prompt-catalog.mjs';
 
 const root = process.cwd();
@@ -85,5 +86,25 @@ test('PG-003 shape guides have availability-consistent tasks and provenance', ()
         assert.ok(records.every((record) => record.status !== 'blocked-missing-shape-guide'));
       }
     }
+  }
+});
+
+test('PG-022 airliner families have original editable guides and rendered Vertex references', async () => {
+  const ids = [
+    'a350-747-class-widebody', '777-a350-class-widebody', 'md-11-trijet',
+    '747-767-class-cargo-widebody', 'boeing-717-rear-engine-jet',
+    'boeing-757-long-narrowbody', 'boeing-787-dreamliner',
+    'boeing-777-widebody', 'boeing-747-8-jumbo', 'airbus-a380-super-jumbo',
+    'airbus-a220', 'embraer-e190', 'bombardier-crj-200', 'bombardier-crj-900',
+  ];
+  for (const id of ids) {
+    const guide = inventory.guides.find((candidate) => candidate.id === id);
+    assert.equal(guide?.status, 'available', id);
+    assert.match(guide.provenance, new RegExp(`src/${id}\\.svg`));
+    assert.match(guide.permission, /Project-owned original/);
+    const source = await readFile(join(root, 'design', 'plane-art', 'shape-guides', 'src', `${id}.svg`), 'utf8');
+    assert.match(source, /Original McNair Farms project diagram/);
+    const metadata = await sharp(join(root, guide.file)).metadata();
+    assert.deepEqual([metadata.format, metadata.width, metadata.height], ['png', 1600, 900]);
   }
 });

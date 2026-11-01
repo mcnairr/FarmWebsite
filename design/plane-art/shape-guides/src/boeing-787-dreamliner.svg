@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
+    <path d="M125 380 C240 330 455 320 1180 337 C1330 342 1440 377 1480 400.3 C1405 443 1260 451 375 448 C230 445 150 424 125 380 Z"/>
+    <path d="M280 356 L160 150 L245 142 L475 358 Z"/><path d="M690 377 L385 112 L495 96 L920 369 Z"/><path d="M735 424 L430 714 L345 694 L590 406 Z"/><ellipse cx="650" cy="461" rx="92" ry="58"/><ellipse cx="950" cy="461" rx="92" ry="58"/>
+  </g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12"><line x1="70" y1="490" x2="1530" y2="490"/><line x1="800" y1="70" x2="800" y2="725"/></g>
+  <g fill="#132a46" font-family="Arial, sans-serif"><text x="100" y="72" font-size="46" font-weight="700">Boeing 787 Dreamliner shape guide</text><text x="100" y="790" font-size="30">Twin-aisle fuselage - swept raked wing tips - two large chevron nacelles - gear retracted</text><text x="100" y="836" font-size="25" fill="#52677d">Original McNair Farms project diagram - silhouette and proportions only; no livery or registration reference.</text></g>
+</svg>

@@ -194,7 +194,8 @@ try {
       if (-not (Test-Path -LiteralPath $rightPath -PathType Leaf)) { throw "The approved right input is missing for '$($record.artworkId):left'." }
       $rightHash = Get-Sha256 $rightPath
       if ($rightHash -ne ([string]$rightMatches[0].output.sha256).ToLowerInvariant()) { throw "The approved right input hash does not match metadata for '$($record.artworkId):left'." }
-      $inputs.Add([pscustomobject]@{ id = [string]$record.styleReferenceKey; path = $rightPath; sha256 = $rightHash; image = $true })
+      $sendStyleReferenceImage = -not ($record.generationException -and $record.generationException.omitStyleReferenceImage -eq $true)
+      $inputs.Add([pscustomobject]@{ id = [string]$record.styleReferenceKey; path = $rightPath; sha256 = $rightHash; image = $sendStyleReferenceImage })
     }
 
     $approvedOutput = Join-Path $resolvedApprovedRoot ("$($record.artworkId)-$($record.direction).webp")

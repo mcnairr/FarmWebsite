@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
+    <path d="M95 353 C210 303 425 293 1205 310 C1355 315 1465 350 1505 393.65 C1430 453 1285 461 345 458 C200 455 120 434 95 353 Z"/>
+    <path d="M250 329 L130 150 L215 142 L445 331 Z"/><path d="M690 350 L385 112 L495 96 L965 342 Z"/><path d="M735 434 L430 714 L345 694 L590 416 Z"/><ellipse cx="535" cy="471" rx="92" ry="58"/><ellipse cx="690" cy="471" rx="92" ry="58"/><ellipse cx="900" cy="471" rx="92" ry="58"/><ellipse cx="1055" cy="471" rx="92" ry="58"/><path fill="#fff" opacity=".2" d="M310 355 H1280 V370 H310 Z"/>
+  </g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12"><line x1="70" y1="490" x2="1530" y2="490"/><line x1="800" y1="70" x2="800" y2="725"/></g>
+  <g fill="#132a46" font-family="Arial, sans-serif"><text x="100" y="72" font-size="46" font-weight="700">Airbus A380 super-jumbo shape guide</text><text x="100" y="790" font-size="30">Deep full-length double-deck fuselage - very broad wing - four engines - gear retracted</text><text x="100" y="836" font-size="25" fill="#52677d">Original McNair Farms project diagram - silhouette and proportions only; no livery or registration reference.</text></g>
+</svg>

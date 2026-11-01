@@ -54,12 +54,12 @@ test('Phase 2 mappings cover positive, incompatible, ambiguous, unknown, and hos
 test('planeArtwork covers all Phase 1 exact brand mappings', () => {
   const cases = [
     ['AAL1', 'B738', 'aal-narrowbody'], ['AAL2', 'B789', 'aal-widebody'],
-    ['UAL1', 'A320', 'ual-narrowbody'], ['UAL2', 'B788', 'ual-widebody'],
+    ['UAL1', 'A320', 'ual-narrowbody'], ['UAL2', 'B788', 'ual-b787'],
     ['DAL1', 'A321', 'dal-narrowbody'], ['DAL2', 'A339', 'dal-widebody'],
     ['SWA1', 'B38M', 'swa-narrowbody'], ['FDX1', 'B763', 'fdx-widebody'],
     ['UPS1', 'B764', 'ups-widebody'], ['ENY1', 'E75L', 'american-eagle-regional'],
     ['JIA1', 'CRJ9', 'american-eagle-regional'],
-    ['EDV1', 'CRJ9', 'delta-connection-regional'],
+    ['EDV1', 'CRJ9', 'delta-connection-crj900'],
     ['GJS1', 'CRJ7', 'united-express-regional'],
     ['QXE1', 'E75L', 'alaska-regional'],
     ['ASA1', 'B739', 'asa-narrowbody'], ['JBU1', 'A320', 'jbu-narrowbody'],
@@ -93,6 +93,28 @@ test('planeArtwork applies special, nearest-brand, and generic precedence', () =
     [{ callsign: null, icaoType: 'AT3P', aircraftClass: 'light' }, 'air-tractor-yellow'],
   ];
   for (const [aircraft, expected] of cases) assert.equal(planeArtwork(aircraft), expected);
+});
+
+test('PG-022 exact special families outrank broader compatible brands', () => {
+  const cases = [
+    ['AAL22', 'B77W', 'aal-b777'], ['AAL23', 'B789', 'aal-widebody'],
+    ['UAL22', 'B789', 'ual-b787'], ['UAL23', 'B772', 'ual-widebody'],
+    ['DAL22', 'B712', 'dal-b717'], ['DAL23', 'B752', 'dal-b757'],
+    ['DAL24', 'A321', 'dal-narrowbody'], ['BAW22', 'A388', 'baw-a380'],
+    ['BAW23', 'B789', 'baw-widebody'], ['DLH22', 'B748', 'dlh-b747'],
+    ['DLH23', 'A359', 'dlh-widebody'], ['JBU22', 'A223', 'jbu-a220'],
+    ['JBU23', 'E190', 'jbu-e190'], ['JBU24', 'A320', 'jbu-narrowbody'],
+    ['FDX22', 'MD11', 'fdx-trijet'], ['FDX23', 'B763', 'fdx-widebody'],
+    ['UPS22', 'MD11', 'ups-trijet'], ['UPS23', 'B763', 'ups-widebody'],
+    ['GTI22', 'B748', 'gti-widebody'], ['DHK22', 'B763', 'dhl-widebody'],
+    ['GJS22', 'CRJ2', 'united-express-crj200'],
+    ['GJS23', 'CRJ7', 'united-express-regional'],
+    ['EDV22', 'CRJ9', 'delta-connection-crj900'],
+    ['EDV23', 'E75L', 'delta-connection-regional'],
+  ];
+  for (const [callsign, icaoType, expected] of cases) {
+    assert.equal(planeArtwork({ callsign, icaoType, aircraftClass: 'airliner' }), expected);
+  }
 });
 
 test('unknown and hostile values can select only authored generic assets', () => {

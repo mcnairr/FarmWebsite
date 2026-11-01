@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#fff"/>
+  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
+    <path d="M85 376 C200 326 415 316 1215 333 C1365 338 1475 373 1515 400.7 C1440 447 1295 455 335 452 C190 449 110 428 85 376 Z"/>
+    <path d="M240 352 L120 150 L205 142 L435 354 Z"/><path d="M690 373 L385 112 L495 96 L965 365 Z"/><path d="M735 428 L430 714 L345 694 L590 410 Z"/><ellipse cx="650" cy="465" rx="105" ry="68"/><ellipse cx="950" cy="465" rx="105" ry="68"/>
+  </g>
+  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12"><line x1="70" y1="490" x2="1530" y2="490"/><line x1="800" y1="70" x2="800" y2="725"/></g>
+  <g fill="#132a46" font-family="Arial, sans-serif"><text x="100" y="72" font-size="46" font-weight="700">Boeing 777 widebody shape guide</text><text x="100" y="790" font-size="30">Very long twin-aisle fuselage - broad wing - two oversized underwing engines - gear retracted</text><text x="100" y="836" font-size="25" fill="#52677d">Original McNair Farms project diagram - silhouette and proportions only; no livery or registration reference.</text></g>
+</svg>

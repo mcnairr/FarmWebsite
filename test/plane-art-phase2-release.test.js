@@ -10,13 +10,14 @@ import {
 import { validatePlaneLibrary } from '../scripts/validate-plane-library.mjs';
 
 test('PG-021 releases exactly 40 approved treatments and 80 directional WebPs', async () => {
+  const phase2Assets = PLANE_ASSETS.filter(({ artworkId }) => PHASE2_TREATMENT_IDS.includes(artworkId));
   const files = (await readdir(new URL('../assets/planes/v1/', import.meta.url)))
-    .filter((name) => name.endsWith('.webp'));
+    .filter((name) => phase2Assets.some(({ url }) => url.endsWith(`/${name}`)));
   assert.equal(PHASE2_ADDITION_IDS.length, 24);
   assert.equal(new Set(PHASE2_TREATMENT_IDS).size, 40);
-  assert.equal(PLANE_ASSETS.length, 80);
+  assert.equal(phase2Assets.length, 80);
   assert.equal(files.length, 80);
-  assert.equal(PLANE_ASSETS.every(({ approvalStatus }) => approvalStatus === 'approved'), true);
+  assert.equal(phase2Assets.every(({ approvalStatus }) => approvalStatus === 'approved'), true);
   assert.deepEqual(await validatePlaneLibrary(), []);
 });
 

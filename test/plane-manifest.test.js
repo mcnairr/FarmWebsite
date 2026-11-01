@@ -182,8 +182,8 @@ test('PG-010 business, light-aircraft, and agricultural pairs are independently 
 
 test('PG-019 regional partner pairs are independent, approved, and narrowly mapped', () => {
   const expected = {
-    'delta-connection-regional': { callsigns: ['EDV'], types: ['CRJ7', 'CRJ9', 'E170', 'E75L', 'E75S'] },
-    'united-express-regional': { callsigns: ['GJS'], types: ['CRJ2', 'CRJ7', 'CRJ9', 'E170', 'E75L', 'E75S'] },
+    'delta-connection-regional': { callsigns: ['EDV'], types: ['CRJ7', 'E170', 'E75L', 'E75S'] },
+    'united-express-regional': { callsigns: ['GJS'], types: ['CRJ7', 'CRJ9', 'E170', 'E75L', 'E75S'] },
     'alaska-regional': { callsigns: ['QXE'], types: ['E170', 'E75L', 'E75S'] },
   };
   const recordsByKey = Object.fromEntries(prompts.records.map((record) => [record.key, record]));

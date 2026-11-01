@@ -23,7 +23,9 @@ const FAMILY_BY_ICAO = Object.freeze({
   A359: 'widebody', A35K: 'widebody', B762: 'widebody', B763: 'widebody',
   B764: 'widebody', B772: 'widebody', B773: 'widebody', B77L: 'widebody',
   B77W: 'widebody', B778: 'widebody', B779: 'widebody', B788: 'widebody',
-  B789: 'widebody', B78X: 'widebody',
+  B789: 'widebody', B78X: 'widebody', B744: 'widebody', B748: 'widebody',
+  A388: 'widebody', MD11: 'widebody',
+  B712: 'narrowbody', B752: 'narrowbody', B753: 'narrowbody',
 
   // Phase 1 business and special-aircraft families.
   C25A: 'bizjet-small', C25B: 'bizjet-small', C25C: 'bizjet-small',
@@ -66,8 +68,33 @@ const BRANDED_FAMILIES = Object.freeze({
   WJA: Object.freeze({ narrowbody: 'wja-narrowbody' }),
   AMX: Object.freeze({ narrowbody: 'amx-narrowbody' }),
   VOI: Object.freeze({ narrowbody: 'voi-narrowbody' }),
+  BAW: Object.freeze({ widebody: 'baw-widebody' }),
+  DLH: Object.freeze({ widebody: 'dlh-widebody' }),
+  AFR: Object.freeze({ widebody: 'afr-widebody' }),
+  KLM: Object.freeze({ widebody: 'klm-widebody' }),
+  GTI: Object.freeze({ widebody: 'gti-widebody' }),
+  BCS: Object.freeze({ widebody: 'dhl-widebody' }),
+  DHK: Object.freeze({ widebody: 'dhl-widebody' }),
   EJA: Object.freeze({ 'bizjet-large': 'netjets-bizjet' }),
   LXJ: Object.freeze({ 'bizjet-large': 'flexjet-bizjet' }),
+});
+
+// Exact reviewed type/operator treatments must win before a broader branded
+// family. This preserves the visible distinctions added by PG-022.
+const EXACT_BRANDED_TYPES = Object.freeze({
+  AAL: Object.freeze({ B772: 'aal-b777', B773: 'aal-b777', B77W: 'aal-b777' }),
+  UAL: Object.freeze({ B788: 'ual-b787', B789: 'ual-b787', B78X: 'ual-b787' }),
+  DAL: Object.freeze({ B712: 'dal-b717', B752: 'dal-b757', B753: 'dal-b757' }),
+  BAW: Object.freeze({ A388: 'baw-a380' }),
+  DLH: Object.freeze({ B748: 'dlh-b747' }),
+  JBU: Object.freeze({ A220: 'jbu-a220', A223: 'jbu-a220', E190: 'jbu-e190' }),
+  FDX: Object.freeze({ MD11: 'fdx-trijet' }),
+  UPS: Object.freeze({ MD11: 'ups-trijet' }),
+  GTI: Object.freeze({ B744: 'gti-widebody', B748: 'gti-widebody', B763: 'gti-widebody' }),
+  BCS: Object.freeze({ B763: 'dhl-widebody', B77L: 'dhl-widebody' }),
+  DHK: Object.freeze({ B763: 'dhl-widebody', B77L: 'dhl-widebody' }),
+  GJS: Object.freeze({ CRJ2: 'united-express-crj200' }),
+  EDV: Object.freeze({ CRJ9: 'delta-connection-crj900' }),
 });
 
 const REGIONAL_PARTNERS = Object.freeze({
@@ -153,29 +180,36 @@ export function planeArtwork(aircraft) {
   const prefix = callsignPrefix(candidate.callsign);
   const family = planeFamily(icao, candidate.aircraftClass);
 
-  // 1. Exact airline/cargo brand plus a manifest-approved ICAO type.
+  // 1. Exact special-family mapping before a broader compatible brand.
+  if (icao && prefix && EXACT_BRANDED_TYPES[prefix]?.[icao]) {
+    const exactId = EXACT_BRANDED_TYPES[prefix][icao];
+    const asset = ASSET_BY_KEY.get(`${exactId}:${RIGHT}`);
+    if (asset?.applicableIcaoTypes.includes(icao)) return exactId;
+  }
+
+  // 2. Exact airline/cargo brand plus a manifest-approved ICAO type.
   if (icao && prefix && BRANDED_FAMILIES[prefix]) {
     const brandedId = BRANDED_FAMILIES[prefix][family];
     const asset = brandedId && ASSET_BY_KEY.get(`${brandedId}:${RIGHT}`);
     if (asset?.applicableIcaoTypes.includes(icao)) return brandedId;
   }
 
-  // 2. A regional brand is safe only for a reviewed operating partnership.
+  // 3. A regional brand is safe only for a reviewed operating partnership.
   if (family === 'regional' && prefix && REGIONAL_PARTNERS[prefix]) {
     const regionalId = REGIONAL_PARTNERS[prefix];
     const asset = ASSET_BY_KEY.get(`${regionalId}:${RIGHT}`);
     if (icao && asset?.applicableIcaoTypes.includes(icao)) return regionalId;
   }
 
-  // 3. Exact special-aircraft family.
+  // 4. Exact special-aircraft family.
   if (icao && SPECIAL_ARTWORK[family]) return SPECIAL_ARTWORK[family];
 
-  // 4. The closest branded treatment is allowed only inside the same family.
+  // 5. The closest branded treatment is allowed only inside the same family.
   if (prefix && BRANDED_FAMILIES[prefix]?.[family]) {
     return BRANDED_FAMILIES[prefix][family];
   }
 
-  // 5. Generic/special-neutral family fallback. The legacy SVG is reserved
+  // 6. Generic/special-neutral family fallback. The legacy SVG is reserved
   // for the image element's load-error handler and is never selected here.
   return GENERIC_ARTWORK[family] ?? DEFAULT_ARTWORK;
 }

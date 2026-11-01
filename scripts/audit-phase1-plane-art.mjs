@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -93,6 +94,7 @@ async function inspectAsset(root, asset) {
     width: metadata.width,
     height: metadata.height,
     bytes: bytes.length,
+    sha256: createHash('sha256').update(bytes).digest('hex'),
     inTarget,
     format: metadata.format,
     hasAlpha: metadata.hasAlpha === true,
