@@ -436,17 +436,20 @@ editable SVG sources, ownership, permission, and provenance are recorded under
 `shape-guides/`. No third-party aircraft reference was introduced.
 
 All twelve aircraft masters were independently generated with the pinned
-`gemini-3.1-flash-image` Google Cloud Vertex AI workflow. Regional Vertex
-locations were used when global dynamic capacity returned `RESOURCE_EXHAUSTED`;
-each request records its actual location. Two rejected generic-widebody left
-candidates were never promoted: one copied guide captions and faced the wrong
-direction, and one resembled a recognizable airline tail treatment.
+`gemini-3.1-flash-image` Google Cloud Vertex AI workflow. On 2026-10-31 the
+original white-matte masters were replaced by user-approved, independently
+generated magenta-chroma candidates using the scoped
+`pg009-chroma-magenta-1` exception. Regional Vertex locations were used when
+global dynamic capacity returned `RESOURCE_EXHAUSTED`; each request records its
+actual location.
 
-The FedEx right and both generic-regional outputs used the documented manual
-alpha-only repair path; their aircraft masters remain the linked Vertex
-candidates. Those three files also have dated below-range exceptions with the
-frozen quality-90 settings unchanged. The other nine outputs passed the normal
-edge-connected white-matte workflow and byte-range gate.
+The replacement batch used connected magenta extraction with the recorded
+120-distance cutoff, followed by the frozen quality-90 normalization workflow.
+All twelve outputs pass the 960 × 330 canvas, alpha, transparent-corner,
+padding, baseline, clipping, and fringe checks. Each is below the 40 KB target
+and carries a dated visual byte-range exception; none exceeds the 110 KB
+ceiling. Raw candidates and extraction inputs remain linked in the gitignored
+processing reports.
 
 Cargo review confirmed readable, correctly oriented FedEx and UPS branding.
 The three generic pairs contain no airline name, logo, registration, or
