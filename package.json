@@ -23,10 +23,12 @@
     "test:browser": "playwright test",
     "test:all": "npm run test && npm run test:browser",
     "plane-art:measure-performance": "node scripts/measure-plane-art-performance.mjs",
-    "deploy:api": "npx wrangler@4 deploy --config api/wrangler.toml"
+    "deploy:api": "npx wrangler@4 deploy --config api/wrangler.toml",
+    "logs:download": "node scripts/download-worker-logs.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.1",
-    "sharp": "^0.35.5"
+    "sharp": "^0.35.5",
+    "wrangler": "^4.156.0"
   }
 }

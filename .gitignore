@@ -7,3 +7,4 @@ node_modules/
 .vscode/
 test-results/
 playwright-report/
+worker-logs/

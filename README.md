@@ -237,6 +237,22 @@ application problems emit `application_failure`. The free plan currently
 includes 200,000 log events per day with three-day retention. Cloudflare changes
 this on December 1, 2026 to 0.5 GB ingested per day with seven-day retention.
 
+To download the retained logs locally, first [create a Cloudflare API
+token](https://dash.cloudflare.com/6de85677a20b3555e2c9261df9ec39b5/api-tokens)
+with the **Workers Observability Write** account permission. Then, from
+PowerShell in the repository root, set the token for the current terminal and
+run the downloader:
+
+```powershell
+$env:CLOUDFLARE_API_TOKEN = "your-token"
+npm run logs:download
+```
+
+The command writes daily JSONL files to `worker-logs/`. It is safe to run every
+few days: completed time ranges are checkpointed and overlapping events are
+deduplicated automatically. The API token is read only from the environment and
+is not written to the repository.
+
 **Custom address (optional):** a name like `flights.mcnair-farms.com` instead
 of `workers.dev` requires the domain's DNS to move to Cloudflare. It's
 currently on Google Cloud DNS. The `workers.dev` address works fine as-is.
