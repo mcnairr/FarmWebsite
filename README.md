@@ -339,6 +339,7 @@ Cloudflare's own runtime, at http://127.0.0.1:8787/api/flights.
 | `scripts/extract-plane-chroma.mjs` | Edge-connected magenta/green chroma extraction for pale aircraft; use the documented magenta workflow before normal processing (`npm run plane-art:chroma`) |
 | `scripts/repair-plane-lighting.mjs` | PG-011 reviewer-driven, alpha-preserving correction for smoke-like neutral upper-surface shading (`npm run plane-art:repair-lighting`) |
 | `scripts/audit-phase1-plane-art.mjs` | Reproducible PG-011 dimensions, byte distribution, alpha, pair, model, and prompt-revision audit (`npm run plane-art:audit-phase1`) |
+| `scripts/audit-phase3-ga.mjs` | Reproducible PG-023 GA/turboprop six-pair production audit (`npm run plane-art:audit-phase3-ga`) |
 | `scripts/measure-plane-art-performance.mjs` | Repeatable throttled Chromium cold/warm benchmark (`npm run plane-art:measure-performance`) |
 | `scripts/validate-plane-library.mjs` | CI-safe plane-library integrity, mapping, hostile-input, and public credential/runtime validation (`npm run plane-art:validate`) |
 | `scripts/dev-server.mjs` | Local preview: website and API together |

@@ -561,6 +561,21 @@ export const PLANE_ASSETS = Object.freeze([
       approvalStatus: 'approved',
     }))),
   ...[
+    ['cirrus-low-wing', 'general-aviation', 'small', ['SR20','SR22'], [], 'piper-low-wing'],
+    ['beech-piston', 'general-aviation', 'small', ['BE33','BE35','BE36','BE55','BE58'], [], 'generic-twin-piston'],
+    ['pilatus-pc12', 'turboprop', 'medium', ['PC12'], [], 'legacy-svg-prop'],
+    ['daher-tbm', 'turboprop', 'small', ['TBM7','TBM8','TBM9'], [], 'legacy-svg-prop'],
+    ['atr', 'turboprop', 'large', ['AT72','AT73','AT75','AT76'], [], 'dash8'],
+    ['generic-twin-piston', 'general-aviation', 'small', ['C310','C340','C402','PA34','PA44'], [], 'legacy-svg-prop'],
+  ].flatMap(([artworkId, category, sizeClass, applicableIcaoTypes, allowedCallsignPrefixes, fallbackId]) =>
+    ['right', 'left'].map((direction) => ({
+      key: `${artworkId}:${direction}`, artworkId, direction, category,
+      url: `/assets/planes/v1/${artworkId}-${direction}.webp`, width: 960, height: 330, sizeClass,
+      applicableIcaoTypes, allowedCallsignPrefixes, fallbackId,
+      promptRecordKey: `${artworkId}:${direction}:v1`, generationModel: 'gemini-3.1-flash-image',
+      approvalStatus: 'approved',
+    }))),
+  ...[
     ['baw-widebody', 'scheduled-passenger', 'x-large', ['B772','B773','B77W','B788','B789','B78X'], ['BAW'], 'generic-widebody'],
     ['dlh-widebody', 'scheduled-passenger', 'x-large', ['A359','A35K'], ['DLH'], 'generic-widebody'],
     ['afr-widebody', 'scheduled-passenger', 'x-large', ['A359','A35K','B772','B773','B77W'], ['AFR'], 'generic-widebody'],

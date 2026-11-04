@@ -5370,8 +5370,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "sr20-sr22",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide sr20-sr22 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5388,15 +5388,18 @@
         "shape-guide:sr20-sr22"
       ],
       "styleReferenceKey": null,
-      "generationException": null,
+      "generationException": {
+        "id": "pg023-cirrus-anatomy-retry-1",
+        "text": "Previous candidates copied the abstract guide too literally and lacked a cabin. Render a recognizable Cirrus SR22-class four-seat light airplane with a conventional enclosed cockpit and four side windows, one nose-mounted piston engine and propeller, a normal tail, one low wing, and three fully visible fixed landing-gear wheels. The guide is silhouette-only: do not copy its diagram geometry, omit the cabin, add extra wings or tails, or create a drone."
+      },
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-03T22:25:28.9520518+00:00",
+      "candidateNotes": "Vertex request d800cac6e3c323d9598a returned one independently generated right-facing candidate; processed with the frozen edge-connected white-matte recipe.",
+      "approvalNotes": "Approved for PG-023 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, crop, baseline, identity constraints, and alpha edges pass.",
       "output": {
         "manifestKey": "cirrus-low-wing:right",
         "url": "/assets/planes/v1/cirrus-low-wing-right.webp",
-        "sha256": null
+        "sha256": "46c76527514b2960e5ca6a87a7cf0d5c08e90538675ef120e285069160ee58d6"
       }
     },
     {
@@ -5418,8 +5421,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "sr20-sr22",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide sr20-sr22 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5438,13 +5441,13 @@
       "styleReferenceKey": "cirrus-low-wing:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-03T22:27:23.3483516+00:00",
+      "candidateNotes": "Vertex request 592b31a80c7208acdb68 returned one independently generated left-facing candidate; processed with the frozen edge-connected white-matte recipe.",
+      "approvalNotes": "Approved for PG-023 after the directional pair was reviewed together on the production sky and checkerboard at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, scale, crop, baseline, identity constraints, alpha edges, and independent generation pass.",
       "output": {
         "manifestKey": "cirrus-low-wing:left",
         "url": "/assets/planes/v1/cirrus-low-wing-left.webp",
-        "sha256": null
+        "sha256": "a9625f3f5e40163e45cf1dd56e53bb659c841504cc7fc95016fcceab18857ab3"
       }
     },
     {
@@ -5465,8 +5468,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "bonanza-baron",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide bonanza-baron is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5485,13 +5488,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-03T22:21:23.1306534+00:00",
+      "candidateNotes": "Vertex request 51ac651e4f523fd675ea returned one independently generated right-facing candidate; processed with the frozen edge-connected white-matte recipe.",
+      "approvalNotes": "Approved for PG-023 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, crop, baseline, identity constraints, and alpha edges pass.",
       "output": {
         "manifestKey": "beech-piston:right",
         "url": "/assets/planes/v1/beech-piston-right.webp",
-        "sha256": null
+        "sha256": "a4c2aad19397c8161c6f1008f5f695c33d330774cd4b0be96d9787c98000222e"
       }
     },
     {
@@ -5512,8 +5515,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "bonanza-baron",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide bonanza-baron is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5532,13 +5535,13 @@
       "styleReferenceKey": "beech-piston:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-03T22:27:14.1650951+00:00",
+      "candidateNotes": "Vertex request 23aa78ea6ee482cd794c returned one independently generated left-facing candidate; processed with the frozen edge-connected white-matte recipe.",
+      "approvalNotes": "Approved for PG-023 after the directional pair was reviewed together on the production sky and checkerboard at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, scale, crop, baseline, identity constraints, alpha edges, and independent generation pass.",
       "output": {
         "manifestKey": "beech-piston:left",
         "url": "/assets/planes/v1/beech-piston-left.webp",
-        "sha256": null
+        "sha256": "ed8fef4ee3374c1b60feabd1a63c09c7328aa4dba7d00ba8b6a544ba46a9e46e"
       }
     },
     {
@@ -5656,8 +5659,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "pc-12",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide pc-12 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5674,15 +5677,18 @@
         "shape-guide:pc-12"
       ],
       "styleReferenceKey": null,
-      "generationException": null,
+      "generationException": {
+        "id": "pg023-pc12-anatomy-retry-1",
+        "text": "Previous candidates copied the abstract guide too literally and lacked a cabin. Render a recognizable Pilatus PC-12-class executive turboprop with an enclosed cockpit, cabin windows, one nose-mounted turboprop and propeller, a conventional PC-12 tail, one low wing, and retracted landing gear. The guide is silhouette-only: do not copy its diagram geometry, omit the cabin, add extra wings or tails, or create a drone."
+      },
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-03T22:25:36.8101280+00:00",
+      "candidateNotes": "Vertex request 9d1994b2e58a5cd595a3 returned one independently generated right-facing candidate; processed with the frozen edge-connected white-matte recipe.",
+      "approvalNotes": "Approved for PG-023 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, crop, baseline, identity constraints, and alpha edges pass.",
       "output": {
         "manifestKey": "pilatus-pc12:right",
         "url": "/assets/planes/v1/pilatus-pc12-right.webp",
-        "sha256": null
+        "sha256": "8cae8c6a2e1e593975034936fc878d3698ae57fd3d7170f0c6031d2246036f9d"
       }
     },
     {
@@ -5703,8 +5709,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "pc-12",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide pc-12 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5723,13 +5729,13 @@
       "styleReferenceKey": "pilatus-pc12:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-03T22:30:34.9932731+00:00",
+      "candidateNotes": "Vertex request 9319ef98c8c2ff9de5b7 returned one independently generated left-facing candidate; processed with the frozen edge-connected white-matte recipe.",
+      "approvalNotes": "Approved for PG-023 after the directional pair was reviewed together on the production sky and checkerboard at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, scale, crop, baseline, identity constraints, alpha edges, and independent generation pass.",
       "output": {
         "manifestKey": "pilatus-pc12:left",
         "url": "/assets/planes/v1/pilatus-pc12-left.webp",
-        "sha256": null
+        "sha256": "6e132022eae3dfc023b8cf6fb3a583c499dc35236f655d7e61cb988e349622fd"
       }
     },
     {
@@ -5750,8 +5756,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "tbm-single-turboprop",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide tbm-single-turboprop is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5770,13 +5776,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-03T22:21:39.3840036+00:00",
+      "candidateNotes": "Vertex request 2f8ba8070899392514cc returned one independently generated right-facing candidate; processed with the frozen edge-connected white-matte recipe.",
+      "approvalNotes": "Approved for PG-023 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, crop, baseline, identity constraints, and alpha edges pass.",
       "output": {
         "manifestKey": "daher-tbm:right",
         "url": "/assets/planes/v1/daher-tbm-right.webp",
-        "sha256": null
+        "sha256": "2fea5e3bba950ece7962c87c300dc72f455a64b2262f30718727545f7553321e"
       }
     },
     {
@@ -5797,8 +5803,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "tbm-single-turboprop",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide tbm-single-turboprop is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5817,13 +5823,13 @@
       "styleReferenceKey": "daher-tbm:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-03T22:28:17.3482788+00:00",
+      "candidateNotes": "Vertex request 5e240cc5fac663f1d54a returned one independently generated left-facing candidate; processed with the frozen edge-connected white-matte recipe.",
+      "approvalNotes": "Approved for PG-023 after the directional pair was reviewed together on the production sky and checkerboard at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, scale, crop, baseline, identity constraints, alpha edges, and independent generation pass.",
       "output": {
         "manifestKey": "daher-tbm:left",
         "url": "/assets/planes/v1/daher-tbm-left.webp",
-        "sha256": null
+        "sha256": "67ab32905353def870894420b9cc1111ad1e753b6d1631637e9789030fd59b76"
       }
     },
     {
@@ -5938,8 +5944,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "atr-72",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide atr-72 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -5958,13 +5964,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-03T22:22:42.1011930+00:00",
+      "candidateNotes": "Vertex request 521243c2f1cd98644ac2 returned one independently generated right-facing candidate; processed with the frozen edge-connected white-matte recipe.",
+      "approvalNotes": "Approved for PG-023 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, crop, baseline, identity constraints, and alpha edges pass.",
       "output": {
         "manifestKey": "atr:right",
         "url": "/assets/planes/v1/atr-right.webp",
-        "sha256": null
+        "sha256": "01ca49d99961f347b1a0edbb84d2afdd31159342697f378a30ea1770cf3c6841"
       }
     },
     {
@@ -5985,8 +5991,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "atr-72",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide atr-72 is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6005,13 +6011,13 @@
       "styleReferenceKey": "atr:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-03T22:27:05.5533732+00:00",
+      "candidateNotes": "Vertex request 7577e177701ff4622626 returned one independently generated left-facing candidate; processed with the frozen edge-connected white-matte recipe.",
+      "approvalNotes": "Approved for PG-023 after the directional pair was reviewed together on the production sky and checkerboard at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, scale, crop, baseline, identity constraints, alpha edges, and independent generation pass.",
       "output": {
         "manifestKey": "atr:left",
         "url": "/assets/planes/v1/atr-left.webp",
-        "sha256": null
+        "sha256": "23ce9564cf912594c5ebd1215c49017df7e1d3b879739ca7cd2dc600a8a8e669"
       }
     },
     {
@@ -6032,8 +6038,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "light-piston-twin",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide light-piston-twin is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6052,13 +6058,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-03T22:21:48.7915854+00:00",
+      "candidateNotes": "Vertex request d102e1083d394f143b59 returned one independently generated right-facing candidate; processed with the frozen edge-connected white-matte recipe.",
+      "approvalNotes": "Approved for PG-023 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, crop, baseline, identity constraints, and alpha edges pass.",
       "output": {
         "manifestKey": "generic-twin-piston:right",
         "url": "/assets/planes/v1/generic-twin-piston-right.webp",
-        "sha256": null
+        "sha256": "3d645c0a0c659a7291e9bb4284353b7f88e29cb6e99f615b1e0ad42bab7a5b13"
       }
     },
     {
@@ -6079,8 +6085,8 @@
         "Show every specified propeller with a plausible hub, blades, placement, and clearance."
       ],
       "shapeGuideId": "light-piston-twin",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide light-piston-twin is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6099,13 +6105,13 @@
       "styleReferenceKey": "generic-twin-piston:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-03T22:28:28.4726654+00:00",
+      "candidateNotes": "Vertex request fddad33f0a4fe646311c returned one independently generated left-facing candidate; processed with the frozen edge-connected white-matte recipe.",
+      "approvalNotes": "Approved for PG-023 after the directional pair was reviewed together on the production sky and checkerboard at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, scale, crop, baseline, identity constraints, alpha edges, and independent generation pass.",
       "output": {
         "manifestKey": "generic-twin-piston:left",
         "url": "/assets/planes/v1/generic-twin-piston-left.webp",
-        "sha256": null
+        "sha256": "8197718c66a2c764e2fa4bffc525fa3b077f98f67f107c43a742794f0b3200ba"
       }
     },
     {

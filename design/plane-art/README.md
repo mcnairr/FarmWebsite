@@ -259,6 +259,11 @@ MD-11 trijet, rear-engine Boeing 717 and CRJ families, long 757, 777/787,
 families. Run `npm run plane-art:prompts` afterward to move their directional
 prompt records from blocked to ready.
 
+The six GA and turboprop guides needed by PG-023 are reproducible with
+`node scripts/build-phase3-ga-shape-guides.mjs`. Their generation, rejected
+candidate decisions, processing recipe, and twelve-image gallery approval are
+recorded in [`phase3-ga-release.md`](phase3-ga-release.md).
+
 Run `npm run plane-art:prompts` after an approved matrix change to rebuild the
 deterministic catalog and inventory. Run `npm run plane-art:validate-prompts`
 before generation or committing changes. The validator rejects unknown or
