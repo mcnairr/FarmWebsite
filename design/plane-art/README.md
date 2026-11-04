@@ -625,6 +625,22 @@ workflow, rejected-candidate corrections, exact resolver precedence, output
 measurements, and verification commands are recorded in
 [`phase3-airliners-release.md`](phase3-airliners-release.md).
 
+## PG-024 Phase 3 crop-duster and helicopter pairs
+
+Issue #24 adds independently generated left/right production pairs for
+`thrush-yellow-blue`, `crop-duster-green`, `bell-206`, `bell-407`,
+`h135-medical`, `police-helicopter`, and `utility-helicopter`.
+
+All fourteen images use Google Cloud Vertex AI with original project-owned
+shape guides and the scoped `pg024-chroma-magenta-1` workflow. Global chroma
+extraction at distance 120 precedes the frozen 960 x 330 quality-90 processor.
+The utility pair includes generic camera/searchlight equipment and no station,
+company, agency, registration, or official affiliation. Medical and police
+art uses generic category symbols without a real provider or local insignia.
+
+Run `npm run plane-art:audit-phase3-specialty` to reproduce the dimensions,
+byte, alpha, padding, baseline, model, and prompt-revision audit for this batch.
+
 ### Adding a future asset-library version
 
 A future library is added beside this one, for example

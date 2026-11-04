@@ -610,12 +610,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/thrush-crop-duster.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/thrush-crop-duster.svg on 2026-11-03.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Thrush crop duster shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "thrush-crop-duster",
       "family": "Thrush crop duster",
       "treatmentIds": [
@@ -623,12 +623,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/generic-crop-duster.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/generic-crop-duster.svg on 2026-11-03.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original generic crop duster shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "generic-crop-duster",
       "family": "generic crop duster",
       "treatmentIds": [
@@ -636,12 +636,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/bell-206-helicopter.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/bell-206-helicopter.svg on 2026-11-03.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Bell 206 helicopter shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "bell-206-helicopter",
       "family": "Bell 206 helicopter",
       "treatmentIds": [
@@ -649,12 +649,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/bell-407-helicopter.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/bell-407-helicopter.svg on 2026-11-03.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Bell 407 helicopter shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "bell-407-helicopter",
       "family": "Bell 407 helicopter",
       "treatmentIds": [
@@ -662,12 +662,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/airbus-h135-helicopter.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/airbus-h135-helicopter.svg on 2026-11-03.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original Airbus H135 helicopter shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "airbus-h135-helicopter",
       "family": "Airbus H135 helicopter",
       "treatmentIds": [
@@ -675,12 +675,12 @@
       ]
     },
     {
-      "status": "missing",
-      "file": null,
-      "provenance": "Planned original project-authored shape guide; no source file exists yet.",
+      "status": "available",
+      "file": "design/plane-art/shape-guides/light-helicopter.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/light-helicopter.svg on 2026-11-03.",
       "ownership": "McNair Farms project",
-      "permission": "Not applicable until the original guide is created; no third-party or unlicensed input is authorized.",
-      "blockedTask": "Create and review an original light helicopter shape guide before generation.",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
       "id": "light-helicopter",
       "family": "light helicopter",
       "treatmentIds": [

@@ -10,6 +10,59 @@
   ],
   "scopedGenerationExceptions": [
     {
+      "id": "pg024-utility-tail-rotor-correction-1",
+      "approvedOn": "2026-11-03",
+      "rationale": "The utility-role retry added a duplicated tail-rotor assembly and was rejected.",
+      "text": "Rejected-candidate anatomy correction: show exactly one tail boom and exactly one conventional tail rotor total. Do not add a second tail rotor, fenestron, ducted fan, decorative rotor ring, duplicate assembly, coaxial tail rotor, or overlapping tail-rotor system.",
+      "recordKeys": [
+        "utility-helicopter:right:v1",
+        "utility-helicopter:left:v1"
+      ]
+    },
+    {
+      "id": "pg024-no-registration-correction-1",
+      "approvedOn": "2026-11-03",
+      "rationale": "Rejected PG-024 candidates contained an unverifiable registration or malformed guide-like lettering.",
+      "text": "Rejected-candidate correction: omit every registration, letter, number, wordmark, caption, label, organization name, and other text. Preserve only the requested generic category colors and universally recognizable non-affiliated medical or police symbol where applicable.",
+      "recordKeys": [
+        "crop-duster-green:left:v1",
+        "h135-medical:left:v1",
+        "police-helicopter:left:v1"
+      ]
+    },
+    {
+      "id": "pg024-utility-role-correction-1",
+      "approvedOn": "2026-11-03",
+      "rationale": "The first utility pair was visually neutral and did not communicate its required news/utility category.",
+      "text": "Rejected-candidate correction: clearly communicate a generic civilian news/utility role with a small belly-mounted stabilized camera pod or searchlight and restrained high-visibility accent striping. Include no registration, letters, numbers, words, logo, station, company, agency, badge, insignia, or official-looking affiliation. Keep all equipment securely attached and aerodynamically plausible.",
+      "recordKeys": [
+        "utility-helicopter:right:v1",
+        "utility-helicopter:left:v1"
+      ]
+    },
+    {
+      "id": "pg024-chroma-magenta-1",
+      "approvedOn": "2026-11-03",
+      "rationale": "Issue #24 uses the established contrasting magenta background so pale crop-duster and helicopter details, rotors, skids, and application equipment remain intact during deterministic alpha extraction.",
+      "text": "PG-024 asset-specific background override for extraction: ignore the pure-white-background instruction for this request only. Place the complete aircraft on a perfectly uniform solid chroma-key magenta (#FF00FF) background. Use no gradient, texture, checkerboard, floor, horizon, scenery, shadow, magenta spill, magenta aircraft paint, or outline. Preserve the requested direction, exact crop-duster or helicopter family, engine, propeller and rotor counts, landing gear or skids, agricultural equipment, generic non-affiliated identity, crop, lighting, and all other frozen constraints.",
+      "recordKeys": [
+        "thrush-yellow-blue:right:v1",
+        "thrush-yellow-blue:left:v1",
+        "crop-duster-green:right:v1",
+        "crop-duster-green:left:v1",
+        "bell-206:right:v1",
+        "bell-206:left:v1",
+        "bell-407:right:v1",
+        "bell-407:left:v1",
+        "h135-medical:right:v1",
+        "h135-medical:left:v1",
+        "police-helicopter:right:v1",
+        "police-helicopter:left:v1",
+        "utility-helicopter:right:v1",
+        "utility-helicopter:left:v1"
+      ]
+    },
+    {
       "id": "pg022-chroma-magenta-1",
       "approvedOn": "2026-11-01",
       "rationale": "Issue #22 uses the established contrasting magenta background so pale international, cargo, jumbo, trijet, and regional aircraft pixels remain intact during deterministic alpha extraction.",
@@ -6336,8 +6389,8 @@
         "Preserve purpose-built agricultural crop-duster anatomy, including robust fixed gear and believable spray-boom/application hardware."
       ],
       "shapeGuideId": "thrush-crop-duster",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide thrush-crop-duster is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6356,13 +6409,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:14:42.6823914+00:00",
+      "candidateNotes": "Vertex request 36ea8fad31c9d25b04db returned one independently generated right-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: b241ba9997463a9dfcb92082d3c461f6d1f4d0dbd71f08a7c1e563e9701a1024.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 51802 bytes.",
       "output": {
         "manifestKey": "thrush-yellow-blue:right",
         "url": "/assets/planes/v1/thrush-yellow-blue-right.webp",
-        "sha256": null
+        "sha256": "ac0882dc7752a740edb845889207f412214b13034c9186efc409b72d1b4ca6a8"
       }
     },
     {
@@ -6385,8 +6438,8 @@
         "Preserve purpose-built agricultural crop-duster anatomy, including robust fixed gear and believable spray-boom/application hardware."
       ],
       "shapeGuideId": "thrush-crop-duster",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide thrush-crop-duster is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6405,13 +6458,13 @@
       "styleReferenceKey": "thrush-yellow-blue:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:20:11.2054045+00:00",
+      "candidateNotes": "Vertex request 536020a04ad3f88d65c0 returned one independently generated left-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: db588485a620107b5e69e37e17fb63e8abddb70003a53bf08a1e7f11be75ab93.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 50892 bytes.",
       "output": {
         "manifestKey": "thrush-yellow-blue:left",
         "url": "/assets/planes/v1/thrush-yellow-blue-left.webp",
-        "sha256": null
+        "sha256": "fa6534d4339a6c6655c50ed05ca1257fa81384bc2f67fd57652a0e5c541e0fba"
       }
     },
     {
@@ -6434,8 +6487,8 @@
         "Preserve purpose-built agricultural crop-duster anatomy, including robust fixed gear and believable spray-boom/application hardware."
       ],
       "shapeGuideId": "generic-crop-duster",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide generic-crop-duster is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6452,15 +6505,18 @@
         "shape-guide:generic-crop-duster"
       ],
       "styleReferenceKey": null,
-      "generationException": null,
+      "generationException": {
+        "id": "pg024-crop-gear-correction-1",
+        "text": "Rejected-candidate correction: show exactly one conventional agricultural-aircraft fixed landing-gear assembly: two main wheels total plus one small tailwheel total. Do not add tandem wheels, duplicated wheels, outrigger wheels, extra struts, or any other landing gear. Keep the spray boom distinct from and structurally independent of the landing gear."
+      },
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:16:46.8635577+00:00",
+      "candidateNotes": "Vertex request c4208a041ac080709c58 returned one independently generated right-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 20703c9a7dd87aaf6c77c74d652786732a04a15d4b01aec758b8124d7d19c745.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 41850 bytes.",
       "output": {
         "manifestKey": "crop-duster-green:right",
         "url": "/assets/planes/v1/crop-duster-green-right.webp",
-        "sha256": null
+        "sha256": "aa49fa7b407d04880590e024bba784435dd2c3cc4a0c72851bfa03120914bbd9"
       }
     },
     {
@@ -6483,8 +6539,8 @@
         "Preserve purpose-built agricultural crop-duster anatomy, including robust fixed gear and believable spray-boom/application hardware."
       ],
       "shapeGuideId": "generic-crop-duster",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide generic-crop-duster is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6503,13 +6559,13 @@
       "styleReferenceKey": "crop-duster-green:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:23:42.2638054+00:00",
+      "candidateNotes": "Vertex request 35d0ae4aaa7bc82f35b7 returned one independently generated left-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 5f1d87c9d954db049880c5258f7fcbd7ac791585844a54838eaf61f8669b7865.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 39664 bytes.",
       "output": {
         "manifestKey": "crop-duster-green:left",
         "url": "/assets/planes/v1/crop-duster-green-left.webp",
-        "sha256": null
+        "sha256": "5d76246dafc9c3a0a4784cd95649b844cd5777f5fb0144ff768791d20e88b81c"
       }
     },
     {
@@ -6530,8 +6586,8 @@
         "Preserve one complete main-rotor system and one aircraft-family-accurate anti-torque tail-rotor system; do not add wings or airplane propellers."
       ],
       "shapeGuideId": "bell-206-helicopter",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide bell-206-helicopter is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6550,13 +6606,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:13:55.9733391+00:00",
+      "candidateNotes": "Vertex request aff165c317df96bbe901 returned one independently generated right-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: d89cf8904d250d01bf3dcf27c5be924e84111d4209b6c7a1f3306cd126ff46a1.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 49602 bytes.",
       "output": {
         "manifestKey": "bell-206:right",
         "url": "/assets/planes/v1/bell-206-right.webp",
-        "sha256": null
+        "sha256": "029d2c1d4f67d0b5d36971d25f48b194be5237c6cbe8d9b066e41bc0ca040f8c"
       }
     },
     {
@@ -6577,8 +6633,8 @@
         "Preserve one complete main-rotor system and one aircraft-family-accurate anti-torque tail-rotor system; do not add wings or airplane propellers."
       ],
       "shapeGuideId": "bell-206-helicopter",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide bell-206-helicopter is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6597,13 +6653,13 @@
       "styleReferenceKey": "bell-206:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:19:28.9021064+00:00",
+      "candidateNotes": "Vertex request 97d60bc5a43cbb317220 returned one independently generated left-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 15d8cb951885240a4d96f2c74a3911ddb97c3b601bcbea97466308400f1901a4.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 44336 bytes.",
       "output": {
         "manifestKey": "bell-206:left",
         "url": "/assets/planes/v1/bell-206-left.webp",
-        "sha256": null
+        "sha256": "e7170a4c52146de0ffc21eda4cdcbae2bae10e1db8316d7ecd3ef045347e9f4a"
       }
     },
     {
@@ -6624,8 +6680,8 @@
         "Preserve one complete main-rotor system and one aircraft-family-accurate anti-torque tail-rotor system; do not add wings or airplane propellers."
       ],
       "shapeGuideId": "bell-407-helicopter",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide bell-407-helicopter is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6644,13 +6700,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:14:05.4744424+00:00",
+      "candidateNotes": "Vertex request ca0a6d136919c42ff511 returned one independently generated right-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 9bd260df2c604686705257ffd751f0bfb3942ee4068c79c013de7b106a0d616a.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 61224 bytes.",
       "output": {
         "manifestKey": "bell-407:right",
         "url": "/assets/planes/v1/bell-407-right.webp",
-        "sha256": null
+        "sha256": "862872bc18ed33ed197ed7670b9cd9962775b6f9f008c9860902601e98f187eb"
       }
     },
     {
@@ -6671,8 +6727,8 @@
         "Preserve one complete main-rotor system and one aircraft-family-accurate anti-torque tail-rotor system; do not add wings or airplane propellers."
       ],
       "shapeGuideId": "bell-407-helicopter",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide bell-407-helicopter is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6691,13 +6747,13 @@
       "styleReferenceKey": "bell-407:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:19:37.0888845+00:00",
+      "candidateNotes": "Vertex request 3d2dfb83745380791ff9 returned one independently generated left-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 12617782741ac4f74d0f3e3bea70c5214fd7d72df24d59e9f4ad5974093cfafe.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 59916 bytes.",
       "output": {
         "manifestKey": "bell-407:left",
         "url": "/assets/planes/v1/bell-407-left.webp",
-        "sha256": null
+        "sha256": "9100512c5c9eb17a83cb12986316940d26f7ced2e0bf09ab2c291bd1d083b466"
       }
     },
     {
@@ -6718,8 +6774,8 @@
         "Preserve one complete main-rotor system and one aircraft-family-accurate anti-torque tail-rotor system; do not add wings or airplane propellers."
       ],
       "shapeGuideId": "airbus-h135-helicopter",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide airbus-h135-helicopter is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6738,13 +6794,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:14:25.4392977+00:00",
+      "candidateNotes": "Vertex request e09b8820aa1b538a6d98 returned one independently generated right-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 7004d80422731d08eb3a2298eb98585c70550e06cc3b52c1ed556a0c3eea5a2b.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 65684 bytes.",
       "output": {
         "manifestKey": "h135-medical:right",
         "url": "/assets/planes/v1/h135-medical-right.webp",
-        "sha256": null
+        "sha256": "0f832a4eb7fcca605a41b6934f8f40ec13108df30df5fe43e581c2de61689036"
       }
     },
     {
@@ -6765,8 +6821,8 @@
         "Preserve one complete main-rotor system and one aircraft-family-accurate anti-torque tail-rotor system; do not add wings or airplane propellers."
       ],
       "shapeGuideId": "airbus-h135-helicopter",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide airbus-h135-helicopter is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6785,13 +6841,13 @@
       "styleReferenceKey": "h135-medical:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:24:36.4505193+00:00",
+      "candidateNotes": "Vertex request ef76f5f6d97648060165 returned one independently generated left-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: f21df43ab3b91286dfc33b9fbb8f84c26fedf96b4458b79830290706cb1981f5.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 61384 bytes.",
       "output": {
         "manifestKey": "h135-medical:left",
         "url": "/assets/planes/v1/h135-medical-left.webp",
-        "sha256": null
+        "sha256": "89667237b55c82feb71e58511775a6f7d5e6f9dbeb82d6d6c99aec9858912d9c"
       }
     },
     {
@@ -6812,8 +6868,8 @@
         "Preserve one complete main-rotor system and one aircraft-family-accurate anti-torque tail-rotor system; do not add wings or airplane propellers."
       ],
       "shapeGuideId": "light-helicopter",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide light-helicopter is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6832,13 +6888,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:14:33.6833077+00:00",
+      "candidateNotes": "Vertex request c415bbc987f48d7ea6ce returned one independently generated right-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 70523f273f5a895dae282e876b272a33c7908a983a1333e54f1f328ab4b9a922.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 65570 bytes.",
       "output": {
         "manifestKey": "police-helicopter:right",
         "url": "/assets/planes/v1/police-helicopter-right.webp",
-        "sha256": null
+        "sha256": "da9843e7d1cf704fd7d5fdad57322524339901ae428d83d0a89ff386269f0f9d"
       }
     },
     {
@@ -6859,8 +6915,8 @@
         "Preserve one complete main-rotor system and one aircraft-family-accurate anti-torque tail-rotor system; do not add wings or airplane propellers."
       ],
       "shapeGuideId": "light-helicopter",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide light-helicopter is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6879,13 +6935,13 @@
       "styleReferenceKey": "police-helicopter:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:24:44.5967146+00:00",
+      "candidateNotes": "Vertex request 698093e4560e0ae9a47f returned one independently generated left-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: eb264e83fd8f9f1997df065d5f992645744ec6e5f3df01525c9cf7cd5dcd35b3.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 54394 bytes.",
       "output": {
         "manifestKey": "police-helicopter:left",
         "url": "/assets/planes/v1/police-helicopter-left.webp",
-        "sha256": null
+        "sha256": "629be8e473f467a350a78438a719cc080099ffaf4b15206adb5124f926d4c739"
       }
     },
     {
@@ -6906,8 +6962,8 @@
         "Preserve one complete main-rotor system and one aircraft-family-accurate anti-torque tail-rotor system; do not add wings or airplane propellers."
       ],
       "shapeGuideId": "light-helicopter",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide light-helicopter is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6926,13 +6982,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:22:33.8508964+00:00",
+      "candidateNotes": "Vertex request a22556f99aca2ee476f7 returned one independently generated right-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 6456281fb82744b285a1feffbba9fb8543e47bde08491c3af791e2eb0fec6fb6.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 62826 bytes.",
       "output": {
         "manifestKey": "utility-helicopter:right",
         "url": "/assets/planes/v1/utility-helicopter-right.webp",
-        "sha256": null
+        "sha256": "ee4f563bc9589ccbf451d98842fa1da5600f8b4673cddc047c3d218ccdbdb602"
       }
     },
     {
@@ -6953,8 +7009,8 @@
         "Preserve one complete main-rotor system and one aircraft-family-accurate anti-torque tail-rotor system; do not add wings or airplane propellers."
       ],
       "shapeGuideId": "light-helicopter",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide light-helicopter is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
@@ -6973,13 +7029,13 @@
       "styleReferenceKey": "utility-helicopter:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-04T01:25:37.6377368+00:00",
+      "candidateNotes": "Vertex request e216f9091c52939b3b23 returned one independently generated left-facing PG-024 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: abc87f91389a2cc380ae876c9ef3a68f609168afdd68b0e06bfa32ade98d1505.",
+      "approvalNotes": "Approved 2026-11-03 for PG-024 after production-sky and checkerboard review: direction, silhouette, engine/propeller/rotor anatomy, landing gear or skids, agricultural equipment where applicable, category identity, non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 60936 bytes.",
       "output": {
         "manifestKey": "utility-helicopter:left",
         "url": "/assets/planes/v1/utility-helicopter-left.webp",
-        "sha256": null
+        "sha256": "dd67d1571801871904cb3b744cf0e2172440c5bbfbae90b6f68140497163e35b"
       }
     },
     {

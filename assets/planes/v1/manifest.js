@@ -576,6 +576,22 @@ export const PLANE_ASSETS = Object.freeze([
       approvalStatus: 'approved',
     }))),
   ...[
+    ['thrush-yellow-blue', 'crop-duster', 'small', ['S2R'], [], 'legacy-svg-prop'],
+    ['crop-duster-green', 'crop-duster', 'small', [], [], 'legacy-svg-prop'],
+    ['bell-206', 'helicopter', 'small', ['B06'], [], 'legacy-svg-prop'],
+    ['bell-407', 'helicopter', 'small', ['B407'], [], 'legacy-svg-prop'],
+    ['h135-medical', 'helicopter', 'small', ['H135'], [], 'legacy-svg-prop'],
+    ['police-helicopter', 'helicopter', 'small', [], [], 'legacy-svg-prop'],
+    ['utility-helicopter', 'helicopter', 'small', [], [], 'legacy-svg-prop'],
+  ].flatMap(([artworkId, category, sizeClass, applicableIcaoTypes, allowedCallsignPrefixes, fallbackId]) =>
+    ['right', 'left'].map((direction) => ({
+      key: `${artworkId}:${direction}`, artworkId, direction, category,
+      url: `/assets/planes/v1/${artworkId}-${direction}.webp`, width: 960, height: 330, sizeClass,
+      applicableIcaoTypes, allowedCallsignPrefixes, fallbackId,
+      promptRecordKey: `${artworkId}:${direction}:v1`, generationModel: 'gemini-3.1-flash-image',
+      approvalStatus: 'approved',
+    }))),
+  ...[
     ['baw-widebody', 'scheduled-passenger', 'x-large', ['B772','B773','B77W','B788','B789','B78X'], ['BAW'], 'generic-widebody'],
     ['dlh-widebody', 'scheduled-passenger', 'x-large', ['A359','A35K'], ['DLH'], 'generic-widebody'],
     ['afr-widebody', 'scheduled-passenger', 'x-large', ['A359','A35K','B772','B773','B77W'], ['AFR'], 'generic-widebody'],

@@ -49,6 +49,8 @@ const FAMILY_BY_ICAO = Object.freeze({
   DH8A: 'dash8', DH8B: 'dash8', DH8C: 'dash8', DH8D: 'dash8',
   AT3P: 'air-tractor-yellow', AT5T: 'air-tractor-yellow', AT6T: 'air-tractor-yellow',
   AT8T: 'air-tractor-red-white',
+  S2R: 'thrush-yellow-blue',
+  B06: 'bell-206', B407: 'bell-407', H135: 'h135-medical',
 });
 
 const CLASS_FALLBACKS = Object.freeze({
@@ -128,6 +130,10 @@ const SPECIAL_ARTWORK = Object.freeze({
   dash8: 'dash8',
   'air-tractor-yellow': 'air-tractor-yellow',
   'air-tractor-red-white': 'air-tractor-red-white',
+  'thrush-yellow-blue': 'thrush-yellow-blue',
+  'bell-206': 'bell-206',
+  'bell-407': 'bell-407',
+  'h135-medical': 'h135-medical',
 });
 
 const GENERIC_ARTWORK = Object.freeze({
@@ -149,6 +155,10 @@ const GENERIC_ARTWORK = Object.freeze({
   dash8: 'dash8',
   'air-tractor-yellow': 'air-tractor-yellow',
   'air-tractor-red-white': 'air-tractor-red-white',
+  'thrush-yellow-blue': 'thrush-yellow-blue',
+  'bell-206': 'bell-206',
+  'bell-407': 'bell-407',
+  'h135-medical': 'h135-medical',
 });
 
 const ASSET_BY_KEY = new Map(PLANE_ASSETS.map((asset) => [asset.key, asset]));

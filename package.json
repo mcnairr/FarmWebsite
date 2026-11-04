@@ -20,6 +20,8 @@
     "plane-art:audit-phase1": "node scripts/audit-phase1-plane-art.mjs",
     "plane-art:audit-phase2": "node scripts/audit-phase2-plane-art.mjs",
     "plane-art:audit-phase3-ga": "node scripts/audit-phase3-ga.mjs",
+    "plane-art:audit-phase3-specialty": "node scripts/audit-phase3-specialty.mjs",
+    "plane-art:build-phase3-specialty-guides": "node scripts/build-phase3-specialty-shape-guides.mjs",
     "test": "node --test \"test/*.test.js\"",
     "test:browser": "playwright test",
     "test:all": "npm run test && npm run test:browser",
