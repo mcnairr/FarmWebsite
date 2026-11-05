@@ -641,6 +641,17 @@ art uses generic category symbols without a real provider or local insignia.
 Run `npm run plane-art:audit-phase3-specialty` to reproduce the dimensions,
 byte, alpha, padding, baseline, model, and prompt-revision audit for this batch.
 
+## PG-025 Phase 3 military pairs
+
+Issue #25 adds independently generated left/right pairs for `c130-military`,
+`c17-military`, and `kc135-military`. All six use original project-owned shape
+guides, the pinned Vertex model, the scoped magenta chroma workflow, and neutral
+military-gray treatments without unit affiliation. The review record and byte-
+range exceptions are documented in
+[`phase3-military-release.md`](phase3-military-release.md).
+
+Run `npm run plane-art:audit-phase3-military` to reproduce the three-pair audit.
+
 ### Adding a future asset-library version
 
 A future library is added beside this one, for example

@@ -90,6 +90,9 @@ function categoryConstraints(id, treatmentCategory) {
   if (trijets.has(id)) constraints.push('Preserve the MD-11 trijet layout: two under-wing engines and one distinct tail-mounted center engine.');
   if (id === 'dlh-b747') constraints.push('Preserve the Boeing 747-8 jumbo silhouette, four under-wing engines, and its distinctive forward upper-deck hump.');
   if (id === 'baw-a380') constraints.push('Preserve the Airbus A380 super-jumbo silhouette, four under-wing engines, and full-length double-deck fuselage profile.');
+  if (id === 'c130-military') constraints.push('Use a slightly elevated side three-quarter view that makes all four engines and all four propeller hubs visibly countable; preserve the high wing, boxy tactical cargo fuselage, and conventional tail.');
+  if (id === 'c17-military') constraints.push('Use a slightly elevated side three-quarter view that makes all four turbofan nacelles visibly countable; preserve the massive high wing, deep strategic-cargo fuselage, upswept rear, and tall T-tail.');
+  if (id === 'kc135-military') constraints.push('Use a slightly elevated side three-quarter view that makes all four under-wing turbojet nacelles visibly countable; preserve the narrow swept-wing tanker silhouette and one clearly recognizable tail refueling boom.');
   if (treatmentCategory === 'crop-duster') constraints.push('Preserve purpose-built agricultural crop-duster anatomy, including robust fixed gear and believable spray-boom/application hardware.');
   return constraints;
 }
@@ -137,7 +140,7 @@ for (const treatment of treatments) {
   const brandedStyleReference = !['business', 'general-aviation', 'turboprop', 'crop-duster', 'helicopter', 'military'].includes(treatmentCategory)
     || treatment.id === 'netjets-bizjet'
     || treatment.id === 'flexjet-bizjet';
-  const referenceExclusion = ['business', 'general-aviation', 'turboprop', 'crop-duster', 'helicopter'].includes(treatmentCategory)
+  const referenceExclusion = ['business', 'general-aviation', 'turboprop', 'crop-duster', 'helicopter', 'military'].includes(treatmentCategory)
     ? 'Use reference images only for production style and aircraft silhouette. Do not reproduce any reference title, caption, label, guide annotation, instructional text, livery, logo, or registration.'
     : '';
   for (const direction of ['right', 'left']) {
@@ -177,7 +180,16 @@ const catalog = {
   schemaVersion: 2,
   canonicalMatrix: 'design/plane-graphics-plan2.md#planned-artwork-matrix',
   generationAmendments: existingCatalog?.generationAmendments ?? [],
-  scopedGenerationExceptions: existingCatalog?.scopedGenerationExceptions ?? [],
+  scopedGenerationExceptions: [
+    ...((existingCatalog?.scopedGenerationExceptions ?? []).filter(({ id }) => id !== 'pg025-chroma-magenta-1')),
+    {
+      id: 'pg025-chroma-magenta-1',
+      approvedOn: '2026-11-04',
+      rationale: 'Neutral gray military aircraft need a contrasting matte so pale fuselage and engine pixels survive deterministic alpha extraction.',
+      text: 'PG-025 asset-specific background override for extraction: ignore the pure-white-background instruction for this request only. Place the complete aircraft on a perfectly uniform solid chroma-key magenta (#FF00FF) background. Use no gradient, texture, checkerboard, floor, horizon, scenery, shadow, magenta spill, magenta aircraft paint, or outline. Preserve the requested direction, aircraft-family silhouette, exact engine and propeller count, retracted landing gear, role equipment, neutral military-gray identity, crop, lighting, and all other frozen anatomy constraints.',
+      recordKeys: ['c130-military:right:v1', 'c130-military:left:v1', 'c17-military:right:v1', 'c17-military:left:v1', 'kc135-military:right:v1', 'kc135-military:left:v1'],
+    },
+  ],
   sharedConstraints: sharedConstraints.map((text, index) => ({ id: `global-${index + 1}`, text })),
   referenceCatalog: [
     { id: 'production-spec', type: 'file', file: 'design/plane-art/README.md', provenance: 'Project-authored production decision record.', ownership: 'McNair Farms project', permission: 'Project-owned; approved for this production workflow.' },

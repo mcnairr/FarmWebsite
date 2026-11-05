@@ -233,6 +233,20 @@
         "voi-narrowbody:right:v1",
         "voi-narrowbody:left:v1"
       ]
+    },
+    {
+      "id": "pg025-chroma-magenta-1",
+      "approvedOn": "2026-11-04",
+      "rationale": "Neutral gray military aircraft need a contrasting matte so pale fuselage and engine pixels survive deterministic alpha extraction.",
+      "text": "PG-025 asset-specific background override for extraction: ignore the pure-white-background instruction for this request only. Place the complete aircraft on a perfectly uniform solid chroma-key magenta (#FF00FF) background. Use no gradient, texture, checkerboard, floor, horizon, scenery, shadow, magenta spill, magenta aircraft paint, or outline. Preserve the requested direction, aircraft-family silhouette, exact engine and propeller count, retracted landing gear, role equipment, neutral military-gray identity, crop, lighting, and all other frozen anatomy constraints.",
+      "recordKeys": [
+        "c130-military:right:v1",
+        "c130-military:left:v1",
+        "c17-military:right:v1",
+        "c17-military:left:v1",
+        "kc135-military:right:v1",
+        "kc135-military:left:v1"
+      ]
     }
   ],
   "sharedConstraints": [
@@ -7053,15 +7067,16 @@
         "landingGear": "retracted"
       },
       "categoryConstraints": [
-        "Show every specified propeller with a plausible hub, blades, placement, and clearance."
+        "Show every specified propeller with a plausible hub, blades, placement, and clearance.",
+        "Use a slightly elevated side three-quarter view that makes all four engines and all four propeller hubs visibly countable; preserve the high wing, boxy tactical cargo fuselage, and conventional tail."
       ],
       "shapeGuideId": "c-130-hercules",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide c-130-hercules is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
-      "prompt": "Create one C-130 Hercules aircraft in the approved lightly polished photorealistic production style, nose pointing right.  Preserve this treatment's aircraft family and show exactly 4 engines, 4 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted. Show every specified propeller with a plausible hub, blades, placement, and clearance. Use neutral military gray with no unit, squadron, base, insignia, serial, or official affiliation. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this right-facing view.",
+      "prompt": "Create one C-130 Hercules aircraft in the approved lightly polished photorealistic production style, nose pointing right. Use reference images only for production style and aircraft silhouette. Do not reproduce any reference title, caption, label, guide annotation, instructional text, livery, logo, or registration. Preserve this treatment's aircraft family and show exactly 4 engines, 4 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted. Show every specified propeller with a plausible hub, blades, placement, and clearance. Use a slightly elevated side three-quarter view that makes all four engines and all four propeller hubs visibly countable; preserve the high wing, boxy tactical cargo fuselage, and conventional tail. Use neutral military gray with no unit, squadron, base, insignia, serial, or official affiliation. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this right-facing view.",
       "sharedConstraintIds": [
         "global-1",
         "global-2",
@@ -7076,13 +7091,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-05T02:04:03.0481979+00:00",
+      "candidateNotes": "Vertex request 501d3d81e7ac2cc39a16 returned one independently generated right-facing PG-025 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 08a0cc30e73bb82aaeeffa363c67dff2d200416ce1867cbe9ec254190ff86c15.",
+      "approvalNotes": "Approved 2026-11-04 for PG-025 after production-sky and checkerboard review: direction, military aircraft-family silhouette, four-engine/four-propeller arrangement where applicable, cargo or tanker role cues, retracted gear, neutral gray non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 35540 bytes; the dated reviewed below-range exception is recorded in the processing report.",
       "output": {
         "manifestKey": "c130-military:right",
         "url": "/assets/planes/v1/c130-military-right.webp",
-        "sha256": null
+        "sha256": "66fc27bd5fec6bc4d096d2797b80b91bde419d0f3fce323e69002c9956c4708f"
       }
     },
     {
@@ -7100,15 +7115,16 @@
         "landingGear": "retracted"
       },
       "categoryConstraints": [
-        "Show every specified propeller with a plausible hub, blades, placement, and clearance."
+        "Show every specified propeller with a plausible hub, blades, placement, and clearance.",
+        "Use a slightly elevated side three-quarter view that makes all four engines and all four propeller hubs visibly countable; preserve the high wing, boxy tactical cargo fuselage, and conventional tail."
       ],
       "shapeGuideId": "c-130-hercules",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide c-130-hercules is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
-      "prompt": "Use the approved c130-military:right:v1 result as a style, lighting, paint, and livery reference, but create a new independent image. Do not mirror it. Create one C-130 Hercules aircraft in the approved lightly polished photorealistic production style, nose pointing left.  Preserve this treatment's aircraft family and show exactly 4 engines, 4 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted. Show every specified propeller with a plausible hub, blades, placement, and clearance. Use neutral military gray with no unit, squadron, base, insignia, serial, or official affiliation. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this left-facing view.",
+      "prompt": "Use the approved c130-military:right:v1 result as a style, lighting, paint, and livery reference, but create a new independent image. Do not mirror it. Create one C-130 Hercules aircraft in the approved lightly polished photorealistic production style, nose pointing left. Use reference images only for production style and aircraft silhouette. Do not reproduce any reference title, caption, label, guide annotation, instructional text, livery, logo, or registration. Preserve this treatment's aircraft family and show exactly 4 engines, 4 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted. Show every specified propeller with a plausible hub, blades, placement, and clearance. Use a slightly elevated side three-quarter view that makes all four engines and all four propeller hubs visibly countable; preserve the high wing, boxy tactical cargo fuselage, and conventional tail. Use neutral military gray with no unit, squadron, base, insignia, serial, or official affiliation. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this left-facing view.",
       "sharedConstraintIds": [
         "global-1",
         "global-2",
@@ -7123,13 +7139,13 @@
       "styleReferenceKey": "c130-military:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-05T02:06:17.6482550+00:00",
+      "candidateNotes": "Vertex request 50dcea77d8fe361ad958 returned one independently generated left-facing PG-025 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: aa69d98fe0e4467d96a06fa81cfe8f44ef08ac678a23562692be6fc628a76177.",
+      "approvalNotes": "Approved 2026-11-04 for PG-025 after production-sky and checkerboard review: direction, military aircraft-family silhouette, four-engine/four-propeller arrangement where applicable, cargo or tanker role cues, retracted gear, neutral gray non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 30456 bytes; the dated reviewed below-range exception is recorded in the processing report.",
       "output": {
         "manifestKey": "c130-military:left",
         "url": "/assets/planes/v1/c130-military-left.webp",
-        "sha256": null
+        "sha256": "6d0360a907ce6b054ab4acd77af7c6effef3348c2d00e5ee05fe1a2bcfed3fca"
       }
     },
     {
@@ -7146,14 +7162,16 @@
         "tailRotorCount": 0,
         "landingGear": "retracted"
       },
-      "categoryConstraints": [],
+      "categoryConstraints": [
+        "Use a slightly elevated side three-quarter view that makes all four turbofan nacelles visibly countable; preserve the massive high wing, deep strategic-cargo fuselage, upswept rear, and tall T-tail."
+      ],
       "shapeGuideId": "c-17-globemaster",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide c-17-globemaster is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
-      "prompt": "Create one C-17 Globemaster aircraft in the approved lightly polished photorealistic production style, nose pointing right.  Preserve this treatment's aircraft family and show exactly 4 engines, 0 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted.  Use neutral military gray with no unit, squadron, base, insignia, serial, or official affiliation. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this right-facing view.",
+      "prompt": "Create one C-17 Globemaster aircraft in the approved lightly polished photorealistic production style, nose pointing right. Use reference images only for production style and aircraft silhouette. Do not reproduce any reference title, caption, label, guide annotation, instructional text, livery, logo, or registration. Preserve this treatment's aircraft family and show exactly 4 engines, 0 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted. Use a slightly elevated side three-quarter view that makes all four turbofan nacelles visibly countable; preserve the massive high wing, deep strategic-cargo fuselage, upswept rear, and tall T-tail. Use neutral military gray with no unit, squadron, base, insignia, serial, or official affiliation. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this right-facing view.",
       "sharedConstraintIds": [
         "global-1",
         "global-2",
@@ -7168,13 +7186,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-05T02:04:14.5385331+00:00",
+      "candidateNotes": "Vertex request 18c0804ed0ef21e9c6e7 returned one independently generated right-facing PG-025 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 301678954b6624892657e8f72bc7b179657e8030d3612787a59c9063e0282c22.",
+      "approvalNotes": "Approved 2026-11-04 for PG-025 after production-sky and checkerboard review: direction, military aircraft-family silhouette, four-engine/four-propeller arrangement where applicable, cargo or tanker role cues, retracted gear, neutral gray non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 32532 bytes; the dated reviewed below-range exception is recorded in the processing report.",
       "output": {
         "manifestKey": "c17-military:right",
         "url": "/assets/planes/v1/c17-military-right.webp",
-        "sha256": null
+        "sha256": "97cc1a8332164e076614e3b5b332e62ebd0a5053e8bd09998993c52c1ef5190d"
       }
     },
     {
@@ -7191,14 +7209,16 @@
         "tailRotorCount": 0,
         "landingGear": "retracted"
       },
-      "categoryConstraints": [],
+      "categoryConstraints": [
+        "Use a slightly elevated side three-quarter view that makes all four turbofan nacelles visibly countable; preserve the massive high wing, deep strategic-cargo fuselage, upswept rear, and tall T-tail."
+      ],
       "shapeGuideId": "c-17-globemaster",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide c-17-globemaster is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
-      "prompt": "Use the approved c17-military:right:v1 result as a style, lighting, paint, and livery reference, but create a new independent image. Do not mirror it. Create one C-17 Globemaster aircraft in the approved lightly polished photorealistic production style, nose pointing left.  Preserve this treatment's aircraft family and show exactly 4 engines, 0 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted.  Use neutral military gray with no unit, squadron, base, insignia, serial, or official affiliation. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this left-facing view.",
+      "prompt": "Use the approved c17-military:right:v1 result as a style, lighting, paint, and livery reference, but create a new independent image. Do not mirror it. Create one C-17 Globemaster aircraft in the approved lightly polished photorealistic production style, nose pointing left. Use reference images only for production style and aircraft silhouette. Do not reproduce any reference title, caption, label, guide annotation, instructional text, livery, logo, or registration. Preserve this treatment's aircraft family and show exactly 4 engines, 0 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted. Use a slightly elevated side three-quarter view that makes all four turbofan nacelles visibly countable; preserve the massive high wing, deep strategic-cargo fuselage, upswept rear, and tall T-tail. Use neutral military gray with no unit, squadron, base, insignia, serial, or official affiliation. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this left-facing view.",
       "sharedConstraintIds": [
         "global-1",
         "global-2",
@@ -7213,13 +7233,13 @@
       "styleReferenceKey": "c17-military:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-05T02:06:29.2976504+00:00",
+      "candidateNotes": "Vertex request 5be3e46336f4e36ca268 returned one independently generated left-facing PG-025 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 6588ea591ae9840c61e587e80a30b08b5ceb698bc8e72d8105bb610cdc413c12.",
+      "approvalNotes": "Approved 2026-11-04 for PG-025 after production-sky and checkerboard review: direction, military aircraft-family silhouette, four-engine/four-propeller arrangement where applicable, cargo or tanker role cues, retracted gear, neutral gray non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 29792 bytes; the dated reviewed below-range exception is recorded in the processing report.",
       "output": {
         "manifestKey": "c17-military:left",
         "url": "/assets/planes/v1/c17-military-left.webp",
-        "sha256": null
+        "sha256": "0d736e531b6ca21cb4eae73fbb6455e2dc07286accddd3a8a55c43904ee2765d"
       }
     },
     {
@@ -7236,14 +7256,16 @@
         "tailRotorCount": 0,
         "landingGear": "retracted"
       },
-      "categoryConstraints": [],
+      "categoryConstraints": [
+        "Use a slightly elevated side three-quarter view that makes all four under-wing turbojet nacelles visibly countable; preserve the narrow swept-wing tanker silhouette and one clearly recognizable tail refueling boom."
+      ],
       "shapeGuideId": "kc-135-tanker",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide kc-135-tanker is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
-      "prompt": "Create one KC-135 tanker aircraft in the approved lightly polished photorealistic production style, nose pointing right.  Preserve this treatment's aircraft family and show exactly 4 engines, 0 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted.  Use neutral military gray with no unit, squadron, base, insignia, serial, or official affiliation. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this right-facing view.",
+      "prompt": "Create one KC-135 tanker aircraft in the approved lightly polished photorealistic production style, nose pointing right. Use reference images only for production style and aircraft silhouette. Do not reproduce any reference title, caption, label, guide annotation, instructional text, livery, logo, or registration. Preserve this treatment's aircraft family and show exactly 4 engines, 0 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted. Use a slightly elevated side three-quarter view that makes all four under-wing turbojet nacelles visibly countable; preserve the narrow swept-wing tanker silhouette and one clearly recognizable tail refueling boom. Use neutral military gray with no unit, squadron, base, insignia, serial, or official affiliation. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this right-facing view.",
       "sharedConstraintIds": [
         "global-1",
         "global-2",
@@ -7258,13 +7280,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-05T02:04:25.9137972+00:00",
+      "candidateNotes": "Vertex request 986440fac63761f87ad4 returned one independently generated right-facing PG-025 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 4227dca8844439ebeb30223380631529a625711329cf06d96cfbb028bad08566.",
+      "approvalNotes": "Approved 2026-11-04 for PG-025 after production-sky and checkerboard review: direction, military aircraft-family silhouette, four-engine/four-propeller arrangement where applicable, cargo or tanker role cues, retracted gear, neutral gray non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 28366 bytes; the dated reviewed below-range exception is recorded in the processing report.",
       "output": {
         "manifestKey": "kc135-military:right",
         "url": "/assets/planes/v1/kc135-military-right.webp",
-        "sha256": null
+        "sha256": "52169db46a838d6811bb74b25a5c91590f3cd84422a523ca48f4815a20d08de9"
       }
     },
     {
@@ -7281,14 +7303,16 @@
         "tailRotorCount": 0,
         "landingGear": "retracted"
       },
-      "categoryConstraints": [],
+      "categoryConstraints": [
+        "Use a slightly elevated side three-quarter view that makes all four under-wing turbojet nacelles visibly countable; preserve the narrow swept-wing tanker silhouette and one clearly recognizable tail refueling boom."
+      ],
       "shapeGuideId": "kc-135-tanker",
-      "status": "blocked-missing-shape-guide",
-      "blockedReason": "Shape guide kc-135-tanker is missing; generation is prohibited until its inventory status is available.",
+      "status": "approved",
+      "blockedReason": null,
       "provider": "Google Cloud Vertex AI",
       "projectId": "simbusiness-13e1f",
       "modelId": "gemini-3.1-flash-image",
-      "prompt": "Use the approved kc135-military:right:v1 result as a style, lighting, paint, and livery reference, but create a new independent image. Do not mirror it. Create one KC-135 tanker aircraft in the approved lightly polished photorealistic production style, nose pointing left.  Preserve this treatment's aircraft family and show exactly 4 engines, 0 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted.  Use neutral military gray with no unit, squadron, base, insignia, serial, or official affiliation. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this left-facing view.",
+      "prompt": "Use the approved kc135-military:right:v1 result as a style, lighting, paint, and livery reference, but create a new independent image. Do not mirror it. Create one KC-135 tanker aircraft in the approved lightly polished photorealistic production style, nose pointing left. Use reference images only for production style and aircraft silhouette. Do not reproduce any reference title, caption, label, guide annotation, instructional text, livery, logo, or registration. Preserve this treatment's aircraft family and show exactly 4 engines, 0 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted. Use a slightly elevated side three-quarter view that makes all four under-wing turbojet nacelles visibly countable; preserve the narrow swept-wing tanker silhouette and one clearly recognizable tail refueling boom. Use neutral military gray with no unit, squadron, base, insignia, serial, or official affiliation. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this left-facing view.",
       "sharedConstraintIds": [
         "global-1",
         "global-2",
@@ -7303,13 +7327,13 @@
       "styleReferenceKey": "kc135-military:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": null,
-      "candidateNotes": "Generation is blocked until the original shape guide is created, documented, and reviewed.",
-      "approvalNotes": "Not generated or approved.",
+      "generatedAt": "2026-11-05T02:06:40.5115580+00:00",
+      "candidateNotes": "Vertex request 0f077da9122e55ffee9b returned one independently generated left-facing PG-025 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: ad88a44bbd2aa65eaab1f1213f74dd00431cc668da4c704ccde01e6d049f54da.",
+      "approvalNotes": "Approved 2026-11-04 for PG-025 after production-sky and checkerboard review: direction, military aircraft-family silhouette, four-engine/four-propeller arrangement where applicable, cargo or tanker role cues, retracted gear, neutral gray non-affiliation, crop, baseline, alpha edges, and hero/blip recognition pass. Output is 28694 bytes; the dated reviewed below-range exception is recorded in the processing report.",
       "output": {
         "manifestKey": "kc135-military:left",
         "url": "/assets/planes/v1/kc135-military-left.webp",
-        "sha256": null
+        "sha256": "a086a3bae6ddd55aca7bd0feda927967fcce279be09a58eb55a07621a5ecffeb"
       }
     }
   ]
