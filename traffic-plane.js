@@ -36,6 +36,7 @@ export function createTrafficPlaneRenderer(image, fallback) {
       image.hidden = false;
       image.width = asset.width;
       image.height = asset.height;
+      image.setAttribute('fetchpriority', 'low');
       image.setAttribute('src', asset.url);
       return asset;
     },

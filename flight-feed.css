@@ -58,6 +58,12 @@
   animation: ff-pulse 2.4s ease-out infinite;
 }
 .flight-feed[data-state="demo"] .ff-dot { border-color: var(--ff-amber); }
+.flight-feed[data-state="connecting"] .ff-empty-dot {
+  border-color: var(--ff-amber);
+  border-top-color: transparent;
+  animation: ff-listening .9s linear infinite;
+}
+@keyframes ff-listening { to { transform: rotate(360deg); } }
 @keyframes ff-pulse {
   0% { box-shadow: 0 0 0 0 rgba(63, 220, 124, .55); }
   70%, 100% { box-shadow: 0 0 0 .4rem rgba(63, 220, 124, 0); }

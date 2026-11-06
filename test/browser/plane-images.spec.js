@@ -105,6 +105,8 @@ test('requests only visible unique art, reuses cache and keyed blips, and does n
   await mockFeed(page, () => items);
   await waitForFeed(page);
 
+  expect(requests).toEqual(['/assets/planes/v1/fft-narrowbody-right.webp']);
+
   await page.evaluate(() => {
     window.__blipNodes = Object.fromEntries([...document.querySelectorAll('.ff-blip')].map((node) => [node.dataset.id, node]));
   });
@@ -131,4 +133,23 @@ test('requests only visible unique art, reuses cache and keyed blips, and does n
     (node) => !window.__blipNodes[node.dataset.id] || window.__blipNodes[node.dataset.id] === node,
   ))).toBe(true);
   expect(requests.filter((url) => url.endsWith('fft-narrowbody-right.webp'))).toHaveLength(1);
+});
+
+test('shows an immediate listening state and distinguishes a confirmed empty sky', async ({ page }) => {
+  let releaseFeed;
+  const feedGate = new Promise((resolve) => { releaseFeed = resolve; });
+  await page.route('**/api/flights**', async (route) => {
+    await feedGate;
+    await route.fulfill({ contentType: 'application/json', body: JSON.stringify(feed([])) });
+  });
+
+  await page.goto('/');
+  await expect(page.locator('#flight-feed')).toBeVisible();
+  await expect(page.locator('.ff-empty')).toBeVisible();
+  await expect(page.locator('.ff-status-text')).toHaveText('Listening for aircraft…');
+
+  releaseFeed();
+  await expect(page.locator('#flight-feed')).toHaveAttribute('data-state', 'demo');
+  await expect(page.locator('.ff-status-text')).toHaveText('No aircraft near the farm');
+  await expect(page.locator('.ff-empty')).toBeVisible();
 });

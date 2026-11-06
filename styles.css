@@ -6,6 +6,53 @@
 }
 * { box-sizing: border-box; }
 body { margin: 0; }
+
+/* Critical flight-feed loading state. The full component stylesheet is loaded
+   only when the feature is enabled, but this keeps its first message styled
+   while that request is in flight. */
+.flight-feed:not([hidden]) {
+  position: relative;
+  width: 100%;
+  max-width: 72rem;
+  margin-top: clamp(1.75rem, 4vh, 2.5rem);
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fffdf5;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.flight-feed:not([hidden]) .ff-sky {
+  position: relative;
+  width: 100%;
+  min-height: clamp(16rem, 36svh, 26rem);
+  display: grid;
+  place-items: start center;
+}
+.flight-feed:not([hidden]) .ff-empty {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin: 0;
+  padding: .48rem .7rem;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: .6rem;
+  background: rgba(9, 24, 54, .44);
+  box-shadow: 0 10px 30px rgba(3, 14, 38, .22);
+  color: rgba(255, 253, 245, .8);
+  font-size: .76rem;
+  line-height: 1;
+  -webkit-backdrop-filter: blur(10px) saturate(1.15);
+  backdrop-filter: blur(10px) saturate(1.15);
+}
+.flight-feed:not([hidden]) .ff-empty-dot {
+  width: .45rem;
+  height: .45rem;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
 .landscape {
   position: relative;
   isolation: isolate;

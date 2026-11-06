@@ -32,11 +32,17 @@ const KEEP_LAST_DATA_MS = 45_000;
 const REQUEST_TIMEOUT_MS = 8_000;
 const AUTO_ADVANCE_MS = 30_000;
 const SWITCH_MS = 180;
+const TRAFFIC_DEFER_MAX_MS = 1_500;
 const MAX_BLIPS_NARROW = 4;
 
 const endpoint = document.querySelector('meta[name="flight-feed-endpoint"]')?.getAttribute('content')?.trim();
 const root = document.getElementById('flight-feed');
-if (endpoint && root) start(endpoint, root).catch(() => root.remove());
+if (endpoint && root) {
+  // Reveal useful feedback before the optional component stylesheet arrives.
+  // Critical styles for this one state live in styles.css.
+  root.hidden = false;
+  start(endpoint, root).catch(() => root.remove());
+}
 
 /** @param {string} endpointUrl @param {HTMLElement} root */
 async function start(endpointUrl, root) {
@@ -46,6 +52,7 @@ async function start(endpointUrl, root) {
     sky: $('.ff-sky'),
     traffic: $('.ff-traffic'),
     empty: $('.ff-empty'),
+    statusText: $('.ff-status-text'),
     flight: $('.ff-flight'),
     card: $('.ff-card'),
     position: $('.ff-position'),
@@ -87,12 +94,14 @@ async function start(endpointUrl, root) {
   let autoAdvanceTimer;
   /** @type {ReturnType<typeof setTimeout> | undefined} */
   let switchTimer;
+  /** @type {ReturnType<typeof setTimeout> | undefined} */
+  let trafficDeferTimer;
+  let trafficRenderVersion = 0;
   /** @type {Map<string, HTMLButtonElement>} */
   const blips = new Map();
   /** @type {WeakMap<HTMLButtonElement, ReturnType<typeof createTrafficPlaneRenderer>>} */
   const blipRenderers = new WeakMap();
 
-  root.hidden = false;
   document.querySelector('.flight-credit')?.removeAttribute('hidden');
   setState('connecting');
 
@@ -165,7 +174,15 @@ async function start(endpointUrl, root) {
 
   function renderEmpty() {
     const state = /** @type {ViewState} */ (root.dataset.state);
-    el.empty.hidden = aircraft.length > 0 || (state !== 'live' && state !== 'demo');
+    const message = state === 'connecting'
+      ? 'Listening for aircraft…'
+      : state === 'unavailable'
+        ? 'Aircraft feed unavailable'
+        : (state === 'live' || state === 'demo') && aircraft.length === 0
+          ? 'No aircraft near the farm'
+          : null;
+    setText(el.statusText, message);
+    el.empty.hidden = !message;
   }
 
   /** Position of the selected aircraft relative to the farm. */
@@ -204,6 +221,7 @@ async function start(endpointUrl, root) {
     el.card.classList.toggle('is-single', single);
 
     if (!selected) {
+      cancelDeferredTraffic();
       el.flight.hidden = true;
       el.flight.classList.remove('is-switching');
       renderedId = null;
@@ -220,12 +238,12 @@ async function start(endpointUrl, root) {
         switchTimer = undefined;
         fillFlight(selected);
         el.flight.classList.remove('is-switching');
-        renderTraffic();
+        renderTrafficAfterSelected();
       }, SWITCH_MS);
     } else {
       fillFlight(selected);
       el.flight.classList.remove('is-switching');
-      renderTraffic();
+      renderTrafficAfterSelected();
     }
 
     if (userInitiated) el.announcer.textContent = describe(selected, index, aircraft.length);
@@ -326,6 +344,34 @@ async function start(endpointUrl, root) {
       node.classList.toggle('is-light', a.aircraftClass === 'light');
       blipRenderers.get(node)?.render(a, pose.facing);
     }
+  }
+
+  /**
+   * Let the prominent aircraft use the connection first. Cached images pass
+   * through immediately; a timeout prevents slow or stalled art from holding
+   * back the rest of the sky indefinitely.
+   */
+  function renderTrafficAfterSelected() {
+    cancelDeferredTraffic();
+    const version = trafficRenderVersion;
+    if (!el.plane.classList.contains('is-loading')) {
+      renderTraffic();
+      return;
+    }
+    const finish = () => {
+      if (version !== trafficRenderVersion) return;
+      cancelDeferredTraffic();
+      renderTraffic();
+    };
+    el.plane.addEventListener('load', finish, { once: true });
+    el.plane.addEventListener('error', finish, { once: true });
+    trafficDeferTimer = setTimeout(finish, TRAFFIC_DEFER_MAX_MS);
+  }
+
+  function cancelDeferredTraffic() {
+    clearTimeout(trafficDeferTimer);
+    trafficDeferTimer = undefined;
+    trafficRenderVersion++;
   }
 
   // ----- interaction -----

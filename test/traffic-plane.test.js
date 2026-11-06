@@ -19,6 +19,7 @@ test('traffic plane reuses its directional production image across refreshes', (
   const aircraft = { callsign: 'AAL123', icaoType: 'B738', aircraftClass: 'airliner' };
   renderer.render(aircraft, 'left');
   assert.equal(image.getAttribute('src'), '/assets/planes/v1/aal-narrowbody-left.webp');
+  assert.equal(image.getAttribute('fetchpriority'), 'low');
   assert.equal(image.width, 960); assert.equal(image.height, 330);
   assert.equal(fallback.use.getAttribute('href'), '#ff-jet');
   image.dispatch('load');
