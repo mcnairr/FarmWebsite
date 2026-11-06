@@ -234,3 +234,18 @@ test('PG-002 public manifest contains no generation runtime or private paths', a
     assert.equal(source.toLowerCase().includes(forbidden), false, `public manifest contains ${forbidden}`);
   }
 });
+
+test('PG-026 releases exactly 74 complete approved independent pairs', () => {
+  assert.equal(PLANE_ASSETS.length, 148);
+  assert.equal(new Set(PLANE_ASSETS.map(({ artworkId }) => artworkId)).size, 74);
+  assert.ok(PLANE_ASSETS.every(({ approvalStatus }) => approvalStatus === 'approved'));
+  const recordsByKey = Object.fromEntries(prompts.records.map((record) => [record.key, record]));
+  for (const artworkId of new Set(PLANE_ASSETS.map((asset) => asset.artworkId))) {
+    const pair = PLANE_ASSETS.filter((asset) => asset.artworkId === artworkId);
+    assert.deepEqual(pair.map(({ direction }) => direction).sort(), ['left', 'right']);
+    const provenance = pair.map((asset) => recordsByKey[asset.promptRecordKey]);
+    assert.ok(provenance.every(({ status }) => status === 'approved'));
+    assert.equal(new Set(provenance.map(({ output }) => output.sha256)).size, 2,
+      `${artworkId} must retain independent directional bytes`);
+  }
+});

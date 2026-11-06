@@ -235,6 +235,17 @@
       ]
     },
     {
+      "id": "pg026-visual-rejection-retry-1",
+      "approvedOn": "2026-11-05",
+      "rationale": "Final 148-image gallery review rejected three directional masters for wrong direction or implausible wing geometry.",
+      "text": "PG-026 reviewer correction: the output must point in the requested direction and have one anatomically plausible, symmetric aircraft-family-accurate wing assembly. Keep both wings attached at the same fuselage station with believable perspective; no duplicated, forked, melted, disconnected, stacked, or extra wing surfaces. Treat direction and wing anatomy as hard acceptance gates. Preserve all other frozen style, identity, engine, propeller, lighting, crop, and background constraints.",
+      "recordKeys": [
+        "beech-piston:right:v1",
+        "dash8:right:v1",
+        "generic-narrowbody:left:v1"
+      ]
+    },
+    {
       "id": "pg025-chroma-magenta-1",
       "approvedOn": "2026-11-04",
       "rationale": "Neutral gray military aircraft need a contrasting matte so pale fuselage and engine pixels survive deterministic alpha extraction.",
@@ -661,13 +672,13 @@
       "styleReferenceKey": "ual-widebody:right:v1",
       "generationException": null,
       "repair": null,
-      "generatedAt": "2026-10-30T03:01:22.4045332+00:00",
-      "candidateNotes": "Vertex request 673e628754eff996b38e returned one independently generated left-facing candidate; processed from candidate-1.png using the standard edge-connected white-matte workflow.",
-      "approvalNotes": "Approved 2026-10-29 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, two-engine configuration, crop, baseline, alpha edges, primary wordmark, and tail branding pass. The directional pair was reviewed together and matches one aircraft family and livery.",
+      "generatedAt": "2026-10-31T18:40:18.4516414+00:00",
+      "candidateNotes": "PG-026 replacement provenance: ual-widebody:left:v1+pg011-lighting-1+pg008-chroma-magenta-1; manual-repair SHA-256 1b33aeebd8bb26042e55a54a2792a99f78159f4dec676a05b4f0706ffd607d21.",
+      "approvalNotes": "Approved 2026-11-05 for PG-026 after directional-pair review on production sky and checkerboard at 272 px hero and 46 px blip sizes and three tilts. Direction, aircraft-family anatomy, lighting, crop, baseline, identity, alpha edges, and independent-master requirements pass. Output is 34944 bytes. Recorded byte exception: 2026-11-05 PG-026 reviewer-approved replacement retains frozen quality 90; simple neutral paint may encode below 40 KB. The directional pair was reviewed together.",
       "output": {
         "manifestKey": "ual-widebody:left",
         "url": "/assets/planes/v1/ual-widebody-left.webp",
-        "sha256": "245f74203d7d9517ccfddee894e566ba7a8139894fb59009c8404b8edfa27f03"
+        "sha256": "58779c5dc1aad90319176a6038aa893eb45b16344c33d78ad9ed7ae6e18b1c06"
       }
     },
     {
@@ -2742,12 +2753,12 @@
         "outputSha256": "870e99abd252482d541f76780db1e8c3320b5a7747bbfdec57145a921a2f17e7"
       },
       "generatedAt": "2026-10-31T19:43:48.7878030+00:00",
-      "candidateNotes": "Vertex request 5b88f6d876dc6ffe6b3e in us-central1 returned the independently generated left-facing PG-009 replacement using the approved right-side treatment as a style reference. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: f3ce17092b40236a09dbfeda3b4fd1afe6b0714b609f8bc8463b12a12d237e7d.",
-      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. Cargo branding or neutral generic identity remains appropriate for the treatment. The directional pair was reviewed together and uses independently generated masters. Output is 31,418 bytes with a recorded frozen-quality byte-range exception.",
+      "candidateNotes": "PG-026 replacement provenance: fdx-widebody:left:v1+pg011-lighting-1+pg009-chroma-magenta-1; manual-repair SHA-256 dc28ce039d996e16fbee0d471b60b7468d745e7b382215e4d5ff2ad28ab3cb76.",
+      "approvalNotes": "Approved 2026-11-05 for PG-026 after directional-pair review on production sky and checkerboard at 272 px hero and 46 px blip sizes and three tilts. Direction, aircraft-family anatomy, lighting, crop, baseline, identity, alpha edges, and independent-master requirements pass. Output is 34690 bytes. Recorded byte exception: 2026-11-05 PG-026 reviewer-approved replacement retains frozen quality 90; simple neutral paint may encode below 40 KB. The directional pair was reviewed together.",
       "output": {
         "manifestKey": "fdx-widebody:left",
         "url": "/assets/planes/v1/fdx-widebody-left.webp",
-        "sha256": "569e4c993e9b7891edae54a1b6d7ffe2f8e88adf770b2f4a91f3d97eae2d5b4e"
+        "sha256": "1e2a413b924eac38ce13be1d9c9699088dab4c8403901724241d663dde05ca04"
       }
     },
     {
@@ -3698,13 +3709,13 @@
         "correctedPngSha256": "84ad0ab87155b1cb983ecec229015a1d29500e8137f21877f70441744d47e2d8",
         "outputSha256": "221ea258b7775b534153eba63e97381b0915026360bba45404d6f828b67fb53c"
       },
-      "generatedAt": "2026-10-31T19:43:56.9654318+00:00",
-      "candidateNotes": "Vertex request 635f0cff1a425434bb0c in us-central1 returned the independently generated left-facing PG-009 replacement using the approved right-side treatment as a style reference. The selected candidate was processed through connected magenta chroma extraction at the recorded 120-distance cutoff and the frozen quality-90 workflow; manual repair SHA-256: f50d0ea9c220816eb197b40e62b8daf55b49c5cc8bc72effc2b28e9aca25d8db.",
-      "approvalNotes": "Approved 2026-10-31 after user review at 272 px hero and 46 px blip sizes with production-sky/checkerboard proofs. Direction, aircraft-family anatomy, two-engine configuration, crop, baseline, transparent corners, and spill-free alpha edges pass. The neutral generic identity remains appropriate for the treatment. No airline name, logo, registration, or recognizable brand mark is present. The directional pair was reviewed together and uses independently generated masters. Output is 29,424 bytes with a recorded frozen-quality byte-range exception.",
+      "generatedAt": "2026-11-05T21:10:35.8157860+00:00",
+      "candidateNotes": "PG-026 replacement provenance: generic-narrowbody:left:v1+pg011-lighting-1+pg009-chroma-magenta-1+pg026-visual-rejection-retry-1; manual-repair SHA-256 fc73fe8f819d478c353c9a763ad0ca8d4094f7da4a6dbb836a991823a5b168eb.",
+      "approvalNotes": "Approved 2026-11-05 for PG-026 after directional-pair review on production sky and checkerboard at 272 px hero and 46 px blip sizes and three tilts. Direction, aircraft-family anatomy, lighting, crop, baseline, identity, alpha edges, and independent-master requirements pass. Output is 28480 bytes. Recorded byte exception: 2026-11-05 PG-026 reviewer-approved replacement retains frozen quality 90; simple neutral paint may encode below 40 KB. The directional pair was reviewed together. No airline name, logo, registration, or recognizable brand mark is present.",
       "output": {
         "manifestKey": "generic-narrowbody:left",
         "url": "/assets/planes/v1/generic-narrowbody-left.webp",
-        "sha256": "a9b250445217597dada57854056b41165a4783b2fcee60a20486846ef51b8798"
+        "sha256": "5660b4d7bfbf03217bfff68b04714590362eb898f572ec589ceb12fa6769470e"
       }
     },
     {
@@ -5555,13 +5566,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": "2026-11-03T22:21:23.1306534+00:00",
-      "candidateNotes": "Vertex request 51ac651e4f523fd675ea returned one independently generated right-facing candidate; processed with the frozen edge-connected white-matte recipe.",
-      "approvalNotes": "Approved for PG-023 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, crop, baseline, identity constraints, and alpha edges pass.",
+      "generatedAt": "2026-11-05T21:10:05.0127852+00:00",
+      "candidateNotes": "PG-026 replacement provenance: beech-piston:right:v1+pg011-lighting-1+pg026-visual-rejection-retry-1; manual-repair SHA-256 7470e3f97b1f504749c8e81f4065eff76ecde33f1c3979d52bc5e7f7c30e554a. The rejected Vertex geometry was corrected with an OpenAI precise-object edit; the edit removed the registration and restored conventional Baron-class anatomy.",
+      "approvalNotes": "Approved 2026-11-05 for PG-026 after directional-pair review on production sky and checkerboard at 272 px hero and 46 px blip sizes and three tilts. Direction, aircraft-family anatomy, lighting, crop, baseline, identity, alpha edges, and independent-master requirements pass. Output is 47332 bytes. The directional pair was reviewed together.",
       "output": {
         "manifestKey": "beech-piston:right",
         "url": "/assets/planes/v1/beech-piston-right.webp",
-        "sha256": "a4c2aad19397c8161c6f1008f5f695c33d330774cd4b0be96d9787c98000222e"
+        "sha256": "a425a5ff0da337ea7b472eb86375351dd175eedfb6e32b5815839714cafcbc86"
       }
     },
     {
@@ -5603,12 +5614,12 @@
       "generationException": null,
       "repair": null,
       "generatedAt": "2026-11-03T22:27:14.1650951+00:00",
-      "candidateNotes": "Vertex request 23aa78ea6ee482cd794c returned one independently generated left-facing candidate; processed with the frozen edge-connected white-matte recipe.",
-      "approvalNotes": "Approved for PG-023 after the directional pair was reviewed together on the production sky and checkerboard at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, scale, crop, baseline, identity constraints, alpha edges, and independent generation pass.",
+      "candidateNotes": "PG-026 replacement provenance: beech-piston:left:v1+pg011-lighting-1; manual-repair SHA-256 3543b38eab816a0e4027bd7d7f03387c572f242169e321e5ea72e75aa9f3b8f4.",
+      "approvalNotes": "Approved 2026-11-05 for PG-026 after directional-pair review on production sky and checkerboard at 272 px hero and 46 px blip sizes and three tilts. Direction, aircraft-family anatomy, lighting, crop, baseline, identity, alpha edges, and independent-master requirements pass. Output is 46328 bytes. The directional pair was reviewed together.",
       "output": {
         "manifestKey": "beech-piston:left",
         "url": "/assets/planes/v1/beech-piston-left.webp",
-        "sha256": "ed8fef4ee3374c1b60feabd1a63c09c7328aa4dba7d00ba8b6a544ba46a9e46e"
+        "sha256": "7261a3b3f701988a644245d3cdb1ac993586fd3b09ba1e01088afcce8ad837f8"
       }
     },
     {
@@ -5750,12 +5761,12 @@
       },
       "repair": null,
       "generatedAt": "2026-11-03T22:25:36.8101280+00:00",
-      "candidateNotes": "Vertex request 9d1994b2e58a5cd595a3 returned one independently generated right-facing candidate; processed with the frozen edge-connected white-matte recipe.",
-      "approvalNotes": "Approved for PG-023 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, crop, baseline, identity constraints, and alpha edges pass.",
+      "candidateNotes": "PG-026 replacement provenance: pilatus-pc12:right:v1+pg011-lighting-1+pg023-pc12-anatomy-retry-1; manual-repair SHA-256 5529e936134a8003ab13428be99b513b39655375b1f820652868a3a22ce121b5.",
+      "approvalNotes": "Approved 2026-11-05 for PG-026 after directional-pair review on production sky and checkerboard at 272 px hero and 46 px blip sizes and three tilts. Direction, aircraft-family anatomy, lighting, crop, baseline, identity, alpha edges, and independent-master requirements pass. Output is 61080 bytes. The directional pair was reviewed together.",
       "output": {
         "manifestKey": "pilatus-pc12:right",
         "url": "/assets/planes/v1/pilatus-pc12-right.webp",
-        "sha256": "8cae8c6a2e1e593975034936fc878d3698ae57fd3d7170f0c6031d2246036f9d"
+        "sha256": "ef88d842068cb303a3329c8131c85582a0ff9487a88281e17a67ed2f23c41a52"
       }
     },
     {
@@ -5797,12 +5808,12 @@
       "generationException": null,
       "repair": null,
       "generatedAt": "2026-11-03T22:30:34.9932731+00:00",
-      "candidateNotes": "Vertex request 9319ef98c8c2ff9de5b7 returned one independently generated left-facing candidate; processed with the frozen edge-connected white-matte recipe.",
-      "approvalNotes": "Approved for PG-023 after the directional pair was reviewed together on the production sky and checkerboard at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, scale, crop, baseline, identity constraints, alpha edges, and independent generation pass.",
+      "candidateNotes": "PG-026 replacement provenance: pilatus-pc12:left:v1+pg011-lighting-1; manual-repair SHA-256 c52703de9ad33a18eff3b36d18242ffe9354c6848d82873de4b09a44c6cc2108.",
+      "approvalNotes": "Approved 2026-11-05 for PG-026 after directional-pair review on production sky and checkerboard at 272 px hero and 46 px blip sizes and three tilts. Direction, aircraft-family anatomy, lighting, crop, baseline, identity, alpha edges, and independent-master requirements pass. Output is 69082 bytes. The directional pair was reviewed together.",
       "output": {
         "manifestKey": "pilatus-pc12:left",
         "url": "/assets/planes/v1/pilatus-pc12-left.webp",
-        "sha256": "6e132022eae3dfc023b8cf6fb3a583c499dc35236f655d7e61cb988e349622fd"
+        "sha256": "528949e7d53481867b4e283f7341fe929fdd3c55a5570c0b93f6a11c6d6810c1"
       }
     },
     {
@@ -5937,13 +5948,13 @@
       "styleReferenceKey": null,
       "generationException": null,
       "repair": null,
-      "generatedAt": "2026-11-01T00:00:00-05:00",
-      "candidateNotes": "Vertex request 7021945ea773ea6b466e returned one independently generated right-facing candidate on uniform magenta; processed with deterministic global chroma extraction. Credible Dash 8 regional-turboprop silhouette, right direction, retracted gear, and aircraft-family-appropriate twin-engine layout.",
-      "approvalNotes": "Approved for PG-020 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, category, anatomy, crop, baseline, and alpha edges pass. The independently generated directional pair was reviewed together and matches the required aircraft family, treatment, relative size, and production baseline.",
+      "generatedAt": "2026-11-05T21:10:21.2534459+00:00",
+      "candidateNotes": "PG-026 replacement provenance: dash8:right:v1+pg011-lighting-1+pg020-chroma-magenta-1+pg026-visual-rejection-retry-1; manual-repair SHA-256 d339d7e786160c38aeb710aa20571127de1ee8976ad99f19946b3748cfb343ec.",
+      "approvalNotes": "Approved 2026-11-05 for PG-026 after directional-pair review on production sky and checkerboard at 272 px hero and 46 px blip sizes and three tilts. Direction, aircraft-family anatomy, lighting, crop, baseline, identity, alpha edges, and independent-master requirements pass. Output is 28126 bytes. Recorded byte exception: 2026-11-05 PG-026 reviewer-approved replacement retains frozen quality 90; simple neutral paint may encode below 40 KB. The directional pair was reviewed together.",
       "output": {
         "manifestKey": "dash8:right",
         "url": "/assets/planes/v1/dash8-right.webp",
-        "sha256": "97f1dfc47586eb33e5d3a785e23ff7dff6c52fee634a7498542528bc3e458f35"
+        "sha256": "0535d23f212054c4821debded37e87527d91b50cc6081760d4c1f77cabc90311"
       }
     },
     {
@@ -6032,12 +6043,12 @@
       "generationException": null,
       "repair": null,
       "generatedAt": "2026-11-03T22:22:42.1011930+00:00",
-      "candidateNotes": "Vertex request 521243c2f1cd98644ac2 returned one independently generated right-facing candidate; processed with the frozen edge-connected white-matte recipe.",
-      "approvalNotes": "Approved for PG-023 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, crop, baseline, identity constraints, and alpha edges pass.",
+      "candidateNotes": "PG-026 replacement provenance: atr:right:v1+pg011-lighting-1; manual-repair SHA-256 7cdb81e1055b21e56511cf19fd5cf01d98ab18cc90f0b26be35b3a22a55587ad.",
+      "approvalNotes": "Approved 2026-11-05 for PG-026 after directional-pair review on production sky and checkerboard at 272 px hero and 46 px blip sizes and three tilts. Direction, aircraft-family anatomy, lighting, crop, baseline, identity, alpha edges, and independent-master requirements pass. Output is 71374 bytes. The directional pair was reviewed together.",
       "output": {
         "manifestKey": "atr:right",
         "url": "/assets/planes/v1/atr-right.webp",
-        "sha256": "01ca49d99961f347b1a0edbb84d2afdd31159342697f378a30ea1770cf3c6841"
+        "sha256": "c22c546fac9272f2605d8d68fde009d93febb850b507b33fee0777729aaefc43"
       }
     },
     {
@@ -6079,12 +6090,12 @@
       "generationException": null,
       "repair": null,
       "generatedAt": "2026-11-03T22:27:05.5533732+00:00",
-      "candidateNotes": "Vertex request 7577e177701ff4622626 returned one independently generated left-facing candidate; processed with the frozen edge-connected white-matte recipe.",
-      "approvalNotes": "Approved for PG-023 after the directional pair was reviewed together on the production sky and checkerboard at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, scale, crop, baseline, identity constraints, alpha edges, and independent generation pass.",
+      "candidateNotes": "PG-026 replacement provenance: atr:left:v1+pg011-lighting-1; manual-repair SHA-256 96658b34330aafa86c0c4f280931b3fad6bca3e242c4612deead5ed75e7cb883.",
+      "approvalNotes": "Approved 2026-11-05 for PG-026 after directional-pair review on production sky and checkerboard at 272 px hero and 46 px blip sizes and three tilts. Direction, aircraft-family anatomy, lighting, crop, baseline, identity, alpha edges, and independent-master requirements pass. Output is 74976 bytes. The directional pair was reviewed together.",
       "output": {
         "manifestKey": "atr:left",
         "url": "/assets/planes/v1/atr-left.webp",
-        "sha256": "23ce9564cf912594c5ebd1215c49017df7e1d3b879739ca7cd2dc600a8a8e669"
+        "sha256": "80752d83078ce826dc99a607f83470e26c9f4e067e213733be1cea69bc3fa5fa"
       }
     },
     {
@@ -6126,12 +6137,12 @@
       "generationException": null,
       "repair": null,
       "generatedAt": "2026-11-03T22:21:48.7915854+00:00",
-      "candidateNotes": "Vertex request d102e1083d394f143b59 returned one independently generated right-facing candidate; processed with the frozen edge-connected white-matte recipe.",
-      "approvalNotes": "Approved for PG-023 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, crop, baseline, identity constraints, and alpha edges pass.",
+      "candidateNotes": "PG-026 replacement provenance: generic-twin-piston:right:v1+pg011-lighting-1; manual-repair SHA-256 3f9be657ce61b657bb9512be3b0ab18e818231ec44118fa53634ffc9ef9f1aa4.",
+      "approvalNotes": "Approved 2026-11-05 for PG-026 after directional-pair review on production sky and checkerboard at 272 px hero and 46 px blip sizes and three tilts. Direction, aircraft-family anatomy, lighting, crop, baseline, identity, alpha edges, and independent-master requirements pass. Output is 52370 bytes. The directional pair was reviewed together.",
       "output": {
         "manifestKey": "generic-twin-piston:right",
         "url": "/assets/planes/v1/generic-twin-piston-right.webp",
-        "sha256": "3d645c0a0c659a7291e9bb4284353b7f88e29cb6e99f615b1e0ad42bab7a5b13"
+        "sha256": "632f025372ec2e9ea6f7bf641d0f0c565ed92cf00ca1fa5a7472db2c380864e6"
       }
     },
     {
@@ -6173,12 +6184,12 @@
       "generationException": null,
       "repair": null,
       "generatedAt": "2026-11-03T22:28:28.4726654+00:00",
-      "candidateNotes": "Vertex request fddad33f0a4fe646311c returned one independently generated left-facing candidate; processed with the frozen edge-connected white-matte recipe.",
-      "approvalNotes": "Approved for PG-023 after the directional pair was reviewed together on the production sky and checkerboard at 272 px hero and 46 px blip sizes. Direction, aircraft family, engine and propeller count, landing gear, scale, crop, baseline, identity constraints, alpha edges, and independent generation pass.",
+      "candidateNotes": "PG-026 replacement provenance: generic-twin-piston:left:v1+pg011-lighting-1; manual-repair SHA-256 9ef6102626ccabcd1f561930d226d768b258d987333ed6b825a0e05d30417b4f.",
+      "approvalNotes": "Approved 2026-11-05 for PG-026 after directional-pair review on production sky and checkerboard at 272 px hero and 46 px blip sizes and three tilts. Direction, aircraft-family anatomy, lighting, crop, baseline, identity, alpha edges, and independent-master requirements pass. Output is 47324 bytes. The directional pair was reviewed together.",
       "output": {
         "manifestKey": "generic-twin-piston:left",
         "url": "/assets/planes/v1/generic-twin-piston-left.webp",
-        "sha256": "8197718c66a2c764e2fa4bffc525fa3b077f98f67f107c43a742794f0b3200ba"
+        "sha256": "237a4fe0ec00dcbebd3d328846bd70d192c782329e92c42a44a34dd4f9a4a5a7"
       }
     },
     {

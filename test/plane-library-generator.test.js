@@ -167,3 +167,22 @@ test('PG-004 checkpoint skips completed requests unless Force is explicit', asyn
   assert.match(forced.stdout, /\[GENERATE\] test-plane right/);
 });
 
+test('approved replacements require explicit candidate-only authorization and a reason', async (t) => {
+  const value = await fixture({ rightApproved: true });
+  t.after(() => rm(value.directory, { recursive: true, force: true }));
+  const args = [...commonArgs(value), '-ArtworkId', 'test-plane', '-Direction', 'right', '-DryRun'];
+
+  const blocked = run(args);
+  assert.notEqual(blocked.status, 0);
+  assert.match(compact(blocked.stderr), /use -ReplaceApproved with -ReplacementNote/);
+
+  const missingReason = run([...args, '-ReplaceApproved']);
+  assert.notEqual(missingReason.status, 0);
+  assert.match(compact(missingReason.stderr), /use -ReplaceApproved with -ReplacementNote/);
+
+  const allowed = run([...args, '-ReplaceApproved', '-ReplacementNote', '2026-11-05 reviewer rejection']);
+  assert.equal(allowed.status, 0, allowed.stderr);
+  assert.match(allowed.stdout, /approved target \(read-only\)/);
+  assert.match(allowed.stdout, /Dry run complete; Vertex was not called/);
+});
+

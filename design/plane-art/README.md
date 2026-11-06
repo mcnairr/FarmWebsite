@@ -652,6 +652,13 @@ range exceptions are documented in
 
 Run `npm run plane-art:audit-phase3-military` to reproduce the three-pair audit.
 
+## PG-026 Phase 3 release gate
+
+The complete v1 library is frozen at exactly 74 approved treatments and 148
+independent directional WebPs. Final gallery repairs, the demo/local traffic-gap
+audit, throttled cold-cache evidence, known limitations, and release commands
+are recorded in [`phase3-release-gate.md`](phase3-release-gate.md).
+
 ### Adding a future asset-library version
 
 A future library is added beside this one, for example

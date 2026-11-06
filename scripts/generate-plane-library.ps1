@@ -8,6 +8,8 @@ param(
   [switch] $ConfirmAll,
   [switch] $DryRun,
   [switch] $Force,
+  [switch] $ReplaceApproved,
+  [string] $ReplacementNote,
   [string] $CredentialPath,
   [string] $ProjectId,
   [string] $Model,
@@ -199,11 +201,15 @@ try {
     }
 
     $approvedOutput = Join-Path $resolvedApprovedRoot ("$($record.artworkId)-$($record.direction).webp")
-    if (Test-Path -LiteralPath $approvedOutput) { throw "Approved output already exists for '$($record.artworkId):$($record.direction)'; generation will not overwrite it." }
-    $requestIdentity = @($promptRevision, $Model, $Location, $ProjectId, $CandidateCount, (Get-TextSha256 $effectivePrompt)) + @($inputs | ForEach-Object { $_.sha256 })
+    $approvedExists = Test-Path -LiteralPath $approvedOutput
+    if ($approvedExists -and (-not $ReplaceApproved -or -not $ReplacementNote.Trim())) {
+      throw "Approved output already exists for '$($record.artworkId):$($record.direction)'; use -ReplaceApproved with -ReplacementNote to generate a review candidate without overwriting it."
+    }
+    if (-not $approvedExists -and $ReplaceApproved) { throw "-ReplaceApproved is valid only when the approved output already exists for '$($record.artworkId):$($record.direction)'." }
+    $requestIdentity = @($promptRevision, $Model, $Location, $ProjectId, $CandidateCount, (Get-TextSha256 $effectivePrompt), $(if ($ReplaceApproved) { Get-TextSha256 $ReplacementNote.Trim() } else { 'new-output' })) + @($inputs | ForEach-Object { $_.sha256 })
     $requestKey = (Get-TextSha256 ($requestIdentity -join '|')).Substring(0, 20)
     $outputDirectory = Join-Path (Join-Path (Join-Path $resolvedGeneratedRoot 'candidates') ([string]$record.artworkId)) (Join-Path ([string]$record.direction) $requestKey)
-    $plan += [pscustomobject]@{ record = $record; prompt = $effectivePrompt; promptRevision = $promptRevision; inputs = $inputs.ToArray(); approvedOutput = $approvedOutput; requestKey = $requestKey; outputDirectory = $outputDirectory }
+    $plan += [pscustomobject]@{ record = $record; prompt = $effectivePrompt; promptRevision = $promptRevision; inputs = $inputs.ToArray(); approvedOutput = $approvedOutput; requestKey = $requestKey; outputDirectory = $outputDirectory; replacementNote = $(if ($ReplaceApproved) { $ReplacementNote.Trim() } else { $null }) }
   }
 
   $ledgerPath = Join-Path $resolvedGeneratedRoot 'ledger.json'
@@ -255,7 +261,12 @@ try {
     if ($authExit -ne 0) { throw 'Google Cloud service-account authentication failed.' }
     $tokenOutput = & $gcloud.Source auth print-access-token --quiet 2>$null
   } else {
+    $savedPreference = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
     $tokenOutput = & $gcloud.Source auth application-default print-access-token --quiet 2>$null
+    if ($LASTEXITCODE -ne 0 -or -not ([string]$tokenOutput).Trim()) {
+      $tokenOutput = & $gcloud.Source auth print-access-token --quiet 2>$null
+    }
+    $ErrorActionPreference = $savedPreference
   }
   $tokenExit = $LASTEXITCODE
   $script:accessToken = ([string]$tokenOutput).Trim()
@@ -297,7 +308,7 @@ try {
     }
     if ($candidateFiles.Count -eq 0) { throw "Vertex returned no image candidates for '$($item.record.key)'." }
     $requestTime = [DateTimeOffset]::UtcNow.ToString('o')
-    $metadata = [ordered]@{ schemaVersion = 1; requestKey = $item.requestKey; artworkId = [string]$item.record.artworkId; direction = [string]$item.record.direction; promptRevision = [string]$item.promptRevision; promptSha256 = Get-TextSha256 ([string]$item.prompt); provider = 'Google Cloud Vertex AI'; modelId = $Model; location = $Location; projectId = $ProjectId; requestTime = $requestTime; requestedCandidateCount = $CandidateCount; returnedCandidateCount = $candidateFiles.Count; references = @($item.inputs | ForEach-Object { [ordered]@{ id = $_.id; sha256 = $_.sha256 } }); candidates = $candidateFiles.ToArray() }
+    $metadata = [ordered]@{ schemaVersion = 1; requestKey = $item.requestKey; artworkId = [string]$item.record.artworkId; direction = [string]$item.record.direction; promptRevision = [string]$item.promptRevision; promptSha256 = Get-TextSha256 ([string]$item.prompt); replacementNote = $item.replacementNote; provider = 'Google Cloud Vertex AI'; modelId = $Model; location = $Location; projectId = $ProjectId; requestTime = $requestTime; requestedCandidateCount = $CandidateCount; returnedCandidateCount = $candidateFiles.Count; references = @($item.inputs | ForEach-Object { [ordered]@{ id = $_.id; sha256 = $_.sha256 } }); candidates = $candidateFiles.ToArray() }
     Write-JsonAtomic -Value $metadata -Path $item.metadataPath
     $ledger.requests = @($ledger.requests | Where-Object { $_.requestKey -ne $item.requestKey }) + @([pscustomobject]@{ requestKey = $item.requestKey; artworkId = [string]$item.record.artworkId; direction = [string]$item.record.direction; status = 'completed'; completedAt = $requestTime; metadata = $item.metadataPath.Substring($resolvedGeneratedRoot.Length).TrimStart('\', '/') })
     Write-JsonAtomic -Value $ledger -Path $ledgerPath

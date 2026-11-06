@@ -181,7 +181,14 @@ const catalog = {
   canonicalMatrix: 'design/plane-graphics-plan2.md#planned-artwork-matrix',
   generationAmendments: existingCatalog?.generationAmendments ?? [],
   scopedGenerationExceptions: [
-    ...((existingCatalog?.scopedGenerationExceptions ?? []).filter(({ id }) => id !== 'pg025-chroma-magenta-1')),
+    ...((existingCatalog?.scopedGenerationExceptions ?? []).filter(({ id }) => !['pg025-chroma-magenta-1', 'pg026-visual-rejection-retry-1'].includes(id))),
+    {
+      id: 'pg026-visual-rejection-retry-1',
+      approvedOn: '2026-11-05',
+      rationale: 'Final 148-image gallery review rejected three directional masters for wrong direction or implausible wing geometry.',
+      text: 'PG-026 reviewer correction: the output must point in the requested direction and have one anatomically plausible, symmetric aircraft-family-accurate wing assembly. Keep both wings attached at the same fuselage station with believable perspective; no duplicated, forked, melted, disconnected, stacked, or extra wing surfaces. Treat direction and wing anatomy as hard acceptance gates. Preserve all other frozen style, identity, engine, propeller, lighting, crop, and background constraints.',
+      recordKeys: ['beech-piston:right:v1', 'dash8:right:v1', 'generic-narrowbody:left:v1'],
+    },
     {
       id: 'pg025-chroma-magenta-1',
       approvedOn: '2026-11-04',
