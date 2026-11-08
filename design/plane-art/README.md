@@ -15,8 +15,8 @@ approval rubric, and exact Phase 2 freeze are recorded in
 
 ## Approved treatment matrix and phases
 
-The 74 IDs, display names/treatments, categories, and aircraft shapes are
-approved **without revision** exactly as listed in the three tables under
+The original 74 IDs, display names/treatments, categories, and aircraft shapes
+remain approved **without revision** exactly as listed in the first three tables under
 “Planned artwork matrix” in [`../plane-graphics-plan2.md`](../plane-graphics-plan2.md).
 Those tables are the canonical name/category/shape inventory; an ID must not be
 renamed or moved to a different shape by a batch issue.
@@ -29,17 +29,17 @@ The exact phase allocation is approved **without revision** as listed under
 - Phase 2: 24 unique additions (40 cumulative) / 48 new images.
 - Phase 3: 34 unique additions (74 cumulative) / 68 new images.
 
-The automated PG-001 test parses both sources and enforces 16 + 24 + 34 = 74
-unique IDs, as well as 47 scheduled/cargo, 15 business/GA/turboprop, and 12
-crop-duster/helicopter/military rows. This preserves the written requirements
-as the source instead of copying a second matrix that could drift.
+The automated PG-001 test still enforces the 16 + 24 + 34 = 74 baseline. PG-027
+adds two separately identified Phase 4 rows, for 76 current IDs. This preserves
+the written phase requirements while allowing the bounded observed-growth issue
+to extend the canonical matrix without rewriting its baseline.
 
 ## Visual style
 
 The single production style is **lightly polished photorealistic**. Aircraft
 must retain believable materials, anatomy, proportions, daylight, and camera
 perspective, while allowing restrained cleanup of reflections, paint, and
-surface detail so the 148-image set feels consistent. “Polished” does not permit
+surface detail so the 152-image set feels consistent. “Polished” does not permit
 illustration, toy-like forms, heavy HDR, exaggerated saturation, or a synthetic
 icon finish. The existing American and Southwest Vertex proofs are the signed-off
 style references.
@@ -235,15 +235,15 @@ asset URLs.
 
 ## PG-003 prompt catalog and shape-guide gate
 
-[`prompts.json`](prompts.json) now contains all 74 approved treatments in both
-directions (148 prompt records). Each record copies its canonical treatment
+[`prompts.json`](prompts.json) now contains all 76 approved treatments in both
+directions (152 prompt records). Each record copies its canonical treatment
 name and aircraft shape from the approved matrix, then adds explicit category,
 engine, propeller, rotor, landing-gear, paint/branding, crop, background, and
 identity constraints. A left-facing record names its right-facing result as a
 style/livery reference while requiring a new independent image; mirroring is
 always prohibited.
 
-[`shape-guides/inventory.json`](shape-guides/inventory.json) inventories the 54
+[`shape-guides/inventory.json`](shape-guides/inventory.json) inventories the 56
 distinct aircraft-family descriptions currently used by the matrix. No shape
 guide is silently inferred from a proof or a similar aircraft: unavailable
 entries remain `missing` with a concrete blocked task, while completed entries
@@ -658,6 +658,20 @@ The complete v1 library is frozen at exactly 74 approved treatments and 148
 independent directional WebPs. Final gallery repairs, the demo/local traffic-gap
 audit, throttled cold-cache evidence, known limitations, and release commands
 are recorded in [`phase3-release-gate.md`](phase3-release-gate.md).
+
+## PG-027 Phase 4 observed-traffic review
+
+The evidence-based growth review added the two strongest uncovered silhouettes:
+the Cirrus Vision Jet (`SF50`) and Citation X (`C750`). Version 1 now contains
+76 treatments and 152 directional masters, below the 160-image ceiling. The
+privacy-safe aggregation method, observation interval, ranked candidates,
+rejected Vertex retries, final generation provenance, and performance decision
+are recorded in
+[`phase4-observed-traffic-decision.md`](phase4-observed-traffic-decision.md).
+Run `npm run plane-art:audit-phase4-traffic` against locally downloaded,
+gitignored worker logs to reproduce the aggregate without emitting aircraft
+identifiers, registrations, or complete callsigns. Run
+`npm run plane-art:audit-phase4` to reproduce the four-image production audit.
 
 ### Adding a future asset-library version
 

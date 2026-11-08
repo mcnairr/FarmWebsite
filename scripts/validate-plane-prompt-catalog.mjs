@@ -16,6 +16,7 @@ function matrixRows(markdown) {
 }
 
 function expectedCategory(number) {
+  if (number >= 75) return 'business';
   if (number >= 25 && number <= 30) return 'cargo';
   if (number <= 47) return 'scheduled-passenger';
   if (number <= 51) return 'business';
@@ -31,6 +32,7 @@ function nonempty(value) { return typeof value === 'string' && value.trim().leng
 function expectedCounts(id) {
   if (helicopters.has(id)) return [id === 'h135-medical' ? 2 : 1, 0, 1, 1];
   if (id === 'c130-military') return [4, 4, 0, 0];
+  if (id === 'cirrus-vision-jet') return [1, 0, 0, 0];
   if (singleProps.has(id)) return [1, 1, 0, 0];
   if (twinProps.has(id)) return [2, 2, 0, 0];
   return [trijets.has(id) ? 3 : fourEngineJets.has(id) ? 4 : 2, 0, 0, 0];
@@ -49,8 +51,8 @@ export async function validatePlanePromptCatalog({ root = defaultRoot, prompts, 
   const referenceIds = (catalog.referenceCatalog ?? []).map(({ id }) => id);
   const sharedIds = (catalog.sharedConstraints ?? []).map(({ id }) => id);
 
-  if (matrix.length !== 74) errors.push(`canonical matrix contains ${matrix.length} treatments, expected 74`);
-  if (catalog.records.length !== 148) errors.push(`catalog contains ${catalog.records.length} prompts, expected 148`);
+  if (matrix.length !== 76) errors.push(`canonical matrix contains ${matrix.length} treatments, expected 76`);
+  if (catalog.records.length !== 152) errors.push(`catalog contains ${catalog.records.length} prompts, expected 152`);
   if (guideById.size !== guides.guides.length) errors.push('duplicate shape-guide id');
   if (new Set(referenceIds).size !== referenceIds.length) errors.push('duplicate reference id');
   if (new Set(sharedIds).size !== sharedIds.length) errors.push('duplicate shared-constraint id');
@@ -144,5 +146,5 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   if (errors.length) {
     console.error(errors.map((error) => `- ${error}`).join('\n'));
     process.exitCode = 1;
-  } else console.log('Plane prompt catalog is valid: 74 treatments, 148 directional prompts.');
+  } else console.log('Plane prompt catalog is valid: 76 treatments, 152 directional prompts.');
 }

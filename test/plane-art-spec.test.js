@@ -23,20 +23,21 @@ test('PG-001 phase allocation contains 16, 24, and 34 unique additions', async (
   assert.equal(new Set([...phase1, ...phase2, ...phase3]).size, 74);
 });
 
-test('PG-001 approved matrix has 74 unique IDs with names and shapes', async () => {
+test('PG-001 baseline plus PG-027 additions have 76 unique IDs with names and shapes', async () => {
   const plan = await readFile(join(root, 'design', 'plane-graphics-plan2.md'), 'utf8');
   const matrix = plan.slice(plan.indexOf('## Planned artwork matrix'), plan.indexOf('## ICAO type and callsign resolution'));
   const rows = [...matrix.matchAll(/^\|\s*(\d+)\s*\|\s*`([^`]+)`\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|$/gm)]
     .map((match) => ({ number: Number(match[1]), id: match[2], name: match[3].trim(), shape: match[4].trim() }));
-  assert.equal(rows.length, 74);
-  assert.equal(new Set(rows.map(({ id }) => id)).size, 74);
-  assert.deepEqual(rows.map(({ number }) => number), Array.from({ length: 74 }, (_, index) => index + 1));
+  assert.equal(rows.length, 76);
+  assert.equal(new Set(rows.map(({ id }) => id)).size, 76);
+  assert.deepEqual(rows.map(({ number }) => number), Array.from({ length: 76 }, (_, index) => index + 1));
   assert.ok(rows.every(({ name, shape }) => name.length > 0 && shape.length > 0));
   assert.deepEqual([
     rows.filter(({ number }) => number <= 47).length,
     rows.filter(({ number }) => number >= 48 && number <= 62).length,
-    rows.filter(({ number }) => number >= 63).length,
-  ], [47, 15, 12]);
+    rows.filter(({ number }) => number >= 63 && number <= 74).length,
+    rows.filter(({ number }) => number >= 75).length,
+  ], [47, 15, 12, 2]);
 });
 
 test('PG-001 reference WebPs satisfy the approved output contract', async () => {

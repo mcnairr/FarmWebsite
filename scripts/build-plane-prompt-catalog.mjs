@@ -24,7 +24,7 @@ const matrix = plan.slice(plan.indexOf('## Planned artwork matrix'), plan.indexO
 const treatments = [...matrix.matchAll(/^\|\s*(\d+)\s*\|\s*`([^`]+)`\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|$/gm)]
   .map((match) => ({ number: Number(match[1]), id: match[2], name: match[3].trim(), shape: match[4].trim() }));
 
-if (treatments.length !== 74) throw new Error(`Expected 74 approved treatments, found ${treatments.length}`);
+if (treatments.length !== 76) throw new Error(`Expected 76 approved treatments, found ${treatments.length}`);
 
 const trijets = new Set(['fdx-trijet', 'ups-trijet']);
 const fourEngineJets = new Set(['dlh-b747', 'baw-a380', 'c17-military', 'kc135-military']);
@@ -41,6 +41,7 @@ const fixedGear = new Set([
 ]);
 
 function category(number) {
+  if (number >= 75) return 'business';
   if (number >= 25 && number <= 30) return 'cargo';
   if (number <= 34 || (number >= 38 && number <= 47)) return 'scheduled-passenger';
   if (number <= 37) return 'scheduled-passenger';
@@ -55,6 +56,7 @@ function category(number) {
 function anatomy(id) {
   if (helicopters.has(id)) return { engineCount: id === 'h135-medical' ? 2 : 1, propellerCount: 0, mainRotorCount: 1, tailRotorCount: 1, landingGear: 'aircraft-family-accurate skids or fixed wheels' };
   if (id === 'c130-military') return { engineCount: 4, propellerCount: 4, mainRotorCount: 0, tailRotorCount: 0, landingGear: 'retracted' };
+  if (id === 'cirrus-vision-jet') return { engineCount: 1, propellerCount: 0, mainRotorCount: 0, tailRotorCount: 0, landingGear: 'retracted' };
   if (singleProps.has(id)) return { engineCount: 1, propellerCount: 1, mainRotorCount: 0, tailRotorCount: 0, landingGear: fixedGear.has(id) ? 'fixed and fully visible' : 'retracted' };
   if (twinProps.has(id)) return { engineCount: 2, propellerCount: 2, mainRotorCount: 0, tailRotorCount: 0, landingGear: 'retracted' };
   return {
@@ -93,6 +95,8 @@ function categoryConstraints(id, treatmentCategory) {
   if (id === 'c130-military') constraints.push('Use a slightly elevated side three-quarter view that makes all four engines and all four propeller hubs visibly countable; preserve the high wing, boxy tactical cargo fuselage, and conventional tail.');
   if (id === 'c17-military') constraints.push('Use a slightly elevated side three-quarter view that makes all four turbofan nacelles visibly countable; preserve the massive high wing, deep strategic-cargo fuselage, upswept rear, and tall T-tail.');
   if (id === 'kc135-military') constraints.push('Use a slightly elevated side three-quarter view that makes all four under-wing turbojet nacelles visibly countable; preserve the narrow swept-wing tanker silhouette and one clearly recognizable tail refueling boom.');
+  if (id === 'cirrus-vision-jet') constraints.push('Preserve the compact Cirrus Vision Jet silhouette: exactly one dorsal turbofan above the aft fuselage, a low wing, a distinctly forked V-tail, and no propeller or conventional vertical tail.');
+  if (id === 'citation-x') constraints.push('Preserve the Cessna Citation X silhouette: long low swept wing, slim swept fuselage, exactly two rear-fuselage turbofans, and a tall swept T-tail.');
   if (treatmentCategory === 'crop-duster') constraints.push('Preserve purpose-built agricultural crop-duster anatomy, including robust fixed gear and believable spray-boom/application hardware.');
   return constraints;
 }
@@ -181,7 +185,21 @@ const catalog = {
   canonicalMatrix: 'design/plane-graphics-plan2.md#planned-artwork-matrix',
   generationAmendments: existingCatalog?.generationAmendments ?? [],
   scopedGenerationExceptions: [
-    ...((existingCatalog?.scopedGenerationExceptions ?? []).filter(({ id }) => !['pg025-chroma-magenta-1', 'pg026-visual-rejection-retry-1'].includes(id))),
+    ...((existingCatalog?.scopedGenerationExceptions ?? []).filter(({ id }) => !['pg025-chroma-magenta-1', 'pg026-visual-rejection-retry-1', 'pg027-chroma-magenta-1', 'pg027-anatomy-retry-1'].includes(id))),
+    {
+      id: 'pg027-anatomy-retry-1',
+      approvedOn: '2026-11-08',
+      rationale: 'The first right-facing PG-027 candidates failed hard direction, cockpit, engine-count, and wing/tail anatomy gates.',
+      text: 'PG-027 rejected-candidate correction: show a conventional side three-quarter aircraft view with the nose and clearly visible cockpit at the requested side and the tail at the opposite side. Treat the requested nose direction as absolute. Render exactly one complete fuselage, one anatomically plausible left/right wing pair attached at one station, and one aircraft-family-accurate tail assembly. Do not add duplicate, crossed, stacked, detached, melted, or extra wings, tails, engines, fuselages, or cockpit sections. The Cirrus Vision Jet must have exactly one dorsal aft-fuselage turbofan and one forked V-tail. The Citation X must have exactly two rear-fuselage turbofans and one T-tail. Preserve all other frozen identity, lighting, crop, and background constraints.',
+      recordKeys: ['cirrus-vision-jet:right:v1', 'cirrus-vision-jet:left:v1', 'citation-x:right:v1', 'citation-x:left:v1'],
+    },
+    {
+      id: 'pg027-chroma-magenta-1',
+      approvedOn: '2026-11-08',
+      rationale: 'The two neutral Phase 4 business jets use pale paint and require a contrasting matte for deterministic alpha extraction.',
+      text: 'PG-027 asset-specific background override for extraction: ignore the pure-white-background instruction for this request only. Place the complete aircraft on a perfectly uniform solid chroma-key magenta (#FF00FF) background. Use no gradient, texture, checkerboard, floor, horizon, scenery, shadow, magenta spill, magenta aircraft paint, or outline. Preserve the requested direction, exact aircraft-family silhouette, engine count and placement, retracted landing gear, neutral private-aircraft identity, crop, lighting, and all other frozen anatomy constraints.',
+      recordKeys: ['cirrus-vision-jet:right:v1', 'cirrus-vision-jet:left:v1', 'citation-x:right:v1', 'citation-x:left:v1'],
+    },
     {
       id: 'pg026-visual-rejection-retry-1',
       approvedOn: '2026-11-05',

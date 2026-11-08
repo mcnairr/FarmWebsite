@@ -726,6 +726,32 @@
       "treatmentIds": [
         "kc135-military"
       ]
+    },
+    {
+      "status": "available",
+      "file": "design/plane-art/shape-guides/cirrus-vision-jet-sf50.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/cirrus-vision-jet-sf50.svg on 2026-11-08.",
+      "ownership": "McNair Farms project",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
+      "id": "cirrus-vision-jet-sf50",
+      "family": "Cirrus Vision Jet SF50",
+      "treatmentIds": [
+        "cirrus-vision-jet"
+      ]
+    },
+    {
+      "status": "available",
+      "file": "design/plane-art/shape-guides/cessna-citation-x.png",
+      "provenance": "Original project-authored technical silhouette rendered from design/plane-art/shape-guides/src/cessna-citation-x.svg on 2026-11-08.",
+      "ownership": "McNair Farms project",
+      "permission": "Project-owned original; approved for use as a Vertex generation reference. No third-party input was used.",
+      "blockedTask": null,
+      "id": "cessna-citation-x",
+      "family": "Cessna Citation X",
+      "treatmentIds": [
+        "citation-x"
+      ]
     }
   ]
 }

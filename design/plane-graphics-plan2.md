@@ -31,8 +31,9 @@ registrations, and incidental lettering.
 
 ## Library size
 
-The target library is **74 aircraft/livery treatments × 2 directions = 148
-custom images**.
+The initial planned library was **74 aircraft/livery treatments x 2 directions
+= 148 custom images**. PG-027 adds two observed silhouettes, bringing the
+current library to **76 treatments / 152 images**.
 
 This is intentionally much larger than a minimal 12-25 image set. It should make
 the flight tracker feel rich even when unusual aircraft appear, while remaining
@@ -74,8 +75,9 @@ input unless the underlying plane image is ours or appropriately licensed.
 
 ## Planned artwork matrix
 
-The matrix contains 74 treatments. Each row produces a separate right-facing and
-left-facing image, for 148 final custom images.
+The matrix contains 76 treatments. Each row produces a separate right-facing and
+left-facing image, for 152 final custom images. Rows 75-76 are the two
+traffic-observed Phase 4 additions approved in PG-027.
 
 ### Scheduled passenger and cargo aircraft: 47 treatments / 94 images
 
@@ -172,6 +174,13 @@ real private owner's registration intentionally.
 | 72 | `c130-military` | neutral U.S. military gray | C-130 Hercules |
 | 73 | `c17-military` | neutral U.S. military gray | C-17 Globemaster |
 | 74 | `kc135-military` | neutral U.S. military gray | KC-135 tanker |
+
+### Phase 4 observed additions: 2 treatments / 4 images
+
+| # | Artwork id | Treatment | Shape |
+|---:|---|---|---|
+| 75 | `cirrus-vision-jet` | modern premium neutral paint | Cirrus Vision Jet SF50 |
+| 76 | `citation-x` | polished neutral corporate paint | Cessna Citation X |
 
 Generic police, medical, utility, and military art should be recognizable by
 category without copying a local agency's exact insignia or inventing an
@@ -285,7 +294,7 @@ recommended Vertex image model and pin the selected model id in generation
 metadata. Model names will change over the life of the site; the committed assets
 must not depend on a model remaining available.
 
-For each of the 74 treatments:
+For each of the 76 treatments:
 
 1. Select or create an original shape guide for the aircraft family.
 2. Generate the right-facing master using the treatment prompt, shape guide, and
@@ -323,7 +332,7 @@ represents the same aircraft family and livery.
 - Record generation counts so accidental reruns do not create avoidable Vertex
   charges.
 - The batch workflow must support selecting particular artwork ids and directions;
-  it must not regenerate all 148 images merely to replace one bad asset.
+  it must not regenerate the entire library merely to replace one bad asset.
 - The public site depends only on committed WebPs and continues working if Vertex
   is unavailable, billing is disabled, or the Google project is removed.
 
@@ -349,7 +358,7 @@ missing WebP must never leave an empty route.
 
 Add a dev-only `design/plane-gallery.html` showing:
 
-- all 74 treatments as adjacent right/left pairs;
+- all 76 treatments as adjacent right/left pairs;
 - hero and blip display sizes;
 - climb, level, and descent tilts;
 - the production sky background and a checkerboard alpha view;
@@ -437,7 +446,7 @@ mockup and approved proofs.
 Plan 2 accepts a larger curated asset library and a substantial visual-review
 effort in exchange for much better hero artwork and simpler browser rendering.
 Independent left/right images solve the backwards-branding problem, and on-demand
-static loading prevents the 148-image library from becoming a 148-image initial
+static loading prevents the 152-image library from becoming a 152-image initial
 download.
 
 ## Decisions remaining before implementation

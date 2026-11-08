@@ -630,6 +630,17 @@ export const PLANE_ASSETS = Object.freeze([
       promptRecordKey: `${artworkId}:${direction}:v1`, generationModel: 'gemini-3.1-flash-image',
       approvalStatus: 'approved',
     }))),
+  ...[
+    ['cirrus-vision-jet', 'business', 'small', ['SF50'], 'generic-bizjet-small'],
+    ['citation-x', 'business', 'medium', ['C750'], 'generic-bizjet-large'],
+  ].flatMap(([artworkId, category, sizeClass, applicableIcaoTypes, fallbackId]) =>
+    ['right', 'left'].map((direction) => ({
+      key: `${artworkId}:${direction}`, artworkId, direction, category,
+      url: `/assets/planes/v1/${artworkId}-${direction}.webp`, width: 960, height: 330, sizeClass,
+      applicableIcaoTypes, allowedCallsignPrefixes: [], fallbackId,
+      promptRecordKey: `${artworkId}:${direction}:v1`, generationModel: 'gemini-3.1-flash-image',
+      approvalStatus: 'approved',
+    }))),
 ]);
 
 export const PLANE_ASSETS_BY_KEY = Object.freeze(Object.fromEntries(

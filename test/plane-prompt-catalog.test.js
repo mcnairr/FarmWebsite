@@ -13,12 +13,12 @@ const copy = (value) => structuredClone(value);
 
 test('PG-003 catalog contains every treatment and independent directional prompt', async () => {
   assert.deepEqual(await validatePlanePromptCatalog({ root, prompts, inventory, plan }), []);
-  assert.equal(prompts.records.length, 148);
-  assert.equal(new Set(prompts.records.map(({ artworkId }) => artworkId)).size, 74);
+  assert.equal(prompts.records.length, 152);
+  assert.equal(new Set(prompts.records.map(({ artworkId }) => artworkId)).size, 76);
   assert.deepEqual(
     Object.fromEntries(['scheduled-passenger', 'cargo', 'business', 'general-aviation', 'turboprop', 'crop-duster', 'helicopter', 'military']
       .map((category) => [category, prompts.records.filter((record) => record.category === category).length / 2])),
-    { 'scheduled-passenger': 41, cargo: 6, business: 4, 'general-aviation': 6, turboprop: 5, 'crop-duster': 4, helicopter: 5, military: 3 },
+    { 'scheduled-passenger': 41, cargo: 6, business: 6, 'general-aviation': 6, turboprop: 5, 'crop-duster': 4, helicopter: 5, military: 3 },
   );
   for (const left of prompts.records.filter(({ direction }) => direction === 'left')) {
     assert.equal(left.styleReferenceKey, `${left.artworkId}:right:v1`);
@@ -38,6 +38,9 @@ test('PG-003 anatomy records cover category-specific engine, propeller, rotor, a
   assert.equal(byKey['cessna-high-wing:right:v1'].anatomy.propellerCount, 1);
   assert.equal(byKey['bell-407:right:v1'].anatomy.mainRotorCount, 1);
   assert.equal(byKey['bell-407:right:v1'].anatomy.tailRotorCount, 1);
+  assert.equal(byKey['cirrus-vision-jet:right:v1'].anatomy.engineCount, 1);
+  assert.match(byKey['cirrus-vision-jet:right:v1'].categoryConstraints.join(' '), /dorsal turbofan/i);
+  assert.match(byKey['citation-x:right:v1'].categoryConstraints.join(' '), /rear-fuselage turbofans/i);
   assert.match(byKey['fdx-trijet:right:v1'].categoryConstraints.join(' '), /tail-mounted center engine/i);
   assert.match(byKey['dlh-b747:right:v1'].categoryConstraints.join(' '), /upper-deck hump/i);
   assert.match(byKey['baw-a380:right:v1'].categoryConstraints.join(' '), /full-length double-deck/i);
@@ -98,6 +101,19 @@ test('PG-022 airliner families have original editable guides and rendered Vertex
     'airbus-a220', 'embraer-e190', 'bombardier-crj-200', 'bombardier-crj-900',
   ];
   for (const id of ids) {
+    const guide = inventory.guides.find((candidate) => candidate.id === id);
+    assert.equal(guide?.status, 'available', id);
+    assert.match(guide.provenance, new RegExp(`src/${id}\\.svg`));
+    assert.match(guide.permission, /Project-owned original/);
+    const source = await readFile(join(root, 'design', 'plane-art', 'shape-guides', 'src', `${id}.svg`), 'utf8');
+    assert.match(source, /Original McNair Farms project diagram/);
+    const metadata = await sharp(join(root, guide.file)).metadata();
+    assert.deepEqual([metadata.format, metadata.width, metadata.height], ['png', 1600, 900]);
+  }
+});
+
+test('PG-027 additions have original editable shape guides', async () => {
+  for (const id of ['cirrus-vision-jet-sf50', 'cessna-citation-x']) {
     const guide = inventory.guides.find((candidate) => candidate.id === id);
     assert.equal(guide?.status, 'available', id);
     assert.match(guide.provenance, new RegExp(`src/${id}\\.svg`));

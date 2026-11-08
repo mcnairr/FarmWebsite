@@ -235,6 +235,30 @@
       ]
     },
     {
+      "id": "pg027-anatomy-retry-1",
+      "approvedOn": "2026-11-08",
+      "rationale": "The first right-facing PG-027 candidates failed hard direction, cockpit, engine-count, and wing/tail anatomy gates.",
+      "text": "PG-027 rejected-candidate correction: show a conventional side three-quarter aircraft view with the nose and clearly visible cockpit at the requested side and the tail at the opposite side. Treat the requested nose direction as absolute. Render exactly one complete fuselage, one anatomically plausible left/right wing pair attached at one station, and one aircraft-family-accurate tail assembly. Do not add duplicate, crossed, stacked, detached, melted, or extra wings, tails, engines, fuselages, or cockpit sections. The Cirrus Vision Jet must have exactly one dorsal aft-fuselage turbofan and one forked V-tail. The Citation X must have exactly two rear-fuselage turbofans and one T-tail. Preserve all other frozen identity, lighting, crop, and background constraints.",
+      "recordKeys": [
+        "cirrus-vision-jet:right:v1",
+        "cirrus-vision-jet:left:v1",
+        "citation-x:right:v1",
+        "citation-x:left:v1"
+      ]
+    },
+    {
+      "id": "pg027-chroma-magenta-1",
+      "approvedOn": "2026-11-08",
+      "rationale": "The two neutral Phase 4 business jets use pale paint and require a contrasting matte for deterministic alpha extraction.",
+      "text": "PG-027 asset-specific background override for extraction: ignore the pure-white-background instruction for this request only. Place the complete aircraft on a perfectly uniform solid chroma-key magenta (#FF00FF) background. Use no gradient, texture, checkerboard, floor, horizon, scenery, shadow, magenta spill, magenta aircraft paint, or outline. Preserve the requested direction, exact aircraft-family silhouette, engine count and placement, retracted landing gear, neutral private-aircraft identity, crop, lighting, and all other frozen anatomy constraints.",
+      "recordKeys": [
+        "cirrus-vision-jet:right:v1",
+        "cirrus-vision-jet:left:v1",
+        "citation-x:right:v1",
+        "citation-x:left:v1"
+      ]
+    },
+    {
       "id": "pg026-visual-rejection-retry-1",
       "approvedOn": "2026-11-05",
       "rationale": "Final 148-image gallery review rejected three directional masters for wrong direction or implausible wing geometry.",
@@ -7345,6 +7369,194 @@
         "manifestKey": "kc135-military:left",
         "url": "/assets/planes/v1/kc135-military-left.webp",
         "sha256": "a086a3bae6ddd55aca7bd0feda927967fcce279be09a58eb55a07621a5ecffeb"
+      }
+    },
+    {
+      "key": "cirrus-vision-jet:right:v1",
+      "artworkId": "cirrus-vision-jet",
+      "direction": "right",
+      "treatmentName": "modern premium neutral paint",
+      "category": "business",
+      "aircraftShape": "Cirrus Vision Jet SF50",
+      "anatomy": {
+        "engineCount": 1,
+        "propellerCount": 0,
+        "mainRotorCount": 0,
+        "tailRotorCount": 0,
+        "landingGear": "retracted"
+      },
+      "categoryConstraints": [
+        "Preserve the compact Cirrus Vision Jet silhouette: exactly one dorsal turbofan above the aft fuselage, a low wing, a distinctly forked V-tail, and no propeller or conventional vertical tail."
+      ],
+      "shapeGuideId": "cirrus-vision-jet-sf50",
+      "status": "approved",
+      "blockedReason": null,
+      "provider": "Google Cloud Vertex AI",
+      "projectId": "simbusiness-13e1f",
+      "modelId": "gemini-3.1-flash-image",
+      "prompt": "Create one Cirrus Vision Jet SF50 aircraft in the approved lightly polished photorealistic production style, nose pointing right. Use reference images only for production style and aircraft silhouette. Do not reproduce any reference title, caption, label, guide annotation, instructional text, livery, logo, or registration. Preserve this treatment's aircraft family and show exactly 1 engine, 0 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted. Preserve the compact Cirrus Vision Jet silhouette: exactly one dorsal turbofan above the aft fuselage, a low wing, a distinctly forked V-tail, and no propeller or conventional vertical tail. Apply the specified modern premium neutral paint treatment as original paint with no copied private identity. Include no real organization name, logo, or recognizable brand mark. Any registration must be fictional or omitted; omission is preferred. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this right-facing view.",
+      "sharedConstraintIds": [
+        "global-1",
+        "global-2",
+        "global-3",
+        "global-4",
+        "global-5"
+      ],
+      "referenceIds": [
+        "production-spec",
+        "shape-guide:cirrus-vision-jet-sf50"
+      ],
+      "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-08T17:23:07.9841006+00:00",
+      "candidateNotes": "Vertex request a02e0c768d1244acb2a6 returned one independently generated right-facing PG-027 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 19f1cd705e275f2a45a84caa520aaa2903ef6355b787c8f174ef5621d1fe0c6c. The first right request 6d8bf811685847d5b483 was rejected for wrong direction and missing credible cockpit anatomy.",
+      "approvalNotes": "Approved 2026-11-08 for PG-027 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes: direction, exact SF50/Citation X silhouette, engine count and placement, wing/tail anatomy, retracted gear, neutral private identity, crop, baseline, alpha edges, and pair recognition pass. Output is 34588 bytes; the dated reviewed below-range exception is recorded in the processing report.",
+      "output": {
+        "manifestKey": "cirrus-vision-jet:right",
+        "url": "/assets/planes/v1/cirrus-vision-jet-right.webp",
+        "sha256": "a0a5e01a3e4cb6ac6f878a20260d0d41ae200d88fc733c24d7a93cbd2259f1c1"
+      }
+    },
+    {
+      "key": "cirrus-vision-jet:left:v1",
+      "artworkId": "cirrus-vision-jet",
+      "direction": "left",
+      "treatmentName": "modern premium neutral paint",
+      "category": "business",
+      "aircraftShape": "Cirrus Vision Jet SF50",
+      "anatomy": {
+        "engineCount": 1,
+        "propellerCount": 0,
+        "mainRotorCount": 0,
+        "tailRotorCount": 0,
+        "landingGear": "retracted"
+      },
+      "categoryConstraints": [
+        "Preserve the compact Cirrus Vision Jet silhouette: exactly one dorsal turbofan above the aft fuselage, a low wing, a distinctly forked V-tail, and no propeller or conventional vertical tail."
+      ],
+      "shapeGuideId": "cirrus-vision-jet-sf50",
+      "status": "approved",
+      "blockedReason": null,
+      "provider": "Google Cloud Vertex AI",
+      "projectId": "simbusiness-13e1f",
+      "modelId": "gemini-3.1-flash-image",
+      "prompt": "Use the approved cirrus-vision-jet:right:v1 result as a style, lighting, paint, and livery reference, but create a new independent image. Do not mirror it. Create one Cirrus Vision Jet SF50 aircraft in the approved lightly polished photorealistic production style, nose pointing left. Use reference images only for production style and aircraft silhouette. Do not reproduce any reference title, caption, label, guide annotation, instructional text, livery, logo, or registration. Preserve this treatment's aircraft family and show exactly 1 engine, 0 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted. Preserve the compact Cirrus Vision Jet silhouette: exactly one dorsal turbofan above the aft fuselage, a low wing, a distinctly forked V-tail, and no propeller or conventional vertical tail. Apply the specified modern premium neutral paint treatment as original paint with no copied private identity. Include no real organization name, logo, or recognizable brand mark. Any registration must be fictional or omitted; omission is preferred. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this left-facing view.",
+      "sharedConstraintIds": [
+        "global-1",
+        "global-2",
+        "global-3",
+        "global-4",
+        "global-5"
+      ],
+      "referenceIds": [
+        "production-spec",
+        "shape-guide:cirrus-vision-jet-sf50"
+      ],
+      "styleReferenceKey": "cirrus-vision-jet:right:v1",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-08T17:25:05.2338775+00:00",
+      "candidateNotes": "Vertex request fb50fa9894ba9c9d44ca returned one independently generated left-facing PG-027 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: b0636c3e8a404e9eb0933f83ceeae163b691aa9a5c3a06a38b6be1efdab1c82c.",
+      "approvalNotes": "Approved 2026-11-08 for PG-027 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes: direction, exact SF50/Citation X silhouette, engine count and placement, wing/tail anatomy, retracted gear, neutral private identity, crop, baseline, alpha edges, and pair recognition pass. Output is 30556 bytes; the dated reviewed below-range exception is recorded in the processing report.",
+      "output": {
+        "manifestKey": "cirrus-vision-jet:left",
+        "url": "/assets/planes/v1/cirrus-vision-jet-left.webp",
+        "sha256": "92a7899414e92b7a7612dc02ca7f04ce89bd68005b44e429cd7b29cb9bfd9d4b"
+      }
+    },
+    {
+      "key": "citation-x:right:v1",
+      "artworkId": "citation-x",
+      "direction": "right",
+      "treatmentName": "polished neutral corporate paint",
+      "category": "business",
+      "aircraftShape": "Cessna Citation X",
+      "anatomy": {
+        "engineCount": 2,
+        "propellerCount": 0,
+        "mainRotorCount": 0,
+        "tailRotorCount": 0,
+        "landingGear": "retracted"
+      },
+      "categoryConstraints": [
+        "Preserve the Cessna Citation X silhouette: long low swept wing, slim swept fuselage, exactly two rear-fuselage turbofans, and a tall swept T-tail."
+      ],
+      "shapeGuideId": "cessna-citation-x",
+      "status": "approved",
+      "blockedReason": null,
+      "provider": "Google Cloud Vertex AI",
+      "projectId": "simbusiness-13e1f",
+      "modelId": "gemini-3.1-flash-image",
+      "prompt": "Create one Cessna Citation X aircraft in the approved lightly polished photorealistic production style, nose pointing right. Use reference images only for production style and aircraft silhouette. Do not reproduce any reference title, caption, label, guide annotation, instructional text, livery, logo, or registration. Preserve this treatment's aircraft family and show exactly 2 engines, 0 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted. Preserve the Cessna Citation X silhouette: long low swept wing, slim swept fuselage, exactly two rear-fuselage turbofans, and a tall swept T-tail. Apply the specified polished neutral corporate paint treatment as original paint with no copied private identity. Include no real organization name, logo, or recognizable brand mark. Any registration must be fictional or omitted; omission is preferred. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this right-facing view.",
+      "sharedConstraintIds": [
+        "global-1",
+        "global-2",
+        "global-3",
+        "global-4",
+        "global-5"
+      ],
+      "referenceIds": [
+        "production-spec",
+        "shape-guide:cessna-citation-x"
+      ],
+      "styleReferenceKey": null,
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-08T17:23:16.8421755+00:00",
+      "candidateNotes": "Vertex request 1adcc598b3889b7e195a returned one independently generated right-facing PG-027 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 969e699b47cfcc3a2a9b161084c45b1a93abba10b4d4d7e3f5a140dbf2253bc8. The first right request 62f95d67aa6bdf614617 was rejected for four engines and duplicated wing/tail anatomy.",
+      "approvalNotes": "Approved 2026-11-08 for PG-027 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes: direction, exact SF50/Citation X silhouette, engine count and placement, wing/tail anatomy, retracted gear, neutral private identity, crop, baseline, alpha edges, and pair recognition pass. Output is 26822 bytes; the dated reviewed below-range exception is recorded in the processing report.",
+      "output": {
+        "manifestKey": "citation-x:right",
+        "url": "/assets/planes/v1/citation-x-right.webp",
+        "sha256": "26ab6de268121e4486f5f30fd88492f787c2c860cf38afcbbf889f948a7faf7d"
+      }
+    },
+    {
+      "key": "citation-x:left:v1",
+      "artworkId": "citation-x",
+      "direction": "left",
+      "treatmentName": "polished neutral corporate paint",
+      "category": "business",
+      "aircraftShape": "Cessna Citation X",
+      "anatomy": {
+        "engineCount": 2,
+        "propellerCount": 0,
+        "mainRotorCount": 0,
+        "tailRotorCount": 0,
+        "landingGear": "retracted"
+      },
+      "categoryConstraints": [
+        "Preserve the Cessna Citation X silhouette: long low swept wing, slim swept fuselage, exactly two rear-fuselage turbofans, and a tall swept T-tail."
+      ],
+      "shapeGuideId": "cessna-citation-x",
+      "status": "approved",
+      "blockedReason": null,
+      "provider": "Google Cloud Vertex AI",
+      "projectId": "simbusiness-13e1f",
+      "modelId": "gemini-3.1-flash-image",
+      "prompt": "Use the approved citation-x:right:v1 result as a style, lighting, paint, and livery reference, but create a new independent image. Do not mirror it. Create one Cessna Citation X aircraft in the approved lightly polished photorealistic production style, nose pointing left. Use reference images only for production style and aircraft silhouette. Do not reproduce any reference title, caption, label, guide annotation, instructional text, livery, logo, or registration. Preserve this treatment's aircraft family and show exactly 2 engines, 0 propellers, 0 main rotors, and 0 tail rotors; landing gear must be retracted. Preserve the Cessna Citation X silhouette: long low swept wing, slim swept fuselage, exactly two rear-fuselage turbofans, and a tall swept T-tail. Apply the specified polished neutral corporate paint treatment as original paint with no copied private identity. Include no real organization name, logo, or recognizable brand mark. Any registration must be fictional or omitted; omission is preferred. Show the entire aircraft centered with generous even padding. Use believable anatomy, proportions, materials, clean daylight, and restrained highlights. Use a plain pure-white removable background. No scenery, clouds, contrails, people, watermark, border, ground shadow, cropped parts, or extra aircraft. Branding and all text must read normally for this left-facing view.",
+      "sharedConstraintIds": [
+        "global-1",
+        "global-2",
+        "global-3",
+        "global-4",
+        "global-5"
+      ],
+      "referenceIds": [
+        "production-spec",
+        "shape-guide:cessna-citation-x"
+      ],
+      "styleReferenceKey": "citation-x:right:v1",
+      "generationException": null,
+      "repair": null,
+      "generatedAt": "2026-11-08T17:25:14.9219737+00:00",
+      "candidateNotes": "Vertex request bfe681a4d90fcce1f61f returned one independently generated left-facing PG-027 candidate on uniform magenta; processed with deterministic global chroma extraction at distance 120. Manual-repair SHA-256: 5bde8ce7ac306e9e1c621c87bc27333bd2c2751781ebaa0d96482fff3a4d575b.",
+      "approvalNotes": "Approved 2026-11-08 for PG-027 after production-sky and checkerboard review at 272 px hero and 46 px blip sizes: direction, exact SF50/Citation X silhouette, engine count and placement, wing/tail anatomy, retracted gear, neutral private identity, crop, baseline, alpha edges, and pair recognition pass. Output is 26112 bytes; the dated reviewed below-range exception is recorded in the processing report.",
+      "output": {
+        "manifestKey": "citation-x:left",
+        "url": "/assets/planes/v1/citation-x-left.webp",
+        "sha256": "a2ad326099f1562c9435a654119dfef2d7dc85606d898a18c7ccc3678878ec16"
       }
     }
   ]

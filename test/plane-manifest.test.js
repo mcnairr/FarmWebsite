@@ -235,9 +235,9 @@ test('PG-002 public manifest contains no generation runtime or private paths', a
   }
 });
 
-test('PG-026 releases exactly 74 complete approved independent pairs', () => {
-  assert.equal(PLANE_ASSETS.length, 148);
-  assert.equal(new Set(PLANE_ASSETS.map(({ artworkId }) => artworkId)).size, 74);
+test('PG-027 releases exactly 76 complete approved independent pairs', () => {
+  assert.equal(PLANE_ASSETS.length, 152);
+  assert.equal(new Set(PLANE_ASSETS.map(({ artworkId }) => artworkId)).size, 76);
   assert.ok(PLANE_ASSETS.every(({ approvalStatus }) => approvalStatus === 'approved'));
   const recordsByKey = Object.fromEntries(prompts.records.map((record) => [record.key, record]));
   for (const artworkId of new Set(PLANE_ASSETS.map((asset) => asset.artworkId))) {

@@ -68,7 +68,7 @@ The footer gains a one-line data credit while the feed is on.
   Cloudflare Worker: a small program Cloudflare hosts for free and runs on
   demand. The website itself stays on GitHub Pages exactly as before.
 - **Nothing to install or build in production.** The public site serves plain
-  JavaScript, CSS, and 32 committed directional WebPs. The inline jet and
+  JavaScript, CSS, and 152 committed directional WebPs. The inline jet and
   propeller SVGs are load-error fallbacks. Google credentials, Vertex AI,
   billing, generation SDKs, and the development-only image tools are not
   needed to serve the approved aircraft library.
@@ -340,6 +340,8 @@ Cloudflare's own runtime, at http://127.0.0.1:8787/api/flights.
 | `scripts/repair-plane-lighting.mjs` | PG-011 reviewer-driven, alpha-preserving correction for smoke-like neutral upper-surface shading (`npm run plane-art:repair-lighting`) |
 | `scripts/audit-phase1-plane-art.mjs` | Reproducible PG-011 dimensions, byte distribution, alpha, pair, model, and prompt-revision audit (`npm run plane-art:audit-phase1`) |
 | `scripts/audit-phase3-ga.mjs` | Reproducible PG-023 GA/turboprop six-pair production audit (`npm run plane-art:audit-phase3-ga`) |
+| `scripts/audit-phase4-observed-traffic.mjs` | Privacy-safe PG-027 observed-traffic aggregation and fallback ranking (`npm run plane-art:audit-phase4-traffic`) |
+| `scripts/audit-phase4-plane-art.mjs` | Reproducible PG-027 Vision Jet/Citation X production audit (`npm run plane-art:audit-phase4`) |
 | `scripts/measure-plane-art-performance.mjs` | Repeatable throttled Chromium cold/warm benchmark (`npm run plane-art:measure-performance`) |
 | `scripts/validate-plane-library.mjs` | CI-safe plane-library integrity, mapping, hostile-input, and public credential/runtime validation (`npm run plane-art:validate`) |
 | `scripts/dev-server.mjs` | Local preview: website and API together |
