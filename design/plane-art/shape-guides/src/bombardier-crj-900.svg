@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <rect width="1600" height="900" fill="#fff"/>
-  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
-    <path d="M185 398 C300 348 515 338 1120 355 C1270 360 1380 395 1420 398.5 C1345 425 1200 433 435 430 C290 427 210 406 185 398 Z"/>
-    <path d="M310 380 L240 178 L310 168 L440 383 Z"/><path d="M215 180 L460 180 L445 205 L240 205 Z"/><path d="M690 395 L385 112 L495 96 L855 387 Z"/><path d="M735 406 L430 714 L345 694 L590 388 Z"/><ellipse cx="445" cy="438" rx="74" ry="38"/><ellipse cx="575" cy="439" rx="74" ry="38"/>
-  </g>
-  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12"><line x1="70" y1="490" x2="1530" y2="490"/><line x1="800" y1="70" x2="800" y2="725"/></g>
-  <g fill="#132a46" font-family="Arial, sans-serif"><text x="100" y="72" font-size="46" font-weight="700">Bombardier CRJ-900 shape guide</text><text x="100" y="790" font-size="30">Long slender regional fuselage - T-tail - two rear-mounted engines - gear retracted</text><text x="100" y="836" font-size="25" fill="#52677d">Original McNair Farms project diagram - silhouette and proportions only; no livery or registration reference.</text></g>
-</svg>

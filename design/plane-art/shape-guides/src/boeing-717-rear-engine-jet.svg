@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <rect width="1600" height="900" fill="#fff"/>
-  <g fill="#132a46" stroke="#132a46" stroke-linejoin="round">
-    <path d="M245 392 C360 342 575 332 1060 349 C1210 354 1320 389 1360 396.35 C1285 426 1140 434 495 431 C350 428 270 407 245 392 Z"/>
-    <path d="M370 374 L300 178 L370 168 L500 377 Z"/><path d="M275 180 L520 180 L505 205 L300 205 Z"/><path d="M690 389 L385 112 L495 96 L855 381 Z"/><path d="M735 407 L430 714 L345 694 L590 389 Z"/><ellipse cx="505" cy="439" rx="74" ry="38"/><ellipse cx="635" cy="440" rx="74" ry="38"/>
-  </g>
-  <g fill="none" stroke="#6e7f92" stroke-width="5" stroke-dasharray="16 12"><line x1="70" y1="490" x2="1530" y2="490"/><line x1="800" y1="70" x2="800" y2="725"/></g>
-  <g fill="#132a46" font-family="Arial, sans-serif"><text x="100" y="72" font-size="46" font-weight="700">Boeing 717 rear-engine jet shape guide</text><text x="100" y="790" font-size="30">Compact narrow fuselage - T-tail - two rear-mounted engines - gear retracted</text><text x="100" y="836" font-size="25" fill="#52677d">Original McNair Farms project diagram - silhouette and proportions only; no livery or registration reference.</text></g>
-</svg>
