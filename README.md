@@ -323,6 +323,22 @@ Cloudflare's own runtime, at http://127.0.0.1:8787/api/flights.
 | `scripts/dev-server.mjs` | Local preview: website and API together |
 | `scripts/download-worker-logs.mjs` | Optional local export of retained Worker observability logs |
 
+### Repository licensing
+
+Copyright (c) 2026 McNair Farms Inc.
+
+The software source code is available under the
+[PolyForm Noncommercial License 1.0.0](LICENSE). You may use, modify, and
+redistribute the code for permitted noncommercial purposes. Commercial use
+requires prior written permission from McNair Farms Inc. This project is
+source-available, not open source as defined by the Open Source Initiative.
+
+The software license does not cover farm photographs, aircraft artwork and its
+working materials, McNair Farms branding, or authored website content. Those
+materials are proprietary and all rights are reserved; see
+[ASSETS-LICENSE.md](ASSETS-LICENSE.md). Third-party materials and data remain
+subject to their own terms.
+
 ### Attribution and data licensing
 
 - **adsb.lol** data is available under the
@@ -350,4 +366,6 @@ The website doesn't change, though it could then label those aircraft
 "Received live at McNair Farms". A paid route source such as FlightAware
 AeroAPI would plug in the same way, after ADSBDB, to fill in more routes.
 
-Copyright © 2026 McNair Farms Inc. All rights reserved. See LICENSE.
+Copyright © 2026 McNair Farms Inc. Software and non-code materials are subject
+to separate terms; see [LICENSE](LICENSE) and
+[ASSETS-LICENSE.md](ASSETS-LICENSE.md).
