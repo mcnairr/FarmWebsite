@@ -1,5 +1,6 @@
 {
   "name": "mcnair-farms-website",
+  "version": "1.0.0",
   "private": true,
   "description": "McNair Farms Inc. website and live flight feed API",
   "license": "PolyForm-Noncommercial-1.0.0",
