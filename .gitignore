@@ -9,15 +9,12 @@ test-results/
 playwright-report/
 worker-logs/
 
-# Private design, generation, test, and service-source workspace. These files
-# stay on the local machine but are intentionally excluded from the public
-# GitHub Pages repository.
-/api/
+# Private design, generation, and test workspace. These files stay on the
+# local machine but are intentionally excluded from the public repository.
 /design/
-/scripts/
+/scripts/*
+!/scripts/dev-server.mjs
+!/scripts/download-worker-logs.mjs
 /test/
 /Oats.jpg
-/.env.example
-/package.json
-/package-lock.json
 /playwright.config.js
